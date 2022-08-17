@@ -1,0 +1,15 @@
+\documentclass{standalone}
+\usepackage{circuitikz}
+
+\begin{document}
+\begin{circuitikz}[european,scale=0.7, every node/.style={scale=0.65}]
+    \draw (0,3)  to[R=$Z_1$, o-] (3,3) node[above]{$A$} to[R=$Z_2$, -o] (6,3) ;
+    \draw (3,3) to [R=$Z_3$,o-o] (3,1); 
+    \draw (3,-0.5) node[ground] {} ;
+    \draw (6,1) node[ground] {} ;
+    \draw (0,1) node[ground] {} ;
+    \draw[->,>=latex] (6,1.25) -- (6,2.75) node[right,yshift=-3em] {$v_{2}(t)$};
+    \draw[->,>=latex] (0,1.25) -- (0,2.75) node[left,yshift=-3em] {$v_{1}(t)$};
+    \draw[->,>=latex] (3,-0.25) -- (3,0.75) node[left,xshift=-1em,yshift=-1em] {$v_{3}(t)$};
+\end{circuitikz}
+\end{document}

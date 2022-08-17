@@ -1,0 +1,11 @@
+\documentclass{standalone}
+\usepackage{circuitikz}
+
+\begin{document}
+\begin{circuitikz}[european,scale=0.5, every node/.style={scale=0.65}]
+    \draw (0,0)   to[R, l_=$Z_1$, o-] (4,0)  to[R,l_=$Z_2$, o-] (4,-2.75)  ;
+            \draw (4,-2.5) node[ground] {} ;
+            \draw[<-,>=latex] (-0.25,0) -- (-0.25,-3) node[right,yshift=2em] {$v_{1}(t)$};
+            \draw[<-,>=latex] (4.75,0) -- (4.75,-3) node[right,xshift=-0.25em,yshift=2em] {$v_{2}(t)$};
+    \end{circuitikz}
+\end{document}

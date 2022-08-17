@@ -1,0 +1,9 @@
+\documentclass{standalone}
+\usepackage{circuitikz}
+
+\begin{document}
+\begin{circuitikz}[scale=0.6, every node/.style={scale=0.65}]
+                \draw (0,0) to[R=$R$, i>^=$i(t)$] (4,0);
+                \draw[<-,>=latex] (0,-0.5) -- node[midway,yshift=-0.75em]{$u(t)$}(4,-0.5);
+\end{circuitikz}
+\end{document}
