@@ -1,10 +1,6 @@
 Liste des Circuits
 ==================
 
-.. note ::
-
-  Travail collaboratif: https://git.enib.fr/choqueuse/analog_circuits
-
 Premier Ordre
 -------------
 
