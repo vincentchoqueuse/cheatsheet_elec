@@ -1,0 +1,386 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>Rappels sur les Equations Differentielles &#8212; pydata_theme  documentation</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/css/blank.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/plot_directive.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Fonction de Transfert" href="transfer_function.html" />
+    <link rel="prev" title="Rappels d’Electronique" href="circuits_analysis.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
+    
+    
+
+<a class="navbar-brand" href="../index.html">
+  <img src="../_static/logo.png" class="logo" alt="logo">
+</a>
+
+
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 current active nav-item">
+ <a class="reference internal nav-link" href="index.html">
+  Cours
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../tutorials/index.html">
+  Tutorials
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../cheatsheet.html">
+  Cheatsheet
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../links.html">
+  Links
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../about.html">
+  About
+ </a>
+</li>
+
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/vincentchoqueuse/cheatsheet_elec" rel="noopener" target="_blank" title="GitHub">
+            <span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label>
+          </a>
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar"><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    <p>
+ <span class="caption-text">
+  Contents:
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="math.html">
+   Rappels Mathematiques
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="circuits_analysis.html">
+   Rappels d’Electronique
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Rappels sur les Equations Differentielles
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="transfer_function.html">
+   Fonction de Transfert
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="first_order.html">
+   Systèmes de Premier Ordre
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="second_order.html">
+   Systèmes de Second Ordre
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="filter_synthesis.html">
+   Synthèse des Filtres d’ordre N
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="signal_list.html">
+   Liste des Signaux
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="transfer_function_list.html">
+   Liste des Filtres
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="circuit_list.html">
+   Liste des Circuits
+  </a>
+ </li>
+</ul>
+
+  </div>
+</nav>
+            </div>
+            
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+              
+              <div class="toc-item">
+                
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#modele-mathematique">
+   Modèle Mathématique
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#expression-de-la-solution">
+   Expression de la Solution
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#solution-libre">
+     Solution libre
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#solution-particuliere">
+     Solution particulière
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exemple">
+   Exemple
+  </a>
+ </li>
+</ul>
+
+</nav>
+              </div>
+              
+              <div class="toc-item">
+                
+              </div>
+              
+            
+          </div>
+          
+
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <section id="rappels-sur-les-equations-differentielles">
+<h1>Rappels sur les Equations Differentielles<a class="headerlink" href="#rappels-sur-les-equations-differentielles" title="Permalink to this headline">¶</a></h1>
+<section id="modele-mathematique">
+<h2>Modèle Mathématique<a class="headerlink" href="#modele-mathematique" title="Permalink to this headline">¶</a></h2>
+<p>Une équation différentielle linéaire à coefficients constants d’ordre n s’exprime sous la forme</p>
+<div class="math notranslate nohighlight">
+\[a_n \frac{d^n s(t)}{dt^n} + \cdots+a_1 \frac{d s(t)}{dt}  +a_0 s(t) =b_m \frac{d^m e(t)}{dt^m} +\cdots+b_0 e(t)\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(a_n\)</span> et <span class="math notranslate nohighlight">\(b_m\)</span> désigne les paramètres de l’équation différentielle,</p></li>
+<li><p>La partie droite de l’équation est appelée second membre.</p></li>
+</ul>
+</section>
+<section id="expression-de-la-solution">
+<h2>Expression de la Solution<a class="headerlink" href="#expression-de-la-solution" title="Permalink to this headline">¶</a></h2>
+<p>La solution complète de l’équation différentielle s’exprime sous la forme :</p>
+<div class="math notranslate nohighlight">
+\[s(t)=s_l(t)+s_p(t)\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(s_l(t)\)</span>: solution libre (régime libre),</p></li>
+<li><p><span class="math notranslate nohighlight">\(s_p(t)\)</span>: solution particulière (régime forcé).</p></li>
+</ul>
+<section id="solution-libre">
+<h3>Solution libre<a class="headerlink" href="#solution-libre" title="Permalink to this headline">¶</a></h3>
+<p>Le terme <span class="math notranslate nohighlight">\(s_l(t)\)</span> désigne la solution libre de l’équation sans second membre définie par :</p>
+<div class="math notranslate nohighlight">
+\[a_n \frac{d^n s(t)}{dt^n} + \cdots+a_1 \frac{d s(t)}{dt}  +a_0 s(t) =0\]</div>
+<p>La solution libre s’exprime sous la forme</p>
+<div class="math notranslate nohighlight">
+\[s_l(t)=\sum_{k=1}^{n}\lambda_k e^{p_kt}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\lambda_k\in \mathbb{C}\)</span> désigne des constantes d’intégration. Ces constantes peuvent être déterminées à partir de la connaissance des conditions initiales de l’équation différentielle.</p></li>
+<li><p><span class="math notranslate nohighlight">\(p_k \in \mathbb{C}\)</span> désigne les racines du polynôme caractéristique <span class="math notranslate nohighlight">\(a_n p^n+a_{n-1}p^{n-1}+\cdots+a_1 p+a_0\)</span>.</p></li>
+</ul>
+</section>
+<section id="solution-particuliere">
+<h3>Solution particulière<a class="headerlink" href="#solution-particuliere" title="Permalink to this headline">¶</a></h3>
+<p>Le terme <span class="math notranslate nohighlight">\(s_p(t)\)</span> désigne une solution particulière de l’équation avec second membre. Il n’y a pas d’expression générale
+permettant de déterminer <span class="math notranslate nohighlight">\(s_p(t)\)</span> quelque soit <span class="math notranslate nohighlight">\(e(t)\)</span>. Le plus souvent, la solution particulière possède la même “forme”
+que <span class="math notranslate nohighlight">\(e(t)\)</span>.</p>
+<p>Par exemple,</p>
+<ul class="simple">
+<li><p>Si <span class="math notranslate nohighlight">\(e(t)=\alpha\)</span> est une constante, <span class="math notranslate nohighlight">\(s_p(t)=\beta\)</span> est une constante,</p></li>
+<li><p>Si <span class="math notranslate nohighlight">\(e(t)\)</span> est un polynôme de degré <span class="math notranslate nohighlight">\(Q\)</span>, <span class="math notranslate nohighlight">\(s_p(t)\)</span> est un polynôme de degré <span class="math notranslate nohighlight">\(Q\)</span> (avec des coefficients différents),</p></li>
+<li><p>Si <span class="math notranslate nohighlight">\(e(t)\)</span> est une sinusoïde de pulsation <span class="math notranslate nohighlight">\(\omega\)</span>, <span class="math notranslate nohighlight">\(s_p(t)\)</span> est une sinusoïde de pulsation <span class="math notranslate nohighlight">\(\omega\)</span> (avec une amplitude et une phase différentes).</p></li>
+</ul>
+<p>Les paramètres de la solution particulière s’obtiennent par identification en remplaçant <span class="math notranslate nohighlight">\(s(t)\)</span> par <span class="math notranslate nohighlight">\(s_p(t)\)</span> dans l’équation différentielle.</p>
+</section>
+</section>
+<section id="exemple">
+<h2>Exemple<a class="headerlink" href="#exemple" title="Permalink to this headline">¶</a></h2>
+<p>Considérons l’équation différentielle suivante de premier ordre</p>
+<div class="math notranslate nohighlight">
+\[\tau \frac{d s(t)}{dt} + s(t)= Ku(t)\]</div>
+<p>où <span class="math notranslate nohighlight">\(u(t)\)</span> désigne l’échelon unité (<span class="math notranslate nohighlight">\(u(t)=0\)</span> si <span class="math notranslate nohighlight">\(t&lt;0\)</span> et <span class="math notranslate nohighlight">\(u(t)=1\)</span> si <span class="math notranslate nohighlight">\(t\ge 0\)</span>) et <span class="math notranslate nohighlight">\(s(0)=0\)</span>.</p>
+<p>La solution complète s’exprime sous la forme :</p>
+<div class="math notranslate nohighlight">
+\[s(t)=s_l(t)+s_p(t)\]</div>
+<ul class="simple">
+<li><p>Solution libre: <span class="math notranslate nohighlight">\(s_l(t)=\lambda_1 e^{p_1t}\)</span> avec <span class="math notranslate nohighlight">\(\tau p_1+1=0 \Rightarrow p_1=-\frac{1}{\tau}\)</span>.</p></li>
+<li><p>Solution particulière: <span class="math notranslate nohighlight">\(s_p(t)=\beta\)</span> avec <span class="math notranslate nohighlight">\(\tau \times 0 +\beta = K\times 1 \Rightarrow \beta=K\)</span>.</p></li>
+</ul>
+<p>La solution complète s’exprime alors sous la forme :</p>
+<div class="math notranslate nohighlight">
+\[s(t)=\lambda_1 e^{-\frac{1}{\tau} t} + K\]</div>
+<p>Pour déterminer la constante d’intégration <span class="math notranslate nohighlight">\(\lambda_1\)</span>, il est nécessaire d’exploiter une condition initiale. En utilisant le fait
+que <span class="math notranslate nohighlight">\(s(0)=0\)</span>, nous obtenons <span class="math notranslate nohighlight">\(\lambda_1  + K = 0 \Rightarrow \lambda_1=-K\)</span>. Pour <span class="math notranslate nohighlight">\(t\ge 0\)</span>, nous obtenons finalement l’expression :</p>
+<div class="math notranslate nohighlight">
+\[s(t) = K(1-e^{-\frac{1}{\tau}t})\]</div>
+</section>
+</section>
+
+
+              </div>
+              
+              
+              <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="circuits_analysis.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Rappels d’Electronique</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="transfer_function.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Fonction de Transfert</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+              
+          </main>
+          
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+<footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    
+    <div class="footer-item">
+      <p class="copyright">
+    &copy; Copyright 2022, V. Choqueuse.<br>
+</p>
+    </div>
+    
+    <div class="footer-item">
+      <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.0.<br>
+</p>
+    </div>
+    
+  </div>
+</footer>
+  </body>
+</html>

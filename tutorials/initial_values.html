@@ -1,0 +1,408 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>Expression de la valeur initiale &#8212; pydata_theme  documentation</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/css/blank.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/plot_directive.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Cheatsheet" href="../cheatsheet.html" />
+    <link rel="prev" title="Analyse d’un Circuit de Premier Ordre" href="first_order.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
+    
+    
+
+<a class="navbar-brand" href="../index.html">
+  <img src="../_static/logo.png" class="logo" alt="logo">
+</a>
+
+
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../courses/index.html">
+  Cours
+ </a>
+</li>
+
+<li class="toctree-l1 current active nav-item">
+ <a class="reference internal nav-link" href="index.html">
+  Tutorials
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../cheatsheet.html">
+  Cheatsheet
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../links.html">
+  Links
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../about.html">
+  About
+ </a>
+</li>
+
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/vincentchoqueuse/cheatsheet_elec" rel="noopener" target="_blank" title="GitHub">
+            <span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label>
+          </a>
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar"><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    <p>
+ <span class="caption-text">
+  Contents:
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="python.html">
+   Utilisation de Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="analog_filter.html">
+   Travail Collaboratif : Analog Filter
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="first_order.html">
+   Analyse d’un Circuit de Premier Ordre
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Expression de la valeur initiale
+  </a>
+ </li>
+</ul>
+
+  </div>
+</nav>
+            </div>
+            
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+              
+              <div class="toc-item">
+                
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction">
+   Introduction
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#approche-temporelle">
+   Approche Temporelle
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#valeur-initiale">
+     Valeur Initiale
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exemples">
+   Exemples
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#proprietes">
+     Propriétés
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#illustrations">
+     Illustrations
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+</nav>
+              </div>
+              
+              <div class="toc-item">
+                
+              </div>
+              
+            
+          </div>
+          
+
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <section id="expression-de-la-valeur-initiale">
+<h1>Expression de la valeur initiale<a class="headerlink" href="#expression-de-la-valeur-initiale" title="Permalink to this headline">¶</a></h1>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>Lorsqu’un système est excité par une entrée <span class="math notranslate nohighlight">\(e(t)\)</span> en <span class="math notranslate nohighlight">\(t=0^+\)</span>, la sortie <span class="math notranslate nohighlight">\(s(t)\)</span> peut
+présenter différents comportements. Ces différents comportements permettent d’identifier le type de filtre (passe-bas, passe-haut, etc) et certains paramètres.</p>
+<p>Dans ce tutorial, nous nous intéressons spécifiquement au comportement à l’excitation, c-à-d en <span class="math notranslate nohighlight">\(t=0^+\)</span>.</p>
+<p>Pour analyser le comportement en <span class="math notranslate nohighlight">\(t=0^+\)</span>, ce tutorial présente deux approches, l’une basée sur l’équation différentielle et l’autre sur la fonction de transfert.
+Pour des raisons de simplicité, les approches présentées ci dessous se limitent au cas des systèmes de second ordre.</p>
+</section>
+<section id="approche-temporelle">
+<h2>Approche Temporelle<a class="headerlink" href="#approche-temporelle" title="Permalink to this headline">¶</a></h2>
+<p>Considérons un système de second ordre décrit par l’équation différentielle suivante</p>
+<div class="math notranslate nohighlight">
+\[a_2 \ddot{s}(t)+a_1 \dot{s}(t)+a_0 s(t)=b_2 \ddot{e}(t)+b_1 \ddot{e}(t)+b_0 e(t)\]</div>
+<section id="valeur-initiale">
+<h3>Valeur Initiale<a class="headerlink" href="#valeur-initiale" title="Permalink to this headline">¶</a></h3>
+<p>Il est possible de trouver la valeur initiale en <span class="math notranslate nohighlight">\(t=0^+\)</span>
+en intégrant plusieurs fois l’équation différentielle entre <span class="math notranslate nohighlight">\(0^-\)</span> et <span class="math notranslate nohighlight">\(0^+\)</span>.</p>
+<p>En intégrant deux fois l’équation différentielle entre <span class="math notranslate nohighlight">\(0^-\)</span> et <span class="math notranslate nohighlight">\(0^+\)</span>, nous obtenons :</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}a_2 \int\int_{0^-}^{0^+}\ddot{s}(t)dt^2+a_1 \int\int_{0^-}^{0^+}\dot{s}(t)dt^2 +a_0 \int\int_{0^-}^{0^+}s(t)dt^2\\
+=b_2 \int\int_{0^-}^{0^+}\ddot{e}(t)dt^2+b_1 \int\int_{0^-}^{0^+}\dot{e}(t)dt^2+b_0 \int\int_{0^-}^{0^+}e(t)dt^2\end{split}\]</div>
+<p>En supposant que l’entrée et la sortie ne contiennent pas d’impulsion, les deux derniers termes des deux membres sont nuls.
+Dans ce contexte, l’égalité se simplifie sous la forme :</p>
+<div class="math notranslate nohighlight">
+\[a_2 \left[s(t)\right]_{0^-}^{0^+}=b_2 \left[e(t)\right]_{0^-}^{0^+}\]</div>
+<p>et donc :</p>
+<div class="math notranslate nohighlight">
+\[a_2(s(0^+)-s(0^-)) = b_2(e(0^+)-e(0^-))\tag{1}\]</div>
+<p>En intégrant une fois l’équation différentielle entre <span class="math notranslate nohighlight">\(0^-\)</span> et <span class="math notranslate nohighlight">\(0^+\)</span>, nous obtenons :</p>
+<div class="math notranslate nohighlight">
+\[a_2 \int_{0^-}^{0^+}\ddot{s}(t)dt+a_1 \int_{0^-}^{0^+}\dot{s}(t)dt +a_0 \int_{0^-}^{0^+}s(t)dt=b_2 \int_{0^-}^{0^+}\ddot{e}(t)dt+b_1 \int_{0^-}^{0^+}\dot{e}(t)dt+b_0 \int_{0^-}^{0^+}e(t)dt\]</div>
+<p>Sous les mêmes hypothèses, nous trouvons alors :</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}a_2  \left[\dot{s}(t)\right]_{0^-}^{0^+}+a_1  \left[s(t)\right]_{0^-}^{0^+} \\
+=b_2 \left[\dot{e}(t)\right]_{0^-}^{0^+}+b_1  \left[e(t)\right]_{0^-}^{0^+}\end{split}\]</div>
+<p>et donc :</p>
+<div class="math notranslate nohighlight">
+\[a_2  \left(\dot{s}(0^+)-\dot{s}(0^-)\right)+a_1 \left(s(0^+)-s(0^-)\right) =b_2 \left(\dot{e}(0^+)-\dot{e}(0^-)\right)+b_1  \left(e(0^+)-e(0^-)\right)\tag{2}\]</div>
+<p>Ces relations permettent de définir un système d’équation. Pour simplfiier la résolution, nous allons utiliser une notation matricielle.
+Définissons tout d’abord les vecteurs suivants :</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\mathbf{s}(t) &amp;= \begin{bmatrix} s(t) \\ \dot{s}(t)\end{bmatrix} \\
+\mathbf{e}(t) &amp;= \begin{bmatrix} e(t) \\ \dot{e}(t)\end{bmatrix}\end{split}\]</div>
+<p>Nous obtenons alors le système</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{bmatrix}a_2 &amp; 0 \\ a_1 &amp;a_2\end{bmatrix}\left(\mathbf{s}(0^+)-\mathbf{s}(0^-)\right) = \begin{bmatrix}b_2 &amp; 0 \\ b_1 &amp;b_2 \end{bmatrix}\left(\mathbf{e}(0^+)-\mathbf{e}(0^-)\right)\end{split}\]</div>
+<p>En utilisant le fait que</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{bmatrix}a_2 &amp; 0 \\ a_1 &amp;a_2\end{bmatrix}^{-1} = \frac{1}{a_2^2}\begin{bmatrix}a_2 &amp; 0 \\ -a_1 &amp;a_2\end{bmatrix},\end{split}\]</div>
+<p>nous obtenons :</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\mathbf{s}(0^+) = \frac{1}{a_2^2}\begin{bmatrix}a_2 &amp; 0 \\ -a_1 &amp;a_2\end{bmatrix}\begin{bmatrix}b_2 &amp; 0 \\ b_1 &amp;b_2 \end{bmatrix}\left(\mathbf{e}(0^+)-\mathbf{e}(0^-)\right) + \mathbf{s}(0^-)\end{split}\]</div>
+<p>La sortie et sa dérivée s’expriment alors sous la forme :</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\mathbf{s}(0^+) = \frac{1}{a_2^2}\begin{bmatrix}a_2b_2 &amp; 0 \\ a_2b_1-a_1b_2 &amp;a_2 b_2 \end{bmatrix}\left(\mathbf{e}(0^+)-\mathbf{e}(0^-)\right) + \mathbf{s}(0^-)\end{split}\]</div>
+<p>En introduisant la notion de variation, il en vient que :</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\Delta \mathbf{s}(0) = \frac{1}{a_2^2}\begin{bmatrix}a_2b_2 &amp; 0 \\ a_2b_1-a_1b_2 &amp;a_2 b_2 \end{bmatrix}\Delta \mathbf{e}(0)\end{split}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\Delta \mathbf{s}(0) = \mathbf{s}(0^+)-\mathbf{s}(0^-)\)</span> désigne la variation du vecteur de sortie,</p></li>
+<li><p><span class="math notranslate nohighlight">\(\Delta \mathbf{e}(0) = \mathbf{e}(0^+)-\mathbf{e}(0^-)\)</span> désigne la variation du vecteur d’entrée.</p></li>
+</ul>
+</section>
+</section>
+<section id="exemples">
+<h2>Exemples<a class="headerlink" href="#exemples" title="Permalink to this headline">¶</a></h2>
+<p>Dans cette partie, nous nous intéressons aux comportements des filtres de second ordre de type passe-bas, passe-bande, passe-haut et rejecteur.</p>
+<p>Pour ces filtres, nous obtenons la relation générale :</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\Delta \mathbf{s}(0) = \omega_0^2\begin{bmatrix} b_2  &amp; 0 \\ b_1 -2m b_2 \omega_0 &amp; b_2 \end{bmatrix}\Delta \mathbf{e}(0)\end{split}\]</div>
+<section id="proprietes">
+<h3>Propriétés<a class="headerlink" href="#proprietes" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Passe-bas :</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\Delta \mathbf{s}(0) = \mathbf{0}\]</div>
+<ul class="simple">
+<li><p>Passe-bande :</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\Delta \mathbf{s}(0) = T_m\begin{bmatrix} 0 &amp; 0 \\ 2m  \omega_0   &amp; 0 \end{bmatrix}\Delta \mathbf{e}(0)\end{split}\]</div>
+<ul class="simple">
+<li><p>Passe-haut :</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\Delta \mathbf{s}(0) =  T_{\infty}\begin{bmatrix} 1 &amp; 0 \\ - 2m \omega_0   &amp; 1  \end{bmatrix}\Delta \mathbf{e}(0)\end{split}\]</div>
+<ul class="simple">
+<li><p>Rejecteur :</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\Delta \mathbf{s}(0) =  T_{0}\begin{bmatrix} 1 &amp; 0 \\ - 2m \omega_0   &amp; 1  \end{bmatrix}\Delta \mathbf{e}(0)\end{split}\]</div>
+</section>
+<section id="illustrations">
+<h3>Illustrations<a class="headerlink" href="#illustrations" title="Permalink to this headline">¶</a></h3>
+<p>Considérons le cas où l’entrée est un échelon d’amplitude <span class="math notranslate nohighlight">\(E=1\)</span>. Dans ce contexte, le vecteur d’entrée est égale à</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\Delta \mathbf{e}(0)=\begin{bmatrix}1 \\ 0\end{bmatrix}\end{split}\]</div>
+<p>La figure suivante présente la réponse indicielle pour un filtre passe-bas, passe-bande, passe-haut et rejecteur ayant la même pulsation propre <span class="math notranslate nohighlight">\(\omega_0=1\)</span> rad/s, le même coefficient d’amortissement <span class="math notranslate nohighlight">\(m=0.5\)</span> et le même
+coefficient d’amplification <span class="math notranslate nohighlight">\(T_0=T_\infty=T_m=2\)</span>.</p>
+<figure class="align-default">
+<img alt="../_images/initial_values-1.png" class="plot-directive" src="../_images/initial_values-1.png" />
+</figure>
+<p>Nous observons rapidement que :</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Seuls les filtres passe-haut et rejecteur laissent passer les discontinuités en entrée.</p></li>
+<li><p>Seuls les filtres passe-bas et rejecteur possèdent un regime permanent non nul.</p></li>
+</ul>
+</div></blockquote>
+</section>
+</section>
+</section>
+
+
+              </div>
+              
+              
+              <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="first_order.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Analyse d’un Circuit de Premier Ordre</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../cheatsheet.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Cheatsheet</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+              
+          </main>
+          
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+<footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    
+    <div class="footer-item">
+      <p class="copyright">
+    &copy; Copyright 2022, V. Choqueuse.<br>
+</p>
+    </div>
+    
+    <div class="footer-item">
+      <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.0.<br>
+</p>
+    </div>
+    
+  </div>
+</footer>
+  </body>
+</html>
