@@ -12,9 +12,7 @@ Cheatsheet
 System Analysis
 ---------------
 
-.. note::
-    
-    Documentation: https://docs.scipy.org/doc/scipy/reference/signal.html#continuous-time-linear-systems
+* Documentation: https://docs.scipy.org/doc/scipy/reference/signal.html#continuous-time-linear-systems
 
 
 System Creation
@@ -101,9 +99,7 @@ Frequency Response
 Filter Design
 -------------
 
-.. note::
-    
-    Documentation: https://docs.scipy.org/doc/scipy/reference/signal.html#matlab-style-iir-filter-design
+* Documentation: https://docs.scipy.org/doc/scipy/reference/signal.html#matlab-style-iir-filter-design
 
 Butterworth
 +++++++++++
