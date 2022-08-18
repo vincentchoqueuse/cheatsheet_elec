@@ -17,7 +17,7 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'pydata_theme'
+project = 'cheatsheet elec'
 copyright = '2022, V. Choqueuse'
 author = 'V. Choqueuse'
 

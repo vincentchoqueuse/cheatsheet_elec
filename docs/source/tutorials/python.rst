@@ -62,3 +62,5 @@ rédiger des rapports (notebook) contenant du texte (en markdown), des équation
     plt.plot(t, s)
     plt.grid()
     plt.xlabel("t [s]");
+
+* Executer la cellule de code.
