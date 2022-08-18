@@ -12,9 +12,7 @@ Cheatsheet
 System Analysis
 ---------------
 
-.. note::
-    
-    Documentation: https://docs.scipy.org/doc/scipy/reference/signal.html#continuous-time-linear-systems
+* Documentation: https://docs.scipy.org/doc/scipy/reference/signal.html#continuous-time-linear-systems
 
 
 System Creation
