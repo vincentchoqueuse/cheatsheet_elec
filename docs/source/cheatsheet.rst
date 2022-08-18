@@ -99,9 +99,7 @@ Frequency Response
 Filter Design
 -------------
 
-.. note::
-    
-    Documentation: https://docs.scipy.org/doc/scipy/reference/signal.html#matlab-style-iir-filter-design
+* Documentation: https://docs.scipy.org/doc/scipy/reference/signal.html#matlab-style-iir-filter-design
 
 Butterworth
 +++++++++++
