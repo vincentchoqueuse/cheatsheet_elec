@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>Travail Collaboratif : Analog Filter &#8212; pydata_theme  documentation</title>
+    <title>Travail Collaboratif : Analog Filter &#8212; cheatsheet elec  documentation</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -214,10 +214,10 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#fonction-set-components">
+    <a class="reference internal nav-link" href="#fonction-get-components">
      Fonction
      <cite>
-      set_components
+      get_components
      </cite>
     </a>
    </li>
@@ -258,7 +258,7 @@
 <li><p>Calcul de la fonction de transfert ,</p></li>
 <li><p>Implémentation d’une fonction <code class="code docutils literal notranslate"><span class="pre">lti_rlc_bp3</span></code> permettant d’obtenir la fonction de transfert en Python à partir des composants,</p></li>
 <li><p>Implémentation d’une fonction <code class="code docutils literal notranslate"><span class="pre">get_params</span></code> permettant d’obtenir les paramètres de la fonction de transfert,</p></li>
-<li><p>Implémentation d’une fonction <code class="code docutils literal notranslate"><span class="pre">set_components</span></code> permettant d’obtenir les composants du filtre à partir des paramètres.</p></li>
+<li><p>Implémentation d’une fonction <code class="code docutils literal notranslate"><span class="pre">get_components</span></code> permettant d’obtenir les composants du filtre à partir des paramètres.</p></li>
 </ol>
 <section id="fonction-de-transfert">
 <h2>Fonction de transfert<a class="headerlink" href="#fonction-de-transfert" title="Permalink to this headline">¶</a></h2>
@@ -338,17 +338,17 @@ T_{m} &amp;= \frac {R_1} {R_1 + R_2}\end{split}\]</div>
 </pre></div>
 </div>
 </section>
-<section id="fonction-set-components">
-<h3>Fonction <cite>set_components</cite><a class="headerlink" href="#fonction-set-components" title="Permalink to this headline">¶</a></h3>
+<section id="fonction-get-components">
+<h3>Fonction <cite>get_components</cite><a class="headerlink" href="#fonction-get-components" title="Permalink to this headline">¶</a></h3>
 <p>Comme nous avons 3 équations et 4 composants, nous devons fixer un composant.
 En fixant la bobine L, nous obtenons alors les équations suivantes :</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}C &amp;=\frac{1}{L \omega_0^2}\\
 R_2 &amp;=\frac{1}{2 m T_{m}}\sqrt{\frac{L}{C}}\\
 R_1 &amp;= \frac{R_2 T_{m}}{1 - T_{m}}\\\end{split}\]</div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">set_components</span><span class="p">(</span><span class="n">Tm</span><span class="p">,</span> <span class="n">w0</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">L</span><span class="p">):</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_components</span><span class="p">(</span><span class="n">Tm</span><span class="p">,</span> <span class="n">w0</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">L</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Set the circuit components from the filter parameters.</span>
+<span class="sd">    Returns the circuit components from the filter parameters.</span>
 
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>

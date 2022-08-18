@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>Systèmes de Premier Ordre &#8212; pydata_theme  documentation</title>
+    <title>Systèmes de Premier Ordre &#8212; cheatsheet elec  documentation</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -238,8 +238,8 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exemples-lp">
-     Exemples (LP)
+    <a class="reference internal nav-link" href="#exemples">
+     Exemples
     </a>
    </li>
   </ul>
@@ -250,9 +250,16 @@
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exemple">
-     Exemple
+    <a class="reference internal nav-link" href="#exemple-lp">
+     Exemple (LP)
     </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#valeurs-remarquables">
+       Valeurs Remarquables
+      </a>
+     </li>
+    </ul>
    </li>
   </ul>
  </li>
@@ -322,8 +329,8 @@
 <div class="math notranslate nohighlight">
 \[\tau p+1 = 0 \Rightarrow p = -\frac{1}{\tau} = -\omega_c\]</div>
 </section>
-<section id="exemples-lp">
-<h3>Exemples (LP)<a class="headerlink" href="#exemples-lp" title="Permalink to this headline">¶</a></h3>
+<section id="exemples">
+<h3>Exemples<a class="headerlink" href="#exemples" title="Permalink to this headline">¶</a></h3>
 <div class="math notranslate nohighlight">
 \[\begin{split}H_{LP}(p)&amp;=\frac{T_0}{\frac{1}{\omega_c}p+1}\\
 H_{HP}(p)&amp;=\frac{\frac{T_\infty}{\omega_0}p}{\frac{1}{\omega_c}p+1}\end{split}\]</div>
@@ -342,8 +349,8 @@ H_{HP}(p)&amp;=\frac{\frac{T_\infty}{\omega_0}p}{\frac{1}{\omega_c}p+1}\end{spli
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(s_p(t)\)</span>: solution particulière (régime forcé). L’expression du régime forcé dépend de l’allure de l’entrée et des coefficients <span class="math notranslate nohighlight">\(b_1\)</span> et <span class="math notranslate nohighlight">\(b_2\)</span></p></li>
 </ul>
-<section id="exemple">
-<h3>Exemple<a class="headerlink" href="#exemple" title="Permalink to this headline">¶</a></h3>
+<section id="exemple-lp">
+<h3>Exemple (LP)<a class="headerlink" href="#exemple-lp" title="Permalink to this headline">¶</a></h3>
 <p>Considérons la réponse d’un système de premier ordre a un échelon d’amplitude <span class="math notranslate nohighlight">\(E\)</span>, c-à-d <span class="math notranslate nohighlight">\(e(t)=Eu(t)\)</span>. Le système est supposé initialement au repos (<span class="math notranslate nohighlight">\(s(0^-)=0\)</span>).
 Comme l’entrée est un échelon, le regime forcé est de la forme <span class="math notranslate nohighlight">\(s_p(t)=Su(t)\)</span>. En remplaçant cette expression dans
 l’équation différentielle pour <span class="math notranslate nohighlight">\(t\ge 0\)</span>, nous obtenons <span class="math notranslate nohighlight">\(s_p(t)=T_0E\)</span>. Il en vient que :</p>
@@ -357,9 +364,18 @@ En exploitant cette equation, il en vient que :</p>
 <p>Pour un filtre passe-bas de premier ordre, la réponse du système a un échelon d’amplitude <span class="math notranslate nohighlight">\(E\)</span> s’exprime finalement sous la forme :</p>
 <div class="math notranslate nohighlight">
 \[s(t) = T_0 E\left(1-e^{-\frac{1}{\tau} t}\right)\]</div>
+<section id="valeurs-remarquables">
+<h4>Valeurs Remarquables<a class="headerlink" href="#valeurs-remarquables" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>Valeur initiale : <span class="math notranslate nohighlight">\(s(0^+)=0\)</span>,</p></li>
+<li><p>Valeur finale : <span class="math notranslate nohighlight">\(s(\infty)=T_0 E\)</span>,</p></li>
+<li><p>Valeur maximale: <span class="math notranslate nohighlight">\(\max(s(t))=T_0 E\)</span>,</p></li>
+<li><p>Temps de réponse à <span class="math notranslate nohighlight">\(\pm 5\%\)</span>: <span class="math notranslate nohighlight">\(t_r=3\tau\)</span>.</p></li>
+</ul>
 <figure class="align-default">
 <img alt="../_images/first_order-1.png" class="plot-directive" src="../_images/first_order-1.png" />
 </figure>
+</section>
 </section>
 </section>
 <section id="reponse-frequentielle">

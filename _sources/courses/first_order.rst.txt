@@ -34,8 +34,8 @@ Un système de premier ordre possède un unique pôle. Ce pôle s'obtient en che
 
     \tau p+1 = 0 \Rightarrow p = -\frac{1}{\tau} = -\omega_c
 
-Exemples (LP)
-+++++++++++++
+Exemples
+++++++++
 
 .. math::
 
@@ -60,8 +60,8 @@ La solution complète de l'équation différentielle s'exprime sous la forme :
 
 * :math:`s_p(t)`: solution particulière (régime forcé). L'expression du régime forcé dépend de l'allure de l'entrée et des coefficients :math:`b_1` et :math:`b_2`
 
-Exemple
-+++++++
+Exemple (LP)
+++++++++++++
 
 Considérons la réponse d'un système de premier ordre a un échelon d'amplitude :math:`E`, c-à-d :math:`e(t)=Eu(t)`. Le système est supposé initialement au repos (:math:`s(0^-)=0`).
 Comme l'entrée est un échelon, le regime forcé est de la forme :math:`s_p(t)=Su(t)`. En remplaçant cette expression dans 
@@ -85,8 +85,14 @@ Pour un filtre passe-bas de premier ordre, la réponse du système a un échelon
 
     s(t) = T_0 E\left(1-e^{-\frac{1}{\tau} t}\right)
 
+Valeurs Remarquables 
+````````````````````
+* Valeur initiale : :math:`s(0^+)=0`,
+* Valeur finale : :math:`s(\infty)=T_0 E`,
+* Valeur maximale: :math:`\max(s(t))=T_0 E`,
+* Temps de réponse à :math:`\pm 5\%`: :math:`t_r=3\tau`.
+
 .. plot ::
-    :context:
     :include-source: false
 
     import numpy as np
@@ -100,11 +106,17 @@ Pour un filtre passe-bas de premier ordre, la réponse du système a un échelon
 
     H = lti([T_0],[tau, 1])
     t, s = step(H)
+    t2 = np.array([-0.1, 0, 0, 0.07])
+    e = np.array([0, 0, E, E])
     plt.plot(t, E*s, label="s(t)")
-    plt.plot(t, E*(t>=0), label="e(t)")
+    plt.plot(t2, e, label="e(t)")
+    plt.axhline([0.95*E*T_0],c="r", linestyle="--")
+    plt.axvline([3*tau],c="r", linestyle="--")
     plt.xlim([0, t[-1]])
     plt.xlabel("temps [s]")
     plt.ylabel("sortie")
+    plt.xlim([-0.01, 0.07])
+    plt.ylim([0, 2.5])
     plt.legend()
     plt.grid()
 

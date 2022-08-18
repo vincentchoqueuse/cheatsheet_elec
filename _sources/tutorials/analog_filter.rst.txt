@@ -16,7 +16,7 @@ Spécifiquement, nous allons traiter les problèmes suivants :
 1. Calcul de la fonction de transfert ,
 2. Implémentation d'une fonction :code:`lti_rlc_bp3` permettant d'obtenir la fonction de transfert en Python à partir des composants, 
 3. Implémentation d'une fonction :code:`get_params` permettant d'obtenir les paramètres de la fonction de transfert, 
-4. Implémentation d'une fonction :code:`set_components` permettant d'obtenir les composants du filtre à partir des paramètres.
+4. Implémentation d'une fonction :code:`get_components` permettant d'obtenir les composants du filtre à partir des paramètres.
 
 Fonction de transfert
 ---------------------
@@ -44,7 +44,7 @@ Implémentation
 --------------
 
 Fonction `lti_RLC_BP3`
-+++++++++++++++++++++
+++++++++++++++++++++++
 
 Pour implémenter la fonction de transfert, nous pouvons utiliser la fonction `lti` du module `scipy`.
 
@@ -118,7 +118,7 @@ avec
         m = 0.5*((R1+R2)/(R1*R2))*np.sqrt(L/C)
         return Tm, w0, m
 
-Fonction `set_components`
+Fonction `get_components`
 +++++++++++++++++++++++++
 
 Comme nous avons 3 équations et 4 composants, nous devons fixer un composant.
@@ -131,9 +131,9 @@ En fixant la bobine L, nous obtenons alors les équations suivantes :
 
 .. code ::
         
-    def set_components(Tm, w0, m, L):
+    def get_components(Tm, w0, m, L):
         """
-        Set the circuit components from the filter parameters.
+        Returns the circuit components from the filter parameters.
 
         Parameters
         ----------

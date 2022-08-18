@@ -22,7 +22,7 @@ Passe-Haut (HP)
     H(p)=\frac{T_m\tau p}{\tau p+1}​
 
 * gain haute-fréquence: :math:`T_m`, 
-* constante de temps (en s): :math:`\tau \ge 0` constante de temps (en s).
+* constante de temps (en s): :math:`\tau \ge 0`
 
 
 Second Ordre
