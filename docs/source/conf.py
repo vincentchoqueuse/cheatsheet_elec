@@ -56,6 +56,9 @@ html_css_files = [
 ]
 
 html_logo = "_static/logo.png"
+html_context = {
+   "default_mode": "light"
+}
 
 plot_html_show_source_link = False
 plot_html_show_formats = False
