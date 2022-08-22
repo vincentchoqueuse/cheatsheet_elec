@@ -1,16 +1,22 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en">
   <head>
-    <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
     <title>Expression de la valeur initiale &#8212; cheatsheet elec  documentation</title>
-    
-  <link href="../_static/css/theme.css" rel="stylesheet">
-  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+<script>
+  document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
+  document.documentElement.dataset.theme = localStorage.getItem("theme") || "light"
+</script>
 
-    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=92025949c220c2e29695" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=92025949c220c2e29695" rel="stylesheet">
+
+
   <link rel="stylesheet"
     href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
   <link rel="preload" as="font" type="font/woff2" crossorigin
@@ -18,56 +24,59 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
-    <link rel="stylesheet" href="../_static/css/blank.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/plot_directive.css" />
     <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
-    
-  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
-    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-    <script type="text/javascript" src="../_static/jquery.js"></script>
-    <script type="text/javascript" src="../_static/underscore.js"></script>
-    <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="../_static/language_data.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=92025949c220c2e29695">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="author" title="About these documents" href="../about.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Cheatsheet" href="../cheatsheet.html" />
     <link rel="prev" title="Analyse d’un Circuit de Premier Ordre" href="first_order.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="docsearch:language" content="en">
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
-    
-    <div class="container-fluid" id="banner"></div>
+  
+  
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="180" data-default-mode="light">
+    <div class="bd-header-announcement container-fluid" id="banner">
+      
+
+    </div>
 
     
-    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+    <nav class="bd-header navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="bd-header__inner container-xl">
 
   <div id="navbar-start">
     
     
+  
 
-<a class="navbar-brand" href="../index.html">
-  <img src="../_static/logo.png" class="logo" alt="logo">
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Logo image">
+    <img src="../_static/logo.png" class="logo__image only-dark" alt="Logo image">
+  
+  
 </a>
-
-
     
   </div>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
+    <span class="fas fa-bars"></span>
   </button>
 
   
@@ -115,12 +124,18 @@
     <div id="navbar-end">
       
       <div class="navbar-end-item">
+        <span id="theme-switch" class="btn btn-sm btn-outline-primary navbar-btn rounded-circle">
+    <a class="theme-switch" data-mode="light"><i class="fas fa-sun"></i></a>
+    <a class="theme-switch" data-mode="dark"><i class="far fa-moon"></i></a>
+    <a class="theme-switch" data-mode="auto"><i class="fas fa-adjust"></i></a>
+</span>
+      </div>
+      
+      <div class="navbar-end-item">
         <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
         <li class="nav-item">
-          <a class="nav-link" href="https://github.com/vincentchoqueuse/cheatsheet_elec" rel="noopener" target="_blank" title="GitHub">
-            <span><i class="fab fa-github-square"></i></span>
-            <label class="sr-only">GitHub</label>
-          </a>
+          <a class="nav-link" href="https://github.com/vincentchoqueuse/cheatsheet_elec" rel="noopener" target="_blank" title="GitHub"><span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label></a>
         </li>
       </ul>
       </div>
@@ -131,17 +146,18 @@
     </nav>
     
 
-    <div class="container-xl">
-      <div class="row">
+    <div class="bd-container container-xl">
+      <div class="bd-container__inner row">
           
-            
-            <!-- Only show if we have sidebars configured, else just a small margin  -->
-            <div class="col-12 col-md-3 bd-sidebar"><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+
+<!-- Only show if we have sidebars configured, else just a small margin  -->
+<div class="bd-sidebar-primary col-12 col-md-3 bd-sidebar">
+  <div class="sidebar-start-items"><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
   <div class="bd-toc-item active">
-    <p>
+    <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Contents:
  </span>
@@ -171,17 +187,21 @@
 
   </div>
 </nav>
-            </div>
-            
-          
+  </div>
+  <div class="sidebar-end-items">
+  </div>
+</div>
+
 
           
-          <div class="d-none d-xl-block col-xl-2 bd-toc">
-            
-              
-              <div class="toc-item">
-                
-<div class="tocsection onthispage pt-5 pb-3">
+
+
+<div class="bd-sidebar-secondary d-none d-xl-block col-xl-2 bd-toc">
+  
+    
+    <div class="toc-item">
+      
+<div class="tocsection onthispage mt-5 pt-1 pb-3">
     <i class="fas fa-list"></i> On this page
 </div>
 
@@ -224,28 +244,26 @@
 </ul>
 
 </nav>
-              </div>
-              
-              <div class="toc-item">
-                
-              </div>
-              
-            
-          </div>
-          
+    </div>
+    
+    <div class="toc-item">
+      
+    </div>
+    
+  
+</div>
+
 
           
           
-            
-          
-          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+          <div class="bd-content col-12 col-md-9 col-xl-7">
               
-              <div>
+              <article class="bd-article" role="main">
                 
   <section id="expression-de-la-valeur-initiale">
-<h1>Expression de la valeur initiale<a class="headerlink" href="#expression-de-la-valeur-initiale" title="Permalink to this headline">¶</a></h1>
+<h1>Expression de la valeur initiale<a class="headerlink" href="#expression-de-la-valeur-initiale" title="Permalink to this heading">#</a></h1>
 <section id="introduction">
-<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">#</a></h2>
 <p>Lorsqu’un système est excité par une entrée <span class="math notranslate nohighlight">\(e(t)\)</span> en <span class="math notranslate nohighlight">\(t=0^+\)</span>, la sortie <span class="math notranslate nohighlight">\(s(t)\)</span> peut
 présenter différents comportements. Ces différents comportements permettent d’identifier le type de filtre (passe-bas, passe-haut, etc) et certains paramètres.</p>
 <p>Dans ce tutorial, nous nous intéressons spécifiquement au comportement à l’excitation, c-à-d en <span class="math notranslate nohighlight">\(t=0^+\)</span>.</p>
@@ -253,12 +271,12 @@ présenter différents comportements. Ces différents comportements permettent d
 Pour des raisons de simplicité, les approches présentées ci dessous se limitent au cas des systèmes de second ordre.</p>
 </section>
 <section id="approche-temporelle">
-<h2>Approche Temporelle<a class="headerlink" href="#approche-temporelle" title="Permalink to this headline">¶</a></h2>
+<h2>Approche Temporelle<a class="headerlink" href="#approche-temporelle" title="Permalink to this heading">#</a></h2>
 <p>Considérons un système de second ordre décrit par l’équation différentielle suivante</p>
 <div class="math notranslate nohighlight">
 \[a_2 \ddot{s}(t)+a_1 \dot{s}(t)+a_0 s(t)=b_2 \ddot{e}(t)+b_1 \ddot{e}(t)+b_0 e(t)\]</div>
 <section id="valeur-initiale">
-<h3>Valeur Initiale<a class="headerlink" href="#valeur-initiale" title="Permalink to this headline">¶</a></h3>
+<h3>Valeur Initiale<a class="headerlink" href="#valeur-initiale" title="Permalink to this heading">#</a></h3>
 <p>Il est possible de trouver la valeur initiale en <span class="math notranslate nohighlight">\(t=0^+\)</span>
 en intégrant plusieurs fois l’équation différentielle entre <span class="math notranslate nohighlight">\(0^-\)</span> et <span class="math notranslate nohighlight">\(0^+\)</span>.</p>
 <p>En intégrant deux fois l’équation différentielle entre <span class="math notranslate nohighlight">\(0^-\)</span> et <span class="math notranslate nohighlight">\(0^+\)</span>, nous obtenons :</p>
@@ -277,8 +295,7 @@ Dans ce contexte, l’égalité se simplifie sous la forme :</p>
 \[a_2 \int_{0^-}^{0^+}\ddot{s}(t)dt+a_1 \int_{0^-}^{0^+}\dot{s}(t)dt +a_0 \int_{0^-}^{0^+}s(t)dt=b_2 \int_{0^-}^{0^+}\ddot{e}(t)dt+b_1 \int_{0^-}^{0^+}\dot{e}(t)dt+b_0 \int_{0^-}^{0^+}e(t)dt\]</div>
 <p>Sous les mêmes hypothèses, nous trouvons alors :</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}a_2  \left[\dot{s}(t)\right]_{0^-}^{0^+}+a_1  \left[s(t)\right]_{0^-}^{0^+} \\
-=b_2 \left[\dot{e}(t)\right]_{0^-}^{0^+}+b_1  \left[e(t)\right]_{0^-}^{0^+}\end{split}\]</div>
+\[a_2  \left[\dot{s}(t)\right]_{0^-}^{0^+}+a_1  \left[s(t)\right]_{0^-}^{0^+} =b_2 \left[\dot{e}(t)\right]_{0^-}^{0^+}+b_1  \left[e(t)\right]_{0^-}^{0^+}\]</div>
 <p>et donc :</p>
 <div class="math notranslate nohighlight">
 \[a_2  \left(\dot{s}(0^+)-\dot{s}(0^-)\right)+a_1 \left(s(0^+)-s(0^-)\right) =b_2 \left(\dot{e}(0^+)-\dot{e}(0^-)\right)+b_1  \left(e(0^+)-e(0^-)\right)\tag{2}\]</div>
@@ -309,13 +326,13 @@ Définissons tout d’abord les vecteurs suivants :</p>
 </section>
 </section>
 <section id="exemples">
-<h2>Exemples<a class="headerlink" href="#exemples" title="Permalink to this headline">¶</a></h2>
+<h2>Exemples<a class="headerlink" href="#exemples" title="Permalink to this heading">#</a></h2>
 <p>Dans cette partie, nous nous intéressons aux comportements des filtres de second ordre de type passe-bas, passe-bande, passe-haut et rejecteur.</p>
 <p>Pour ces filtres, nous obtenons la relation générale :</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\Delta \mathbf{s}(0) = \omega_0^2\begin{bmatrix} b_2  &amp; 0 \\ b_1 -2m b_2 \omega_0 &amp; b_2 \end{bmatrix}\Delta \mathbf{e}(0)\end{split}\]</div>
 <section id="proprietes">
-<h3>Propriétés<a class="headerlink" href="#proprietes" title="Permalink to this headline">¶</a></h3>
+<h3>Propriétés<a class="headerlink" href="#proprietes" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Passe-bas :</p></li>
 </ul>
@@ -338,7 +355,7 @@ Définissons tout d’abord les vecteurs suivants :</p>
 \[\begin{split}\Delta \mathbf{s}(0) =  T_{0}\begin{bmatrix} 1 &amp; 0 \\ - 2m \omega_0   &amp; 1  \end{bmatrix}\Delta \mathbf{e}(0)\end{split}\]</div>
 </section>
 <section id="illustrations">
-<h3>Illustrations<a class="headerlink" href="#illustrations" title="Permalink to this headline">¶</a></h3>
+<h3>Illustrations<a class="headerlink" href="#illustrations" title="Permalink to this heading">#</a></h3>
 <p>Considérons le cas où l’entrée est un échelon d’amplitude <span class="math notranslate nohighlight">\(E=1\)</span>. Dans ce contexte, le vecteur d’entrée est égale à</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\Delta \mathbf{e}(0)=\begin{bmatrix}1 \\ 0\end{bmatrix}\end{split}\]</div>
@@ -359,50 +376,55 @@ coefficient d’amplification <span class="math notranslate nohighlight">\(T_0=T
 </section>
 
 
-              </div>
+              </article>
               
-              
-              <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="first_order.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Analyse d’un Circuit de Premier Ordre</p>
-        </div>
-    </a>
-    <a class='right-next' id="next-link" href="../cheatsheet.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Cheatsheet</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
-</div>
-              
-          </main>
-          
 
+              
+              <footer class="bd-footer-article">
+                  <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+  <a class='left-prev' id="prev-link" href="first_order.html" title="previous page">
+      <i class="fas fa-angle-left"></i>
+      <div class="prev-next-info">
+          <p class="prev-next-subtitle">previous</p>
+          <p class="prev-next-title">Analyse d’un Circuit de Premier Ordre</p>
+      </div>
+  </a>
+  <a class='right-next' id="next-link" href="../cheatsheet.html" title="next page">
+  <div class="prev-next-info">
+      <p class="prev-next-subtitle">next</p>
+      <p class="prev-next-title">Cheatsheet</p>
+  </div>
+  <i class="fas fa-angle-right"></i>
+  </a>
+</div>
+              </footer>
+              
+          </div>
+          
       </div>
     </div>
+
   
-  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
-<footer class="footer mt-5 mt-md-0">
-  <div class="container">
-    
-    <div class="footer-item">
-      <p class="copyright">
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=92025949c220c2e29695"></script>
+
+<footer class="bd-footer"><div class="bd-footer__inner container">
+  
+  <div class="footer-item">
+    <p class="copyright">
     &copy; Copyright 2022, V. Choqueuse.<br>
 </p>
-    </div>
-    
-    <div class="footer-item">
-      <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.0.<br>
-</p>
-    </div>
-    
   </div>
+  
+  <div class="footer-item">
+    <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.1.1.<br>
+</p>
+  </div>
+  
+</div>
 </footer>
   </body>
 </html>

@@ -58,8 +58,7 @@ Sous les mêmes hypothèses, nous trouvons alors :
 
 .. math ::
 
-    a_2  \left[\dot{s}(t)\right]_{0^-}^{0^+}+a_1  \left[s(t)\right]_{0^-}^{0^+} \\
-    =b_2 \left[\dot{e}(t)\right]_{0^-}^{0^+}+b_1  \left[e(t)\right]_{0^-}^{0^+}
+    a_2  \left[\dot{s}(t)\right]_{0^-}^{0^+}+a_1  \left[s(t)\right]_{0^-}^{0^+} =b_2 \left[\dot{e}(t)\right]_{0^-}^{0^+}+b_1  \left[e(t)\right]_{0^-}^{0^+}
    
 et donc :
 

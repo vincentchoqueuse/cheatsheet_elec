@@ -1,16 +1,22 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en">
   <head>
-    <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
     <title>Analyse d’un Circuit de Premier Ordre &#8212; cheatsheet elec  documentation</title>
-    
-  <link href="../_static/css/theme.css" rel="stylesheet">
-  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+<script>
+  document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
+  document.documentElement.dataset.theme = localStorage.getItem("theme") || "light"
+</script>
 
-    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=92025949c220c2e29695" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=92025949c220c2e29695" rel="stylesheet">
+
+
   <link rel="stylesheet"
     href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
   <link rel="preload" as="font" type="font/woff2" crossorigin
@@ -18,56 +24,59 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
-    <link rel="stylesheet" href="../_static/css/blank.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/plot_directive.css" />
     <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
-    
-  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
-    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-    <script type="text/javascript" src="../_static/jquery.js"></script>
-    <script type="text/javascript" src="../_static/underscore.js"></script>
-    <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="../_static/language_data.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=92025949c220c2e29695">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="author" title="About these documents" href="../about.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Expression de la valeur initiale" href="initial_values.html" />
     <link rel="prev" title="Travail Collaboratif : Analog Filter" href="analog_filter.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="docsearch:language" content="en">
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
-    
-    <div class="container-fluid" id="banner"></div>
+  
+  
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="180" data-default-mode="light">
+    <div class="bd-header-announcement container-fluid" id="banner">
+      
+
+    </div>
 
     
-    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+    <nav class="bd-header navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="bd-header__inner container-xl">
 
   <div id="navbar-start">
     
     
+  
 
-<a class="navbar-brand" href="../index.html">
-  <img src="../_static/logo.png" class="logo" alt="logo">
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Logo image">
+    <img src="../_static/logo.png" class="logo__image only-dark" alt="Logo image">
+  
+  
 </a>
-
-
     
   </div>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
+    <span class="fas fa-bars"></span>
   </button>
 
   
@@ -115,12 +124,18 @@
     <div id="navbar-end">
       
       <div class="navbar-end-item">
+        <span id="theme-switch" class="btn btn-sm btn-outline-primary navbar-btn rounded-circle">
+    <a class="theme-switch" data-mode="light"><i class="fas fa-sun"></i></a>
+    <a class="theme-switch" data-mode="dark"><i class="far fa-moon"></i></a>
+    <a class="theme-switch" data-mode="auto"><i class="fas fa-adjust"></i></a>
+</span>
+      </div>
+      
+      <div class="navbar-end-item">
         <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
         <li class="nav-item">
-          <a class="nav-link" href="https://github.com/vincentchoqueuse/cheatsheet_elec" rel="noopener" target="_blank" title="GitHub">
-            <span><i class="fab fa-github-square"></i></span>
-            <label class="sr-only">GitHub</label>
-          </a>
+          <a class="nav-link" href="https://github.com/vincentchoqueuse/cheatsheet_elec" rel="noopener" target="_blank" title="GitHub"><span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label></a>
         </li>
       </ul>
       </div>
@@ -131,17 +146,18 @@
     </nav>
     
 
-    <div class="container-xl">
-      <div class="row">
+    <div class="bd-container container-xl">
+      <div class="bd-container__inner row">
           
-            
-            <!-- Only show if we have sidebars configured, else just a small margin  -->
-            <div class="col-12 col-md-3 bd-sidebar"><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+
+<!-- Only show if we have sidebars configured, else just a small margin  -->
+<div class="bd-sidebar-primary col-12 col-md-3 bd-sidebar">
+  <div class="sidebar-start-items"><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
   <div class="bd-toc-item active">
-    <p>
+    <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Contents:
  </span>
@@ -171,17 +187,21 @@
 
   </div>
 </nav>
-            </div>
-            
-          
+  </div>
+  <div class="sidebar-end-items">
+  </div>
+</div>
+
 
           
-          <div class="d-none d-xl-block col-xl-2 bd-toc">
-            
-              
-              <div class="toc-item">
-                
-<div class="tocsection onthispage pt-5 pb-3">
+
+
+<div class="bd-sidebar-secondary d-none d-xl-block col-xl-2 bd-toc">
+  
+    
+    <div class="toc-item">
+      
+<div class="tocsection onthispage mt-5 pt-1 pb-3">
     <i class="fas fa-list"></i> On this page
 </div>
 
@@ -227,19 +247,19 @@
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#expression-1">
+    <a class="reference internal nav-link" href="#id1">
      Expression
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#valeurs-remarquables-1">
+      <a class="reference internal nav-link" href="#id2">
        Valeurs Remarquables
       </a>
      </li>
     </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#simulation-python-1">
+    <a class="reference internal nav-link" href="#id3">
      Simulation Python
     </a>
    </li>
@@ -248,36 +268,34 @@
 </ul>
 
 </nav>
-              </div>
-              
-              <div class="toc-item">
-                
-              </div>
-              
-            
-          </div>
-          
+    </div>
+    
+    <div class="toc-item">
+      
+    </div>
+    
+  
+</div>
+
 
           
           
-            
-          
-          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+          <div class="bd-content col-12 col-md-9 col-xl-7">
               
-              <div>
+              <article class="bd-article" role="main">
                 
   <section id="analyse-d-un-circuit-de-premier-ordre">
-<h1>Analyse d’un Circuit de Premier Ordre<a class="headerlink" href="#analyse-d-un-circuit-de-premier-ordre" title="Permalink to this headline">¶</a></h1>
+<h1>Analyse d’un Circuit de Premier Ordre<a class="headerlink" href="#analyse-d-un-circuit-de-premier-ordre" title="Permalink to this heading">#</a></h1>
 <p>Dans ce tutorial, nous allons réaliser une analyse complète d’un circuit.
 Le circuit considéré est le suivant :</p>
-<figure class="align-center" id="figure-1">
+<figure class="align-center" id="id4">
 <a class="reference internal image-reference" href="../_images/RC_LP1.svg"><img alt="RC LP" src="../_images/RC_LP1.svg" width="300" /></a>
 <figcaption>
-<p><span class="caption-text">RC LP Filter</span><a class="headerlink" href="#figure-1" title="Permalink to this image">¶</a></p>
+<p><span class="caption-text">RC LP Filter</span><a class="headerlink" href="#id4" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <section id="fonction-de-transfert">
-<h2>Fonction de Transfert<a class="headerlink" href="#fonction-de-transfert" title="Permalink to this headline">¶</a></h2>
+<h2>Fonction de Transfert<a class="headerlink" href="#fonction-de-transfert" title="Permalink to this heading">#</a></h2>
 <p>La fonction de transfert du circuit s’obtient en utilisant le pont diviseur de tension.
 En notant <span class="math notranslate nohighlight">\(s(t)\)</span> la sortie <span class="math notranslate nohighlight">\(V_{out}(t)\)</span> et <span class="math notranslate nohighlight">\(e(t)\)</span> l’entrée <span class="math notranslate nohighlight">\(V_{in}(t)\)</span>, nous obtenons dans le domaine de Laplace:</p>
 <div class="math notranslate nohighlight">
@@ -300,16 +318,16 @@ En notant <span class="math notranslate nohighlight">\(s(t)\)</span> la sortie <
 </pre></div>
 </div>
 <figure class="align-default">
-<img alt="../_images/first_order-12.png" class="plot-directive" src="../_images/first_order-12.png" />
+<img alt="../_images/first_order-11.png" class="plot-directive" src="../_images/first_order-11.png" />
 </figure>
 </section>
 <section id="reponse-temporelle">
-<h2>Réponse Temporelle<a class="headerlink" href="#reponse-temporelle" title="Permalink to this headline">¶</a></h2>
+<h2>Réponse Temporelle<a class="headerlink" href="#reponse-temporelle" title="Permalink to this heading">#</a></h2>
 <p>Le système peut être décrit dans le domaine temporelle par l’équation suivante :</p>
 <div class="math notranslate nohighlight">
 \[RC \frac{d s(t)}{dt} + s(t) = e(t)\]</div>
 <section id="reponse-indicielle">
-<h3>Réponse Indicielle<a class="headerlink" href="#reponse-indicielle" title="Permalink to this headline">¶</a></h3>
+<h3>Réponse Indicielle<a class="headerlink" href="#reponse-indicielle" title="Permalink to this heading">#</a></h3>
 <p>Nous allons nous intéresser à la sortie lorsque l’entrée est un échelon d’amplitude E</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}e(t) = \left\{\begin{array}{cc}E&amp;\text{ si } t\ge 0\\
@@ -317,7 +335,7 @@ En notant <span class="math notranslate nohighlight">\(s(t)\)</span> la sortie <
 \end{array}\right.\end{split}\]</div>
 <p>La sortie du système est supposée initialement nulle c-a-d  <span class="math notranslate nohighlight">\(s(0^-)=0\)</span>.</p>
 <section id="expression">
-<h4>Expression<a class="headerlink" href="#expression" title="Permalink to this headline">¶</a></h4>
+<h4>Expression<a class="headerlink" href="#expression" title="Permalink to this heading">#</a></h4>
 <ul class="simple">
 <li><p>Equation caractéristique :</p></li>
 </ul>
@@ -354,7 +372,7 @@ nous obtenons :</p>
 \[s(t) = E\left(1-e^{-\frac{1}{RC} t}\right)\]</div>
 </section>
 <section id="valeurs-remarquables">
-<h4>Valeurs Remarquables<a class="headerlink" href="#valeurs-remarquables" title="Permalink to this headline">¶</a></h4>
+<h4>Valeurs Remarquables<a class="headerlink" href="#valeurs-remarquables" title="Permalink to this heading">#</a></h4>
 <ul class="simple">
 <li><p>Valeur initiale: <span class="math notranslate nohighlight">\(s(0^+)=0\)</span>,</p></li>
 <li><p>Valeur finale: <span class="math notranslate nohighlight">\(s(\infty)=E\)</span>,</p></li>
@@ -365,7 +383,7 @@ nous obtenons :</p>
 </section>
 </section>
 <section id="simulation-python">
-<h3>Simulation Python<a class="headerlink" href="#simulation-python" title="Permalink to this headline">¶</a></h3>
+<h3>Simulation Python<a class="headerlink" href="#simulation-python" title="Permalink to this heading">#</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">E</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="n">t</span><span class="p">,</span> <span class="n">s</span> <span class="o">=</span> <span class="n">step</span><span class="p">(</span><span class="n">H</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;s(t)&quot;</span><span class="p">)</span>
@@ -382,14 +400,14 @@ nous obtenons :</p>
 </pre></div>
 </div>
 <figure class="align-default">
-<img alt="../_images/first_order-22.png" class="plot-directive" src="../_images/first_order-22.png" />
+<img alt="../_images/first_order-21.png" class="plot-directive" src="../_images/first_order-21.png" />
 </figure>
 </section>
 </section>
 <section id="reponse-frequentielle">
-<h2>Réponse Fréquentielle<a class="headerlink" href="#reponse-frequentielle" title="Permalink to this headline">¶</a></h2>
-<section id="expression-1">
-<h3>Expression<a class="headerlink" href="#expression-1" title="Permalink to this headline">¶</a></h3>
+<h2>Réponse Fréquentielle<a class="headerlink" href="#reponse-frequentielle" title="Permalink to this heading">#</a></h2>
+<section id="id1">
+<h3>Expression<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
 <p>La réponse fréquentielle s’obtient en évaluant la fonction de transfert en <span class="math notranslate nohighlight">\(p=j\omega\)</span>. Mathématiquement, nous obtenons :</p>
 <div class="math notranslate nohighlight">
 \[H(j\omega) = \frac{1}{jRC\omega+1}\]</div>
@@ -403,8 +421,8 @@ nous obtenons :</p>
 </ul>
 <div class="math notranslate nohighlight">
 \[\arg[H(j\omega)] = -\arctan\left(RC\omega\right)\]</div>
-<section id="valeurs-remarquables-1">
-<h4>Valeurs Remarquables<a class="headerlink" href="#valeurs-remarquables-1" title="Permalink to this headline">¶</a></h4>
+<section id="id2">
+<h4>Valeurs Remarquables<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h4>
 <ul class="simple">
 <li><p>Basse-Fréquence : Lorsque <span class="math notranslate nohighlight">\(\omega\to 0\)</span>,</p></li>
 </ul>
@@ -425,8 +443,8 @@ nous obtenons :</p>
 \lim_{\omega \to \infty} \arg[H(j\omega)] &amp;= -90^o.\end{split}\]</div>
 </section>
 </section>
-<section id="simulation-python-1">
-<h3>Simulation Python<a class="headerlink" href="#simulation-python-1" title="Permalink to this headline">¶</a></h3>
+<section id="id3">
+<h3>Simulation Python<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">w</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logspace</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
 <span class="n">wc</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">R</span><span class="o">*</span><span class="n">C</span><span class="p">)</span>
 <span class="n">w</span><span class="p">,</span> <span class="n">Hjw</span> <span class="o">=</span> <span class="n">H</span><span class="o">.</span><span class="n">freqresp</span><span class="p">(</span><span class="n">w</span><span class="o">=</span><span class="n">w</span><span class="p">)</span>
@@ -454,57 +472,62 @@ nous obtenons :</p>
 </pre></div>
 </div>
 <figure class="align-default">
-<img alt="../_images/first_order-32.png" class="plot-directive" src="../_images/first_order-32.png" />
+<img alt="../_images/first_order-31.png" class="plot-directive" src="../_images/first_order-31.png" />
 </figure>
 </section>
 </section>
 </section>
 
 
-              </div>
+              </article>
               
-              
-              <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="analog_filter.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Travail Collaboratif : Analog Filter</p>
-        </div>
-    </a>
-    <a class='right-next' id="next-link" href="initial_values.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Expression de la valeur initiale</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
-</div>
-              
-          </main>
-          
 
+              
+              <footer class="bd-footer-article">
+                  <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+  <a class='left-prev' id="prev-link" href="analog_filter.html" title="previous page">
+      <i class="fas fa-angle-left"></i>
+      <div class="prev-next-info">
+          <p class="prev-next-subtitle">previous</p>
+          <p class="prev-next-title">Travail Collaboratif : Analog Filter</p>
+      </div>
+  </a>
+  <a class='right-next' id="next-link" href="initial_values.html" title="next page">
+  <div class="prev-next-info">
+      <p class="prev-next-subtitle">next</p>
+      <p class="prev-next-title">Expression de la valeur initiale</p>
+  </div>
+  <i class="fas fa-angle-right"></i>
+  </a>
+</div>
+              </footer>
+              
+          </div>
+          
       </div>
     </div>
+
   
-  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
-<footer class="footer mt-5 mt-md-0">
-  <div class="container">
-    
-    <div class="footer-item">
-      <p class="copyright">
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=92025949c220c2e29695"></script>
+
+<footer class="bd-footer"><div class="bd-footer__inner container">
+  
+  <div class="footer-item">
+    <p class="copyright">
     &copy; Copyright 2022, V. Choqueuse.<br>
 </p>
-    </div>
-    
-    <div class="footer-item">
-      <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.0.<br>
-</p>
-    </div>
-    
   </div>
+  
+  <div class="footer-item">
+    <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.1.1.<br>
+</p>
+  </div>
+  
+</div>
 </footer>
   </body>
 </html>

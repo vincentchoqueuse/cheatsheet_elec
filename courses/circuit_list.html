@@ -1,16 +1,22 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en">
   <head>
-    <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
     <title>Liste des Circuits &#8212; cheatsheet elec  documentation</title>
-    
-  <link href="../_static/css/theme.css" rel="stylesheet">
-  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+<script>
+  document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
+  document.documentElement.dataset.theme = localStorage.getItem("theme") || "light"
+</script>
 
-    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=92025949c220c2e29695" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=92025949c220c2e29695" rel="stylesheet">
+
+
   <link rel="stylesheet"
     href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
   <link rel="preload" as="font" type="font/woff2" crossorigin
@@ -18,56 +24,58 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
-    <link rel="stylesheet" href="../_static/css/blank.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/plot_directive.css" />
     <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
-    
-  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
-    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-    <script type="text/javascript" src="../_static/jquery.js"></script>
-    <script type="text/javascript" src="../_static/underscore.js"></script>
-    <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="../_static/language_data.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=92025949c220c2e29695">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
     <link rel="author" title="About these documents" href="../about.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Tutorials" href="../tutorials/index.html" />
     <link rel="prev" title="Liste des Filtres" href="transfer_function_list.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="docsearch:language" content="en">
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
-    
-    <div class="container-fluid" id="banner"></div>
+  
+  
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="180" data-default-mode="light">
+    <div class="bd-header-announcement container-fluid" id="banner">
+      
+
+    </div>
 
     
-    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+    <nav class="bd-header navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="bd-header__inner container-xl">
 
   <div id="navbar-start">
     
     
+  
 
-<a class="navbar-brand" href="../index.html">
-  <img src="../_static/logo.png" class="logo" alt="logo">
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Logo image">
+    <img src="../_static/logo.png" class="logo__image only-dark" alt="Logo image">
+  
+  
 </a>
-
-
     
   </div>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
+    <span class="fas fa-bars"></span>
   </button>
 
   
@@ -115,12 +123,18 @@
     <div id="navbar-end">
       
       <div class="navbar-end-item">
+        <span id="theme-switch" class="btn btn-sm btn-outline-primary navbar-btn rounded-circle">
+    <a class="theme-switch" data-mode="light"><i class="fas fa-sun"></i></a>
+    <a class="theme-switch" data-mode="dark"><i class="far fa-moon"></i></a>
+    <a class="theme-switch" data-mode="auto"><i class="fas fa-adjust"></i></a>
+</span>
+      </div>
+      
+      <div class="navbar-end-item">
         <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
         <li class="nav-item">
-          <a class="nav-link" href="https://github.com/vincentchoqueuse/cheatsheet_elec" rel="noopener" target="_blank" title="GitHub">
-            <span><i class="fab fa-github-square"></i></span>
-            <label class="sr-only">GitHub</label>
-          </a>
+          <a class="nav-link" href="https://github.com/vincentchoqueuse/cheatsheet_elec" rel="noopener" target="_blank" title="GitHub"><span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label></a>
         </li>
       </ul>
       </div>
@@ -131,17 +145,18 @@
     </nav>
     
 
-    <div class="container-xl">
-      <div class="row">
+    <div class="bd-container container-xl">
+      <div class="bd-container__inner row">
           
-            
-            <!-- Only show if we have sidebars configured, else just a small margin  -->
-            <div class="col-12 col-md-3 bd-sidebar"><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+
+<!-- Only show if we have sidebars configured, else just a small margin  -->
+<div class="bd-sidebar-primary col-12 col-md-3 bd-sidebar">
+  <div class="sidebar-start-items"><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
   <div class="bd-toc-item active">
-    <p>
+    <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Contents:
  </span>
@@ -201,17 +216,21 @@
 
   </div>
 </nav>
-            </div>
-            
-          
+  </div>
+  <div class="sidebar-end-items">
+  </div>
+</div>
+
 
           
-          <div class="d-none d-xl-block col-xl-2 bd-toc">
-            
-              
-              <div class="toc-item">
-                
-<div class="tocsection onthispage pt-5 pb-3">
+
+
+<div class="bd-sidebar-secondary d-none d-xl-block col-xl-2 bd-toc">
+  
+    
+    <div class="toc-item">
+      
+<div class="tocsection onthispage mt-5 pt-1 pb-3">
     <i class="fas fa-list"></i> On this page
 </div>
 
@@ -264,154 +283,152 @@
 </ul>
 
 </nav>
-              </div>
-              
-              <div class="toc-item">
-                
-              </div>
-              
-            
-          </div>
-          
+    </div>
+    
+    <div class="toc-item">
+      
+    </div>
+    
+  
+</div>
+
 
           
           
-            
-          
-          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+          <div class="bd-content col-12 col-md-9 col-xl-7">
               
-              <div>
+              <article class="bd-article" role="main">
                 
   <section id="liste-des-circuits">
-<h1>Liste des Circuits<a class="headerlink" href="#liste-des-circuits" title="Permalink to this headline">¶</a></h1>
+<h1>Liste des Circuits<a class="headerlink" href="#liste-des-circuits" title="Permalink to this heading">#</a></h1>
 <section id="premier-ordre">
-<h2>Premier Ordre<a class="headerlink" href="#premier-ordre" title="Permalink to this headline">¶</a></h2>
+<h2>Premier Ordre<a class="headerlink" href="#premier-ordre" title="Permalink to this heading">#</a></h2>
 <section id="circuits-passifs">
-<h3>Circuits Passifs<a class="headerlink" href="#circuits-passifs" title="Permalink to this headline">¶</a></h3>
-<figure class="align-center" id="figure-1">
+<h3>Circuits Passifs<a class="headerlink" href="#circuits-passifs" title="Permalink to this heading">#</a></h3>
+<figure class="align-center" id="id1">
 <a class="reference internal image-reference" href="../_images/RC_LP.svg"><img alt="RC LP" src="../_images/RC_LP.svg" width="300" /></a>
 <figcaption>
-<p><span class="caption-text">RC LP Filter</span><a class="headerlink" href="#figure-1" title="Permalink to this image">¶</a></p>
+<p><span class="caption-text">RC LP Filter</span><a class="headerlink" href="#id1" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
-<figure class="align-center" id="figure-2">
+<figure class="align-center" id="id2">
 <a class="reference internal image-reference" href="../_images/RC_HP.svg"><img alt="RC HP" src="../_images/RC_HP.svg" width="300" /></a>
 <figcaption>
-<p><span class="caption-text">RC HP Filter</span><a class="headerlink" href="#figure-2" title="Permalink to this image">¶</a></p>
+<p><span class="caption-text">RC HP Filter</span><a class="headerlink" href="#id2" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
 <section id="circuits-actifs">
-<h3>Circuits Actifs<a class="headerlink" href="#circuits-actifs" title="Permalink to this headline">¶</a></h3>
-<figure class="align-center" id="figure-3">
+<h3>Circuits Actifs<a class="headerlink" href="#circuits-actifs" title="Permalink to this heading">#</a></h3>
+<figure class="align-center" id="id3">
 <a class="reference internal image-reference" href="../_images/SP_LP.svg"><img alt="SP LP" src="../_images/SP_LP.svg" width="300" /></a>
 <figcaption>
-<p><span class="caption-text">SP LP Filter</span><a class="headerlink" href="#figure-3" title="Permalink to this image">¶</a></p>
+<p><span class="caption-text">SP LP Filter</span><a class="headerlink" href="#id3" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
-<figure class="align-center" id="figure-4">
+<figure class="align-center" id="id4">
 <a class="reference internal image-reference" href="../_images/SP_HP.svg"><img alt="SP HP" src="../_images/SP_HP.svg" width="300" /></a>
 <figcaption>
-<p><span class="caption-text">SP HP Filter</span><a class="headerlink" href="#figure-4" title="Permalink to this image">¶</a></p>
+<p><span class="caption-text">SP HP Filter</span><a class="headerlink" href="#id4" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
 </section>
 <section id="second-ordre">
-<h2>Second Ordre<a class="headerlink" href="#second-ordre" title="Permalink to this headline">¶</a></h2>
+<h2>Second Ordre<a class="headerlink" href="#second-ordre" title="Permalink to this heading">#</a></h2>
 <section id="circuits-rc-rc">
-<h3>Circuits RC/RC<a class="headerlink" href="#circuits-rc-rc" title="Permalink to this headline">¶</a></h3>
-<figure class="align-center" id="figure-5">
+<h3>Circuits RC/RC<a class="headerlink" href="#circuits-rc-rc" title="Permalink to this heading">#</a></h3>
+<figure class="align-center" id="id5">
 <a class="reference internal image-reference" href="../_images/RC_RC_LP.svg"><img alt="RC RC LP" src="../_images/RC_RC_LP.svg" width="300" /></a>
 <figcaption>
-<p><span class="caption-text">RC/RC LP Filter</span><a class="headerlink" href="#figure-5" title="Permalink to this image">¶</a></p>
+<p><span class="caption-text">RC/RC LP Filter</span><a class="headerlink" href="#id5" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
-<figure class="align-center" id="figure-6">
+<figure class="align-center" id="id6">
 <a class="reference internal image-reference" href="../_images/RC_RC_BP.svg"><img alt="RC RC BP" src="../_images/RC_RC_BP.svg" width="300" /></a>
 <figcaption>
-<p><span class="caption-text">RC/RC BP Filter</span><a class="headerlink" href="#figure-6" title="Permalink to this image">¶</a></p>
+<p><span class="caption-text">RC/RC BP Filter</span><a class="headerlink" href="#id6" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
-<figure class="align-center" id="figure-7">
+<figure class="align-center" id="id7">
 <a class="reference internal image-reference" href="../_images/RC_RC_HP.svg"><img alt="RC RC HP" src="../_images/RC_RC_HP.svg" width="300" /></a>
 <figcaption>
-<p><span class="caption-text">RC/RC HP Filter</span><a class="headerlink" href="#figure-7" title="Permalink to this image">¶</a></p>
+<p><span class="caption-text">RC/RC HP Filter</span><a class="headerlink" href="#id7" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
 <section id="circuits-rlc">
-<h3>Circuits RLC<a class="headerlink" href="#circuits-rlc" title="Permalink to this headline">¶</a></h3>
-<figure class="align-center" id="figure-8">
+<h3>Circuits RLC<a class="headerlink" href="#circuits-rlc" title="Permalink to this heading">#</a></h3>
+<figure class="align-center" id="id8">
 <a class="reference internal image-reference" href="../_images/RLC_LP.svg"><img alt="RLC LP" src="../_images/RLC_LP.svg" width="300" /></a>
 <figcaption>
-<p><span class="caption-text">RLC LP Filter</span><a class="headerlink" href="#figure-8" title="Permalink to this image">¶</a></p>
+<p><span class="caption-text">RLC LP Filter</span><a class="headerlink" href="#id8" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
-<figure class="align-center" id="figure-9">
+<figure class="align-center" id="id9">
 <a class="reference internal image-reference" href="../_images/RLC_BP1.svg"><img alt="RLC BP1" src="../_images/RLC_BP1.svg" width="300" /></a>
 <figcaption>
-<p><span class="caption-text">RLC BP1 Filter</span><a class="headerlink" href="#figure-9" title="Permalink to this image">¶</a></p>
+<p><span class="caption-text">RLC BP1 Filter</span><a class="headerlink" href="#id9" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
-<figure class="align-center" id="figure-10">
+<figure class="align-center" id="id10">
 <a class="reference internal image-reference" href="../_images/RLC_BP2.svg"><img alt="RLC BP2" src="../_images/RLC_BP2.svg" width="300" /></a>
 <figcaption>
-<p><span class="caption-text">RLC BP2 Filter</span><a class="headerlink" href="#figure-10" title="Permalink to this image">¶</a></p>
+<p><span class="caption-text">RLC BP2 Filter</span><a class="headerlink" href="#id10" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
-<figure class="align-center" id="figure-11">
+<figure class="align-center" id="id11">
 <a class="reference internal image-reference" href="../_images/RLC_HP.svg"><img alt="RLC HP" src="../_images/RLC_HP.svg" width="300" /></a>
 <figcaption>
-<p><span class="caption-text">RLC HP Filter</span><a class="headerlink" href="#figure-11" title="Permalink to this image">¶</a></p>
+<p><span class="caption-text">RLC HP Filter</span><a class="headerlink" href="#id11" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
 <section id="circuits-sallen-key">
-<h3>Circuits Sallen Key<a class="headerlink" href="#circuits-sallen-key" title="Permalink to this headline">¶</a></h3>
-<figure class="align-center" id="figure-12">
+<h3>Circuits Sallen Key<a class="headerlink" href="#circuits-sallen-key" title="Permalink to this heading">#</a></h3>
+<figure class="align-center" id="id12">
 <a class="reference internal image-reference" href="../_images/SK_LP.svg"><img alt="SK LP" src="../_images/SK_LP.svg" width="300" /></a>
 <figcaption>
-<p><span class="caption-text">SK LP Filter</span><a class="headerlink" href="#figure-12" title="Permalink to this image">¶</a></p>
+<p><span class="caption-text">SK LP Filter</span><a class="headerlink" href="#id12" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
-<figure class="align-center" id="figure-13">
+<figure class="align-center" id="id13">
 <a class="reference internal image-reference" href="../_images/SK_BP.svg"><img alt="SK BP" src="../_images/SK_BP.svg" width="300" /></a>
 <figcaption>
-<p><span class="caption-text">SK BP Filter</span><a class="headerlink" href="#figure-13" title="Permalink to this image">¶</a></p>
+<p><span class="caption-text">SK BP Filter</span><a class="headerlink" href="#id13" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
-<figure class="align-center" id="figure-14">
+<figure class="align-center" id="id14">
 <a class="reference internal image-reference" href="../_images/SK_HP.svg"><img alt="SK HP" src="../_images/SK_HP.svg" width="300" /></a>
 <figcaption>
-<p><span class="caption-text">SK HP Filter</span><a class="headerlink" href="#figure-14" title="Permalink to this image">¶</a></p>
+<p><span class="caption-text">SK HP Filter</span><a class="headerlink" href="#id14" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
 <section id="circuits-mfb">
-<h3>Circuits MFB<a class="headerlink" href="#circuits-mfb" title="Permalink to this headline">¶</a></h3>
-<figure class="align-center" id="figure-15">
+<h3>Circuits MFB<a class="headerlink" href="#circuits-mfb" title="Permalink to this heading">#</a></h3>
+<figure class="align-center" id="id15">
 <a class="reference internal image-reference" href="../_images/MFB_LP.svg"><img alt="MFB LP" src="../_images/MFB_LP.svg" width="300" /></a>
 <figcaption>
-<p><span class="caption-text">MFB LP Filter</span><a class="headerlink" href="#figure-15" title="Permalink to this image">¶</a></p>
+<p><span class="caption-text">MFB LP Filter</span><a class="headerlink" href="#id15" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
-<figure class="align-center" id="figure-16">
+<figure class="align-center" id="id16">
 <a class="reference internal image-reference" href="../_images/MFB_BP.svg"><img alt="MFB BP" src="../_images/MFB_BP.svg" width="300" /></a>
 <figcaption>
-<p><span class="caption-text">MFB BP Filter</span><a class="headerlink" href="#figure-16" title="Permalink to this image">¶</a></p>
+<p><span class="caption-text">MFB BP Filter</span><a class="headerlink" href="#id16" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
-<figure class="align-center" id="figure-17">
+<figure class="align-center" id="id17">
 <a class="reference internal image-reference" href="../_images/MFB_BP2.svg"><img alt="MFB BP2" src="../_images/MFB_BP2.svg" width="300" /></a>
 <figcaption>
-<p><span class="caption-text">MFB BP2 Filter</span><a class="headerlink" href="#figure-17" title="Permalink to this image">¶</a></p>
+<p><span class="caption-text">MFB BP2 Filter</span><a class="headerlink" href="#id17" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
-<figure class="align-center" id="figure-18">
+<figure class="align-center" id="id18">
 <a class="reference internal image-reference" href="../_images/MFB_HP.svg"><img alt="MFB HP" src="../_images/MFB_HP.svg" width="300" /></a>
 <figcaption>
-<p><span class="caption-text">MFB HP Filter</span><a class="headerlink" href="#figure-18" title="Permalink to this image">¶</a></p>
+<p><span class="caption-text">MFB HP Filter</span><a class="headerlink" href="#id18" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
@@ -419,50 +436,55 @@
 </section>
 
 
-              </div>
+              </article>
               
-              
-              <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="transfer_function_list.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Liste des Filtres</p>
-        </div>
-    </a>
-    <a class='right-next' id="next-link" href="../tutorials/index.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Tutorials</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
-</div>
-              
-          </main>
-          
 
+              
+              <footer class="bd-footer-article">
+                  <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+  <a class='left-prev' id="prev-link" href="transfer_function_list.html" title="previous page">
+      <i class="fas fa-angle-left"></i>
+      <div class="prev-next-info">
+          <p class="prev-next-subtitle">previous</p>
+          <p class="prev-next-title">Liste des Filtres</p>
+      </div>
+  </a>
+  <a class='right-next' id="next-link" href="../tutorials/index.html" title="next page">
+  <div class="prev-next-info">
+      <p class="prev-next-subtitle">next</p>
+      <p class="prev-next-title">Tutorials</p>
+  </div>
+  <i class="fas fa-angle-right"></i>
+  </a>
+</div>
+              </footer>
+              
+          </div>
+          
       </div>
     </div>
+
   
-  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
-<footer class="footer mt-5 mt-md-0">
-  <div class="container">
-    
-    <div class="footer-item">
-      <p class="copyright">
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=92025949c220c2e29695"></script>
+
+<footer class="bd-footer"><div class="bd-footer__inner container">
+  
+  <div class="footer-item">
+    <p class="copyright">
     &copy; Copyright 2022, V. Choqueuse.<br>
 </p>
-    </div>
-    
-    <div class="footer-item">
-      <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.0.<br>
-</p>
-    </div>
-    
   </div>
+  
+  <div class="footer-item">
+    <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.1.1.<br>
+</p>
+  </div>
+  
+</div>
 </footer>
   </body>
 </html>
