@@ -32,19 +32,6 @@ Nous en déduisons que la fonction de transfert du système est égal à
 
 Pour specifier cette fonction de transfert en Python, nous allons utiliser la module `scipy`.
 
-.. plot ::
-    :context:
-    :include-source: true
-
-    import numpy as np
-    import matplotlib.pyplot as plt
-    from scipy.signal import lti, step
-
-    R = 10*(10**3)
-    C = 10**(-9)
-    num = [1]   
-    den = [R*C, 1] 
-    H = lti(num, den)
 
 Réponse Temporelle 
 ------------------
@@ -135,10 +122,20 @@ Valeurs Remarquables
 Simulation Python
 +++++++++++++++++
 
-
 .. plot ::
-    :context:
+    :context: close-figs
     :include-source: true
+
+    import numpy as np
+    import matplotlib.pyplot as plt
+    from scipy.signal import lti, step
+
+    R = 10*(10**3)
+    C = 10**(-9)
+    num = [1]   
+    den = [R*C, 1] 
+    H = lti(num, den)
+
 
     E = 1
     t, s = step(H)
