@@ -208,38 +208,74 @@
 <nav id="bd-toc-nav">
     <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#fonction-de-transfert">
-   Fonction de transfert
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#implementation">
-   Implémentation
+  <a class="reference internal nav-link" href="#description-du-travail">
+   Description du travail
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#fonction-lti-rlc-bp3">
-     Fonction
-     <cite>
-      lti_RLC_BP3
-     </cite>
+    <a class="reference internal nav-link" href="#fonctions-de-transfert-normalisees">
+     Fonctions de transfert normalisées
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#passe-bas-lp">
+       Passe-bas (LP)
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#passe-bande-bp">
+       Passe-bande (BP)
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#passe-haut-hp">
+       Passe-haut (HP)
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exemple">
+   Exemple
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#fonction-de-transfert">
+     Fonction de transfert
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#fonction-get-params">
-     Fonction
-     <cite>
-      get_params
-     </cite>
+    <a class="reference internal nav-link" href="#implementation">
+     Implémentation
     </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#fonction-get-components">
-     Fonction
-     <cite>
-      get_components
-     </cite>
-    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#fonction-lti-rlc-bp3">
+       Fonction
+       <cite>
+        lti_RLC_BP3
+       </cite>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#fonction-get-params">
+       Fonction
+       <cite>
+        get_params
+       </cite>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#fonction-get-components">
+       Fonction
+       <cite>
+        get_components
+       </cite>
+      </a>
+     </li>
+    </ul>
    </li>
   </ul>
  </li>
@@ -264,22 +300,46 @@
                 
   <section id="travail-collaboratif-analog-filter">
 <h1>Travail Collaboratif : Analog Filter<a class="headerlink" href="#travail-collaboratif-analog-filter" title="Permalink to this heading">#</a></h1>
-<p>Dans ce tutorial, nous allons réaliser une analyse complète du circuit suivant :</p>
+<section id="description-du-travail">
+<h2>Description du travail<a class="headerlink" href="#description-du-travail" title="Permalink to this heading">#</a></h2>
+<p>Dans ce travail, nous souhaitons développer des fonctions Python pour analyser des circuits d’ordre 2.
+Pour chaque filtre d’ordre 2, nous souhaitons traiter les problèmes suivants :</p>
+<ol class="arabic simple">
+<li><p>Calcul de la fonction de transfert, puis écriture sous forme normalisée,</p></li>
+<li><p>Implémentation d’une fonction <code class="code docutils literal notranslate"><span class="pre">lti_rlc_bp3</span></code> permettant d’obtenir la fonction de transfert en Python à partir des composants,</p></li>
+<li><p>Implémentation d’une fonction <code class="code docutils literal notranslate"><span class="pre">get_params</span></code> permettant d’obtenir les paramètres de la fonction de transfert,</p></li>
+<li><p>Implémentation d’une fonction <code class="code docutils literal notranslate"><span class="pre">get_components</span></code> permettant d’obtenir les composants du filtre à partir des paramètres.</p></li>
+</ol>
+<section id="fonctions-de-transfert-normalisees">
+<h3>Fonctions de transfert normalisées<a class="headerlink" href="#fonctions-de-transfert-normalisees" title="Permalink to this heading">#</a></h3>
+<section id="passe-bas-lp">
+<h4>Passe-bas (LP)<a class="headerlink" href="#passe-bas-lp" title="Permalink to this heading">#</a></h4>
+<div class="math notranslate nohighlight">
+\[H(p)=\frac{T_0}{\frac{1}{\omega_0^2}p^2+\frac{2m}{\omega_0}p+1}​\]</div>
+</section>
+<section id="passe-bande-bp">
+<h4>Passe-bande (BP)<a class="headerlink" href="#passe-bande-bp" title="Permalink to this heading">#</a></h4>
+<div class="math notranslate nohighlight">
+\[H(p)=\frac{\frac{2mT_m}{\omega_0}p}{\frac{1}{\omega_0^2}p^2+\frac{2m}{\omega_0}p+1}​\]</div>
+</section>
+<section id="passe-haut-hp">
+<h4>Passe-haut (HP)<a class="headerlink" href="#passe-haut-hp" title="Permalink to this heading">#</a></h4>
+<div class="math notranslate nohighlight">
+\[H(p)=\frac{\frac{T_{\infty}}{\omega_0^2}p^2}{\frac{1}{\omega_0^2}p^2+\frac{2m}{\omega_0}p+1}​\]</div>
+</section>
+</section>
+</section>
+<section id="exemple">
+<h2>Exemple<a class="headerlink" href="#exemple" title="Permalink to this heading">#</a></h2>
+<p>Dans cet exemple, nous allons considérer l’analyse complète du circuit suivant :</p>
 <figure class="align-center" id="id1">
 <a class="reference internal image-reference" href="../_images/RLC_BP3.svg"><img alt="Filter" src="../_images/RLC_BP3.svg" width="400" /></a>
 <figcaption>
 <p><span class="caption-text">RLC_BP3 Filter</span><a class="headerlink" href="#id1" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
-<p>Spécifiquement, nous allons traiter les problèmes suivants :</p>
-<ol class="arabic simple">
-<li><p>Calcul de la fonction de transfert ,</p></li>
-<li><p>Implémentation d’une fonction <code class="code docutils literal notranslate"><span class="pre">lti_rlc_bp3</span></code> permettant d’obtenir la fonction de transfert en Python à partir des composants,</p></li>
-<li><p>Implémentation d’une fonction <code class="code docutils literal notranslate"><span class="pre">get_params</span></code> permettant d’obtenir les paramètres de la fonction de transfert,</p></li>
-<li><p>Implémentation d’une fonction <code class="code docutils literal notranslate"><span class="pre">get_components</span></code> permettant d’obtenir les composants du filtre à partir des paramètres.</p></li>
-</ol>
 <section id="fonction-de-transfert">
-<h2>Fonction de transfert<a class="headerlink" href="#fonction-de-transfert" title="Permalink to this heading">#</a></h2>
+<h3>Fonction de transfert<a class="headerlink" href="#fonction-de-transfert" title="Permalink to this heading">#</a></h3>
 <p>En utilisant le pont diviseur de tension, nous obtenons</p>
 <div class="math notranslate nohighlight">
 \[V_s(p) = \frac{Z_{eq}}{R_2+Z_{eq}}V_e(p) \Rightarrow \frac{V_s(p)}{V_e(p)} = \frac{1}{1+\frac{R_2}{Z_{eq}}}\]</div>
@@ -291,9 +351,9 @@
 \[H(p)= \frac{\frac{L}{R_2}p}{1+L(\frac{R_1+R_2}{R_1R_2})p+LCp^2}\]</div>
 </section>
 <section id="implementation">
-<h2>Implémentation<a class="headerlink" href="#implementation" title="Permalink to this heading">#</a></h2>
+<h3>Implémentation<a class="headerlink" href="#implementation" title="Permalink to this heading">#</a></h3>
 <section id="fonction-lti-rlc-bp3">
-<h3>Fonction <cite>lti_RLC_BP3</cite><a class="headerlink" href="#fonction-lti-rlc-bp3" title="Permalink to this heading">#</a></h3>
+<h4>Fonction <cite>lti_RLC_BP3</cite><a class="headerlink" href="#fonction-lti-rlc-bp3" title="Permalink to this heading">#</a></h4>
 <p>Pour implémenter la fonction de transfert, nous pouvons utiliser la fonction <cite>lti</cite> du module <cite>scipy</cite>.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">from</span> <span class="nn">scipy.signal</span> <span class="kn">import</span> <span class="n">lti</span>
@@ -322,7 +382,7 @@
 </div>
 </section>
 <section id="fonction-get-params">
-<h3>Fonction <cite>get_params</cite><a class="headerlink" href="#fonction-get-params" title="Permalink to this heading">#</a></h3>
+<h4>Fonction <cite>get_params</cite><a class="headerlink" href="#fonction-get-params" title="Permalink to this heading">#</a></h4>
 <p>En identifiant la fonction de transfert avec la fonction de transfert normalisée d’un passe-bande, nous obtenons :</p>
 <div class="math notranslate nohighlight">
 \[H(p)=\frac{\frac{2mT_m}{\omega_0}p}{\frac{1}{\omega_0^2}p^2+\frac{2m}{\omega_0}p+1}​\]</div>
@@ -357,7 +417,7 @@ T_{m} &amp;= \frac {R_1} {R_1 + R_2}\end{split}\]</div>
 </div>
 </section>
 <section id="fonction-get-components">
-<h3>Fonction <cite>get_components</cite><a class="headerlink" href="#fonction-get-components" title="Permalink to this heading">#</a></h3>
+<h4>Fonction <cite>get_components</cite><a class="headerlink" href="#fonction-get-components" title="Permalink to this heading">#</a></h4>
 <p>Comme nous avons 3 équations et 4 composants, nous devons fixer un composant.
 En fixant la bobine L, nous obtenons alors les équations suivantes :</p>
 <div class="math notranslate nohighlight">
@@ -388,6 +448,7 @@ R_1 &amp;= \frac{R_2 T_{m}}{1 - T_{m}}\\\end{split}\]</div>
     <span class="k">return</span> <span class="n">C</span><span class="p">,</span> <span class="n">R1</span><span class="p">,</span> <span class="n">R2</span>
 </pre></div>
 </div>
+</section>
 </section>
 </section>
 </section>
