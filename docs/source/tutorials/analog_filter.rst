@@ -1,7 +1,46 @@
 Travail Collaboratif : Analog Filter
 ====================================
 
-Dans ce tutorial, nous allons réaliser une analyse complète du circuit suivant :
+Description du travail 
+----------------------
+
+Dans ce travail, nous souhaitons développer des fonctions Python pour analyser des circuits d'ordre 2. 
+Pour chaque filtre d'ordre 2, nous souhaitons traiter les problèmes suivants :
+
+1. Calcul de la fonction de transfert, puis écriture sous forme normalisée, 
+2. Implémentation d'une fonction :code:`lti_rlc_bp3` permettant d'obtenir la fonction de transfert en Python à partir des composants, 
+3. Implémentation d'une fonction :code:`get_params` permettant d'obtenir les paramètres de la fonction de transfert, 
+4. Implémentation d'une fonction :code:`get_components` permettant d'obtenir les composants du filtre à partir des paramètres.
+
+Fonctions de transfert normalisées 
+++++++++++++++++++++++++++++++++++
+
+Passe-bas (LP)
+``````````````
+
+.. math::
+
+    H(p)=\frac{T_0}{\frac{1}{\omega_0^2}p^2+\frac{2m}{\omega_0}p+1}​
+
+Passe-bande (BP)
+````````````````
+
+.. math::
+
+    H(p)=\frac{\frac{2mT_m}{\omega_0}p}{\frac{1}{\omega_0^2}p^2+\frac{2m}{\omega_0}p+1}​
+
+Passe-haut (HP)
+```````````````
+
+.. math::
+
+    H(p)=\frac{\frac{T_{\infty}}{\omega_0^2}p^2}{\frac{1}{\omega_0^2}p^2+\frac{2m}{\omega_0}p+1}​
+
+
+Exemple 
+-------
+
+Dans cet exemple, nous allons considérer l'analyse complète du circuit suivant :
 
 .. figure:: img/RLC_BP3.svg
         :width: 400
@@ -10,16 +49,9 @@ Dans ce tutorial, nous allons réaliser une analyse complète du circuit suivant
 
         RLC_BP3 Filter
 
-
-Spécifiquement, nous allons traiter les problèmes suivants :
-
-1. Calcul de la fonction de transfert ,
-2. Implémentation d'une fonction :code:`lti_rlc_bp3` permettant d'obtenir la fonction de transfert en Python à partir des composants, 
-3. Implémentation d'une fonction :code:`get_params` permettant d'obtenir les paramètres de la fonction de transfert, 
-4. Implémentation d'une fonction :code:`get_components` permettant d'obtenir les composants du filtre à partir des paramètres.
-
+ 
 Fonction de transfert
----------------------
++++++++++++++++++++++
 
 En utilisant le pont diviseur de tension, nous obtenons
 
@@ -41,10 +73,10 @@ Il en vient que :
     H(p)= \frac{\frac{L}{R_2}p}{1+L(\frac{R_1+R_2}{R_1R_2})p+LCp^2}
 
 Implémentation
---------------
+++++++++++++++
 
 Fonction `lti_RLC_BP3`
-++++++++++++++++++++++
+``````````````````````
 
 Pour implémenter la fonction de transfert, nous pouvons utiliser la fonction `lti` du module `scipy`.
 
@@ -76,7 +108,7 @@ Pour implémenter la fonction de transfert, nous pouvons utiliser la fonction `l
         
 
 Fonction `get_params`
-+++++++++++++++++++++
+`````````````````````
 
 En identifiant la fonction de transfert avec la fonction de transfert normalisée d'un passe-bande, nous obtenons :
 
@@ -119,7 +151,7 @@ avec
         return Tm, w0, m
 
 Fonction `get_components`
-+++++++++++++++++++++++++
+`````````````````````````
 
 Comme nous avons 3 équations et 4 composants, nous devons fixer un composant.
 En fixant la bobine L, nous obtenons alors les équations suivantes : 
