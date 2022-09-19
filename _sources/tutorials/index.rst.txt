@@ -6,6 +6,6 @@ Tutorials
    :caption: Contents:
 
    python
-   analog_filter
    first_order
+   analog_filter
    initial_values
