@@ -4,6 +4,9 @@ Travail Collaboratif : Analog Filter
 Description du travail 
 ----------------------
 
+Objectifs
++++++++++
+
 Dans ce travail, nous souhaitons développer des fonctions Python pour analyser des circuits d'ordre 2. 
 Pour chaque filtre d'ordre 2, nous souhaitons traiter les problèmes suivants :
 
