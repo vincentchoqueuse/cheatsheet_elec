@@ -6,6 +6,7 @@ Tutorials
    :caption: Contents:
 
    python
+   curve_overlay
    first_order
    analog_filter
    initial_values
