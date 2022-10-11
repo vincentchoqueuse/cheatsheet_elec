@@ -37,6 +37,7 @@
     <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/sphinx_highlight.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="author" title="About these documents" href="../about.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -206,9 +207,24 @@
     
     <div class="toc-item">
       
+<div class="tocsection onthispage mt-5 pt-1 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
 
 <nav id="bd-toc-nav">
-    
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#avant-propos">
+   Avant Propos
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#implementation">
+   Implémentation
+  </a>
+ </li>
+</ul>
+
 </nav>
     </div>
     
@@ -228,13 +244,29 @@
                 
   <section id="superposition-de-courbes-en-python">
 <h1>Superposition de courbes en Python<a class="headerlink" href="#superposition-de-courbes-en-python" title="Permalink to this heading">#</a></h1>
-<p>Dans ce tutorial, nous montrons comment superposer une courbe obtenue avec Scipy et une courbe analytique. Plus spécifiquement, nous allons nous intéresser à la réponse
-fréquentielle d’un système de premier ordre.</p>
+<p>Dans ce tutorial, nous montrons comment superposer une courbe obtenue avec Scipy et une courbe obtenue analytiquement.</p>
+<section id="avant-propos">
+<h2>Avant Propos<a class="headerlink" href="#avant-propos" title="Permalink to this heading">#</a></h2>
+<p>Nous allons nous intéresser au module de la réponse fréquentielle d’un système passe-bas de premier ordre. La fonction de transfert d’un passe-bas de premier ordre est donné par</p>
+<div class="math notranslate nohighlight">
+\[H(p)=\frac{T_0}{\frac{1}{\omega_c}p+1}\]</div>
+<p>La réponse fréquentielle s’obtient en posant <span class="math notranslate nohighlight">\(p=j\omega\)</span>. L’expression analytique du module est alors donnée par:</p>
+<div class="math notranslate nohighlight">
+\[|H(j\omega)|=\frac{T_0}{\sqrt{\left(\frac{\omega}{\omega_c}\right)^2+1}}\]</div>
+</section>
+<section id="implementation">
+<h2>Implémentation<a class="headerlink" href="#implementation" title="Permalink to this heading">#</a></h2>
+<p>Pour vérifier notre résultat analytique, nous proposons de superposer notre résultat et celui obtenu avec Scipy.</p>
+<ul class="simple">
+<li><p>Courbe <code class="code docutils literal notranslate"><span class="pre">scipy</span></code>: le module de la réponse fréquentielle s’obtient en lancant la méthode <code class="code docutils literal notranslate"><span class="pre">freqresp</span></code>. Cette méthode renvoie deux variables: <code class="code docutils literal notranslate"><span class="pre">w</span></code> (un vecteur de pulsation), <code class="code docutils literal notranslate"><span class="pre">Hjw</span></code> (un vecteur contenant la réponse fréquentielle évaluée pour chaque élément de <code class="code docutils literal notranslate"><span class="pre">w</span></code>).</p></li>
+<li><p>Courbe analytique: la courbe analytique s’obtient en évaluant notre expression analytique pour chaque élément de <code class="code docutils literal notranslate"><span class="pre">w</span></code>.</p></li>
+</ul>
+<p>Pour bien visualiser la superposition de deux courbes identiques, l’implémentation suivante propose d’utiliser le style de ligne <code class="code docutils literal notranslate"><span class="pre">--</span></code> pour la courbe du dessus.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">from</span> <span class="nn">scipy.signal</span> <span class="kn">import</span> <span class="n">lti</span><span class="p">,</span> <span class="n">step</span>
 
-<span class="n">TO</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">T0</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="n">wc</span> <span class="o">=</span> <span class="mi">100</span>
 <span class="n">tau</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="n">wc</span>
 <span class="n">H</span> <span class="o">=</span> <span class="n">lti</span><span class="p">([</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="n">tau</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
@@ -244,7 +276,7 @@ fréquentielle d’un système de premier ordre.</p>
 <span class="n">H_mod</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">Hjw</span><span class="p">)</span>
 
 <span class="c1"># analytical frequency response</span>
-<span class="n">H_mod2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">TO</span><span class="p">)</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="p">(</span><span class="n">w</span><span class="o">/</span><span class="n">wc</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">H_mod2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">T0</span><span class="p">)</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="p">(</span><span class="n">w</span><span class="o">/</span><span class="n">wc</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
 
 <span class="c1"># plot figure</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">loglog</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">H_mod</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;scipy&quot;</span><span class="p">)</span>
@@ -258,6 +290,7 @@ fréquentielle d’un système de premier ordre.</p>
 <figure class="align-default">
 <img alt="../_images/curve_overlay-1.png" class="plot-directive" src="../_images/curve_overlay-1.png" />
 </figure>
+</section>
 </section>
 
 
