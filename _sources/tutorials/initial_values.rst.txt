@@ -81,7 +81,7 @@ Nous obtenons alors le système
 
     \begin{bmatrix}a_2 & 0 \\ a_1 &a_2\end{bmatrix}\left(\mathbf{s}(0^+)-\mathbf{s}(0^-)\right) = \begin{bmatrix}b_2 & 0 \\ b_1 &b_2 \end{bmatrix}\left(\mathbf{e}(0^+)-\mathbf{e}(0^-)\right)
 
-En utilisant le fait que 
+En utilisant le fait que
 
 .. math ::
 
@@ -103,22 +103,35 @@ En introduisant la notion de variation, il en vient que :
 
 .. math ::
 
-    \Delta \mathbf{s}(0) = \frac{1}{a_2^2}\begin{bmatrix}a_2b_2 & 0 \\ a_2b_1-a_1b_2 &a_2 b_2 \end{bmatrix}\Delta \mathbf{e}(0)
-
-* :math:`\Delta \mathbf{s}(0) = \mathbf{s}(0^+)-\mathbf{s}(0^-)` désigne la variation du vecteur de sortie, 
-* :math:`\Delta \mathbf{e}(0) = \mathbf{e}(0^+)-\mathbf{e}(0^-)` désigne la variation du vecteur d'entrée.
-
+    \begin{bmatrix}
+    s(0^+)-s(0^-)\\
+    \dot{s}(0^+)-\dot{s}(0^-)
+    \end{bmatrix}
+    = \frac{1}{a_2^2}\begin{bmatrix}a_2b_2 & 0 \\ a_2b_1-a_1b_2 &a_2 b_2 \end{bmatrix}
+    \begin{bmatrix}
+    e(0^+)-e(0^-)\\
+    \dot{e}(0^+)-\dot{e}(0^-)
+    \end{bmatrix}
 
 Exemples
 --------
 
 Dans cette partie, nous nous intéressons aux comportements des filtres de second ordre de type passe-bas, passe-bande, passe-haut et rejecteur.
+les
 
 Pour ces filtres, nous obtenons la relation générale :
 
 .. math ::
 
-    \Delta \mathbf{s}(0) = \omega_0^2\begin{bmatrix} b_2  & 0 \\ b_1 -2m b_2 \omega_0 & b_2 \end{bmatrix}\Delta \mathbf{e}(0)
+    \begin{bmatrix}
+    s(0^+)-s(0^-)\\
+    \dot{s}(0^+)-\dot{s}(0^-)
+    \end{bmatrix}
+    =  \omega_0^2\begin{bmatrix} b_2  & 0 \\ b_1 -2m b_2 \omega_0 & b_2 \end{bmatrix}
+    \begin{bmatrix}
+    e(0^+)-e(0^-)\\
+    \dot{e}(0^+)-\dot{e}(0^-)
+    \end{bmatrix}
 
 
 Propriétés 
@@ -129,25 +142,53 @@ Propriétés
 
 .. math ::
 
-    \Delta \mathbf{s}(0) = \mathbf{0} 
+    \begin{bmatrix}
+    s(0^+)-s(0^-)\\
+    \dot{s}(0^+)-\dot{s}(0^-)
+    \end{bmatrix}
+    = \mathbf{0} 
 
 * Passe-bande :
 
 .. math ::
 
-    \Delta \mathbf{s}(0) = T_m\begin{bmatrix} 0 & 0 \\ 2m  \omega_0   & 0 \end{bmatrix}\Delta \mathbf{e}(0)
+    \begin{bmatrix}
+    s(0^+)-s(0^-)\\
+    \dot{s}(0^+)-\dot{s}(0^-)
+    \end{bmatrix}
+    =  T_m\begin{bmatrix} 0 & 0 \\ 2m  \omega_0   & 0 \end{bmatrix}
+    \begin{bmatrix}
+    e(0^+)-e(0^-)\\
+    \dot{e}(0^+)-\dot{e}(0^-)
+    \end{bmatrix}
 
 * Passe-haut :
 
 .. math ::
 
-    \Delta \mathbf{s}(0) =  T_{\infty}\begin{bmatrix} 1 & 0 \\ - 2m \omega_0   & 1  \end{bmatrix}\Delta \mathbf{e}(0)
+    \begin{bmatrix}
+    s(0^+)-s(0^-)\\
+    \dot{s}(0^+)-\dot{s}(0^-)
+    \end{bmatrix}
+    =  T_{\infty}\begin{bmatrix} 1 & 0 \\ - 2m \omega_0   & 1  \end{bmatrix}
+    \begin{bmatrix}
+    e(0^+)-e(0^-)\\
+    \dot{e}(0^+)-\dot{e}(0^-)
+    \end{bmatrix}
 
 * Rejecteur :
 
 .. math ::
 
-    \Delta \mathbf{s}(0) =  T_{0}\begin{bmatrix} 1 & 0 \\ - 2m \omega_0   & 1  \end{bmatrix}\Delta \mathbf{e}(0)
+    \begin{bmatrix}
+    s(0^+)-s(0^-)\\
+    \dot{s}(0^+)-\dot{s}(0^-)
+    \end{bmatrix}
+    =  T_{0}\begin{bmatrix} 1 & 0 \\ - 2m \omega_0   & 1  \end{bmatrix}
+    \begin{bmatrix}
+    e(0^+)-e(0^-)\\
+    \dot{e}(0^+)-\dot{e}(0^-)
+    \end{bmatrix}
 
 
 
@@ -158,7 +199,10 @@ Considérons le cas où l'entrée est un échelon d'amplitude :math:`E=1`. Dans 
 
 .. math ::
     
-    \Delta \mathbf{e}(0)=\begin{bmatrix}1 \\ 0\end{bmatrix}
+    \begin{bmatrix}
+    e(0^+)-e(0^-)\\
+    \dot{e}(0^+)-\dot{e}(0^-)
+    \end{bmatrix}=\begin{bmatrix}1 \\ 0\end{bmatrix}
 
 La figure suivante présente la réponse indicielle pour un filtre passe-bas, passe-bande, passe-haut et rejecteur ayant la même pulsation propre :math:`\omega_0=1` rad/s, le même coefficient d'amortissement :math:`m=0.5` et le même 
 coefficient d'amplification :math:`T_0=T_\infty=T_m=2`.

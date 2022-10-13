@@ -68,8 +68,8 @@
   
   
   
-    <img src="../_static/logo.png" class="logo__image only-light" alt="Logo image">
-    <img src="../_static/logo.png" class="logo__image only-dark" alt="Logo image">
+    <img src="../_static/logo.svg" class="logo__image only-light" alt="Logo image">
+    <img src="../_static/logo.svg" class="logo__image only-dark" alt="Logo image">
   
   
 </a>
@@ -324,47 +324,91 @@ Définissons tout d’abord les vecteurs suivants :</p>
 \[\begin{split}\mathbf{s}(0^+) = \frac{1}{a_2^2}\begin{bmatrix}a_2b_2 &amp; 0 \\ a_2b_1-a_1b_2 &amp;a_2 b_2 \end{bmatrix}\left(\mathbf{e}(0^+)-\mathbf{e}(0^-)\right) + \mathbf{s}(0^-)\end{split}\]</div>
 <p>En introduisant la notion de variation, il en vient que :</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}\Delta \mathbf{s}(0) = \frac{1}{a_2^2}\begin{bmatrix}a_2b_2 &amp; 0 \\ a_2b_1-a_1b_2 &amp;a_2 b_2 \end{bmatrix}\Delta \mathbf{e}(0)\end{split}\]</div>
-<ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(\Delta \mathbf{s}(0) = \mathbf{s}(0^+)-\mathbf{s}(0^-)\)</span> désigne la variation du vecteur de sortie,</p></li>
-<li><p><span class="math notranslate nohighlight">\(\Delta \mathbf{e}(0) = \mathbf{e}(0^+)-\mathbf{e}(0^-)\)</span> désigne la variation du vecteur d’entrée.</p></li>
-</ul>
+\[\begin{split}\begin{bmatrix}
+s(0^+)-s(0^-)\\
+\dot{s}(0^+)-\dot{s}(0^-)
+\end{bmatrix}
+= \frac{1}{a_2^2}\begin{bmatrix}a_2b_2 &amp; 0 \\ a_2b_1-a_1b_2 &amp;a_2 b_2 \end{bmatrix}
+\begin{bmatrix}
+e(0^+)-e(0^-)\\
+\dot{e}(0^+)-\dot{e}(0^-)
+\end{bmatrix}\end{split}\]</div>
 </section>
 </section>
 <section id="exemples">
 <h2>Exemples<a class="headerlink" href="#exemples" title="Permalink to this heading">#</a></h2>
-<p>Dans cette partie, nous nous intéressons aux comportements des filtres de second ordre de type passe-bas, passe-bande, passe-haut et rejecteur.</p>
+<p>Dans cette partie, nous nous intéressons aux comportements des filtres de second ordre de type passe-bas, passe-bande, passe-haut et rejecteur.
+les</p>
 <p>Pour ces filtres, nous obtenons la relation générale :</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}\Delta \mathbf{s}(0) = \omega_0^2\begin{bmatrix} b_2  &amp; 0 \\ b_1 -2m b_2 \omega_0 &amp; b_2 \end{bmatrix}\Delta \mathbf{e}(0)\end{split}\]</div>
+\[\begin{split}\begin{bmatrix}
+s(0^+)-s(0^-)\\
+\dot{s}(0^+)-\dot{s}(0^-)
+\end{bmatrix}
+=  \omega_0^2\begin{bmatrix} b_2  &amp; 0 \\ b_1 -2m b_2 \omega_0 &amp; b_2 \end{bmatrix}
+\begin{bmatrix}
+e(0^+)-e(0^-)\\
+\dot{e}(0^+)-\dot{e}(0^-)
+\end{bmatrix}\end{split}\]</div>
 <section id="proprietes">
 <h3>Propriétés<a class="headerlink" href="#proprietes" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Passe-bas :</p></li>
 </ul>
 <div class="math notranslate nohighlight">
-\[\Delta \mathbf{s}(0) = \mathbf{0}\]</div>
+\[\begin{split}\begin{bmatrix}
+s(0^+)-s(0^-)\\
+\dot{s}(0^+)-\dot{s}(0^-)
+\end{bmatrix}
+= \mathbf{0}\end{split}\]</div>
 <ul class="simple">
 <li><p>Passe-bande :</p></li>
 </ul>
 <div class="math notranslate nohighlight">
-\[\begin{split}\Delta \mathbf{s}(0) = T_m\begin{bmatrix} 0 &amp; 0 \\ 2m  \omega_0   &amp; 0 \end{bmatrix}\Delta \mathbf{e}(0)\end{split}\]</div>
+\[\begin{split}\begin{bmatrix}
+s(0^+)-s(0^-)\\
+\dot{s}(0^+)-\dot{s}(0^-)
+\end{bmatrix}
+=  T_m\begin{bmatrix} 0 &amp; 0 \\ 2m  \omega_0   &amp; 0 \end{bmatrix}
+\begin{bmatrix}
+e(0^+)-e(0^-)\\
+\dot{e}(0^+)-\dot{e}(0^-)
+\end{bmatrix}\end{split}\]</div>
 <ul class="simple">
 <li><p>Passe-haut :</p></li>
 </ul>
 <div class="math notranslate nohighlight">
-\[\begin{split}\Delta \mathbf{s}(0) =  T_{\infty}\begin{bmatrix} 1 &amp; 0 \\ - 2m \omega_0   &amp; 1  \end{bmatrix}\Delta \mathbf{e}(0)\end{split}\]</div>
+\[\begin{split}\begin{bmatrix}
+s(0^+)-s(0^-)\\
+\dot{s}(0^+)-\dot{s}(0^-)
+\end{bmatrix}
+=  T_{\infty}\begin{bmatrix} 1 &amp; 0 \\ - 2m \omega_0   &amp; 1  \end{bmatrix}
+\begin{bmatrix}
+e(0^+)-e(0^-)\\
+\dot{e}(0^+)-\dot{e}(0^-)
+\end{bmatrix}\end{split}\]</div>
 <ul class="simple">
 <li><p>Rejecteur :</p></li>
 </ul>
 <div class="math notranslate nohighlight">
-\[\begin{split}\Delta \mathbf{s}(0) =  T_{0}\begin{bmatrix} 1 &amp; 0 \\ - 2m \omega_0   &amp; 1  \end{bmatrix}\Delta \mathbf{e}(0)\end{split}\]</div>
+\[\begin{split}\begin{bmatrix}
+s(0^+)-s(0^-)\\
+\dot{s}(0^+)-\dot{s}(0^-)
+\end{bmatrix}
+=  T_{0}\begin{bmatrix} 1 &amp; 0 \\ - 2m \omega_0   &amp; 1  \end{bmatrix}
+\begin{bmatrix}
+e(0^+)-e(0^-)\\
+\dot{e}(0^+)-\dot{e}(0^-)
+\end{bmatrix}\end{split}\]</div>
 </section>
 <section id="illustrations">
 <h3>Illustrations<a class="headerlink" href="#illustrations" title="Permalink to this heading">#</a></h3>
 <p>Considérons le cas où l’entrée est un échelon d’amplitude <span class="math notranslate nohighlight">\(E=1\)</span>. Dans ce contexte, le vecteur d’entrée est égale à</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}\Delta \mathbf{e}(0)=\begin{bmatrix}1 \\ 0\end{bmatrix}\end{split}\]</div>
+\[\begin{split}\begin{bmatrix}
+e(0^+)-e(0^-)\\
+\dot{e}(0^+)-\dot{e}(0^-)
+\end{bmatrix}=\begin{bmatrix}1 \\ 0\end{bmatrix}\end{split}\]</div>
 <p>La figure suivante présente la réponse indicielle pour un filtre passe-bas, passe-bande, passe-haut et rejecteur ayant la même pulsation propre <span class="math notranslate nohighlight">\(\omega_0=1\)</span> rad/s, le même coefficient d’amortissement <span class="math notranslate nohighlight">\(m=0.5\)</span> et le même
 coefficient d’amplification <span class="math notranslate nohighlight">\(T_0=T_\infty=T_m=2\)</span>.</p>
 <figure class="align-default">
