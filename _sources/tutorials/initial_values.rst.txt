@@ -113,6 +113,10 @@ En introduisant la notion de variation, il en vient que :
     \dot{e}(0^+)-\dot{e}(0^-)
     \end{bmatrix}
 
+
+* :math:`\Delta e(0)=e(0^+)-e(0^-)` et :math:` \Delta \dot{e}(0)=\dot{e}(0^+)-\dot{e}(0^-)`
+* :math:`\Delta s(0)=s(0^+)-s(0^-)` et :math:` \Delta \dot{s}(0)=\dot{s}(0^+)-\dot{s}(0^-)`.
+
 Exemples
 --------
 
@@ -200,8 +204,8 @@ Considérons le cas où l'entrée est un échelon d'amplitude :math:`E=1`. Dans 
 .. math ::
     
     \begin{bmatrix}
-    e(0^+)-e(0^-)\\
-    \dot{e}(0^+)-\dot{e}(0^-)
+    \Delta e(0)\\
+    \Delta \dot{e}(0)
     \end{bmatrix}=\begin{bmatrix}1 \\ 0\end{bmatrix}
 
 La figure suivante présente la réponse indicielle pour un filtre passe-bas, passe-bande, passe-haut et rejecteur ayant la même pulsation propre :math:`\omega_0=1` rad/s, le même coefficient d'amortissement :math:`m=0.5` et le même 
