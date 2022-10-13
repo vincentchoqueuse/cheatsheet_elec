@@ -124,13 +124,13 @@ Pour ces filtres, nous obtenons la relation générale :
 .. math ::
 
     \begin{bmatrix}
-    s(0^+)-s(0^-)\\
-    \dot{s}(0^+)-\dot{s}(0^-)
+    \Delta s(0)\\
+    \Delta \dot{s}(0)
     \end{bmatrix}
     =  \omega_0^2\begin{bmatrix} b_2  & 0 \\ b_1 -2m b_2 \omega_0 & b_2 \end{bmatrix}
     \begin{bmatrix}
-    e(0^+)-e(0^-)\\
-    \dot{e}(0^+)-\dot{e}(0^-)
+    \Delta e(0)\\
+    \Delta \dot{e}(0)
     \end{bmatrix}
 
 
@@ -143,8 +143,8 @@ Propriétés
 .. math ::
 
     \begin{bmatrix}
-    s(0^+)-s(0^-)\\
-    \dot{s}(0^+)-\dot{s}(0^-)
+    \Delta s(0)\\
+    \Delta \dot{s}(0)
     \end{bmatrix}
     = \mathbf{0} 
 
@@ -153,13 +153,13 @@ Propriétés
 .. math ::
 
     \begin{bmatrix}
-    s(0^+)-s(0^-)\\
-    \dot{s}(0^+)-\dot{s}(0^-)
+    \Delta s(0)\\
+    \Delta \dot{s}(0)
     \end{bmatrix}
     =  T_m\begin{bmatrix} 0 & 0 \\ 2m  \omega_0   & 0 \end{bmatrix}
     \begin{bmatrix}
-    e(0^+)-e(0^-)\\
-    \dot{e}(0^+)-\dot{e}(0^-)
+    \Delta e(0)\\
+    \Delta \dot{e}(0)
     \end{bmatrix}
 
 * Passe-haut :
@@ -167,13 +167,13 @@ Propriétés
 .. math ::
 
     \begin{bmatrix}
-    s(0^+)-s(0^-)\\
-    \dot{s}(0^+)-\dot{s}(0^-)
+    \Delta s(0)\\
+    \Delta \dot{s}(0)
     \end{bmatrix}
     =  T_{\infty}\begin{bmatrix} 1 & 0 \\ - 2m \omega_0   & 1  \end{bmatrix}
     \begin{bmatrix}
-    e(0^+)-e(0^-)\\
-    \dot{e}(0^+)-\dot{e}(0^-)
+     \Delta e(0)\\
+    \Delta \dot{e}(0)
     \end{bmatrix}
 
 * Rejecteur :
@@ -181,13 +181,13 @@ Propriétés
 .. math ::
 
     \begin{bmatrix}
-    s(0^+)-s(0^-)\\
-    \dot{s}(0^+)-\dot{s}(0^-)
+    \Delta s(0)\\
+    \Delta \dot{s}(0)
     \end{bmatrix}
     =  T_{0}\begin{bmatrix} 1 & 0 \\ - 2m \omega_0   & 1  \end{bmatrix}
     \begin{bmatrix}
-    e(0^+)-e(0^-)\\
-    \dot{e}(0^+)-\dot{e}(0^-)
+    \Delta e(0)\\
+    \Delta \dot{e}(0)
     \end{bmatrix}
 
 
