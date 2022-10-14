@@ -128,7 +128,7 @@ La valeur finale correspond à la valeur de :math:`s(t)` en :math:`t=+\infty`. P
 
 .. math ::
 
-    s(\infty) = \lim_{t\inty} s(t) = \lim_{t\inty} s_p(t)
+    s(\infty) = \lim_{t\infty} s(t) = \lim_{t\infty} s_p(t)
  
 
 où la valeur de :math:`s_p(t)` dépend du type d'entrée.
@@ -146,7 +146,7 @@ La valeur finale s'exprime alors sous la forme :
 
     s(\infty) = KE
  
-où :math:`K=\frac{b_0}{a_0}` désigne le gain statique du système. 
+* :math:`K=\frac{b_0}{a_0}` désigne le gain statique du système. 
 
 
 Exemples
