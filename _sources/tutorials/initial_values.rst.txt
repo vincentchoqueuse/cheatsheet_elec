@@ -1,4 +1,4 @@
-Expression de la valeur initiale 
+Expression de la valeur initiale
 =================================
 
 Introduction
@@ -114,8 +114,40 @@ En introduisant la notion de variation, il en vient que :
     \end{bmatrix}
 
 
-* :math:`\Delta e(0)=e(0^+)-e(0^-)` et :math:` \Delta \dot{e}(0)=\dot{e}(0^+)-\dot{e}(0^-)`
-* :math:`\Delta s(0)=s(0^+)-s(0^-)` et :math:` \Delta \dot{s}(0)=\dot{s}(0^+)-\dot{s}(0^-)`.
+* :math:`\Delta e(0)=e(0^+)-e(0^-)` et :math:`\Delta \dot{e}(0)=\dot{e}(0^+)-\dot{e}(0^-)`
+* :math:`\Delta s(0)=s(0^+)-s(0^-)` et :math:`\Delta \dot{s}(0)=\dot{s}(0^+)-\dot{s}(0^-)` 
+
+Valeur Finale
++++++++++++++
+
+.. math ::
+
+    a_2 \ddot{s}(t)+a_1 \dot{s}(t)+a_0 s(t)=b_2 \ddot{e}(t)+b_1 \ddot{e}(t)+b_0 e(t)
+
+La valeur finale correspond à la valeur de :math:`s(t)` en :math:`t=+\infty`. Pour un système stable, la valeur finale s'exprime sous la forme
+
+.. math ::
+
+    s(\infty) = \lim_{t\inty} s(t) = \lim_{t\inty} s_p(t)
+ 
+
+où la valeur de :math:`s_p(t)` dépend du type d'entrée.
+
+Pour des signaux d'entrée de type échelon c-à-d :math:`e(t)=Eu(t)`, la solution particulière s'exprime sous la forme :math:`s_p(t)=\alpha` lorsque :math:`t=0^+`. 
+En injectant cette solution dans l'équation différentielle en :math:`t=+\infty`, nous obtenons pour un système stable  :
+
+.. math ::
+
+    a_0 \alpha=b_0 E \Rightarrow  \alpha = \frac{b_0}{a_0} E
+
+La valeur finale s'exprime alors sous la forme :
+
+.. math ::
+
+    s(\infty) = KE
+ 
+où :math:`K=\frac{b_0}{a_0}` désigne le gain statique du système. 
+
 
 Exemples
 --------
