@@ -13,7 +13,7 @@ Cours
    second_order
    filter_synthesis
    signal_list
-   transfer_function_list
+   transfer_function_list2
    circuit_list
    
 

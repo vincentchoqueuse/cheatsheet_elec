@@ -239,3 +239,21 @@ Propriétés
 
 
 Lorsque :math:`m\ll 1`, :math:`\omega_p\approx \omega_0` et :math:`R\approx e^{2\pi m}`.
+
+Réponse Indicielle
+``````````````````
+
+* Comportement à la discontinuité :
+
+.. math ::
+
+    \begin{bmatrix}
+    s(0^+) &=  \omega_0^2 b_2 E  \\
+    \dot{s}(0^+) &= \omega_0^2 (b_1 -2m b_2 \omega_0) E
+    \end{bmatrix}
+
+* Regime permanent :
+
+.. math ::
+
+    s(\infty) = b_0 E
