@@ -205,11 +205,6 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="transfer_function_list2.html">
-   Liste des Fonctions de Transfert
-  </a>
- </li>
- <li class="toctree-l1">
   <a class="reference internal" href="circuit_list.html">
    Liste des Circuits
   </a>
@@ -308,6 +303,33 @@
       </a>
      </li>
     </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#formes-normalisees">
+   Formes Normalisées
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#passe-bas-lp">
+     Passe-bas (LP)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#passe-bande-bp">
+     Passe-bande (BP)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#passe-haut-hp">
+     Passe-haut (HP)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#rejecteur-notch">
+     Rejecteur (Notch)
+    </a>
    </li>
   </ul>
  </li>
@@ -479,6 +501,102 @@ s(0^+) &amp;=  \omega_0^2 b_2 E  \\
 <div class="math notranslate nohighlight">
 \[s(\infty) = b_0 E\]</div>
 </section>
+</section>
+</section>
+<section id="formes-normalisees">
+<h2>Formes Normalisées<a class="headerlink" href="#formes-normalisees" title="Permalink to this heading">#</a></h2>
+<section id="passe-bas-lp">
+<h3>Passe-bas (LP)<a class="headerlink" href="#passe-bas-lp" title="Permalink to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[H(p)=\frac{T_0}{\frac{1}{\omega_0^2}p^2+\frac{2m}{\omega_0}p+1}​\]</div>
+<ul class="simple">
+<li><p>gain statique: <span class="math notranslate nohighlight">\(T_0\)</span>,</p></li>
+<li><p>pulsation propre: <span class="math notranslate nohighlight">\(\omega_0\)</span> (rad/s),</p></li>
+<li><p>coefficient d’amortissement: <span class="math notranslate nohighlight">\(m\)</span>.</p></li>
+</ul>
+<p><strong>Réponse Indicielle</strong></p>
+<figure class="align-default">
+<img alt="../_images/second_order-4.png" class="plot-directive" src="../_images/second_order-4.png" />
+</figure>
+<p><strong>Comportement Fréquentiel</strong></p>
+<ul class="simple">
+<li><p>Valeur à la pulsation propre: <span class="math notranslate nohighlight">\(H(j\omega_0)=\frac{T_0}{2jm}\)</span>,</p></li>
+<li><p>Si <span class="math notranslate nohighlight">\(m&lt;0.7\)</span>, présence d’une résonance à la pulsation <span class="math notranslate nohighlight">\(\omega_r=\omega_0\sqrt{1-2m^2}\)</span> [rad/s]</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[|H(j\omega_r)|=\frac{T_0}{2m\sqrt{1-m^2}}\]</div>
+<figure class="align-default">
+<img alt="../_images/second_order-5.png" class="plot-directive" src="../_images/second_order-5.png" />
+</figure>
+</section>
+<section id="passe-bande-bp">
+<h3>Passe-bande (BP)<a class="headerlink" href="#passe-bande-bp" title="Permalink to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[H(p)=\frac{\frac{2mT_m}{\omega_0}p}{\frac{1}{\omega_0^2}p^2+\frac{2m}{\omega_0}p+1}​\]</div>
+<ul class="simple">
+<li><p>gain maximum: <span class="math notranslate nohighlight">\(T_m\)</span>,</p></li>
+<li><p>pulsation propre: <span class="math notranslate nohighlight">\(\omega_0\)</span> (rad/s),</p></li>
+<li><p>coefficient d’amortissement: <span class="math notranslate nohighlight">\(m\)</span>.</p></li>
+</ul>
+<p><strong>Réponse Indicielle</strong></p>
+<figure class="align-default">
+<img alt="../_images/second_order-6.png" class="plot-directive" src="../_images/second_order-6.png" />
+</figure>
+<p><strong>Comportement Fréquentiel</strong></p>
+<ul class="simple">
+<li><p>Valeur à la pulsation propre: <span class="math notranslate nohighlight">\(H(j\omega_0)=T_m\)</span>,</p></li>
+<li><p>Intersection des asymptotes de module: <span class="math notranslate nohighlight">\(T_i=2m T_m\)</span>,</p></li>
+<li><p>Largeur de la bande passante à -3dB: <span class="math notranslate nohighlight">\(\Delta \omega =2m \omega_0\)</span> [rad/s].</p></li>
+</ul>
+<figure class="align-default">
+<img alt="../_images/second_order-7.png" class="plot-directive" src="../_images/second_order-7.png" />
+</figure>
+</section>
+<section id="passe-haut-hp">
+<h3>Passe-haut (HP)<a class="headerlink" href="#passe-haut-hp" title="Permalink to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[H(p)=\frac{\frac{T_{\infty}}{\omega_0^2}p^2}{\frac{1}{\omega_0^2}p^2+\frac{2m}{\omega_0}p+1}​\]</div>
+<ul class="simple">
+<li><p>gain haute-fréquence: <span class="math notranslate nohighlight">\(T_{\infty}\)</span>,</p></li>
+<li><p>pulsation propre: <span class="math notranslate nohighlight">\(\omega_0\)</span> (rad/s),</p></li>
+<li><p>coefficient d’amortissement: <span class="math notranslate nohighlight">\(m\)</span>.</p></li>
+</ul>
+<p><strong>Réponse Indicielle</strong></p>
+<figure class="align-default">
+<img alt="../_images/second_order-8.png" class="plot-directive" src="../_images/second_order-8.png" />
+</figure>
+<p><strong>Comportement Fréquentiel</strong></p>
+<ul class="simple">
+<li><p>Valeur à la pulsation propre: <span class="math notranslate nohighlight">\(H(j\omega_0)=j\frac{T_{\infty}}{2m}\)</span>,</p></li>
+<li><p>Si <span class="math notranslate nohighlight">\(m&lt;0.7\)</span>, présence d’une résonance à la pulsation <span class="math notranslate nohighlight">\(\omega_r=\omega_0/\sqrt{1-2m^2}\)</span> [rad/s]</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[|H(j\omega_r)|=\frac{T_{\infty}}{2m\sqrt{1-m^2}}\]</div>
+<figure class="align-default">
+<img alt="../_images/second_order-9.png" class="plot-directive" src="../_images/second_order-9.png" />
+</figure>
+</section>
+<section id="rejecteur-notch">
+<h3>Rejecteur (Notch)<a class="headerlink" href="#rejecteur-notch" title="Permalink to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[H(p)=\frac{T_0\left(\frac{1}{\omega_0^2}p^2+1\right)}{\frac{1}{\omega_0^2}p^2+\frac{2m}{\omega_0}p+1}​\]</div>
+<ul class="simple">
+<li><p>gain maximum: <span class="math notranslate nohighlight">\(T_0\)</span>,</p></li>
+<li><p>pulsation propre: <span class="math notranslate nohighlight">\(\omega_0\)</span> (rad/s),</p></li>
+<li><p>coefficient d’amortissement: <span class="math notranslate nohighlight">\(m\)</span>.</p></li>
+</ul>
+<p><strong>Réponse Indicielle</strong></p>
+<figure class="align-default">
+<img alt="../_images/second_order-10.png" class="plot-directive" src="../_images/second_order-10.png" />
+</figure>
+<p><strong>Comportement Fréquentiel</strong></p>
+<ul class="simple">
+<li><p>Valeur à la pulsation propre: <span class="math notranslate nohighlight">\(H(j\omega_0)=0\)</span>,</p></li>
+<li><p>Largeur de la bande rejetée à -3dB: <span class="math notranslate nohighlight">\(\Delta \omega =2m \omega_0\)</span> [rad/s].</p></li>
+</ul>
+<figure class="align-default">
+<img alt="../_images/second_order-11.png" class="plot-directive" src="../_images/second_order-11.png" />
+</figure>
 </section>
 </section>
 </section>
