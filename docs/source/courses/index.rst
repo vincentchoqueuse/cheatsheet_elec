@@ -5,9 +5,7 @@ Cours
    :maxdepth: 1
    :caption: Contents:
 
-   math
-   circuits_analysis
-   differential_equations
+   rappels/index
    transfer_function
    first_order
    second_order
