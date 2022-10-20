@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>Liste des Signaux &#8212; cheatsheet elec  documentation</title>
+    <title>Identification à partir de la réponse Fréquentielle &#8212; cheatsheet elec  documentation</title>
 <script>
   document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
   document.documentElement.dataset.theme = localStorage.getItem("theme") || "light"
@@ -41,8 +41,8 @@
     <link rel="author" title="About these documents" href="../about.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Liste des Fonctions de Transfert" href="transfer_function_list2.html" />
-    <link rel="prev" title="Synthèse des Filtres d’ordre N" href="filter_synthesis.html" />
+    <link rel="next" title="Cheatsheet" href="../cheatsheet.html" />
+    <link rel="prev" title="Identification à partir de la réponse Indicielle" href="identification_time.html" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="docsearch:language" content="en">
   </head>
@@ -86,14 +86,14 @@
       
       <div class="navbar-center-item">
         <ul id="navbar-main-elements" class="navbar-nav">
-    <li class="toctree-l1 current active nav-item">
- <a class="reference internal nav-link" href="index.html">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../courses/index.html">
   Cours
  </a>
 </li>
 
-<li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="../tutorials/index.html">
+<li class="toctree-l1 current active nav-item">
+ <a class="reference internal nav-link" href="index.html">
   Tutorials
  </a>
 </li>
@@ -165,53 +165,38 @@
 </p>
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="math.html">
-   Rappels Mathematiques
+  <a class="reference internal" href="python.html">
+   Utilisation de Python
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="circuits_analysis.html">
-   Rappels d’Electronique
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="differential_equations.html">
-   Rappels sur les Equations Differentielles
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="transfer_function.html">
-   Fonction de Transfert
+  <a class="reference internal" href="curve_overlay.html">
+   Superposition de courbes en Python
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="first_order.html">
-   Systèmes de Premier Ordre
+   Analyse d’un Circuit de Premier Ordre
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="second_order.html">
-   Systèmes de Second Ordre
+  <a class="reference internal" href="analog_filter.html">
+   Travail Collaboratif : Analog Filter
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="filter_synthesis.html">
-   Synthèse des Filtres d’ordre N
+  <a class="reference internal" href="initial_values.html">
+   Expression de la valeur initiale
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="identification_time.html">
+   Identification à partir de la réponse Indicielle
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Liste des Signaux
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="transfer_function_list2.html">
-   Liste des Fonctions de Transfert
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="circuit_list.html">
-   Liste des Circuits
+   Identification à partir de la réponse Fréquentielle
   </a>
  </li>
 </ul>
@@ -239,52 +224,35 @@
 <nav id="bd-toc-nav">
     <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#impulsion">
-   Impulsion
+  <a class="reference internal nav-link" href="#filtres-lp-et-hp">
+   Filtres LP et HP
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#modele-mathematique">
-     Modèle Mathématique
+    <a class="reference internal nav-link" href="#parametres-a-mesurer">
+     Paramètres à mesurer
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#representation">
-     Représentation
+    <a class="reference internal nav-link" href="#identification-des-parametres">
+     Identification des paramètres
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#echelon-unitaire">
-   Echelon Unitaire
+  <a class="reference internal nav-link" href="#filtres-bp-et-br">
+   Filtres BP et BR
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id1">
-     Modèle Mathématique
+     Paramètres à mesurer
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id2">
-     Représentation
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#sinusoide">
-   Sinusoïde
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id3">
-     Modèle Mathématique
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id4">
-     Représentation
+     Identification des paramètres
     </a>
    </li>
   </ul>
@@ -308,61 +276,102 @@
               
               <article class="bd-article" role="main">
                 
-  <section id="liste-des-signaux">
-<h1>Liste des Signaux<a class="headerlink" href="#liste-des-signaux" title="Permalink to this heading">#</a></h1>
-<section id="impulsion">
-<h2>Impulsion<a class="headerlink" href="#impulsion" title="Permalink to this heading">#</a></h2>
-<section id="modele-mathematique">
-<h3>Modèle Mathématique<a class="headerlink" href="#modele-mathematique" title="Permalink to this heading">#</a></h3>
-<div class="math notranslate nohighlight">
-\[\begin{split}\delta(t)=\left\{
-\begin{array}{ll}
-\infty &amp;\text{si }t=0,\\
-0 &amp;\text{si }t\ne0.
-\end{array}\right.\end{split}\]</div>
-</section>
-<section id="representation">
-<h3>Représentation<a class="headerlink" href="#representation" title="Permalink to this heading">#</a></h3>
-<figure class="align-default">
-<img alt="../_images/signal_list-1.png" class="plot-directive" src="../_images/signal_list-1.png" />
-</figure>
-</section>
-</section>
-<section id="echelon-unitaire">
-<h2>Echelon Unitaire<a class="headerlink" href="#echelon-unitaire" title="Permalink to this heading">#</a></h2>
-<section id="id1">
-<h3>Modèle Mathématique<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
-<div class="math notranslate nohighlight">
-\[\begin{split}u(t)=\left\{
-\begin{array}{ll}
-1 &amp;\text{si }t\ge 0,\\
-0 &amp;\text{si }t&lt;0.
-\end{array}\right.\end{split}\]</div>
-</section>
-<section id="id2">
-<h3>Représentation<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
-<figure class="align-default">
-<img alt="../_images/signal_list-2.png" class="plot-directive" src="../_images/signal_list-2.png" />
-</figure>
-</section>
-</section>
-<section id="sinusoide">
-<h2>Sinusoïde<a class="headerlink" href="#sinusoide" title="Permalink to this heading">#</a></h2>
-<section id="id3">
-<h3>Modèle Mathématique<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
-<div class="math notranslate nohighlight">
-\[e(t)=E \cos(\omega t + \varphi_e)\]</div>
+  <section id="identification-a-partir-de-la-reponse-frequentielle">
+<h1>Identification à partir de la réponse Fréquentielle<a class="headerlink" href="#identification-a-partir-de-la-reponse-frequentielle" title="Permalink to this heading">#</a></h1>
+<p>Dans ce tutorial, nous montrons comment identifier les paramètres d’un filtre d’ordre 2 à partir de sa réponse fréquentielle.</p>
+<p><strong>Hypothèses</strong></p>
 <ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(\omega=2\pi f\)</span> correspond à la pulsation [rad/s], <span class="math notranslate nohighlight">\(f=1/T\)</span> correspond à la fréquence [Hz] et <span class="math notranslate nohighlight">\(T\)</span> correspond à la période [s].</p></li>
-<li><p><span class="math notranslate nohighlight">\(E\)</span> correspond à l’amplitude crête,</p></li>
-<li><p><span class="math notranslate nohighlight">\(\varphi_e\)</span> correspond à la phase initiale.</p></li>
+<li><p>Le filtre est soit un LP, un BP, un HP ou un BR,</p></li>
+<li><p>L’abaque de résonance n’est pas disponible.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Avant toute identification, vérifiez si l’axe des abscisses est en rad/s ou en Hz.</p>
+</div>
+<section id="filtres-lp-et-hp">
+<h2>Filtres LP et HP<a class="headerlink" href="#filtres-lp-et-hp" title="Permalink to this heading">#</a></h2>
+<figure class="align-default">
+<img alt="../_images/identification_freq-1.png" class="plot-directive" src="../_images/identification_freq-1.png" />
+</figure>
+<section id="parametres-a-mesurer">
+<h3>Paramètres à mesurer<a class="headerlink" href="#parametres-a-mesurer" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\omega_0\)</span>: pulsation de symétrie de la phase. Lorsque la phase n’est pas disponible, il est possible d’approximer <span class="math notranslate nohighlight">\(\omega_0\)</span> par <span class="math notranslate nohighlight">\(\omega_r\)</span> lorsque <span class="math notranslate nohighlight">\(m\ll 1\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\Omega = [\varphi_{min}, \varphi_{max}]\)</span>: intervalle de la phase,</p></li>
+<li><p><span class="math notranslate nohighlight">\(|H(j\omega_0)|\)</span>: valeur du module en <span class="math notranslate nohighlight">\(\omega_0\)</span>,</p></li>
+<li><p><span class="math notranslate nohighlight">\(|T| = \lim_{\omega \to 0} |H(j\omega)|\)</span> ou <span class="math notranslate nohighlight">\(|T| = \lim_{\omega \to \infty} |H(j\omega)|\)</span>: valeur de l’asymptote horizontale du module,</p></li>
 </ul>
 </section>
-<section id="id4">
-<h3>Représentation<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
+<section id="identification-des-parametres">
+<h3>Identification des paramètres<a class="headerlink" href="#identification-des-parametres" title="Permalink to this heading">#</a></h3>
+<ul>
+<li><p>Coefficient d’amplification:</p>
+<blockquote>
+<div><ul>
+<li><p>Pour le filtre LP:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Si <span class="math notranslate nohighlight">\(\Omega = [-180, 0]\)</span>, alors <span class="math notranslate nohighlight">\(T_0 = |T|\)</span></p></li>
+<li><p>sinon <span class="math notranslate nohighlight">\(T_0 = -|T|\)</span></p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Pour le filtre HP:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Si <span class="math notranslate nohighlight">\(\Omega = [0, -180]\)</span>, alors <span class="math notranslate nohighlight">\(T_{\infty} = |T|\)</span></p></li>
+<li><p>sinon <span class="math notranslate nohighlight">\(T_{\infty} = -|T|\)</span></p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Coefficient d’amortissement: <span class="math notranslate nohighlight">\(m = \frac{|T|}{2|H(j\omega_0)|}\)</span></p></li>
+</ul>
+</section>
+</section>
+<section id="filtres-bp-et-br">
+<h2>Filtres BP et BR<a class="headerlink" href="#filtres-bp-et-br" title="Permalink to this heading">#</a></h2>
 <figure class="align-default">
-<img alt="../_images/signal_list-3.png" class="plot-directive" src="../_images/signal_list-3.png" />
+<img alt="../_images/identification_freq-2.png" class="plot-directive" src="../_images/identification_freq-2.png" />
 </figure>
+<section id="id1">
+<h3>Paramètres à mesurer<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\omega_0\)</span>: pulsation de symétrie de la phase,</p></li>
+<li><p><span class="math notranslate nohighlight">\(\Omega = [\varphi_{min}, \varphi_{max}]\)</span>: intervalle de la phase,</p></li>
+<li><p><span class="math notranslate nohighlight">\(|T|\)</span>: valeur maximale du module,</p></li>
+<li><p><span class="math notranslate nohighlight">\(\omega_{c1}\)</span> et <span class="math notranslate nohighlight">\(\omega_{c2}\)</span> : pulsation de coupure à <span class="math notranslate nohighlight">\(-3\)</span> dB.</p></li>
+</ul>
+</section>
+<section id="id2">
+<h3>Identification des paramètres<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
+<ul>
+<li><p>Coefficient d’amplification:</p>
+<blockquote>
+<div><ul>
+<li><p>Pour le filtre BP:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Si <span class="math notranslate nohighlight">\(\Omega = [-90, 90]\)</span>, alors <span class="math notranslate nohighlight">\(T_{max} = |T|\)</span></p></li>
+<li><p>sinon <span class="math notranslate nohighlight">\(T_{max} = -|T|\)</span></p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Pour le filtre BR:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Si <span class="math notranslate nohighlight">\(\arg[H(j\omega)]=0\)</span> en BF ou HF, alors <span class="math notranslate nohighlight">\(T_{0} = |T|\)</span></p></li>
+<li><p>sinon <span class="math notranslate nohighlight">\(T_{0} = -|T|\)</span></p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Coefficient d’amortissement: <span class="math notranslate nohighlight">\(m =\frac{\Delta \omega}{2\omega_0}\)</span> où <span class="math notranslate nohighlight">\(\Delta \omega =\omega_{c2}-\omega_{c1}\)</span>.</p></li>
+</ul>
 </section>
 </section>
 </section>
@@ -375,17 +384,17 @@
               <footer class="bd-footer-article">
                   <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-  <a class='left-prev' id="prev-link" href="filter_synthesis.html" title="previous page">
+  <a class='left-prev' id="prev-link" href="identification_time.html" title="previous page">
       <i class="fas fa-angle-left"></i>
       <div class="prev-next-info">
           <p class="prev-next-subtitle">previous</p>
-          <p class="prev-next-title">Synthèse des Filtres d’ordre N</p>
+          <p class="prev-next-title">Identification à partir de la réponse Indicielle</p>
       </div>
   </a>
-  <a class='right-next' id="next-link" href="transfer_function_list2.html" title="next page">
+  <a class='right-next' id="next-link" href="../cheatsheet.html" title="next page">
   <div class="prev-next-info">
       <p class="prev-next-subtitle">next</p>
-      <p class="prev-next-title">Liste des Fonctions de Transfert</p>
+      <p class="prev-next-title">Cheatsheet</p>
   </div>
   <i class="fas fa-angle-right"></i>
   </a>

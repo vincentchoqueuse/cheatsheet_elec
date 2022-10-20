@@ -10,3 +10,5 @@ Tutorials
    first_order
    analog_filter
    initial_values
+   identification_time
+   identification_freq
