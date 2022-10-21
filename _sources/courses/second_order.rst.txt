@@ -247,8 +247,12 @@ Réponse Indicielle
 
 .. math ::
 
-    s(0^+) &=  \omega_0^2 b_2 E  \\
-    \dot{s}(0^+) &= \omega_0^2 (b_1 -2m b_2 \omega_0) E
+     \begin{bmatrix}
+			\Delta s(0)\\
+			\Delta \dot{s}(0)
+			\end{bmatrix}
+			=  \omega_0^2\begin{bmatrix} b_2  & 0 \\ b_1 -2m b_2 \omega_0 & b_2 \end{bmatrix}
+	\begin{bmatrix}
 
 * Regime permanent :
 
