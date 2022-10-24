@@ -83,7 +83,7 @@ Identification des paramètres
 
     * Pour le filtre HP: 
 
-        * Si :math:`\Omega = [0, -180]`, alors :math:`T_{\infty} = |T|` 
+        * Si :math:`\Omega = [0, 180]`, alors :math:`T_{\infty} = |T|` 
         * sinon :math:`T_{\infty} = -|T|`
 
 * Coefficient d'amortissement: :math:`m = \frac{|T|}{2|H(j\omega_0)|}`
