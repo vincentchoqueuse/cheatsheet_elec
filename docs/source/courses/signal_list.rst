@@ -15,6 +15,12 @@ Modèle Mathématique
     0 &\text{si }t\ne0.
     \end{array}\right.
 
+sous la contrainte :
+
+.. math ::
+
+    \int_{-\infty}^{\infty}\delta(t)dt=1
+
 Représentation
 ++++++++++++++
 
