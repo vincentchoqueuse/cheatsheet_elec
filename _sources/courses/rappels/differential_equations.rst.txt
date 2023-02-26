@@ -42,8 +42,8 @@ La solution libre s'exprime sous la forme
     s_l(t)=\sum_{k=1}^{n}\lambda_k e^{p_kt}
 
 * :math:`\lambda_k\in \mathbb{C}` désigne des constantes d'intégration. Ces constantes peuvent être déterminées à partir de la connaissance des conditions initiales de l'équation différentielle.
-* :math:`p_k \in \mathbb{C}` désigne les racines du polynôme caractéristique :math:`a_n p^n+a_{n-1}p^{n-1}+\cdots+a_1 p+a_0`.
-
+* :math:`p_k \in \mathbb{C}` désigne les racines du polynôme caractéristique :math:`a_n p^n+a_{n-1}p^{n-1}+\cdots+a_1 p+a_0`. Ces racines correspondent aux **pôles du système**.
+* Lorsque qu'un pôle (ou plus) possède une partie réelle positive, la solution libre diverge. Dans ce cas, le système est **instable**.
 
 Solution particulière
 +++++++++++++++++++++

@@ -36,7 +36,6 @@ Exemples
     H_{BR}(p)&=\frac{T_0\left(\frac{1}{\omega_0^2}p^2+1\right)}{\frac{1}{\omega_0^2}p^2+\frac{2m}{\omega_0}p+1}​
 
 
-
 Expressions des Pôles 
 ---------------------
 
@@ -201,7 +200,7 @@ Le régime libre s'exprime sous la forme :
     
     s_l(t)=\lambda_1 e^{-(m-\sqrt{m^2-1})\omega_0t}+\lambda_2 e^{-(m+\sqrt{m^2-1})\omega_0t}
 
-Le régime libre est donné par la contribution de deux systèmes de premier ordre ayant pour constantes de temps :
+Le régime libre est donné par la contribution de deux systèmes de premier ordre ayant pour constantes de temps respectives:
 
 .. math ::
     

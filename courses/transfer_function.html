@@ -32,9 +32,6 @@
   <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=92025949c220c2e29695">
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/sphinx_highlight.js"></script>
     <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -68,9 +65,8 @@
   
   
   
-    <img src="../_static/logo.svg" class="logo__image only-light" alt="Logo image">
-    <img src="../_static/logo.svg" class="logo__image only-dark" alt="Logo image">
   
+    <p class="title logo__title">cheatsheet elec  documentation</p>
   
 </a>
     
@@ -251,13 +247,13 @@
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#forme-polynomiale">
-     Forme Polynomiale
+    <a class="reference internal nav-link" href="#forme-polynomiale-ba">
+     Forme Polynomiale [ba]
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#forme-factorisee">
-     Forme Factorisée
+    <a class="reference internal nav-link" href="#forme-factorisee-zpk">
+     Forme Factorisée [zpk]
     </a>
    </li>
   </ul>
@@ -322,6 +318,12 @@
 \[a_n \frac{d^n s(t)}{dt^n} + \cdots+a_1 \frac{d s(t)}{dt}  +a_0 s(t) =b_m \frac{d^m e(t)}{dt^m} +\cdots+b_0 e(t)\]</div>
 <p>Le plus souvent l’analyse d’un SLIT sera réalisée à partir de la fonction de transfert du système. Au lieu
 de manipuler des dérivées, l’utilisation de la fonction de transfert permet de revenir à la manipulation de polynômes.</p>
+<p>Dans ce cours, nous allons nous focaliser spécifiquement à différent type d’entrées <span class="math notranslate nohighlight">\(e(t)\)</span>:</p>
+<ul class="simple">
+<li><p>Impulsion: Lorsque <span class="math notranslate nohighlight">\(e(t)=\delta(t)\)</span>, la sortie du système est appelée <strong>réponse impulsionnelle</strong>,</p></li>
+<li><p>Echelon d’amplitude E: Lorsque <span class="math notranslate nohighlight">\(e(t)=Eu(t)\)</span>, la sortie du système est appelée <strong>réponse indicielle</strong>,</p></li>
+<li><p>Sinusoïde: Lorsque <span class="math notranslate nohighlight">\(E\cos(\omega t + \varphi_e)\)</span>, la sortie du système est appelée <strong>réponse fréquentielle</strong>.</p></li>
+</ul>
 <section id="definition">
 <h2>Définition<a class="headerlink" href="#definition" title="Permalink to this heading">#</a></h2>
 <p>La fonction de transfert du système est définie par :</p>
@@ -337,23 +339,23 @@ de manipuler des dérivées, l’utilisation de la fonction de transfert permet 
 <li><p>à partir de l’équation différentielle en appliquant la transformée de Laplace,</p></li>
 <li><p>à partir de l’analyse d’un circuit électronique en utilisant directement la notion d’impédance généralisée.</p></li>
 </ul>
-<section id="forme-polynomiale">
-<h3>Forme Polynomiale<a class="headerlink" href="#forme-polynomiale" title="Permalink to this heading">#</a></h3>
+<section id="forme-polynomiale-ba">
+<h3>Forme Polynomiale [ba]<a class="headerlink" href="#forme-polynomiale-ba" title="Permalink to this heading">#</a></h3>
 <div class="math notranslate nohighlight">
 \[H(p) = \frac{N(p)}{D(p)}=\frac{b_m p^m+\cdots+b_1p+b_0}{a_n p^n+\cdots+a_1 p+a_0}\]</div>
 </section>
-<section id="forme-factorisee">
-<h3>Forme Factorisée<a class="headerlink" href="#forme-factorisee" title="Permalink to this heading">#</a></h3>
+<section id="forme-factorisee-zpk">
+<h3>Forme Factorisée [zpk]<a class="headerlink" href="#forme-factorisee-zpk" title="Permalink to this heading">#</a></h3>
 <div class="math notranslate nohighlight">
 \[H(p) = G\frac{(p-z_m)\times \cdots\times (p-z_1)}{(p-p_n)\times \cdots\times (p-p_1)}\]</div>
 <ul class="simple">
 <li><p>le paramètre <span class="math notranslate nohighlight">\(G=\frac{b_m}{a_n}\)</span> est un coefficient d’amplification,</p></li>
-<li><p>les zéros <span class="math notranslate nohighlight">\(z_l\)</span> correspondent aux racines du numérateur c-a-d aux solutions de l’équation</p></li>
+<li><p>les <strong>zéros</strong> <span class="math notranslate nohighlight">\(z_l\)</span> correspondent aux racines du numérateur c-a-d aux solutions de l’équation</p></li>
 </ul>
 <div class="math notranslate nohighlight">
 \[b_m p^m+\cdots+b_1p+b_0,\]</div>
 <ul class="simple">
-<li><p>les pôles <span class="math notranslate nohighlight">\(p_l\)</span> correspondent aux racines du dénominateur (c-à-d du polynôme caractéristique) c-a-d aux solutions de l’équation</p></li>
+<li><p>les <strong>pôles</strong> <span class="math notranslate nohighlight">\(p_l\)</span> correspondent aux racines du dénominateur (c-à-d du polynôme caractéristique) c-a-d aux solutions de l’équation</p></li>
 </ul>
 <div class="math notranslate nohighlight">
 \[a_n p^n+\cdots+a_1p+a_0 = 0.\]</div>
@@ -375,25 +377,25 @@ de manipuler des dérivées, l’utilisation de la fonction de transfert permet 
 </section>
 <section id="gain-statique">
 <h3>Gain statique<a class="headerlink" href="#gain-statique" title="Permalink to this heading">#</a></h3>
-<p>Le gain statique, noté <span class="math notranslate nohighlight">\(K\)</span>, est le rapport entre la sortie et l’entrée en régime permanent constant c-à-d lorsque toutes les dérivées de l’équation différentielle sont nulles. Mathématiquement,</p>
+<p>Le gain statique, noté <span class="math notranslate nohighlight">\(K\)</span>, est le rapport entre la sortie et l’entrée en régime permanent lorsque l’entrée est un échelon d’amplitude <span class="math notranslate nohighlight">\(E\)</span>. Mathématiquement, le gain statique s’exprime sous la forme :</p>
 <div class="math notranslate nohighlight">
-\[K = H(0) = \frac{b_0}{a_0}\]</div>
+\[K = \frac{s(\infty)}{E} = H(0) = \frac{b_0}{a_0}\]</div>
 <ul class="simple">
-<li><p>Lorsque l’entrée est un échelon d’amplitude <span class="math notranslate nohighlight">\(E\)</span> et lorsque le système est initialement au repos, la gain statique correspond au rapport entrée la valeur finale <span class="math notranslate nohighlight">\(s(\infty)\)</span> et l’amplitude de l’échelon <span class="math notranslate nohighlight">\(E\)</span>.</p></li>
 <li><p>Lorsque l’entrée est une sinusoïde, le gain statique correspond au gain basse-fréquence c-a-d lorsque <span class="math notranslate nohighlight">\(\omega \to 0\)</span>.</p></li>
+<li><p>Si l’entrée et/ou la sortie ne sont pas nulles, le gain statique correspond au rapport entre la variation de la sortie et la variation de l’entrée.</p></li>
 </ul>
 </section>
 <section id="comportement-frequentiel">
 <h3>Comportement Fréquentiel<a class="headerlink" href="#comportement-frequentiel" title="Permalink to this heading">#</a></h3>
 <section id="exponentielle-complexe">
 <h4>Exponentielle Complexe<a class="headerlink" href="#exponentielle-complexe" title="Permalink to this heading">#</a></h4>
-<p>Lorsque l’entrée est une exponentielle complexe de pulsation <span class="math notranslate nohighlight">\(\omega\)</span>, c-à-d <span class="math notranslate nohighlight">\(e(t)=ce^{j\omega t}\)</span>, la sortie est une sinusoïde de même pulsation et s’exprime sous la forme</p>
+<p>Lorsque l’entrée est une exponentielle complexe de pulsation <span class="math notranslate nohighlight">\(\omega\)</span>, c-à-d <span class="math notranslate nohighlight">\(e(t)=ce^{j\omega t}\)</span>, la sortie est une sinusoïde de même pulsation et s’exprime sous la forme :</p>
 <div class="math notranslate nohighlight">
 \[s(t)=H(j\omega)ce^{j\omega t}.\]</div>
 </section>
 <section id="sinusoide">
 <h4>Sinusoïde<a class="headerlink" href="#sinusoide" title="Permalink to this heading">#</a></h4>
-<p>Lorsque l’entrée est une sinusoïde de pulsation <span class="math notranslate nohighlight">\(\omega\)</span>, c-à-d <span class="math notranslate nohighlight">\(e(t)=E\cos(\omega t + \varphi_e)\)</span>, la sortie est une sinusoïde de même pulsation et s’exprime sous la forme</p>
+<p>Lorsque l’entrée est une sinusoïde de pulsation <span class="math notranslate nohighlight">\(\omega\)</span>, c-à-d <span class="math notranslate nohighlight">\(e(t)=E\cos(\omega t + \varphi_e)\)</span>, la sortie est une sinusoïde de même pulsation et s’exprime sous la forme :</p>
 <div class="math notranslate nohighlight">
 \[s(t)=|H(j\omega)|E\cos(\omega t + \varphi_e + \arg[H(j\omega)]),\]</div>
 <ul class="simple">
@@ -451,7 +453,7 @@ de manipuler des dérivées, l’utilisation de la fonction de transfert permet 
   
   <div class="footer-item">
     <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 6.1.3.<br>
 </p>
   </div>
   
