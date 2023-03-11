@@ -9,7 +9,7 @@ Equation différentielle
 
 .. math ::
 
-    \frac{1}{\omega_0^2}\frac{d^2 s(t)}{dt^2} +\frac{2m}{\omega_0}\frac{d s(t)}{dt}+s(t) = b_2\frac{d^2 e(t)}{dt^2} +b_1\frac{d e(t)}{dt}+e(t)
+    \frac{1}{\omega_0^2}\frac{d^2 s(t)}{dt^2} +\frac{2m}{\omega_0}\frac{d s(t)}{dt}+s(t) = b_2\frac{d^2 e(t)}{dt^2} +b_1\frac{d e(t)}{dt}+b_0 e(t)
 
 * :math:`\omega_0` désigne la pulsation propre [rad/s],
 * :math:`m` le coefficient d'amortissement.
