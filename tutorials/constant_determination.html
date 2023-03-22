@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>Identification à partir de la réponse Fréquentielle &#8212; cheatsheet elec  documentation</title>
+    <title>Détermination des constantes d’intégration &#8212; cheatsheet elec  documentation</title>
   
   
   
@@ -41,12 +41,12 @@
     <script src="../_static/doctools.js"></script>
     <script src="../_static/sphinx_highlight.js"></script>
     <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'tutorials/identification_freq';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'tutorials/constant_determination';</script>
     <link rel="author" title="About these documents" href="../about.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Cheatsheet" href="../cheatsheet.html" />
-    <link rel="prev" title="Identification à partir de la réponse Indicielle" href="identification_time.html" />
+    <link rel="next" title="Expression de la valeur initiale" href="initial_values.html" />
+    <link rel="prev" title="Travail Collaboratif : Analog Filter" href="analog_filter.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -343,10 +343,10 @@ document.write(`
 <li class="toctree-l1"><a class="reference internal" href="curve_overlay.html">Superposition de courbes en Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="first_order.html">Analyse d’un Circuit de Premier Ordre</a></li>
 <li class="toctree-l1"><a class="reference internal" href="analog_filter.html">Travail Collaboratif : Analog Filter</a></li>
-<li class="toctree-l1"><a class="reference internal" href="constant_determination.html">Détermination des constantes d’intégration</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Détermination des constantes d’intégration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="initial_values.html">Expression de la valeur initiale</a></li>
 <li class="toctree-l1"><a class="reference internal" href="identification_time.html">Identification à partir de la réponse Indicielle</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Identification à partir de la réponse Fréquentielle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="identification_freq.html">Identification à partir de la réponse Fréquentielle</a></li>
 </ul>
 </div>
 </nav></div>
@@ -387,7 +387,7 @@ document.write(`
     
     <li class="breadcrumb-item"><a href="index.html" class="nav-link">Tutorials</a></li>
     
-    <li class="breadcrumb-item active" aria-current="page">Identification à partir de la réponse Fréquentielle</li>
+    <li class="breadcrumb-item active" aria-current="page">Détermination des constantes d’intégration</li>
   </ul>
 </nav>
 </div>
@@ -404,102 +404,66 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section id="identification-a-partir-de-la-reponse-frequentielle">
-<h1>Identification à partir de la réponse Fréquentielle<a class="headerlink" href="#identification-a-partir-de-la-reponse-frequentielle" title="Permalink to this heading">#</a></h1>
-<p>Dans ce tutorial, nous montrons comment identifier les paramètres d’un filtre d’ordre 2 à partir de sa réponse fréquentielle.</p>
-<p><strong>Hypothèses</strong></p>
-<ul class="simple">
-<li><p>Le filtre est soit un LP, un BP, un HP ou un BR,</p></li>
-<li><p>L’abaque de résonance n’est pas disponible.</p></li>
-</ul>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Avant toute identification, vérifiez si l’axe des abscisses est en rad/s ou en Hz.</p>
-</div>
-<section id="filtres-lp-et-hp">
-<h2>Filtres LP et HP<a class="headerlink" href="#filtres-lp-et-hp" title="Permalink to this heading">#</a></h2>
-<figure class="align-default">
-<img alt="../_images/identification_freq-1.png" class="plot-directive" src="../_images/identification_freq-1.png" />
-</figure>
-<section id="parametres-a-mesurer">
-<h3>Paramètres à mesurer<a class="headerlink" href="#parametres-a-mesurer" title="Permalink to this heading">#</a></h3>
-<ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(\omega_0\)</span>: pulsation de symétrie de la phase. Lorsque la phase n’est pas disponible, il est possible d’approximer <span class="math notranslate nohighlight">\(\omega_0\)</span> par <span class="math notranslate nohighlight">\(\omega_r\)</span> lorsque <span class="math notranslate nohighlight">\(m\ll 1\)</span>.</p></li>
-<li><p><span class="math notranslate nohighlight">\(\Omega = [\varphi_{min}, \varphi_{max}]\)</span>: intervalle de la phase,</p></li>
-<li><p><span class="math notranslate nohighlight">\(|H(j\omega_0)|\)</span>: valeur du module en <span class="math notranslate nohighlight">\(\omega_0\)</span>,</p></li>
-<li><p><span class="math notranslate nohighlight">\(|T| = \lim_{\omega \to 0} |H(j\omega)|\)</span> ou <span class="math notranslate nohighlight">\(|T| = \lim_{\omega \to \infty} |H(j\omega)|\)</span>: valeur de l’asymptote horizontale du module,</p></li>
-</ul>
+  <section id="determination-des-constantes-d-integration">
+<h1>Détermination des constantes d’intégration<a class="headerlink" href="#determination-des-constantes-d-integration" title="Permalink to this heading">#</a></h1>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">#</a></h2>
+<p>Ce tutorial montre comment déterminer les constantes d’intégration pour la réponse temporelle d’un système de second ordre décrit
+par une équation différentielle linéaire à coefficients constants. La méthode décrite ici fait intervenir des notions de calculs matriciels et
+peut s’étendre facilement à des systèmes d’ordres supérieurs.</p>
 </section>
-<section id="identification-des-parametres">
-<h3>Identification des paramètres<a class="headerlink" href="#identification-des-parametres" title="Permalink to this heading">#</a></h3>
-<ul>
-<li><p>Coefficient d’amplification:</p>
-<blockquote>
-<div><ul>
-<li><p>Pour le filtre LP:</p>
-<blockquote>
-<div><ul class="simple">
-<li><p>Si <span class="math notranslate nohighlight">\(\Omega = [-180, 0]\)</span>, alors <span class="math notranslate nohighlight">\(T_0 = |T|\)</span></p></li>
-<li><p>sinon <span class="math notranslate nohighlight">\(T_0 = -|T|\)</span></p></li>
-</ul>
-</div></blockquote>
-</li>
-<li><p>Pour le filtre HP:</p>
-<blockquote>
-<div><ul class="simple">
-<li><p>Si <span class="math notranslate nohighlight">\(\Omega = [0, 180]\)</span>, alors <span class="math notranslate nohighlight">\(T_{\infty} = |T|\)</span></p></li>
-<li><p>sinon <span class="math notranslate nohighlight">\(T_{\infty} = -|T|\)</span></p></li>
-</ul>
-</div></blockquote>
-</li>
-</ul>
-</div></blockquote>
-</li>
-<li><p>Coefficient d’amortissement: <span class="math notranslate nohighlight">\(m = \frac{|T|}{2|H(j\omega_0)|}\)</span></p></li>
-</ul>
+<section id="expression-de-la-solution">
+<h2>Expression de la solution<a class="headerlink" href="#expression-de-la-solution" title="Permalink to this heading">#</a></h2>
+<p>Pour un système d’ordre 2, la réponse temporelle du système s’exprime sous la forme générale suivante :</p>
+<div class="math notranslate nohighlight">
+\[s(t) = \lambda_1 e^{p_1 t} +\lambda_2 e^{p_2 t} + s_p(t)\]</div>
+<p>Notre objectif ici est la détermination des constantes d’intégration <span class="math notranslate nohighlight">\(\lambda_1\)</span> et <span class="math notranslate nohighlight">\(\lambda_2\)</span> sous l’hypothèse où les valeurs de
+<span class="math notranslate nohighlight">\(p_1\)</span>, <span class="math notranslate nohighlight">\(p_2\)</span> et <span class="math notranslate nohighlight">\(s_p(t)\)</span> sont connues et que les conditions initiales en <span class="math notranslate nohighlight">\(0^+\)</span> sont données.
+Pour simplifier nos calculs, nous allons conserver l’expression initiale de <span class="math notranslate nohighlight">\(s(t)\)</span> qui est composée d’une combinaison linéaire de fonctions exponentielles et d’un terme additionnel.</p>
 </section>
+<section id="utilisation-des-conditions-initiales">
+<h2>Utilisation des conditions initiales<a class="headerlink" href="#utilisation-des-conditions-initiales" title="Permalink to this heading">#</a></h2>
+<section id="cas-general">
+<h3>Cas général<a class="headerlink" href="#cas-general" title="Permalink to this heading">#</a></h3>
+<p>Pour déterminer les deux constantes d’intégrations, nous avons besoin de deux conditions initiales. Dans notre contexte, nous allons
+exploiter la connaissance de :</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}s(0^+) &amp;= \lim_{t\to 0^+} s(t)\\
+\dot{s}(0^+) &amp;= \lim_{t\to 0^+} \frac{ds(t)}{dt}\end{split}\]</div>
+<p>En utilisant ces informations, nous pouvons poser que :</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}s(0^+) &amp;= \lambda_1 +\lambda_2 + s_p(0^+)\\
+\dot{s}(0^+) &amp;= \lambda_1 p_1 +\lambda_2 p_2  + \dot{s}_p(0^+)\end{split}\]</div>
+<p>Pour résoudre ce système linéaire, une approche efficace consiste à modéliser le problème sous forme matricielle :</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\mathbf{x} = \begin{bmatrix}
+s(0^+)-s_p(0^+)\\
+\dot{s}(0^+)-\dot{s}_p(0^+)
+\end{bmatrix}
+= \begin{bmatrix}1 &amp; 1 \\ p_1 &amp; p_2 \end{bmatrix}
+\begin{bmatrix}
+\lambda_1\\
+\lambda_2
+\end{bmatrix}\end{split}\]</div>
+<p>où <span class="math notranslate nohighlight">\(\textbf{x} \in \mathbb{R}^2\)</span> est un vecteur connus.</p>
+<p>Il en vient que :</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{bmatrix}
+\lambda_1\\
+\lambda_2
+\end{bmatrix} = \frac{1}{p_2-p_1}
+\begin{bmatrix}p_2 &amp; -1 \\ -p_1 &amp; 1 \end{bmatrix}\mathbf{x}\end{split}\]</div>
 </section>
-<section id="filtres-bp-et-br">
-<h2>Filtres BP et BR<a class="headerlink" href="#filtres-bp-et-br" title="Permalink to this heading">#</a></h2>
-<figure class="align-default">
-<img alt="../_images/identification_freq-2.png" class="plot-directive" src="../_images/identification_freq-2.png" />
-</figure>
-<section id="id1">
-<h3>Paramètres à mesurer<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
-<ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(\omega_0\)</span>: pulsation de symétrie de la phase,</p></li>
-<li><p><span class="math notranslate nohighlight">\(\Omega = [\varphi_{min}, \varphi_{max}]\)</span>: intervalle de la phase,</p></li>
-<li><p><span class="math notranslate nohighlight">\(|T|\)</span>: valeur maximale du module,</p></li>
-<li><p><span class="math notranslate nohighlight">\(\omega_{c1}\)</span> et <span class="math notranslate nohighlight">\(\omega_{c2}\)</span> : pulsation de coupure à <span class="math notranslate nohighlight">\(-3\)</span> dB.</p></li>
-</ul>
-</section>
-<section id="id2">
-<h3>Identification des paramètres<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
-<ul>
-<li><p>Coefficient d’amplification:</p>
-<blockquote>
-<div><ul>
-<li><p>Pour le filtre BP:</p>
-<blockquote>
-<div><ul class="simple">
-<li><p>Si <span class="math notranslate nohighlight">\(\Omega = [-90, 90]\)</span>, alors <span class="math notranslate nohighlight">\(T_{max} = |T|\)</span></p></li>
-<li><p>sinon <span class="math notranslate nohighlight">\(T_{max} = -|T|\)</span></p></li>
-</ul>
-</div></blockquote>
-</li>
-<li><p>Pour le filtre BR:</p>
-<blockquote>
-<div><ul class="simple">
-<li><p>Si <span class="math notranslate nohighlight">\(\arg[H(j\omega)]=0\)</span> en BF ou HF, alors <span class="math notranslate nohighlight">\(T_{0} = |T|\)</span></p></li>
-<li><p>sinon <span class="math notranslate nohighlight">\(T_{0} = -|T|\)</span></p></li>
-</ul>
-</div></blockquote>
-</li>
-</ul>
-</div></blockquote>
-</li>
-<li><p>Coefficient d’amortissement: <span class="math notranslate nohighlight">\(m =\frac{\Delta \omega}{2\omega_0}\)</span> où <span class="math notranslate nohighlight">\(\Delta \omega =\omega_{c2}-\omega_{c1}\)</span>.</p></li>
-</ul>
+<section id="cas-ou-m-1">
+<h3>Cas où <span class="math notranslate nohighlight">\(m&lt;1\)</span><a class="headerlink" href="#cas-ou-m-1" title="Permalink to this heading">#</a></h3>
+<p>Notons que lorsque les pôles sont complexes-conjugués, c-à-d <span class="math notranslate nohighlight">\(p_1=p_2^*\)</span>, nous obtenons :</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{bmatrix}
+\lambda_1\\
+\lambda_2
+\end{bmatrix} = \frac{j}{2\Im m(p_1)}
+\begin{bmatrix}p_1^* &amp; -1 \\ -p_1 &amp; 1 \end{bmatrix}\mathbf{x}\end{split}\]</div>
+<p>En utilisant le fait que <span class="math notranslate nohighlight">\(\textbf{x} \in \mathbb{R}^2\)</span>, il est alors possible d’établir que <span class="math notranslate nohighlight">\(\lambda_2 = \lambda_1^*\)</span></p>
 </section>
 </section>
 </section>
@@ -513,20 +477,20 @@ document.write(`
                   <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="identification_time.html"
+       href="analog_filter.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Identification à partir de la réponse Indicielle</p>
+        <p class="prev-next-title">Travail Collaboratif : Analog Filter</p>
       </div>
     </a>
     <a class="right-next"
-       href="../cheatsheet.html"
+       href="initial_values.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Cheatsheet</p>
+        <p class="prev-next-title">Expression de la valeur initiale</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -545,14 +509,11 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#filtres-lp-et-hp">Filtres LP et HP</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parametres-a-mesurer">Paramètres à mesurer</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#identification-des-parametres">Identification des paramètres</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#filtres-bp-et-br">Filtres BP et BR</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Paramètres à mesurer</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Identification des paramètres</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#expression-de-la-solution">Expression de la solution</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#utilisation-des-conditions-initiales">Utilisation des conditions initiales</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cas-general">Cas général</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cas-ou-m-1">Cas où <span class="math notranslate nohighlight">\(m&lt;1\)</span></a></li>
 </ul>
 </li>
 </ul>
@@ -560,7 +521,7 @@ document.write(`
 
   <div class="sidebar-secondary-item">
   <div class="tocsection sourcelink">
-    <a href="../_sources/tutorials/identification_freq.rst.txt">
+    <a href="../_sources/tutorials/constant_determination.rst.txt">
       <i class="fa-solid fa-file-lines"></i> Show Source
     </a>
   </div>
