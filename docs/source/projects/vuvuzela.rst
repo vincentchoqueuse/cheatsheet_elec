@@ -4,9 +4,9 @@ Projet: Débruitage de Vuvuzela
 Objectifs 
 ---------
 
-Lors de la coupe du Monde de Football 2010, les téléspectateurs du monde entier ont pu découvrir un instrument de musique d’Afrique du Sud : le Vuvuzela. Lors de la diffusion des matchs, le son continu généré par cet instrument est rapidement devenu gênant. (https://www.youtube.com/watch?v=bKCIFXqhLzo).
+Lors de la Coupe du Monde de Football en 2010, un phénomène sonore a marqué les téléspectateurs du monde entier : le bruit omniprésent du Vuvuzela. Originaire d'Afrique du Sud, cet instrument produit une tonalité continue, qui, bien qu'étant partie intégrante de l'ambiance festive, a parfois nui à la clarté des commentaires sportifs pendant la retransmission des matchs. Pour avoir un aperçu, vous pouvez écouter l'extrait suivant : https://www.youtube.com/watch?v=bKCIFXqhLzo.
 
-Dans ce projet, vous allez mettre en place un filtre « anti-vuvuzela » pour atténuer les sonorités de cet instrument et améliorer la restitution audio des commentaires sportifs. Le fichier son à traiter est disponible sur moodle.
+Le défi de ce projet est de concevoir un filtre "anti-vuvuzela". Votre mission sera d'atténuer spécifiquement les fréquences sonores produites par cet instrument afin de mettre en avant la qualité audio des commentaires. Le fichier audio à analyser et traiter est mis à votre disposition sur la plateforme Moodle.
 
 Méthodologie 
 ++++++++++++
