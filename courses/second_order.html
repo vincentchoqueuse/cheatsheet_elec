@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 
 
@@ -7,7 +6,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Systèmes de Second Ordre &#8212; cheatsheet elec  documentation</title>
   
@@ -19,27 +18,27 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../_static/plot_directive.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=177cf48d" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/documentation_options.js?v=8a448e45"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'courses/second_order';</script>
     <link rel="author" title="About these documents" href="../about.html" />
@@ -147,8 +146,15 @@
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../cheatsheet.html">
-                        Cheatsheet
+                      <a class="nav-link nav-internal" href="../projects/index.html">
+                        Projects
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../cheatsheets/index.html">
+                        Cheatsheets
                       </a>
                     </li>
                 
@@ -159,13 +165,21 @@
                       </a>
                     </li>
                 
-
+            <div class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    More
+                </button>
+                <div class="dropdown-menu">
+                    
                     <li class="nav-item">
                       <a class="nav-link nav-internal" href="../about.html">
                         About
                       </a>
                     </li>
                 
+                </div>
+            </div>
+            
   </ul>
 </nav></div>
       
@@ -274,8 +288,15 @@ document.write(`
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../cheatsheet.html">
-                        Cheatsheet
+                      <a class="nav-link nav-internal" href="../projects/index.html">
+                        Projects
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../cheatsheets/index.html">
+                        Cheatsheets
                       </a>
                     </li>
                 
@@ -286,13 +307,21 @@ document.write(`
                       </a>
                     </li>
                 
-
+            <div class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    More
+                </button>
+                <div class="dropdown-menu">
+                    
                     <li class="nav-item">
                       <a class="nav-link nav-internal" href="../about.html">
                         About
                       </a>
                     </li>
                 
+                </div>
+            </div>
+            
   </ul>
 </nav></div>
         
@@ -345,7 +374,7 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="rappels/differential_equations.html">Rappels sur les Equations Differentielles</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="transfer_function.html">Fonction de Transfert</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transfer_function.html">Systèmes SLIT</a></li>
 <li class="toctree-l1"><a class="reference internal" href="first_order.html">Systèmes de Premier Ordre</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Systèmes de Second Ordre</a></li>
 <li class="toctree-l1"><a class="reference internal" href="filter_synthesis.html">Synthèse des Filtres d’ordre N</a></li>
@@ -409,11 +438,11 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section id="systemes-de-second-ordre">
-<h1>Systèmes de Second Ordre<a class="headerlink" href="#systemes-de-second-ordre" title="Permalink to this heading">#</a></h1>
+<h1>Systèmes de Second Ordre<a class="headerlink" href="#systemes-de-second-ordre" title="Link to this heading">#</a></h1>
 <section id="modelisation">
-<h2>Modélisation<a class="headerlink" href="#modelisation" title="Permalink to this heading">#</a></h2>
+<h2>Modélisation<a class="headerlink" href="#modelisation" title="Link to this heading">#</a></h2>
 <section id="equation-differentielle">
-<h3>Equation différentielle<a class="headerlink" href="#equation-differentielle" title="Permalink to this heading">#</a></h3>
+<h3>Equation différentielle<a class="headerlink" href="#equation-differentielle" title="Link to this heading">#</a></h3>
 <div class="math notranslate nohighlight">
 \[\frac{1}{\omega_0^2}\frac{d^2 s(t)}{dt^2} +\frac{2m}{\omega_0}\frac{d s(t)}{dt}+s(t) = b_2\frac{d^2 e(t)}{dt^2} +b_1\frac{d e(t)}{dt}+b_0 e(t)\]</div>
 <ul class="simple">
@@ -422,7 +451,7 @@ document.write(`
 </ul>
 </section>
 <section id="fonction-de-transfert">
-<h3>Fonction de transfert<a class="headerlink" href="#fonction-de-transfert" title="Permalink to this heading">#</a></h3>
+<h3>Fonction de transfert<a class="headerlink" href="#fonction-de-transfert" title="Link to this heading">#</a></h3>
 <p>La fonction de transfert d’un système de second ordre peut s’exprimer sous la forme normalisée suivante :</p>
 <div class="math notranslate nohighlight">
 \[H(p)=\frac{N(p)}{\frac{1}{\omega_0^2}p^2+\frac{2m}{\omega_0}p+1}\]</div>
@@ -431,7 +460,7 @@ document.write(`
 </ul>
 </section>
 <section id="exemples">
-<h3>Exemples<a class="headerlink" href="#exemples" title="Permalink to this heading">#</a></h3>
+<h3>Exemples<a class="headerlink" href="#exemples" title="Link to this heading">#</a></h3>
 <div class="math notranslate nohighlight">
 \[\begin{split}H_{LP}(p)&amp;=\frac{T_0}{\frac{1}{\omega_0^2}p^2+\frac{2m}{\omega_0}p+1}\\
 H_{BP}(p)&amp;=\frac{\frac{2mT_m}{\omega_0}p}{\frac{1}{\omega_0^2}p^2+\frac{2m}{\omega_0}p+1}​\\
@@ -440,7 +469,7 @@ H_{BR}(p)&amp;=\frac{T_0\left(\frac{1}{\omega_0^2}p^2+1\right)}{\frac{1}{\omega_
 </section>
 </section>
 <section id="expressions-des-poles">
-<h2>Expressions des Pôles<a class="headerlink" href="#expressions-des-poles" title="Permalink to this heading">#</a></h2>
+<h2>Expressions des Pôles<a class="headerlink" href="#expressions-des-poles" title="Link to this heading">#</a></h2>
 <p>Les pôles s’obtiennent en déterminant les racines du dénominateur
 de la fonction de transfert c-a-d en déterminant les valeurs de <span class="math notranslate nohighlight">\(p\)</span> telles que :</p>
 <div class="math notranslate nohighlight">
@@ -451,7 +480,7 @@ de la fonction de transfert c-a-d en déterminant les valeurs de <span class="ma
 <p>L’expression du discriminant montre que la valeur de m joue un rôle essentiel dans l’expression des
 deux racines. Nous pouvons distinguer 3 cas de figure.</p>
 <section id="cas-ou-m-1">
-<h3>Cas où m&gt;1<a class="headerlink" href="#cas-ou-m-1" title="Permalink to this heading">#</a></h3>
+<h3>Cas où m&gt;1<a class="headerlink" href="#cas-ou-m-1" title="Link to this heading">#</a></h3>
 <p>Lorsque <span class="math notranslate nohighlight">\(m&gt;1\)</span>, le système possède deux poles réels et distincts. Les pôles s’expriment sous la forme</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}p_1 = -m\omega_0 +\omega_0 \sqrt{m^2-1}\\
@@ -471,7 +500,7 @@ m &amp;= -\frac{p_1+p_2}{2\omega_0}\end{split}\]</div>
 </figure>
 </section>
 <section id="id1">
-<h3>Cas où m=1<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
+<h3>Cas où m=1<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
 <p>Lorsque <span class="math notranslate nohighlight">\(m=1\)</span>, le système possède un pole réel double. Le pole réel double s’exprime sous la forme</p>
 <div class="math notranslate nohighlight">
 \[p_1 = p_2 = -m\omega_0\]</div>
@@ -480,7 +509,7 @@ m &amp;= -\frac{p_1+p_2}{2\omega_0}\end{split}\]</div>
 </figure>
 </section>
 <section id="id2">
-<h3>Cas où m&lt;1<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
+<h3>Cas où m&lt;1<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
 <p>Lorsque <span class="math notranslate nohighlight">\(m&lt;1\)</span>, le système possède une paire de pôles complex-conjugués. Les pôles s’expriment sous la forme</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}p_1 = -m\omega_0 +j\omega_0 \sqrt{1-m^2}\\
@@ -500,7 +529,7 @@ m &amp;= -\frac{\Re e(p_1)}{\omega_0 }\end{split}\]</div>
 </section>
 </section>
 <section id="reponse-temporelle">
-<h2>Réponse Temporelle<a class="headerlink" href="#reponse-temporelle" title="Permalink to this heading">#</a></h2>
+<h2>Réponse Temporelle<a class="headerlink" href="#reponse-temporelle" title="Link to this heading">#</a></h2>
 <p>La réponse à une entrée quelconque s’exprime sous la forme :</p>
 <div class="math notranslate nohighlight">
 \[s(t) = s_l(t) + s_p(t)\]</div>
@@ -509,7 +538,7 @@ m &amp;= -\frac{\Re e(p_1)}{\omega_0 }\end{split}\]</div>
 <li><p><span class="math notranslate nohighlight">\(s_p(t)\)</span>: solution particulière.</p></li>
 </ul>
 <section id="id3">
-<h3>Cas où m&gt;1<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
+<h3>Cas où m&gt;1<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
 <p>Le régime libre s’exprime sous la forme :</p>
 <div class="math notranslate nohighlight">
 \[s_l(t)=\lambda_1 e^{-(m-\sqrt{m^2-1})\omega_0t}+\lambda_2 e^{-(m+\sqrt{m^2-1})\omega_0t}\]</div>
@@ -518,7 +547,7 @@ m &amp;= -\frac{\Re e(p_1)}{\omega_0 }\end{split}\]</div>
 \[\tau_{1,2} =-\frac{1}{p_{1,2}}=\frac{1}{\omega_0 (m\pm \sqrt{m^2-1})}\]</div>
 </section>
 <section id="id4">
-<h3>Cas où m&lt;1<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
+<h3>Cas où m&lt;1<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
 <p>Le régime libre s’exprime alors sous la forme :</p>
 <div class="math notranslate nohighlight">
 \[s_l(t)=\lambda e^{-m\omega_0t}\cos(\omega_0 \sqrt{1-m^2}t+\varphi)\]</div>
@@ -527,7 +556,7 @@ m &amp;= -\frac{\Re e(p_1)}{\omega_0 }\end{split}\]</div>
 <li><p><span class="math notranslate nohighlight">\(\omega_p=\omega_0 \sqrt{1-m^2}\)</span> correspond à la pseudo-pulsation des oscillations [rad/s]</p></li>
 </ul>
 <section id="proprietes">
-<h4>Propriétés<a class="headerlink" href="#proprietes" title="Permalink to this heading">#</a></h4>
+<h4>Propriétés<a class="headerlink" href="#proprietes" title="Link to this heading">#</a></h4>
 <ul class="simple">
 <li><p>Oscillations : pseudo-pulsation et pseudo-période.</p></li>
 </ul>
@@ -542,22 +571,15 @@ T_p &amp;= \frac{2\pi}{\omega_0\sqrt{1-m^2}}\end{split}\]</div>
 <p>Lorsque <span class="math notranslate nohighlight">\(m\ll 1\)</span>, <span class="math notranslate nohighlight">\(\omega_p\approx \omega_0\)</span> et <span class="math notranslate nohighlight">\(R\approx e^{2\pi m}\)</span>.</p>
 </section>
 <section id="reponse-indicielle">
-<h4>Réponse Indicielle<a class="headerlink" href="#reponse-indicielle" title="Permalink to this heading">#</a></h4>
+<h4>Réponse Indicielle<a class="headerlink" href="#reponse-indicielle" title="Link to this heading">#</a></h4>
 <ul class="simple">
-<li><p>Comportement à la discontinuité :</p></li>
+<li><p>Comportement à la discontinuité : Pour les signaux ne présentant pas de singularité au voisinage de 0, il est possible d’établir que (voir <a class="reference internal" href="../tutorials/initial_values.html"><span class="doc">démonstration</span></a>) :</p></li>
 </ul>
 <div class="math notranslate nohighlight">
-\[\begin{split}\begin{bmatrix}
-    \Delta s(0)\\
-    \Delta \dot{s}(0)
-    \end{bmatrix}
-    =  \omega_0^2\begin{bmatrix} b_2  &amp; 0 \\ b_1 -2m b_2 \omega_0 &amp; b_2 \end{bmatrix}
-\begin{bmatrix}
-\Delta e(0)\\
-\Delta \dot{e}(0)
-\end{bmatrix}\end{split}\]</div>
+\[\begin{split}\Delta s(0) &amp;= \omega_0^2 b_2 \Delta e(0) \\
+\Delta \dot{s}(0) &amp;= (b_1 \omega_0^2-2m b_2 \omega_0^3)\Delta e(0)+b_2 \omega_0^2\Delta \dot{e}(0)\end{split}\]</div>
 <ul class="simple">
-<li><p>Regime permanent :</p></li>
+<li><p>Regime permanent : Lorsque l’entrée est un échelon, la sortie en régime permanent s’exprime sous la forme</p></li>
 </ul>
 <div class="math notranslate nohighlight">
 \[s(\infty) = b_0 E\]</div>
@@ -565,9 +587,9 @@ T_p &amp;= \frac{2\pi}{\omega_0\sqrt{1-m^2}}\end{split}\]</div>
 </section>
 </section>
 <section id="formes-normalisees">
-<h2>Formes Normalisées<a class="headerlink" href="#formes-normalisees" title="Permalink to this heading">#</a></h2>
+<h2>Formes Normalisées<a class="headerlink" href="#formes-normalisees" title="Link to this heading">#</a></h2>
 <section id="passe-bas-lp">
-<h3>Passe-bas (LP)<a class="headerlink" href="#passe-bas-lp" title="Permalink to this heading">#</a></h3>
+<h3>Passe-bas (LP)<a class="headerlink" href="#passe-bas-lp" title="Link to this heading">#</a></h3>
 <div class="math notranslate nohighlight">
 \[H(p)=\frac{T_0}{\frac{1}{\omega_0^2}p^2+\frac{2m}{\omega_0}p+1}​\]</div>
 <ul class="simple">
@@ -591,7 +613,7 @@ T_p &amp;= \frac{2\pi}{\omega_0\sqrt{1-m^2}}\end{split}\]</div>
 </figure>
 </section>
 <section id="passe-bande-bp">
-<h3>Passe-bande (BP)<a class="headerlink" href="#passe-bande-bp" title="Permalink to this heading">#</a></h3>
+<h3>Passe-bande (BP)<a class="headerlink" href="#passe-bande-bp" title="Link to this heading">#</a></h3>
 <div class="math notranslate nohighlight">
 \[H(p)=\frac{\frac{2mT_m}{\omega_0}p}{\frac{1}{\omega_0^2}p^2+\frac{2m}{\omega_0}p+1}​\]</div>
 <ul class="simple">
@@ -614,7 +636,7 @@ T_p &amp;= \frac{2\pi}{\omega_0\sqrt{1-m^2}}\end{split}\]</div>
 </figure>
 </section>
 <section id="passe-haut-hp">
-<h3>Passe-haut (HP)<a class="headerlink" href="#passe-haut-hp" title="Permalink to this heading">#</a></h3>
+<h3>Passe-haut (HP)<a class="headerlink" href="#passe-haut-hp" title="Link to this heading">#</a></h3>
 <div class="math notranslate nohighlight">
 \[H(p)=\frac{\frac{T_{\infty}}{\omega_0^2}p^2}{\frac{1}{\omega_0^2}p^2+\frac{2m}{\omega_0}p+1}​\]</div>
 <ul class="simple">
@@ -638,7 +660,7 @@ T_p &amp;= \frac{2\pi}{\omega_0\sqrt{1-m^2}}\end{split}\]</div>
 </figure>
 </section>
 <section id="rejecteur-notch">
-<h3>Rejecteur (Notch)<a class="headerlink" href="#rejecteur-notch" title="Permalink to this heading">#</a></h3>
+<h3>Rejecteur (Notch)<a class="headerlink" href="#rejecteur-notch" title="Link to this heading">#</a></h3>
 <div class="math notranslate nohighlight">
 \[H(p)=\frac{T_0\left(\frac{1}{\omega_0^2}p^2+1\right)}{\frac{1}{\omega_0^2}p^2+\frac{2m}{\omega_0}p+1}​\]</div>
 <ul class="simple">
@@ -668,7 +690,10 @@ T_p &amp;= \frac{2\pi}{\omega_0\sqrt{1-m^2}}\end{split}\]</div>
               
               
                 <footer class="bd-footer-article">
-                  <!-- Previous / next buttons -->
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="first_order.html"
@@ -688,7 +713,10 @@ T_p &amp;= \frac{2\pi}{\omega_0\sqrt{1-m^2}}\end{split}\]</div>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
+</div></div>
+  
 </div>
+
                 </footer>
               
             </div>
@@ -747,7 +775,7 @@ T_p &amp;= \frac{2\pi}{\omega_0\sqrt{1-m^2}}\end{split}\]</div>
             
           </div>
           <footer class="bd-footer-content">
-            <div class="bd-footer-content__inner"></div>
+            
           </footer>
         
       </main>
@@ -755,8 +783,8 @@ T_p &amp;= \frac{2\pi}{\omega_0\sqrt{1-m^2}}\end{split}\]</div>
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
 
   <footer class="bd-footer">
 <div class="bd-footer__inner bd-page-width">
@@ -774,7 +802,7 @@ T_p &amp;= \frac{2\pi}{\omega_0\sqrt{1-m^2}}\end{split}\]</div>
       
         <div class="footer-item">
   <p class="sphinx-version">
-    Created using <a href="https://sphinx-doc.org/">Sphinx</a> 6.1.3.
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.3.
     <br/>
   </p>
 </div>
@@ -785,7 +813,7 @@ T_p &amp;= \frac{2\pi}{\omega_0\sqrt{1-m^2}}\end{split}\]</div>
     <div class="footer-items__end">
       
         <div class="footer-item"><p class="theme-version">
-  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.1.
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.3.
 </p></div>
       
     </div>

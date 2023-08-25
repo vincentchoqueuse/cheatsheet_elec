@@ -49,16 +49,17 @@ Solution particulière
 +++++++++++++++++++++
 
 Le terme :math:`s_p(t)` désigne une solution particulière de l'équation avec second membre. Il n'y a pas d'expression générale 
-permettant de déterminer :math:`s_p(t)` quelque soit :math:`e(t)`. Le plus souvent, la solution particulière possède la même "forme"
+permettant de déterminer :math:`s_p(t)` quelque soit :math:`e(t)`. Pour des entrées simples (polynômes, exponentiels, ...), il est 
+possible d'utiliser la *méthode des coefficients indéterminés*. Cette méthode exploite le fait que la solution particulière possède la même "forme"
 que :math:`e(t)`.
 
 Par exemple,
 
-* Si :math:`e(t)=\alpha` est une constante, :math:`s_p(t)=\beta` est une constante,
+* Si :math:`e(t)=\alpha` est une constante, :math:`s_p(t)=\beta` est un coefficient constant,
 * Si :math:`e(t)` est un polynôme de degré :math:`Q`, :math:`s_p(t)` est un polynôme de degré :math:`Q` (avec des coefficients différents),
 * Si :math:`e(t)` est une sinusoïde de pulsation :math:`\omega`, :math:`s_p(t)` est une sinusoïde de pulsation :math:`\omega` (avec une amplitude et une phase différentes).
 
-Les paramètres de la solution particulière s'obtiennent par identification en remplaçant :math:`s(t)` par :math:`s_p(t)` dans l'équation différentielle.
+Les coefficients de la solution particulière s'obtiennent par identification en remplaçant :math:`s(t)` par :math:`s_p(t)` dans l'équation différentielle. 
 
 Exemple
 -------
@@ -78,7 +79,7 @@ La solution complète s'exprime sous la forme :
     s(t)=s_l(t)+s_p(t)
 
 * Solution libre: :math:`s_l(t)=\lambda_1 e^{p_1t}` avec :math:`\tau p_1+1=0 \Rightarrow p_1=-\frac{1}{\tau}`.
-* Solution particulière: :math:`s_p(t)=\beta` avec :math:`\tau \times 0 +\beta = K\times 1 \Rightarrow \beta=K`.
+* Solution particulière [méthode des coefficients indéterminés]: :math:`s_p(t)=\beta`. En remplaçant :math:`s(t)` par :math:`s_p(t)` dans l'équation différentielle, nous trouvons :math:`\tau \times 0 +\beta = K\times 1 \Rightarrow \beta=K`.
 
 La solution complète s'exprime alors sous la forme :
 
@@ -86,8 +87,7 @@ La solution complète s'exprime alors sous la forme :
 
     s(t)=\lambda_1 e^{-\frac{1}{\tau} t} + K
 
-Pour déterminer la constante d'intégration :math:`\lambda_1`, il est nécessaire d'exploiter une condition initiale. En utilisant le fait 
-que :math:`s(0)=0`, nous obtenons :math:`\lambda_1  + K = 0 \Rightarrow \lambda_1=-K`. Pour :math:`t\ge 0`, nous obtenons finalement l'expression :
+Pour déterminer la constante d'intégration :math:`\lambda_1`, il est nécessaire d'exploiter une condition initiale. A titre d'exmple, en imposant la condition initiale :math:`s(0)=0`, nous obtenons :math:`\lambda_1  + K = 0 \Rightarrow \lambda_1=-K`. Pour :math:`t\ge 0`, nous obtenons finalement l'expression :
 
 .. math ::
 

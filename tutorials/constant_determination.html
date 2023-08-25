@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 
 
@@ -7,7 +6,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Détermination des constantes d’intégration &#8212; cheatsheet elec  documentation</title>
   
@@ -19,34 +18,34 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../_static/plot_directive.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=177cf48d" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/documentation_options.js?v=8a448e45"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'tutorials/constant_determination';</script>
     <link rel="author" title="About these documents" href="../about.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Expression de la valeur initiale" href="initial_values.html" />
-    <link rel="prev" title="Travail Collaboratif : Analog Filter" href="analog_filter.html" />
+    <link rel="prev" title="Analyse d’un Circuit de Premier Ordre" href="first_order.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -147,8 +146,15 @@
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../cheatsheet.html">
-                        Cheatsheet
+                      <a class="nav-link nav-internal" href="../projects/index.html">
+                        Projects
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../cheatsheets/index.html">
+                        Cheatsheets
                       </a>
                     </li>
                 
@@ -159,13 +165,21 @@
                       </a>
                     </li>
                 
-
+            <div class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    More
+                </button>
+                <div class="dropdown-menu">
+                    
                     <li class="nav-item">
                       <a class="nav-link nav-internal" href="../about.html">
                         About
                       </a>
                     </li>
                 
+                </div>
+            </div>
+            
   </ul>
 </nav></div>
       
@@ -274,8 +288,15 @@ document.write(`
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../cheatsheet.html">
-                        Cheatsheet
+                      <a class="nav-link nav-internal" href="../projects/index.html">
+                        Projects
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../cheatsheets/index.html">
+                        Cheatsheets
                       </a>
                     </li>
                 
@@ -286,13 +307,21 @@ document.write(`
                       </a>
                     </li>
                 
-
+            <div class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    More
+                </button>
+                <div class="dropdown-menu">
+                    
                     <li class="nav-item">
                       <a class="nav-link nav-internal" href="../about.html">
                         About
                       </a>
                     </li>
                 
+                </div>
+            </div>
+            
   </ul>
 </nav></div>
         
@@ -342,7 +371,6 @@ document.write(`
 <li class="toctree-l1"><a class="reference internal" href="python.html">Utilisation de Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="curve_overlay.html">Superposition de courbes en Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="first_order.html">Analyse d’un Circuit de Premier Ordre</a></li>
-<li class="toctree-l1"><a class="reference internal" href="analog_filter.html">Travail Collaboratif : Analog Filter</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Détermination des constantes d’intégration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="initial_values.html">Expression de la valeur initiale</a></li>
 <li class="toctree-l1"><a class="reference internal" href="identification_time.html">Identification à partir de la réponse Indicielle</a></li>
@@ -405,15 +433,15 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section id="determination-des-constantes-d-integration">
-<h1>Détermination des constantes d’intégration<a class="headerlink" href="#determination-des-constantes-d-integration" title="Permalink to this heading">#</a></h1>
+<h1>Détermination des constantes d’intégration<a class="headerlink" href="#determination-des-constantes-d-integration" title="Link to this heading">#</a></h1>
 <section id="introduction">
-<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">#</a></h2>
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
 <p>Ce tutorial montre comment déterminer les constantes d’intégration pour la réponse temporelle d’un système de second ordre décrit
 par une équation différentielle linéaire à coefficients constants. La méthode décrite ici fait intervenir des notions de calculs matriciels et
 peut s’étendre facilement à des systèmes d’ordres supérieurs.</p>
 </section>
 <section id="expression-de-la-solution">
-<h2>Expression de la solution<a class="headerlink" href="#expression-de-la-solution" title="Permalink to this heading">#</a></h2>
+<h2>Expression de la solution<a class="headerlink" href="#expression-de-la-solution" title="Link to this heading">#</a></h2>
 <p>Pour un système d’ordre 2, la réponse temporelle du système s’exprime sous la forme générale suivante :</p>
 <div class="math notranslate nohighlight">
 \[s(t) = \lambda_1 e^{p_1 t} +\lambda_2 e^{p_2 t} + s_p(t)\]</div>
@@ -422,9 +450,9 @@ peut s’étendre facilement à des systèmes d’ordres supérieurs.</p>
 Pour simplifier nos calculs, nous allons conserver l’expression initiale de <span class="math notranslate nohighlight">\(s(t)\)</span> qui est composée d’une combinaison linéaire de fonctions exponentielles et d’un terme additionnel.</p>
 </section>
 <section id="utilisation-des-conditions-initiales">
-<h2>Utilisation des conditions initiales<a class="headerlink" href="#utilisation-des-conditions-initiales" title="Permalink to this heading">#</a></h2>
+<h2>Utilisation des conditions initiales<a class="headerlink" href="#utilisation-des-conditions-initiales" title="Link to this heading">#</a></h2>
 <section id="cas-general">
-<h3>Cas général<a class="headerlink" href="#cas-general" title="Permalink to this heading">#</a></h3>
+<h3>Cas général<a class="headerlink" href="#cas-general" title="Link to this heading">#</a></h3>
 <p>Pour déterminer les deux constantes d’intégrations, nous avons besoin de deux conditions initiales. Dans notre contexte, nous allons
 exploiter la connaissance de :</p>
 <div class="math notranslate nohighlight">
@@ -436,7 +464,7 @@ exploiter la connaissance de :</p>
 \dot{s}(0^+) &amp;= \lambda_1 p_1 +\lambda_2 p_2  + \dot{s}_p(0^+)\end{split}\]</div>
 <p>Pour résoudre ce système linéaire, une approche efficace consiste à modéliser le problème sous forme matricielle :</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}\mathbf{x} = \begin{bmatrix}
+\[\begin{split}\begin{bmatrix}
 s(0^+)-s_p(0^+)\\
 \dot{s}(0^+)-\dot{s}_p(0^+)
 \end{bmatrix}
@@ -452,17 +480,23 @@ s(0^+)-s_p(0^+)\\
 \lambda_1\\
 \lambda_2
 \end{bmatrix} = \frac{1}{p_2-p_1}
-\begin{bmatrix}p_2 &amp; -1 \\ -p_1 &amp; 1 \end{bmatrix}\mathbf{x}\end{split}\]</div>
+\begin{bmatrix}p_2 &amp; -1 \\ -p_1 &amp; 1 \end{bmatrix}\begin{bmatrix}
+s(0^+)-s_p(0^+)\\
+\dot{s}(0^+)-\dot{s}_p(0^+)
+\end{bmatrix}\end{split}\]</div>
 </section>
 <section id="cas-ou-m-1">
-<h3>Cas où <span class="math notranslate nohighlight">\(m&lt;1\)</span><a class="headerlink" href="#cas-ou-m-1" title="Permalink to this heading">#</a></h3>
+<h3>Cas où <span class="math notranslate nohighlight">\(m&lt;1\)</span><a class="headerlink" href="#cas-ou-m-1" title="Link to this heading">#</a></h3>
 <p>Notons que lorsque les pôles sont complexes-conjugués, c-à-d <span class="math notranslate nohighlight">\(p_1=p_2^*\)</span>, nous obtenons :</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{bmatrix}
 \lambda_1\\
 \lambda_2
 \end{bmatrix} = \frac{j}{2\Im m(p_1)}
-\begin{bmatrix}p_1^* &amp; -1 \\ -p_1 &amp; 1 \end{bmatrix}\mathbf{x}\end{split}\]</div>
+\begin{bmatrix}p_1^* &amp; -1 \\ -p_1 &amp; 1 \end{bmatrix}\begin{bmatrix}
+s(0^+)-s_p(0^+)\\
+\dot{s}(0^+)-\dot{s}_p(0^+)
+\end{bmatrix}\end{split}\]</div>
 <p>En utilisant le fait que <span class="math notranslate nohighlight">\(\textbf{x} \in \mathbb{R}^2\)</span>, il est alors possible d’établir que <span class="math notranslate nohighlight">\(\lambda_2 = \lambda_1^*\)</span></p>
 </section>
 </section>
@@ -474,15 +508,18 @@ s(0^+)-s_p(0^+)\\
               
               
                 <footer class="bd-footer-article">
-                  <!-- Previous / next buttons -->
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="analog_filter.html"
+       href="first_order.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Travail Collaboratif : Analog Filter</p>
+        <p class="prev-next-title">Analyse d’un Circuit de Premier Ordre</p>
       </div>
     </a>
     <a class="right-next"
@@ -494,7 +531,10 @@ s(0^+)-s_p(0^+)\\
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
+</div></div>
+  
 </div>
+
                 </footer>
               
             </div>
@@ -532,7 +572,7 @@ s(0^+)-s_p(0^+)\\
             
           </div>
           <footer class="bd-footer-content">
-            <div class="bd-footer-content__inner"></div>
+            
           </footer>
         
       </main>
@@ -540,8 +580,8 @@ s(0^+)-s_p(0^+)\\
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
 
   <footer class="bd-footer">
 <div class="bd-footer__inner bd-page-width">
@@ -559,7 +599,7 @@ s(0^+)-s_p(0^+)\\
       
         <div class="footer-item">
   <p class="sphinx-version">
-    Created using <a href="https://sphinx-doc.org/">Sphinx</a> 6.1.3.
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.3.
     <br/>
   </p>
 </div>
@@ -570,7 +610,7 @@ s(0^+)-s_p(0^+)\\
     <div class="footer-items__end">
       
         <div class="footer-item"><p class="theme-version">
-  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.1.
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.3.
 </p></div>
       
     </div>

@@ -1,5 +1,5 @@
-Cheatsheet
-==========
+Python
+======
 
 .. plot ::
     :context:
@@ -9,14 +9,14 @@ Cheatsheet
     import matplotlib.pyplot as plt
     from scipy.signal import lti, butter
     
-System Analysis
----------------
+Analyse de Systèmes 
+-------------------
 
 * Documentation: https://docs.scipy.org/doc/scipy/reference/signal.html#continuous-time-linear-systems
 
 
-System Creation
-+++++++++++++++
+Création d'un système
++++++++++++++++++++++
 
 .. math ::
 
@@ -54,8 +54,8 @@ Les pôles et zeros sont des attributs de l'objet :code:`lti`.
     plt.ylabel("Im (.)")
     plt.grid()
 
-Time Response
-+++++++++++++
+Response Temporelle 
++++++++++++++++++++
 
 .. plot::
     :context: close-figs
@@ -73,8 +73,8 @@ Time Response
 * impulse response: `sys.impulse()`
 * arbitrary response: `sys.output()`
 
-Frequency Response
-++++++++++++++++++
+Response Fréquentielle 
+++++++++++++++++++++++
 
 .. plot::
     :context: close-figs
@@ -96,8 +96,56 @@ Frequency Response
     plt.xlabel("w [rad/s]")
     plt.grid()
 
-Filter Design
--------------
+
+Analyse d'un signal 
+-------------------
+
+Création d'un signal audio 
+++++++++++++++++++++++++++
+
+.. code ::
+
+    import numpy as np
+    import IPython.display as ipd
+
+    Fs = 22050 # sample rate
+    t = np.arange(0, 1, 1/Fs)
+    x = 0.5*np.sin(2*np.pi*440*t)
+    ipd.Audio(x, rate=Fs)
+
+
+Chargement d'un signal audio
+++++++++++++++++++++++++++++
+
+* Documentation: https://docs.scipy.org/doc/scipy/reference/generated/scipy.io.wavfile.read.html
+
+.. code ::
+
+    from scipy.io import wavfile
+
+    Fs, data = wavfile.read("mon_fichier_audio.wav")
+
+
+
+
+
+
+Affichage du spectre
++++++++++++++++++++++
+
+* Documentation: https://matplotlib.org/stable/gallery/lines_bars_and_markers/spectrum_demo.html
+
+.. code ::
+
+    import matplotlib.pyplot as plt
+
+    ...
+
+    plt.magnitude_spectrum(data, Fs=Fs)
+
+
+Synthèse d'un filtre 
+--------------------
 
 * Documentation: https://docs.scipy.org/doc/scipy/reference/signal.html#matlab-style-iir-filter-design
 
@@ -115,8 +163,8 @@ Butterworth
     sys2 = lti(num, den)
 
 
-Plot Prototype
-++++++++++++++
+Affichage du Prototype
+++++++++++++++++++++++
 
 .. plot ::
     :context: close-figs

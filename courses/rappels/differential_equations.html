@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 
 
@@ -7,7 +6,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Rappels sur les Equations Differentielles &#8212; cheatsheet elec  documentation</title>
   
@@ -19,33 +18,33 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
-<link href="../../_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
 
   
-  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../../_static/plot_directive.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=177cf48d" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/sphinx_highlight.js"></script>
+    <script src="../../_static/documentation_options.js?v=8a448e45"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'courses/rappels/differential_equations';</script>
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Fonction de Transfert" href="../transfer_function.html" />
+    <link rel="next" title="Systèmes SLIT" href="../transfer_function.html" />
     <link rel="prev" title="Rappels d’Electronique" href="circuits_analysis.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -147,8 +146,15 @@
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../cheatsheet.html">
-                        Cheatsheet
+                      <a class="nav-link nav-internal" href="../../projects/index.html">
+                        Projects
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../cheatsheets/index.html">
+                        Cheatsheets
                       </a>
                     </li>
                 
@@ -159,13 +165,21 @@
                       </a>
                     </li>
                 
-
+            <div class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    More
+                </button>
+                <div class="dropdown-menu">
+                    
                     <li class="nav-item">
                       <a class="nav-link nav-internal" href="../../about.html">
                         About
                       </a>
                     </li>
                 
+                </div>
+            </div>
+            
   </ul>
 </nav></div>
       
@@ -274,8 +288,15 @@ document.write(`
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../cheatsheet.html">
-                        Cheatsheet
+                      <a class="nav-link nav-internal" href="../../projects/index.html">
+                        Projects
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../cheatsheets/index.html">
+                        Cheatsheets
                       </a>
                     </li>
                 
@@ -286,13 +307,21 @@ document.write(`
                       </a>
                     </li>
                 
-
+            <div class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    More
+                </button>
+                <div class="dropdown-menu">
+                    
                     <li class="nav-item">
                       <a class="nav-link nav-internal" href="../../about.html">
                         About
                       </a>
                     </li>
                 
+                </div>
+            </div>
+            
   </ul>
 </nav></div>
         
@@ -345,7 +374,7 @@ document.write(`
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Rappels sur les Equations Differentielles</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../transfer_function.html">Fonction de Transfert</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../transfer_function.html">Systèmes SLIT</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../first_order.html">Systèmes de Premier Ordre</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../second_order.html">Systèmes de Second Ordre</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../filter_synthesis.html">Synthèse des Filtres d’ordre N</a></li>
@@ -412,9 +441,9 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section id="rappels-sur-les-equations-differentielles">
-<h1>Rappels sur les Equations Differentielles<a class="headerlink" href="#rappels-sur-les-equations-differentielles" title="Permalink to this heading">#</a></h1>
+<h1>Rappels sur les Equations Differentielles<a class="headerlink" href="#rappels-sur-les-equations-differentielles" title="Link to this heading">#</a></h1>
 <section id="modele-mathematique">
-<h2>Modèle Mathématique<a class="headerlink" href="#modele-mathematique" title="Permalink to this heading">#</a></h2>
+<h2>Modèle Mathématique<a class="headerlink" href="#modele-mathematique" title="Link to this heading">#</a></h2>
 <p>Une équation différentielle linéaire à coefficients constants d’ordre n s’exprime sous la forme</p>
 <div class="math notranslate nohighlight">
 \[a_n \frac{d^n s(t)}{dt^n} + \cdots+a_1 \frac{d s(t)}{dt}  +a_0 s(t) =b_m \frac{d^m e(t)}{dt^m} +\cdots+b_0 e(t)\]</div>
@@ -424,7 +453,7 @@ document.write(`
 </ul>
 </section>
 <section id="expression-de-la-solution">
-<h2>Expression de la Solution<a class="headerlink" href="#expression-de-la-solution" title="Permalink to this heading">#</a></h2>
+<h2>Expression de la Solution<a class="headerlink" href="#expression-de-la-solution" title="Link to this heading">#</a></h2>
 <p>La solution complète de l’équation différentielle s’exprime sous la forme :</p>
 <div class="math notranslate nohighlight">
 \[s(t)=s_l(t)+s_p(t)\]</div>
@@ -433,7 +462,7 @@ document.write(`
 <li><p><span class="math notranslate nohighlight">\(s_p(t)\)</span>: solution particulière (régime forcé).</p></li>
 </ul>
 <section id="solution-libre">
-<h3>Solution libre<a class="headerlink" href="#solution-libre" title="Permalink to this heading">#</a></h3>
+<h3>Solution libre<a class="headerlink" href="#solution-libre" title="Link to this heading">#</a></h3>
 <p>Le terme <span class="math notranslate nohighlight">\(s_l(t)\)</span> désigne la solution libre de l’équation sans second membre définie par :</p>
 <div class="math notranslate nohighlight">
 \[a_n \frac{d^n s(t)}{dt^n} + \cdots+a_1 \frac{d s(t)}{dt}  +a_0 s(t) =0\]</div>
@@ -447,21 +476,22 @@ document.write(`
 </ul>
 </section>
 <section id="solution-particuliere">
-<h3>Solution particulière<a class="headerlink" href="#solution-particuliere" title="Permalink to this heading">#</a></h3>
+<h3>Solution particulière<a class="headerlink" href="#solution-particuliere" title="Link to this heading">#</a></h3>
 <p>Le terme <span class="math notranslate nohighlight">\(s_p(t)\)</span> désigne une solution particulière de l’équation avec second membre. Il n’y a pas d’expression générale
-permettant de déterminer <span class="math notranslate nohighlight">\(s_p(t)\)</span> quelque soit <span class="math notranslate nohighlight">\(e(t)\)</span>. Le plus souvent, la solution particulière possède la même “forme”
+permettant de déterminer <span class="math notranslate nohighlight">\(s_p(t)\)</span> quelque soit <span class="math notranslate nohighlight">\(e(t)\)</span>. Pour des entrées simples (polynômes, exponentiels, …), il est
+possible d’utiliser la <em>méthode des coefficients indéterminés</em>. Cette méthode exploite le fait que la solution particulière possède la même “forme”
 que <span class="math notranslate nohighlight">\(e(t)\)</span>.</p>
 <p>Par exemple,</p>
 <ul class="simple">
-<li><p>Si <span class="math notranslate nohighlight">\(e(t)=\alpha\)</span> est une constante, <span class="math notranslate nohighlight">\(s_p(t)=\beta\)</span> est une constante,</p></li>
+<li><p>Si <span class="math notranslate nohighlight">\(e(t)=\alpha\)</span> est une constante, <span class="math notranslate nohighlight">\(s_p(t)=\beta\)</span> est un coefficient constant,</p></li>
 <li><p>Si <span class="math notranslate nohighlight">\(e(t)\)</span> est un polynôme de degré <span class="math notranslate nohighlight">\(Q\)</span>, <span class="math notranslate nohighlight">\(s_p(t)\)</span> est un polynôme de degré <span class="math notranslate nohighlight">\(Q\)</span> (avec des coefficients différents),</p></li>
 <li><p>Si <span class="math notranslate nohighlight">\(e(t)\)</span> est une sinusoïde de pulsation <span class="math notranslate nohighlight">\(\omega\)</span>, <span class="math notranslate nohighlight">\(s_p(t)\)</span> est une sinusoïde de pulsation <span class="math notranslate nohighlight">\(\omega\)</span> (avec une amplitude et une phase différentes).</p></li>
 </ul>
-<p>Les paramètres de la solution particulière s’obtiennent par identification en remplaçant <span class="math notranslate nohighlight">\(s(t)\)</span> par <span class="math notranslate nohighlight">\(s_p(t)\)</span> dans l’équation différentielle.</p>
+<p>Les coefficients de la solution particulière s’obtiennent par identification en remplaçant <span class="math notranslate nohighlight">\(s(t)\)</span> par <span class="math notranslate nohighlight">\(s_p(t)\)</span> dans l’équation différentielle.</p>
 </section>
 </section>
 <section id="exemple">
-<h2>Exemple<a class="headerlink" href="#exemple" title="Permalink to this heading">#</a></h2>
+<h2>Exemple<a class="headerlink" href="#exemple" title="Link to this heading">#</a></h2>
 <p>Considérons l’équation différentielle suivante de premier ordre</p>
 <div class="math notranslate nohighlight">
 \[\tau \frac{d s(t)}{dt} + s(t)= Ku(t)\]</div>
@@ -471,13 +501,12 @@ que <span class="math notranslate nohighlight">\(e(t)\)</span>.</p>
 \[s(t)=s_l(t)+s_p(t)\]</div>
 <ul class="simple">
 <li><p>Solution libre: <span class="math notranslate nohighlight">\(s_l(t)=\lambda_1 e^{p_1t}\)</span> avec <span class="math notranslate nohighlight">\(\tau p_1+1=0 \Rightarrow p_1=-\frac{1}{\tau}\)</span>.</p></li>
-<li><p>Solution particulière: <span class="math notranslate nohighlight">\(s_p(t)=\beta\)</span> avec <span class="math notranslate nohighlight">\(\tau \times 0 +\beta = K\times 1 \Rightarrow \beta=K\)</span>.</p></li>
+<li><p>Solution particulière [méthode des coefficients indéterminés]: <span class="math notranslate nohighlight">\(s_p(t)=\beta\)</span>. En remplaçant <span class="math notranslate nohighlight">\(s(t)\)</span> par <span class="math notranslate nohighlight">\(s_p(t)\)</span> dans l’équation différentielle, nous trouvons <span class="math notranslate nohighlight">\(\tau \times 0 +\beta = K\times 1 \Rightarrow \beta=K\)</span>.</p></li>
 </ul>
 <p>La solution complète s’exprime alors sous la forme :</p>
 <div class="math notranslate nohighlight">
 \[s(t)=\lambda_1 e^{-\frac{1}{\tau} t} + K\]</div>
-<p>Pour déterminer la constante d’intégration <span class="math notranslate nohighlight">\(\lambda_1\)</span>, il est nécessaire d’exploiter une condition initiale. En utilisant le fait
-que <span class="math notranslate nohighlight">\(s(0)=0\)</span>, nous obtenons <span class="math notranslate nohighlight">\(\lambda_1  + K = 0 \Rightarrow \lambda_1=-K\)</span>. Pour <span class="math notranslate nohighlight">\(t\ge 0\)</span>, nous obtenons finalement l’expression :</p>
+<p>Pour déterminer la constante d’intégration <span class="math notranslate nohighlight">\(\lambda_1\)</span>, il est nécessaire d’exploiter une condition initiale. A titre d’exmple, en imposant la condition initiale <span class="math notranslate nohighlight">\(s(0)=0\)</span>, nous obtenons <span class="math notranslate nohighlight">\(\lambda_1  + K = 0 \Rightarrow \lambda_1=-K\)</span>. Pour <span class="math notranslate nohighlight">\(t\ge 0\)</span>, nous obtenons finalement l’expression :</p>
 <div class="math notranslate nohighlight">
 \[s(t) = K(1-e^{-\frac{1}{\tau}t})\]</div>
 </section>
@@ -489,7 +518,10 @@ que <span class="math notranslate nohighlight">\(s(0)=0\)</span>, nous obtenons 
               
               
                 <footer class="bd-footer-article">
-                  <!-- Previous / next buttons -->
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="circuits_analysis.html"
@@ -505,11 +537,14 @@ que <span class="math notranslate nohighlight">\(s(0)=0\)</span>, nous obtenons 
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Fonction de Transfert</p>
+        <p class="prev-next-title">Systèmes SLIT</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
+</div></div>
+  
 </div>
+
                 </footer>
               
             </div>
@@ -547,7 +582,7 @@ que <span class="math notranslate nohighlight">\(s(0)=0\)</span>, nous obtenons 
             
           </div>
           <footer class="bd-footer-content">
-            <div class="bd-footer-content__inner"></div>
+            
           </footer>
         
       </main>
@@ -555,8 +590,8 @@ que <span class="math notranslate nohighlight">\(s(0)=0\)</span>, nous obtenons 
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d"></script>
-<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d"></script>
+  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
 
   <footer class="bd-footer">
 <div class="bd-footer__inner bd-page-width">
@@ -574,7 +609,7 @@ que <span class="math notranslate nohighlight">\(s(0)=0\)</span>, nous obtenons 
       
         <div class="footer-item">
   <p class="sphinx-version">
-    Created using <a href="https://sphinx-doc.org/">Sphinx</a> 6.1.3.
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.3.
     <br/>
   </p>
 </div>
@@ -585,7 +620,7 @@ que <span class="math notranslate nohighlight">\(s(0)=0\)</span>, nous obtenons 
     <div class="footer-items__end">
       
         <div class="footer-item"><p class="theme-version">
-  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.1.
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.3.
 </p></div>
       
     </div>

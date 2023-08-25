@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 
 
@@ -7,7 +6,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Analyse d’un Circuit de Premier Ordre &#8212; cheatsheet elec  documentation</title>
   
@@ -19,33 +18,33 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../_static/plot_directive.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=177cf48d" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/documentation_options.js?v=8a448e45"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'tutorials/first_order';</script>
     <link rel="author" title="About these documents" href="../about.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Travail Collaboratif : Analog Filter" href="analog_filter.html" />
+    <link rel="next" title="Détermination des constantes d’intégration" href="constant_determination.html" />
     <link rel="prev" title="Superposition de courbes en Python" href="curve_overlay.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -147,8 +146,15 @@
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../cheatsheet.html">
-                        Cheatsheet
+                      <a class="nav-link nav-internal" href="../projects/index.html">
+                        Projects
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../cheatsheets/index.html">
+                        Cheatsheets
                       </a>
                     </li>
                 
@@ -159,13 +165,21 @@
                       </a>
                     </li>
                 
-
+            <div class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    More
+                </button>
+                <div class="dropdown-menu">
+                    
                     <li class="nav-item">
                       <a class="nav-link nav-internal" href="../about.html">
                         About
                       </a>
                     </li>
                 
+                </div>
+            </div>
+            
   </ul>
 </nav></div>
       
@@ -274,8 +288,15 @@ document.write(`
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../cheatsheet.html">
-                        Cheatsheet
+                      <a class="nav-link nav-internal" href="../projects/index.html">
+                        Projects
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../cheatsheets/index.html">
+                        Cheatsheets
                       </a>
                     </li>
                 
@@ -286,13 +307,21 @@ document.write(`
                       </a>
                     </li>
                 
-
+            <div class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    More
+                </button>
+                <div class="dropdown-menu">
+                    
                     <li class="nav-item">
                       <a class="nav-link nav-internal" href="../about.html">
                         About
                       </a>
                     </li>
                 
+                </div>
+            </div>
+            
   </ul>
 </nav></div>
         
@@ -342,7 +371,6 @@ document.write(`
 <li class="toctree-l1"><a class="reference internal" href="python.html">Utilisation de Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="curve_overlay.html">Superposition de courbes en Python</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Analyse d’un Circuit de Premier Ordre</a></li>
-<li class="toctree-l1"><a class="reference internal" href="analog_filter.html">Travail Collaboratif : Analog Filter</a></li>
 <li class="toctree-l1"><a class="reference internal" href="constant_determination.html">Détermination des constantes d’intégration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="initial_values.html">Expression de la valeur initiale</a></li>
 <li class="toctree-l1"><a class="reference internal" href="identification_time.html">Identification à partir de la réponse Indicielle</a></li>
@@ -405,17 +433,17 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section id="analyse-d-un-circuit-de-premier-ordre">
-<h1>Analyse d’un Circuit de Premier Ordre<a class="headerlink" href="#analyse-d-un-circuit-de-premier-ordre" title="Permalink to this heading">#</a></h1>
+<h1>Analyse d’un Circuit de Premier Ordre<a class="headerlink" href="#analyse-d-un-circuit-de-premier-ordre" title="Link to this heading">#</a></h1>
 <p>Dans ce tutorial, nous allons réaliser une analyse complète d’un circuit.
 Le circuit considéré est le suivant :</p>
 <figure class="align-center" id="id4">
 <a class="reference internal image-reference" href="../_images/RC_LP1.svg"><img alt="RC LP" src="../_images/RC_LP1.svg" width="300" /></a>
 <figcaption>
-<p><span class="caption-text">RC LP Filter</span><a class="headerlink" href="#id4" title="Permalink to this image">#</a></p>
+<p><span class="caption-text">RC LP Filter</span><a class="headerlink" href="#id4" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <section id="fonction-de-transfert">
-<h2>Fonction de Transfert<a class="headerlink" href="#fonction-de-transfert" title="Permalink to this heading">#</a></h2>
+<h2>Fonction de Transfert<a class="headerlink" href="#fonction-de-transfert" title="Link to this heading">#</a></h2>
 <p>La fonction de transfert du circuit s’obtient en utilisant le pont diviseur de tension.
 En notant <span class="math notranslate nohighlight">\(s(t)\)</span> la sortie <span class="math notranslate nohighlight">\(V_{out}(t)\)</span> et <span class="math notranslate nohighlight">\(e(t)\)</span> l’entrée <span class="math notranslate nohighlight">\(V_{in}(t)\)</span>, nous obtenons dans le domaine de Laplace:</p>
 <div class="math notranslate nohighlight">
@@ -428,12 +456,12 @@ En notant <span class="math notranslate nohighlight">\(s(t)\)</span> la sortie <
 <p>Pour specifier cette fonction de transfert en Python, nous allons utiliser la module <cite>scipy</cite>.</p>
 </section>
 <section id="reponse-temporelle">
-<h2>Réponse Temporelle<a class="headerlink" href="#reponse-temporelle" title="Permalink to this heading">#</a></h2>
+<h2>Réponse Temporelle<a class="headerlink" href="#reponse-temporelle" title="Link to this heading">#</a></h2>
 <p>Le système peut être décrit dans le domaine temporelle par l’équation suivante :</p>
 <div class="math notranslate nohighlight">
 \[RC \frac{d s(t)}{dt} + s(t) = e(t)\]</div>
 <section id="reponse-indicielle">
-<h3>Réponse Indicielle<a class="headerlink" href="#reponse-indicielle" title="Permalink to this heading">#</a></h3>
+<h3>Réponse Indicielle<a class="headerlink" href="#reponse-indicielle" title="Link to this heading">#</a></h3>
 <p>Nous allons nous intéresser à la sortie lorsque l’entrée est un échelon d’amplitude E</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}e(t) = \left\{\begin{array}{cc}E&amp;\text{ si } t\ge 0\\
@@ -441,7 +469,7 @@ En notant <span class="math notranslate nohighlight">\(s(t)\)</span> la sortie <
 \end{array}\right.\end{split}\]</div>
 <p>La sortie du système est supposée initialement nulle c-a-d  <span class="math notranslate nohighlight">\(s(0^-)=0\)</span>.</p>
 <section id="expression">
-<h4>Expression<a class="headerlink" href="#expression" title="Permalink to this heading">#</a></h4>
+<h4>Expression<a class="headerlink" href="#expression" title="Link to this heading">#</a></h4>
 <ul class="simple">
 <li><p>Equation caractéristique :</p></li>
 </ul>
@@ -478,7 +506,7 @@ nous obtenons :</p>
 \[s(t) = E\left(1-e^{-\frac{1}{RC} t}\right)\]</div>
 </section>
 <section id="valeurs-remarquables">
-<h4>Valeurs Remarquables<a class="headerlink" href="#valeurs-remarquables" title="Permalink to this heading">#</a></h4>
+<h4>Valeurs Remarquables<a class="headerlink" href="#valeurs-remarquables" title="Link to this heading">#</a></h4>
 <ul class="simple">
 <li><p>Valeur initiale: <span class="math notranslate nohighlight">\(s(0^+)=0\)</span>,</p></li>
 <li><p>Valeur finale: <span class="math notranslate nohighlight">\(s(\infty)=E\)</span>,</p></li>
@@ -489,7 +517,7 @@ nous obtenons :</p>
 </section>
 </section>
 <section id="simulation-python">
-<h3>Simulation Python<a class="headerlink" href="#simulation-python" title="Permalink to this heading">#</a></h3>
+<h3>Simulation Python<a class="headerlink" href="#simulation-python" title="Link to this heading">#</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">from</span> <span class="nn">scipy.signal</span> <span class="kn">import</span> <span class="n">lti</span><span class="p">,</span> <span class="n">step</span>
@@ -522,9 +550,9 @@ nous obtenons :</p>
 </section>
 </section>
 <section id="reponse-frequentielle">
-<h2>Réponse Fréquentielle<a class="headerlink" href="#reponse-frequentielle" title="Permalink to this heading">#</a></h2>
+<h2>Réponse Fréquentielle<a class="headerlink" href="#reponse-frequentielle" title="Link to this heading">#</a></h2>
 <section id="id1">
-<h3>Expression<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
+<h3>Expression<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
 <p>La réponse fréquentielle s’obtient en évaluant la fonction de transfert en <span class="math notranslate nohighlight">\(p=j\omega\)</span>. Mathématiquement, nous obtenons :</p>
 <div class="math notranslate nohighlight">
 \[H(j\omega) = \frac{1}{jRC\omega+1}\]</div>
@@ -539,7 +567,7 @@ nous obtenons :</p>
 <div class="math notranslate nohighlight">
 \[\arg[H(j\omega)] = -\arctan\left(RC\omega\right)\]</div>
 <section id="id2">
-<h4>Valeurs Remarquables<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h4>
+<h4>Valeurs Remarquables<a class="headerlink" href="#id2" title="Link to this heading">#</a></h4>
 <ul class="simple">
 <li><p>Basse-Fréquence : Lorsque <span class="math notranslate nohighlight">\(\omega\to 0\)</span>,</p></li>
 </ul>
@@ -561,7 +589,7 @@ nous obtenons :</p>
 </section>
 </section>
 <section id="id3">
-<h3>Simulation Python<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
+<h3>Simulation Python<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">w</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logspace</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
 <span class="n">wc</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">R</span><span class="o">*</span><span class="n">C</span><span class="p">)</span>
 <span class="n">w</span><span class="p">,</span> <span class="n">Hjw</span> <span class="o">=</span> <span class="n">H</span><span class="o">.</span><span class="n">freqresp</span><span class="p">(</span><span class="n">w</span><span class="o">=</span><span class="n">w</span><span class="p">)</span>
@@ -601,7 +629,10 @@ nous obtenons :</p>
               
               
                 <footer class="bd-footer-article">
-                  <!-- Previous / next buttons -->
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="curve_overlay.html"
@@ -613,15 +644,18 @@ nous obtenons :</p>
       </div>
     </a>
     <a class="right-next"
-       href="analog_filter.html"
+       href="constant_determination.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Travail Collaboratif : Analog Filter</p>
+        <p class="prev-next-title">Détermination des constantes d’intégration</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
+</div></div>
+  
 </div>
+
                 </footer>
               
             </div>
@@ -670,7 +704,7 @@ nous obtenons :</p>
             
           </div>
           <footer class="bd-footer-content">
-            <div class="bd-footer-content__inner"></div>
+            
           </footer>
         
       </main>
@@ -678,8 +712,8 @@ nous obtenons :</p>
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
 
   <footer class="bd-footer">
 <div class="bd-footer__inner bd-page-width">
@@ -697,7 +731,7 @@ nous obtenons :</p>
       
         <div class="footer-item">
   <p class="sphinx-version">
-    Created using <a href="https://sphinx-doc.org/">Sphinx</a> 6.1.3.
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.3.
     <br/>
   </p>
 </div>
@@ -708,7 +742,7 @@ nous obtenons :</p>
     <div class="footer-items__end">
       
         <div class="footer-item"><p class="theme-version">
-  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.1.
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.3.
 </p></div>
       
     </div>

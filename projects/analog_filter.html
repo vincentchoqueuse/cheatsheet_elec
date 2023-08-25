@@ -1,0 +1,928 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-theme="light">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Travail Collaboratif : Analog Filter &#8212; cheatsheet elec  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../_static/plot_directive.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=177cf48d" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script src="../_static/documentation_options.js?v=8a448e45"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'projects/analog_filter';</script>
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Projet: Débruitage de Vuvuzela" href="vuvuzela.html" />
+    <link rel="prev" title="Projects" href="index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="light">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  <div class="navbar-header-items__start">
+    
+      <div class="navbar-item">
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+    
+    
+    
+    <img src="../_static/logo.svg" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/logo.svg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../courses/index.html">
+                        Cours
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tutorials/index.html">
+                        Tutorials
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="index.html">
+                        Projects
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../cheatsheets/index.html">
+                        Cheatsheets
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../links.html">
+                        Links
+                      </a>
+                    </li>
+                
+            <div class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    More
+                </button>
+                <div class="dropdown-menu">
+                    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../about.html">
+                        About
+                      </a>
+                    </li>
+                
+                </div>
+            </div>
+            
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+        </div>
+      
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/vincentchoqueuse/cheatsheet_elec" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+    </div>
+  
+
+  
+    <label class="sidebar-toggle secondary-toggle" for="__secondary">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../courses/index.html">
+                        Cours
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tutorials/index.html">
+                        Tutorials
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="index.html">
+                        Projects
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../cheatsheets/index.html">
+                        Cheatsheets
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../links.html">
+                        Links
+                      </a>
+                    </li>
+                
+            <div class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    More
+                </button>
+                <div class="dropdown-menu">
+                    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../about.html">
+                        About
+                      </a>
+                    </li>
+                
+                </div>
+            </div>
+            
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/vincentchoqueuse/cheatsheet_elec" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item"><nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Travail Collaboratif : Analog Filter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vuvuzela.html">Projet: Débruitage de Vuvuzela</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumbs">
+  <ul class="bd-breadcrumbs" role="navigation" aria-label="Breadcrumb">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Projects</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">Travail Collaboratif : Analog Filter</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="travail-collaboratif-analog-filter">
+<h1>Travail Collaboratif : Analog Filter<a class="headerlink" href="#travail-collaboratif-analog-filter" title="Link to this heading">#</a></h1>
+<section id="description-du-travail">
+<h2>Description du travail<a class="headerlink" href="#description-du-travail" title="Link to this heading">#</a></h2>
+<section id="objectifs">
+<h3>Objectifs<a class="headerlink" href="#objectifs" title="Link to this heading">#</a></h3>
+<p>Dans ce travail, nous souhaitons développer des fonctions Python pour analyser des circuits d’ordre 2.
+Pour chaque filtre d’ordre 2, nous souhaitons traiter les problèmes suivants :</p>
+<ol class="arabic simple">
+<li><p>Calcul de la fonction de transfert, puis écriture sous forme normalisée,</p></li>
+<li><p>Implémentation d’une fonction <code class="code docutils literal notranslate"><span class="pre">lti</span></code> permettant d’obtenir la fonction de transfert en Python à partir des composants,</p></li>
+<li><p>Implémentation d’une fonction <code class="code docutils literal notranslate"><span class="pre">get_params</span></code> permettant d’obtenir les paramètres de la fonction de transfert,</p></li>
+<li><p>Implémentation d’une fonction <code class="code docutils literal notranslate"><span class="pre">get_components</span></code> permettant d’obtenir les composants du filtre à partir des paramètres.</p></li>
+<li><p>Validation sur LTSpice</p></li>
+</ol>
+<section id="fonctions-de-transfert-normalisees">
+<h4>Fonctions de transfert normalisées<a class="headerlink" href="#fonctions-de-transfert-normalisees" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Passe-bas (LP)</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[H(p)=\frac{T_0}{\frac{1}{\omega_0^2}p^2+\frac{2m}{\omega_0}p+1}​\]</div>
+<ul class="simple">
+<li><p>Passe-bande (BP)</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[H(p)=\frac{\frac{2mT_m}{\omega_0}p}{\frac{1}{\omega_0^2}p^2+\frac{2m}{\omega_0}p+1}​\]</div>
+<ul class="simple">
+<li><p>Passe-haut (HP)</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[H(p)=\frac{\frac{T_{\infty}}{\omega_0^2}p^2}{\frac{1}{\omega_0^2}p^2+\frac{2m}{\omega_0}p+1}​\]</div>
+</section>
+</section>
+</section>
+<section id="liste-des-circuits">
+<h2>Liste des circuits<a class="headerlink" href="#liste-des-circuits" title="Link to this heading">#</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Chaque étudiant devra choisir un filtre passif et un filtre actif.</p>
+</div>
+<section id="circuits-rc-rc">
+<h3>Circuits RC/RC<a class="headerlink" href="#circuits-rc-rc" title="Link to this heading">#</a></h3>
+<figure class="align-center" id="id1">
+<a class="reference internal image-reference" href="../_images/RC_RC_LP.svg"><img alt="RC RC LP" src="../_images/RC_RC_LP.svg" width="300" /></a>
+<figcaption>
+<p><span class="caption-text">RC/RC LP Filter</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id2">
+<a class="reference internal image-reference" href="../_images/RC_RC_BP.svg"><img alt="RC RC BP" src="../_images/RC_RC_BP.svg" width="300" /></a>
+<figcaption>
+<p><span class="caption-text">RC/RC BP Filter</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id3">
+<a class="reference internal image-reference" href="../_images/RC_RC_HP.svg"><img alt="RC RC HP" src="../_images/RC_RC_HP.svg" width="300" /></a>
+<figcaption>
+<p><span class="caption-text">RC/RC HP Filter</span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="circuits-rlc">
+<h3>Circuits RLC<a class="headerlink" href="#circuits-rlc" title="Link to this heading">#</a></h3>
+<figure class="align-center" id="id4">
+<a class="reference internal image-reference" href="../_images/RLC_LP.svg"><img alt="RLC LP" src="../_images/RLC_LP.svg" width="300" /></a>
+<figcaption>
+<p><span class="caption-text">RLC LP Filter</span><a class="headerlink" href="#id4" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id5">
+<a class="reference internal image-reference" href="../_images/RLC_BP1.svg"><img alt="RLC BP1" src="../_images/RLC_BP1.svg" width="300" /></a>
+<figcaption>
+<p><span class="caption-text">RLC BP1 Filter</span><a class="headerlink" href="#id5" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id6">
+<a class="reference internal image-reference" href="../_images/RLC_BP2.svg"><img alt="RLC BP2" src="../_images/RLC_BP2.svg" width="300" /></a>
+<figcaption>
+<p><span class="caption-text">RLC BP2 Filter</span><a class="headerlink" href="#id6" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id7">
+<a class="reference internal image-reference" href="../_images/RLC_HP.svg"><img alt="RLC HP" src="../_images/RLC_HP.svg" width="300" /></a>
+<figcaption>
+<p><span class="caption-text">RLC HP Filter</span><a class="headerlink" href="#id7" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="circuits-sallen-key">
+<h3>Circuits Sallen Key<a class="headerlink" href="#circuits-sallen-key" title="Link to this heading">#</a></h3>
+<figure class="align-center" id="id8">
+<a class="reference internal image-reference" href="../_images/SK_LP.svg"><img alt="SK LP" src="../_images/SK_LP.svg" width="300" /></a>
+<figcaption>
+<p><span class="caption-text">SK LP Filter</span><a class="headerlink" href="#id8" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id9">
+<a class="reference internal image-reference" href="../_images/SK_HP.svg"><img alt="SK HP" src="../_images/SK_HP.svg" width="300" /></a>
+<figcaption>
+<p><span class="caption-text">SK HP Filter</span><a class="headerlink" href="#id9" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="circuits-mfb">
+<h3>Circuits MFB<a class="headerlink" href="#circuits-mfb" title="Link to this heading">#</a></h3>
+<figure class="align-center" id="id10">
+<a class="reference internal image-reference" href="../_images/MFB_LP.svg"><img alt="MFB LP" src="../_images/MFB_LP.svg" width="300" /></a>
+<figcaption>
+<p><span class="caption-text">MFB LP Filter</span><a class="headerlink" href="#id10" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id11">
+<a class="reference internal image-reference" href="../_images/MFB_BP.svg"><img alt="MFB BP" src="../_images/MFB_BP.svg" width="300" /></a>
+<figcaption>
+<p><span class="caption-text">MFB BP Filter</span><a class="headerlink" href="#id11" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id12">
+<a class="reference internal image-reference" href="../_images/MFB_BP2.svg"><img alt="MFB BP2" src="../_images/MFB_BP2.svg" width="300" /></a>
+<figcaption>
+<p><span class="caption-text">MFB BP2 Filter</span><a class="headerlink" href="#id12" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id13">
+<a class="reference internal image-reference" href="../_images/MFB_HP.svg"><img alt="MFB HP" src="../_images/MFB_HP.svg" width="300" /></a>
+<figcaption>
+<p><span class="caption-text">MFB HP Filter</span><a class="headerlink" href="#id13" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+<section id="exemple">
+<h2>Exemple<a class="headerlink" href="#exemple" title="Link to this heading">#</a></h2>
+<p>Dans cet exemple, nous allons considérer l’analyse complète du circuit suivant :</p>
+<figure class="align-center" id="id14">
+<a class="reference internal image-reference" href="../_images/RLC_BP3.svg"><img alt="Filter" src="../_images/RLC_BP3.svg" width="400" /></a>
+<figcaption>
+<p><span class="caption-text">RLC_BP3 Filter</span><a class="headerlink" href="#id14" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<section id="fonction-de-transfert">
+<h3>Fonction de transfert<a class="headerlink" href="#fonction-de-transfert" title="Link to this heading">#</a></h3>
+<p>En utilisant le pont diviseur de tension, nous obtenons</p>
+<div class="math notranslate nohighlight">
+\[V_s(p) = \frac{Z_{eq}}{R_2+Z_{eq}}V_e(p) \Rightarrow \frac{V_s(p)}{V_e(p)} = \frac{1}{1+\frac{R_2}{Z_{eq}}}\]</div>
+<p>où</p>
+<div class="math notranslate nohighlight">
+\[\frac{1}{Z_{eq}} = \frac{1}{Z_L}+\frac{1}{Z_{R_1}}+\frac{1}{Z_c}=\frac{1}{Lp}+\frac{1}{R_1}+Cp\]</div>
+<p>Il en vient que :</p>
+<div class="math notranslate nohighlight">
+\[H(p)= \frac{\frac{L}{R_2}p}{1+L(\frac{R_1+R_2}{R_1R_2})p+LCp^2}\]</div>
+</section>
+<section id="implementation">
+<h3>Implémentation<a class="headerlink" href="#implementation" title="Link to this heading">#</a></h3>
+<section id="fonction-lti-rlc-bp3">
+<h4>Fonction <cite>lti_RLC_BP3</cite><a class="headerlink" href="#fonction-lti-rlc-bp3" title="Link to this heading">#</a></h4>
+<p>Pour implémenter la fonction de transfert, nous pouvons utiliser la fonction <cite>lti</cite> du module <cite>scipy</cite>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">scipy.signal</span> <span class="kn">import</span> <span class="n">lti</span>
+
+
+<span class="k">def</span> <span class="nf">lti_rlc_bp3</span><span class="p">(</span><span class="n">L</span><span class="p">,</span> <span class="n">C</span><span class="p">,</span> <span class="n">R1</span><span class="p">,</span> <span class="n">R2</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Create the transfer function for the RLC_BP3 filter.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    L : float</span>
+<span class="sd">    C : float</span>
+<span class="sd">    R1 : float</span>
+<span class="sd">    R2 : float</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    system : an instance of the LTI class</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">num</span> <span class="o">=</span> <span class="p">[</span><span class="n">L</span><span class="o">/</span><span class="n">R2</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">den</span> <span class="o">=</span> <span class="p">[</span><span class="n">L</span><span class="o">*</span><span class="n">C</span><span class="p">,</span> <span class="n">L</span><span class="o">*</span><span class="p">(</span><span class="n">R1</span><span class="o">+</span><span class="n">R2</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">R1</span><span class="o">*</span><span class="n">R2</span><span class="p">),</span> <span class="mi">1</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">lti</span><span class="p">(</span><span class="n">num</span><span class="p">,</span> <span class="n">den</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="fonction-get-params">
+<h4>Fonction <cite>get_params</cite><a class="headerlink" href="#fonction-get-params" title="Link to this heading">#</a></h4>
+<p>En identifiant la fonction de transfert avec la fonction de transfert normalisée d’un passe-bande, nous obtenons :</p>
+<div class="math notranslate nohighlight">
+\[H(p)=\frac{\frac{2mT_m}{\omega_0}p}{\frac{1}{\omega_0^2}p^2+\frac{2m}{\omega_0}p+1}​\]</div>
+<p>avec</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}w_0 &amp;= \frac{1}{\sqrt{LC}}\\
+m &amp;= \frac{1}{2}\left(\frac{R_1+R_2}{R_1R_2}\right)\sqrt{\frac{L}{C}}\\
+T_{m} &amp;= \frac {R_1} {R_1 + R_2}\end{split}\]</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_params</span><span class="p">(</span><span class="n">L</span><span class="p">,</span> <span class="n">C</span><span class="p">,</span> <span class="n">R1</span><span class="p">,</span> <span class="n">R2</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Compute the maximum gain, the angular frequency and the damping factor of the RLC_BP3 filter.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    L : float</span>
+<span class="sd">    C : float</span>
+<span class="sd">    R1 : float</span>
+<span class="sd">    R2 : float</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    Type: string</span>
+<span class="sd">    Tm : float</span>
+<span class="sd">    w0 : float</span>
+<span class="sd">    m : float</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">Tm</span> <span class="o">=</span> <span class="n">R1</span> <span class="o">/</span> <span class="p">(</span><span class="n">R1</span><span class="o">+</span><span class="n">R2</span><span class="p">)</span>
+    <span class="n">w0</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">L</span><span class="o">*</span><span class="n">C</span><span class="p">)</span>
+    <span class="n">m</span> <span class="o">=</span> <span class="mf">0.5</span><span class="o">*</span><span class="p">((</span><span class="n">R1</span><span class="o">+</span><span class="n">R2</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">R1</span><span class="o">*</span><span class="n">R2</span><span class="p">))</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">L</span><span class="o">/</span><span class="n">C</span><span class="p">)</span>
+    <span class="k">return</span> <span class="s2">&quot;BP&quot;</span><span class="p">,</span> <span class="n">Tm</span><span class="p">,</span> <span class="n">w0</span><span class="p">,</span> <span class="n">m</span>
+</pre></div>
+</div>
+</section>
+<section id="fonction-get-components">
+<h4>Fonction <cite>get_components</cite><a class="headerlink" href="#fonction-get-components" title="Link to this heading">#</a></h4>
+<p>Comme nous avons 3 équations et 4 composants, nous devons fixer un composant.
+En fixant la bobine L, nous obtenons alors les équations suivantes :</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}C &amp;=\frac{1}{L \omega_0^2}\\
+R_2 &amp;=\frac{1}{2 m T_{m}}\sqrt{\frac{L}{C}}\\
+R_1 &amp;= \frac{R_2 T_{m}}{1 - T_{m}}\\\end{split}\]</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_components</span><span class="p">(</span><span class="n">Tm</span><span class="p">,</span> <span class="n">w0</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">L</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Returns the circuit components from the filter parameters.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    Tm : float</span>
+<span class="sd">    w0 : float</span>
+<span class="sd">    m : float</span>
+<span class="sd">    L : float</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    C : float</span>
+<span class="sd">    R1 : float</span>
+<span class="sd">    R2 : float</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">C</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="n">L</span><span class="o">*</span><span class="p">(</span><span class="n">w0</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span>
+    <span class="n">R2</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">m</span><span class="o">*</span><span class="n">Tm</span><span class="p">))</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">L</span><span class="o">/</span><span class="n">C</span><span class="p">)</span>
+    <span class="n">R1</span> <span class="o">=</span> <span class="p">(</span><span class="n">R2</span><span class="o">*</span><span class="n">Tm</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">Tm</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">C</span><span class="p">,</span> <span class="n">R1</span><span class="p">,</span> <span class="n">R2</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="approche-objet">
+<h3>Approche Objet<a class="headerlink" href="#approche-objet" title="Link to this heading">#</a></h3>
+<p>Au lieu de définir des fonctions, il est d’adopter une approche objet afin de gagner en organisation, clarté et modularité. Il est également
+possible d’implémenter des tests unitaires pour vérifier le bon comportement de notre classe.</p>
+<section id="classe-rlc-bp3-filter">
+<h4>Classe <cite>RLC_BP3_Filter</cite><a class="headerlink" href="#classe-rlc-bp3-filter" title="Link to this heading">#</a></h4>
+<p>Pour implémenter notre classe, nous allons créer le fichier <cite>filter_RLC.py</cite> contenant le code suivant.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> 
+<span class="linenos"> 2</span><span class="kn">from</span> <span class="nn">scipy.signal</span> <span class="kn">import</span> <span class="n">lti</span>
+<span class="linenos"> 3</span>
+<span class="linenos"> 4</span>
+<span class="linenos"> 5</span><span class="k">class</span> <span class="nc">RLC_BP3_Filter</span><span class="p">():</span>
+<span class="linenos"> 6</span>
+<span class="linenos"> 7</span>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">R1</span><span class="p">,</span> <span class="n">R2</span><span class="p">,</span> <span class="n">C</span><span class="p">,</span> <span class="n">L</span><span class="p">):</span>
+<span class="linenos"> 8</span><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos"> 9</span><span class="sd">        Constructor</span>
+<span class="linenos">10</span><span class="sd">        &quot;&quot;&quot;</span>
+<span class="linenos">11</span>        <span class="bp">self</span><span class="o">.</span><span class="n">R1</span> <span class="o">=</span> <span class="n">R1</span> 
+<span class="linenos">12</span>        <span class="bp">self</span><span class="o">.</span><span class="n">R2</span> <span class="o">=</span> <span class="n">R2</span> 
+<span class="linenos">13</span>        <span class="bp">self</span><span class="o">.</span><span class="n">C</span> <span class="o">=</span> <span class="n">C</span> 
+<span class="linenos">14</span>        <span class="bp">self</span><span class="o">.</span><span class="n">L</span> <span class="o">=</span> <span class="n">L</span>
+<span class="linenos">15</span>
+<span class="linenos">16</span>    <span class="k">def</span> <span class="nf">lti</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="linenos">17</span><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos">18</span><span class="sd">        Create the transfer function for the filter.</span>
+<span class="linenos">19</span>
+<span class="linenos">20</span><span class="sd">        Returns</span>
+<span class="linenos">21</span><span class="sd">        -------</span>
+<span class="linenos">22</span><span class="sd">        system : an instance of the LTI class </span>
+<span class="linenos">23</span><span class="sd">        &quot;&quot;&quot;</span>
+<span class="linenos">24</span>        <span class="n">num</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">L</span><span class="o">/</span><span class="bp">self</span><span class="o">.</span><span class="n">R2</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
+<span class="linenos">25</span>        <span class="n">den</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">L</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">C</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">L</span><span class="o">*</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">R1</span><span class="o">+</span><span class="bp">self</span><span class="o">.</span><span class="n">R2</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">R1</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">R2</span><span class="p">),</span> <span class="mi">1</span><span class="p">]</span>
+<span class="linenos">26</span>        <span class="k">return</span> <span class="n">lti</span><span class="p">(</span><span class="n">num</span><span class="p">,</span> <span class="n">den</span><span class="p">)</span>    
+<span class="linenos">27</span>
+<span class="linenos">28</span>    <span class="k">def</span> <span class="nf">get_params</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="linenos">29</span><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos">30</span><span class="sd">        Compute the maximum gain, the angular frequency and the damping factor of the filter.</span>
+<span class="linenos">31</span><span class="sd">        </span>
+<span class="linenos">32</span><span class="sd">        Returns</span>
+<span class="linenos">33</span><span class="sd">        -------</span>
+<span class="linenos">34</span><span class="sd">        Tm : float </span>
+<span class="linenos">35</span><span class="sd">        w0 : float </span>
+<span class="linenos">36</span><span class="sd">        m : float</span>
+<span class="linenos">37</span><span class="sd">        &quot;&quot;&quot;</span>
+<span class="linenos">38</span>        <span class="n">Tm</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">R1</span> <span class="o">/</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">R1</span><span class="o">+</span><span class="bp">self</span><span class="o">.</span><span class="n">R2</span><span class="p">)</span>
+<span class="linenos">39</span>        <span class="n">w0</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">L</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">C</span><span class="p">)</span>
+<span class="linenos">40</span>        <span class="n">m</span> <span class="o">=</span> <span class="mf">0.5</span><span class="o">*</span><span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">R1</span><span class="o">+</span><span class="bp">self</span><span class="o">.</span><span class="n">R2</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">R1</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">R2</span><span class="p">))</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">L</span><span class="o">/</span><span class="bp">self</span><span class="o">.</span><span class="n">C</span><span class="p">)</span>
+<span class="linenos">41</span>        <span class="k">return</span> <span class="s2">&quot;BP&quot;</span><span class="p">,</span> <span class="n">Tm</span><span class="p">,</span> <span class="n">w0</span><span class="p">,</span> <span class="n">m</span>
+<span class="linenos">42</span>    
+<span class="linenos">43</span>    <span class="k">def</span> <span class="nf">set_components</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">Tm</span><span class="p">,</span> <span class="n">w0</span><span class="p">,</span> <span class="n">m</span><span class="p">):</span>
+<span class="linenos">44</span><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos">45</span><span class="sd">        Set the circuit components C, R1 et R2 from the filter parameters and the attribute L</span>
+<span class="linenos">46</span>
+<span class="linenos">47</span><span class="sd">        Parameters</span>
+<span class="linenos">48</span><span class="sd">        ----------</span>
+<span class="linenos">49</span><span class="sd">        Tm : float </span>
+<span class="linenos">50</span><span class="sd">        w0 : float </span>
+<span class="linenos">51</span><span class="sd">        m : float</span>
+<span class="linenos">52</span><span class="sd">        &quot;&quot;&quot;</span>
+<span class="linenos">53</span>
+<span class="linenos">54</span>        <span class="n">C</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">L</span><span class="o">*</span><span class="p">(</span><span class="n">w0</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span> 
+<span class="linenos">55</span>        <span class="n">R2</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">m</span><span class="o">*</span><span class="n">Tm</span><span class="p">))</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">L</span><span class="o">/</span><span class="n">C</span><span class="p">)</span>
+<span class="linenos">56</span>        <span class="n">R1</span> <span class="o">=</span> <span class="p">(</span><span class="n">R2</span><span class="o">*</span><span class="n">Tm</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">Tm</span><span class="p">)</span>
+<span class="linenos">57</span>        <span class="bp">self</span><span class="o">.</span><span class="n">R2</span> <span class="o">=</span> <span class="n">R2</span> 
+<span class="linenos">58</span>        <span class="bp">self</span><span class="o">.</span><span class="n">R1</span> <span class="o">=</span> <span class="n">R1</span>
+<span class="linenos">59</span>        <span class="bp">self</span><span class="o">.</span><span class="n">C</span> <span class="o">=</span> <span class="n">C</span>
+</pre></div>
+</div>
+</section>
+<section id="test-unitaire">
+<h4>Test unitaire<a class="headerlink" href="#test-unitaire" title="Link to this heading">#</a></h4>
+<p>Pour valider le bon fonctionnement de la classe, il est possible de réaliser un test unitaire. Un test unitaire est une méthode de test de logiciel où des unités individuelles (ou composants) d’un logiciel sont testées séparément pour s’assurer qu’elles fonctionnent correctement. L’objectif est d’isoler chaque partie du programme et de vérifier qu’elle fonctionne comme prévu.</p>
+<p>En python, les tests unitaires peuvent être réalisés facilement avec le framework <cite>unitests</cite>. Dans notre cas, nous allons créer le fichier <cite>test_filter_RLC.py</cite> contenant le code suivant.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">import</span> <span class="nn">unittest</span>
+<span class="linenos"> 2</span><span class="kn">from</span> <span class="nn">filter_RLC</span> <span class="kn">import</span> <span class="n">RLC_BP3_Filter</span>
+<span class="linenos"> 3</span>
+<span class="linenos"> 4</span><span class="k">class</span> <span class="nc">TestRLC_BP3_Filter</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
+<span class="linenos"> 5</span>
+<span class="linenos"> 6</span>    <span class="k">def</span> <span class="nf">setUp</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="linenos"> 7</span>        <span class="bp">self</span><span class="o">.</span><span class="n">L</span> <span class="o">=</span> <span class="mi">10</span><span class="o">**-</span><span class="mi">3</span>
+<span class="linenos"> 8</span>        <span class="bp">self</span><span class="o">.</span><span class="n">Tm_ref</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">w0_ref</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">m_ref</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mi">10</span><span class="o">*</span><span class="mi">3</span><span class="p">,</span> <span class="mf">0.2</span>
+<span class="linenos"> 9</span>        <span class="bp">self</span><span class="o">.</span><span class="n">my_filter</span> <span class="o">=</span> <span class="n">RLC_BP3_Filter</span><span class="p">(</span><span class="mi">10</span><span class="o">**</span><span class="mi">3</span><span class="p">,</span> <span class="mi">10</span><span class="o">**</span><span class="mi">3</span><span class="p">,</span> <span class="mi">10</span><span class="o">**-</span><span class="mi">9</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">L</span><span class="p">)</span>
+<span class="linenos">10</span>
+<span class="linenos">11</span>    <span class="k">def</span> <span class="nf">test_set_and_get_params</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="linenos">12</span>        <span class="bp">self</span><span class="o">.</span><span class="n">my_filter</span><span class="o">.</span><span class="n">set_components</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Tm_ref</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">w0_ref</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">m_ref</span><span class="p">)</span>
+<span class="linenos">13</span>        <span class="n">_</span><span class="p">,</span> <span class="n">Tm</span><span class="p">,</span> <span class="n">w0</span><span class="p">,</span> <span class="n">m</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">my_filter</span><span class="o">.</span><span class="n">get_params</span><span class="p">()</span>
+<span class="linenos">14</span>
+<span class="linenos">15</span>        <span class="bp">self</span><span class="o">.</span><span class="n">assertAlmostEqual</span><span class="p">(</span><span class="n">Tm</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">Tm_ref</span><span class="p">,</span> <span class="n">places</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="linenos">16</span>        <span class="bp">self</span><span class="o">.</span><span class="n">assertAlmostEqual</span><span class="p">(</span><span class="n">w0</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">w0_ref</span><span class="p">,</span> <span class="n">places</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="linenos">17</span>        <span class="bp">self</span><span class="o">.</span><span class="n">assertAlmostEqual</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">m_ref</span><span class="p">,</span> <span class="n">places</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="linenos">18</span>
+<span class="linenos">19</span>
+<span class="linenos">20</span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+<span class="linenos">21</span>    <span class="n">unittest</span><span class="o">.</span><span class="n">main</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Pour tester le bon fonctionnement de la classe <cite>RLC_BP3_Filter</cite>, il suffit ensuite de lancer le script python suivant</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">test_filter_RLC</span><span class="o">.</span><span class="n">py</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="index.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Projects</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="vuvuzela.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Projet: Débruitage de Vuvuzela</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#description-du-travail">Description du travail</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#objectifs">Objectifs</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#fonctions-de-transfert-normalisees">Fonctions de transfert normalisées</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#liste-des-circuits">Liste des circuits</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#circuits-rc-rc">Circuits RC/RC</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#circuits-rlc">Circuits RLC</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#circuits-sallen-key">Circuits Sallen Key</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#circuits-mfb">Circuits MFB</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exemple">Exemple</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fonction-de-transfert">Fonction de transfert</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implementation">Implémentation</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#fonction-lti-rlc-bp3">Fonction <cite>lti_RLC_BP3</cite></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#fonction-get-params">Fonction <cite>get_params</cite></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#fonction-get-components">Fonction <cite>get_components</cite></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#approche-objet">Approche Objet</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#classe-rlc-bp3-filter">Classe <cite>RLC_BP3_Filter</cite></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#test-unitaire">Test unitaire</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+  <div class="tocsection sourcelink">
+    <a href="../_sources/projects/analog_filter.rst.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  <p class="copyright">
+    
+      © Copyright 2022, V. Choqueuse.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.3.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

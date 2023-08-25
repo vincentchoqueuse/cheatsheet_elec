@@ -13,7 +13,8 @@ Electronique
  
     courses/index
     tutorials/index
-    cheatsheet
+    projects/index
+    cheatsheets/index
     links
     about
  
