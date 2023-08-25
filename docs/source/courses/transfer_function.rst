@@ -1,5 +1,5 @@
-Fonction de Transfert
-=====================
+Systèmes SLIT
+=============
 
 Considérons un système linéaire et invariant dans le temps (SLIT) décrit par une équation différentielle linéaire à coefficients constants d'ordre n :
 
@@ -32,8 +32,10 @@ La fonction de transfert du système est définie par :
 
 L'expression de :math:`H(p)` peut s'obtenir
 
-* à partir de l'équation différentielle en appliquant la transformée de Laplace,
+* à partir de l'équation différentielle en appliquant la transformée de Laplace sous l'hypothèse où les conditions initiales sont nulles,
 * à partir de l'analyse d'un circuit électronique en utilisant directement la notion d'impédance généralisée.
+
+Il est courant d'exprime la fonction de transfert sous deux formes différentes: la forme polynomiale et la forme factorisée.
 
 Forme Polynomiale [ba]
 ++++++++++++++++++++++
@@ -42,8 +44,15 @@ Forme Polynomiale [ba]
 
     H(p) = \frac{N(p)}{D(p)}=\frac{b_m p^m+\cdots+b_1p+b_0}{a_n p^n+\cdots+a_1 p+a_0}
 
+.. note ::
+
+    En général, pour un système causal (ce qui est courant en pratique), le degré du numérateur :math:`m` ne peut pas être plus élevé que celui du dénominateur :math:`n`. Nous vérifierons donc systématiquement que :math:`m\le n`.
+
+
 Forme Factorisée [zpk]
 ++++++++++++++++++++++
+
+Le passage à la forme factorisée s'obtient en évaluant les racines du polynôme au numérateur et les racines du polynôme au dénominateur.
 
 .. math ::
 
@@ -99,18 +108,42 @@ Pour qu'un système soit stable, il est possible d'établir que tous les pôles 
 
     \Re e(p_l)\le 0, \text{ pour }l=1,.., n. 
 
+.. note ::
+
+    Cette propriété découle directement de l'expression générale de la solution libre :math:`s_l(t)=\sum_{l=1}^{n} \lambda_l e^{p_l t}`.
 
 Gain statique 
 +++++++++++++
 
-Le gain statique, noté :math:`K`, est le rapport entre la sortie et l'entrée en régime permanent lorsque l'entrée est un échelon d'amplitude :math:`E`. Mathématiquement, le gain statique s'exprime sous la forme :
+Le gain statique d'une fonction de transfert, noté :math:`K`,  correspond à la réponse en régime permanent d'un système à une entrée de type échelon unité.
+
+Pour déterminer le gain statique d'une fonction de transfert :math:`H(p)`, il suffit d'évaluer la fonction de transfert en 0 c-à-d
 
 .. math ::
 
-    K = \frac{s(\infty)}{E} = H(0) = \frac{b_0}{a_0}
+    K = H(0) = \frac{b_0}{a_0}
 
-* Lorsque l'entrée est une sinusoïde, le gain statique correspond au gain basse-fréquence c-a-d lorsque :math:`\omega \to 0`. 
+* Lorsque l'entrée est une sinusoïde, le gain statique s'obtient en évaluant le gain dans les basse-fréquences c-a-d lorsque :math:`\omega \to 0`. 
 * Si l'entrée et/ou la sortie ne sont pas nulles, le gain statique correspond au rapport entre la variation de la sortie et la variation de l'entrée.
+
+Exemple 
+```````
+
+Soit la fonction de transfert de :
+
+.. math ::
+
+    H(p) = \frac{2p+5}{p^2+3p+2}
+
+
+Le gain statique s'exprime sous la forme :
+
+.. math ::
+
+    H(0) = \frac{2\times 0+5}{(0)^2+3\times (0) +2}=\frac{5}{2}=2.5
+
+
+A titre d'illustration, si le système est soumis à une entrée en échelon unité, la valeur de sortie en régime permanent sera 2.5 fois la hauteur de cet échelon, soit 2.5.
 
 Comportement Fréquentiel
 ++++++++++++++++++++++++

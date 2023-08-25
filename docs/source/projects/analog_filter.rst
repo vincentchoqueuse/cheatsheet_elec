@@ -11,33 +11,145 @@ Dans ce travail, nous souhaitons développer des fonctions Python pour analyser 
 Pour chaque filtre d'ordre 2, nous souhaitons traiter les problèmes suivants :
 
 1. Calcul de la fonction de transfert, puis écriture sous forme normalisée, 
-2. Implémentation d'une fonction :code:`lti_rlc_bp3` permettant d'obtenir la fonction de transfert en Python à partir des composants, 
+2. Implémentation d'une fonction :code:`lti` permettant d'obtenir la fonction de transfert en Python à partir des composants, 
 3. Implémentation d'une fonction :code:`get_params` permettant d'obtenir les paramètres de la fonction de transfert, 
 4. Implémentation d'une fonction :code:`get_components` permettant d'obtenir les composants du filtre à partir des paramètres.
+5. Validation sur LTSpice
 
 Fonctions de transfert normalisées 
-++++++++++++++++++++++++++++++++++
+```````````````````````````````````
 
-Passe-bas (LP)
-``````````````
+* Passe-bas (LP)
 
 .. math::
 
     H(p)=\frac{T_0}{\frac{1}{\omega_0^2}p^2+\frac{2m}{\omega_0}p+1}​
 
-Passe-bande (BP)
-````````````````
+* Passe-bande (BP)
 
 .. math::
 
     H(p)=\frac{\frac{2mT_m}{\omega_0}p}{\frac{1}{\omega_0^2}p^2+\frac{2m}{\omega_0}p+1}​
 
-Passe-haut (HP)
-```````````````
+* Passe-haut (HP)
 
 .. math::
 
     H(p)=\frac{\frac{T_{\infty}}{\omega_0^2}p^2}{\frac{1}{\omega_0^2}p^2+\frac{2m}{\omega_0}p+1}​
+
+
+Liste des circuits 
+------------------
+
+
+.. note ::
+    
+    Chaque étudiant devra choisir un filtre passif et un filtre actif.
+
+Circuits RC/RC
+++++++++++++++
+
+
+.. figure:: ../courses/img/RC_RC_LP.svg
+  :width: 300
+  :align: center
+  :alt: RC RC LP
+
+  RC/RC LP Filter
+
+
+.. figure:: ../courses/img/RC_RC_BP.svg
+  :width: 300
+  :align: center
+  :alt: RC RC BP
+
+  RC/RC BP Filter
+
+.. figure:: ../courses/img/RC_RC_HP.svg
+  :width: 300
+  :align: center
+  :alt: RC RC HP
+
+  RC/RC HP Filter
+
+Circuits RLC
+++++++++++++
+
+.. figure:: ../courses/img/RLC_LP.svg
+  :width: 300
+  :align: center
+  :alt: RLC LP
+
+  RLC LP Filter
+
+.. figure:: ../courses/img/RLC_BP1.svg
+  :width: 300
+  :align: center
+  :alt: RLC BP1
+
+  RLC BP1 Filter
+
+.. figure:: ../courses/img/RLC_BP2.svg
+  :width: 300
+  :align: center
+  :alt: RLC BP2
+
+  RLC BP2 Filter
+
+.. figure:: ../courses/img/RLC_HP.svg
+  :width: 300
+  :align: center
+  :alt: RLC HP
+
+  RLC HP Filter
+
+Circuits Sallen Key
++++++++++++++++++++
+
+.. figure:: ../courses/img/SK_LP.svg
+  :width: 300
+  :align: center
+  :alt: SK LP
+
+  SK LP Filter
+
+.. figure:: ../courses/img/SK_HP.svg
+  :width: 300
+  :align: center
+  :alt: SK HP
+
+  SK HP Filter
+
+Circuits MFB
+++++++++++++
+
+.. figure:: ../courses/img/MFB_LP.svg
+  :width: 300
+  :align: center
+  :alt: MFB LP
+
+  MFB LP Filter
+
+.. figure:: ../courses/img/MFB_BP.svg
+  :width: 300
+  :align: center
+  :alt: MFB BP
+
+  MFB BP Filter
+
+.. figure:: ../courses/img/MFB_BP2.svg
+  :width: 300
+  :align: center
+  :alt: MFB BP2
+
+  MFB BP2 Filter
+
+.. figure:: ../courses/img/MFB_HP.svg
+  :width: 300
+  :align: center
+  :alt: MFB HP
+
+  MFB HP Filter
 
 
 Exemple 
@@ -143,6 +255,7 @@ avec
 
         Returns
         -------
+        Type: string 
         Tm : float 
         w0 : float 
         m : float
@@ -151,7 +264,7 @@ avec
         Tm = R1 / (R1+R2)
         w0 = 1/ np.sqrt(L*C)
         m = 0.5*((R1+R2)/(R1*R2))*np.sqrt(L/C)
-        return Tm, w0, m
+        return "BP", Tm, w0, m
 
 Fonction `get_components`
 `````````````````````````
@@ -188,3 +301,39 @@ En fixant la bobine L, nous obtenons alors les équations suivantes :
         R2 = (1/(2*m*Tm))*np.sqrt(L/C)
         R1 = (R2*Tm) / (1-Tm)
         return C, R1, R2
+
+
+Approche Objet
+++++++++++++++
+
+Au lieu de définir des fonctions, il est d'adopter une approche objet afin de gagner en organisation, clarté et modularité. Il est également
+possible d'implémenter des tests unitaires pour vérifier le bon comportement de notre classe. 
+
+Classe `RLC_BP3_Filter`
+```````````````````````
+
+Pour implémenter notre classe, nous allons créer le fichier `filter_RLC.py` contenant le code suivant.
+
+.. literalinclude:: ./code/filter_RLC.py
+   :language: python
+   :linenos:
+
+
+
+Test unitaire
+`````````````
+
+Pour valider le bon fonctionnement de la classe, il est possible de réaliser un test unitaire. Un test unitaire est une méthode de test de logiciel où des unités individuelles (ou composants) d'un logiciel sont testées séparément pour s'assurer qu'elles fonctionnent correctement. L'objectif est d'isoler chaque partie du programme et de vérifier qu'elle fonctionne comme prévu.
+
+En python, les tests unitaires peuvent être réalisés facilement avec le framework `unitests`. Dans notre cas, nous allons créer le fichier `test_filter_RLC.py` contenant le code suivant. 
+
+.. literalinclude:: ./code/test_filter_RLC.py
+   :language: python
+   :linenos:
+
+Pour tester le bon fonctionnement de la classe `RLC_BP3_Filter`, il suffit ensuite de lancer le script python suivant
+
+.. code ::
+
+    python test_filter_RLC.py
+

@@ -48,7 +48,7 @@ Pour résoudre ce système linéaire, une approche efficace consiste à modélis
 
 .. math ::
 
-    \mathbf{x} = \begin{bmatrix}
+    \begin{bmatrix}
     s(0^+)-s_p(0^+)\\
     \dot{s}(0^+)-\dot{s}_p(0^+)
     \end{bmatrix}
@@ -68,7 +68,10 @@ Il en vient que :
     \lambda_1\\
     \lambda_2
     \end{bmatrix} = \frac{1}{p_2-p_1}
-    \begin{bmatrix}p_2 & -1 \\ -p_1 & 1 \end{bmatrix}\mathbf{x}
+    \begin{bmatrix}p_2 & -1 \\ -p_1 & 1 \end{bmatrix}\begin{bmatrix}
+    s(0^+)-s_p(0^+)\\
+    \dot{s}(0^+)-\dot{s}_p(0^+)
+    \end{bmatrix}
 
 Cas où :math:`m<1`
 ++++++++++++++++++
@@ -82,6 +85,9 @@ Notons que lorsque les pôles sont complexes-conjugués, c-à-d :math:`p_1=p_2^*
     \lambda_1\\
     \lambda_2
     \end{bmatrix} = \frac{j}{2\Im m(p_1)}
-    \begin{bmatrix}p_1^* & -1 \\ -p_1 & 1 \end{bmatrix}\mathbf{x}
+    \begin{bmatrix}p_1^* & -1 \\ -p_1 & 1 \end{bmatrix}\begin{bmatrix}
+    s(0^+)-s_p(0^+)\\
+    \dot{s}(0^+)-\dot{s}_p(0^+)
+    \end{bmatrix}
     
 En utilisant le fait que :math:`\textbf{x} \in \mathbb{R}^2`, il est alors possible d'établir que :math:`\lambda_2 = \lambda_1^*`

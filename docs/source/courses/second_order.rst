@@ -1,4 +1,4 @@
-Systèmes de Second Ordre 
+Systèmes de Second Ordre
 ========================
 
 Modélisation
@@ -242,21 +242,14 @@ Lorsque :math:`m\ll 1`, :math:`\omega_p\approx \omega_0` et :math:`R\approx e^{2
 Réponse Indicielle
 ``````````````````
 
-* Comportement à la discontinuité :
+* Comportement à la discontinuité : Pour les signaux ne présentant pas de singularité au voisinage de 0, il est possible d'établir que (voir :doc:`démonstration <../tutorials/initial_values>`) :
 
 .. math ::
 
-    \begin{bmatrix}
-	\Delta s(0)\\
-	\Delta \dot{s}(0)
-	\end{bmatrix}
-	=  \omega_0^2\begin{bmatrix} b_2  & 0 \\ b_1 -2m b_2 \omega_0 & b_2 \end{bmatrix}
-    \begin{bmatrix}
-    \Delta e(0)\\	
-    \Delta \dot{e}(0)
-    \end{bmatrix}
+	\Delta s(0) &= \omega_0^2 b_2 \Delta e(0) \\
+	\Delta \dot{s}(0) &= (b_1 \omega_0^2-2m b_2 \omega_0^3)\Delta e(0)+b_2 \omega_0^2\Delta \dot{e}(0)
 
-* Regime permanent :
+* Regime permanent : Lorsque l'entrée est un échelon, la sortie en régime permanent s'exprime sous la forme
 
 .. math ::
 

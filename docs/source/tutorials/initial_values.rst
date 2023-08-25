@@ -9,8 +9,7 @@ présenter différents comportements. Ces différents comportements permettent d
 
 Dans ce tutorial, nous nous intéressons spécifiquement au comportement à l'excitation, c-à-d en :math:`t=0^+`.
 
-Pour analyser le comportement en :math:`t=0^+`, ce tutorial présente deux approches, l'une basée sur l'équation différentielle et l'autre sur la fonction de transfert.
-Pour des raisons de simplicité, les approches présentées ci dessous se limitent au cas des systèmes de second ordre. 
+Pour analyser le comportement en :math:`t=0^+`, ce tutorial présente une solution basée sur l'équation différentielle. Pour des raisons de simplicité, les approches présentées ci dessous se limitent au cas des systèmes de second ordre. 
 
 Approche Temporelle
 -------------------
@@ -21,18 +20,53 @@ Considérons un système de second ordre décrit par l'équation différentielle
 
     a_2 \ddot{s}(t)+a_1 \dot{s}(t)+a_0 s(t)=b_2 \ddot{e}(t)+b_1 \ddot{e}(t)+b_0 e(t)
 
+Dans les développements qui suivent nous allons considérer que les signaux d'entrée et de sortie n'a pas de comportement "singulier" ou infini en 0. Mathématiquement, cela implique que :
+
+.. math ::
+
+    \int_{0^-}^{0+} e(t) dt = \int_{0^-}^{0+} e(t) dt = 0
+
+.. note ::
+
+    Remarquons que la méthodologie décrite ci dessous ne permet pas d'obtenir la réponse implulsionnelle pour laquelle :math:`e(t)=\delta(t)`.
+
+
 Valeur Initiale
 +++++++++++++++
 
 Il est possible de trouver la valeur initiale en :math:`t=0^+`
-en intégrant plusieurs fois l'équation différentielle entre :math:`0^-` et :math:`0^+`. 
+en intégrant plusieurs fois l'équation différentielle par rapport à :math:`t`, et en évaluant le résultat entre :math:`0^-` et :math:`0^+`. 
+
+Intégration Simple 
+```````````````````
+
+En intégrant une fois l'équation différentielle entre :math:`0^-` et :math:`0^+`, nous obtenons :
+
+.. math ::
+
+    a_2 \int_{0^-}^{0^+}\ddot{s}(t)dt+a_1 \int_{0^-}^{0^+}\dot{s}(t)dt +a_0 \int_{0^-}^{0^+}s(t)dt=b_2 \int_{0^-}^{0^+}\ddot{e}(t)dt+b_1 \int_{0^-}^{0^+}\dot{e}(t)dt+b_0 \int_{0^-}^{0^+}e(t)dt
+
+En supposant que l'entrée et la sortie ne contiennent pas d'impulsion, nous trouvons :
+
+.. math ::
+
+    a_2  \left[\dot{s}(t)\right]_{0^-}^{0^+}+a_1  \left[s(t)\right]_{0^-}^{0^+} =b_2 \left[\dot{e}(t)\right]_{0^-}^{0^+}+b_1  \left[e(t)\right]_{0^-}^{0^+}
+   
+et donc :
+
+.. math ::
+
+    a_2  \left(\dot{s}(0^+)-\dot{s}(0^-)\right)+a_1 \left(s(0^+)-s(0^-)\right) =b_2 \left(\dot{e}(0^+)-\dot{e}(0^-)\right)+b_1  \left(e(0^+)-e(0^-)\right)\tag{1}
+    
+Intégrations successives
+````````````````````````
 
 En intégrant deux fois l'équation différentielle entre :math:`0^-` et :math:`0^+`, nous obtenons :
 
 .. math ::
 
-    a_2 \int\int_{0^-}^{0^+}\ddot{s}(t)dt^2+a_1 \int\int_{0^-}^{0^+}\dot{s}(t)dt^2 +a_0 \int\int_{0^-}^{0^+}s(t)dt^2\\
-    =b_2 \int\int_{0^-}^{0^+}\ddot{e}(t)dt^2+b_1 \int\int_{0^-}^{0^+}\dot{e}(t)dt^2+b_0 \int\int_{0^-}^{0^+}e(t)dt^2
+    a_2 \int_{0^-}^{0^+}\int\ddot{s}(t)dt^2+a_1 \int_{0^-}^{0^+}\int\dot{s}(t)dt^2 +a_0 \int_{0^-}^{0^+}\int s(t)dt^2\\
+    =b_2 \int_{0^-}^{0^+} \int\ddot{e}(t)dt^2+b_1 \int_{0^-}^{0^+} \int\dot{e}(t)dt^2+b_0 \int_{0^-}^{0^+} \int e(t)dt^2
 
 En supposant que l'entrée et la sortie ne contiennent pas d'impulsion, les deux derniers termes des deux membres sont nuls.
 Dans ce contexte, l'égalité se simplifie sous la forme :
@@ -45,29 +79,14 @@ et donc :
 
 .. math ::
 
-    a_2(s(0^+)-s(0^-)) = b_2(e(0^+)-e(0^-))\tag{1}
+    a_2(s(0^+)-s(0^-)) = b_2(e(0^+)-e(0^-))\tag{2}
 
 
-En intégrant une fois l'équation différentielle entre :math:`0^-` et :math:`0^+`, nous obtenons :
+Modélisation matricielle 
+````````````````````````
 
-.. math ::
 
-    a_2 \int_{0^-}^{0^+}\ddot{s}(t)dt+a_1 \int_{0^-}^{0^+}\dot{s}(t)dt +a_0 \int_{0^-}^{0^+}s(t)dt=b_2 \int_{0^-}^{0^+}\ddot{e}(t)dt+b_1 \int_{0^-}^{0^+}\dot{e}(t)dt+b_0 \int_{0^-}^{0^+}e(t)dt
-
-Sous les mêmes hypothèses, nous trouvons alors :
-
-.. math ::
-
-    a_2  \left[\dot{s}(t)\right]_{0^-}^{0^+}+a_1  \left[s(t)\right]_{0^-}^{0^+} =b_2 \left[\dot{e}(t)\right]_{0^-}^{0^+}+b_1  \left[e(t)\right]_{0^-}^{0^+}
-   
-et donc :
-
-.. math ::
-
-    a_2  \left(\dot{s}(0^+)-\dot{s}(0^-)\right)+a_1 \left(s(0^+)-s(0^-)\right) =b_2 \left(\dot{e}(0^+)-\dot{e}(0^-)\right)+b_1  \left(e(0^+)-e(0^-)\right)\tag{2}
-    
-
-Ces relations permettent de définir un système d'équation. Pour simplfiier la résolution, nous allons utiliser une notation matricielle. 
+Ces relations permettent de définir un système d'équation. Pour simplifier la résolution du système, il est possible d'utiliser une notation matricielle. 
 Définissons tout d'abord les vecteurs suivants :
 
 .. math ::
@@ -75,11 +94,19 @@ Définissons tout d'abord les vecteurs suivants :
     \mathbf{s}(t) &= \begin{bmatrix} s(t) \\ \dot{s}(t)\end{bmatrix} \\
     \mathbf{e}(t) &= \begin{bmatrix} e(t) \\ \dot{e}(t)\end{bmatrix}
 
-Nous obtenons alors le système 
+ainsi que les vecteurs de "variation"
 
 .. math ::
 
-    \begin{bmatrix}a_2 & 0 \\ a_1 &a_2\end{bmatrix}\left(\mathbf{s}(0^+)-\mathbf{s}(0^-)\right) = \begin{bmatrix}b_2 & 0 \\ b_1 &b_2 \end{bmatrix}\left(\mathbf{e}(0^+)-\mathbf{e}(0^-)\right)
+    \Delta\mathbf{s}(t) &= \mathbf{s}(t^+)-\mathbf{s}(t^-) = \begin{bmatrix} s(t^+)- s(t^-)\\ \dot{s}(t^+)-\dot{s}(t^-)\end{bmatrix} \\
+    \Delta \mathbf{e}(t) &= \mathbf{e}(t^+)-\mathbf{e}(t^-) = \begin{bmatrix} e(t^+)-e(t^-) \\ \dot{e}(t^+)-\dot{e}(t^-)\end{bmatrix}
+
+
+En exploitant ces notations et les équations (1) et (2), nous obtenons le système 
+
+.. math ::
+
+    \begin{bmatrix}a_2 & 0 \\ a_1 &a_2\end{bmatrix}\Delta\mathbf{s}(0) = \begin{bmatrix}b_2 & 0 \\ b_1 &b_2 \end{bmatrix}\Delta\mathbf{e}(0)
 
 En utilisant le fait que
 
@@ -87,67 +114,19 @@ En utilisant le fait que
 
     \begin{bmatrix}a_2 & 0 \\ a_1 &a_2\end{bmatrix}^{-1} = \frac{1}{a_2^2}\begin{bmatrix}a_2 & 0 \\ -a_1 &a_2\end{bmatrix},
 
-nous obtenons :
+le vecteur :math:`\Delta\mathbf{s}(0)` peut s'exprimer sous la forme
 
 .. math ::
 
-    \mathbf{s}(0^+) = \frac{1}{a_2^2}\begin{bmatrix}a_2 & 0 \\ -a_1 &a_2\end{bmatrix}\begin{bmatrix}b_2 & 0 \\ b_1 &b_2 \end{bmatrix}\left(\mathbf{e}(0^+)-\mathbf{e}(0^-)\right) + \mathbf{s}(0^-)
+    \Delta\mathbf{s}(0) = \frac{1}{a_2^2}\begin{bmatrix}a_2 & 0 \\ -a_1 &a_2\end{bmatrix}\begin{bmatrix}b_2 & 0 \\ b_1 &b_2 \end{bmatrix}\Delta\mathbf{e}(0)
 
-La sortie et sa dérivée s'expriment alors sous la forme :
-
-.. math ::
-
-    \mathbf{s}(0^+) = \frac{1}{a_2^2}\begin{bmatrix}a_2b_2 & 0 \\ a_2b_1-a_1b_2 &a_2 b_2 \end{bmatrix}\left(\mathbf{e}(0^+)-\mathbf{e}(0^-)\right) + \mathbf{s}(0^-)
-
-En introduisant la notion de variation, il en vient que : 
+Nous obtenons finalement
 
 .. math ::
 
-    \begin{bmatrix}
-    s(0^+)-s(0^-)\\
-    \dot{s}(0^+)-\dot{s}(0^-)
-    \end{bmatrix}
+    \Delta\mathbf{s}(0)
     = \frac{1}{a_2^2}\begin{bmatrix}a_2b_2 & 0 \\ a_2b_1-a_1b_2 &a_2 b_2 \end{bmatrix}
-    \begin{bmatrix}
-    e(0^+)-e(0^-)\\
-    \dot{e}(0^+)-\dot{e}(0^-)
-    \end{bmatrix}
-
-
-* :math:`\Delta e(0)=e(0^+)-e(0^-)` et :math:`\Delta \dot{e}(0)=\dot{e}(0^+)-\dot{e}(0^-)`
-* :math:`\Delta s(0)=s(0^+)-s(0^-)` et :math:`\Delta \dot{s}(0)=\dot{s}(0^+)-\dot{s}(0^-)` 
-
-Valeur Finale
-+++++++++++++
-
-.. math ::
-
-    a_2 \ddot{s}(t)+a_1 \dot{s}(t)+a_0 s(t)=b_2 \ddot{e}(t)+b_1 \ddot{e}(t)+b_0 e(t)
-
-La valeur finale correspond à la valeur de :math:`s(t)` en :math:`t=+\infty`. Pour un système stable, la valeur finale s'exprime sous la forme
-
-.. math ::
-
-    s(\infty) = \lim_{t\infty} s(t) = \lim_{t\infty} s_p(t)
- 
-
-où la valeur de :math:`s_p(t)` dépend du type d'entrée.
-
-Pour des signaux d'entrée de type échelon c-à-d :math:`e(t)=Eu(t)`, la solution particulière s'exprime sous la forme :math:`s_p(t)=\alpha` lorsque :math:`t=0^+`. 
-En injectant cette solution dans l'équation différentielle en :math:`t=+\infty`, nous obtenons pour un système stable  :
-
-.. math ::
-
-    a_0 \alpha=b_0 E \Rightarrow  \alpha = \frac{b_0}{a_0} E
-
-La valeur finale s'exprime alors sous la forme :
-
-.. math ::
-
-    s(\infty) = KE
- 
-* :math:`K=\frac{b_0}{a_0}` désigne le gain statique du système. 
-
+    \Delta\mathbf{e}(0)
 
 Exemples
 --------
@@ -159,15 +138,9 @@ Pour ces filtres, nous obtenons la relation générale :
 
 .. math ::
 
-    \begin{bmatrix}
-    \Delta s(0)\\
-    \Delta \dot{s}(0)
-    \end{bmatrix}
+    \Delta\mathbf{s}(0)
     =  \omega_0^2\begin{bmatrix} b_2  & 0 \\ b_1 -2m b_2 \omega_0 & b_2 \end{bmatrix}
-    \begin{bmatrix}
-    \Delta e(0)\\
-    \Delta \dot{e}(0)
-    \end{bmatrix}
+    \Delta\mathbf{e}(0)
 
 
 Propriétés 
@@ -178,53 +151,31 @@ Propriétés
 
 .. math ::
 
-    \begin{bmatrix}
-    \Delta s(0)\\
-    \Delta \dot{s}(0)
-    \end{bmatrix}
-    = \mathbf{0} 
+    \Delta s(0) &= 0\\
+    \Delta \dot{s}(0) & =0
 
 * Passe-bande :
 
 .. math ::
 
-    \begin{bmatrix}
-    \Delta s(0)\\
-    \Delta \dot{s}(0)
-    \end{bmatrix}
-    =  T_m\begin{bmatrix} 0 & 0 \\ 2m  \omega_0   & 0 \end{bmatrix}
-    \begin{bmatrix}
-    \Delta e(0)\\
-    \Delta \dot{e}(0)
-    \end{bmatrix}
+    \Delta s(0) &= 0\\
+    \Delta \dot{s}(0) & =2m  \omega_0 T_m \Delta e(0)
 
 * Passe-haut :
 
 .. math ::
 
-    \begin{bmatrix}
-    \Delta s(0)\\
-    \Delta \dot{s}(0)
-    \end{bmatrix}
-    =  T_{\infty}\begin{bmatrix} 1 & 0 \\ - 2m \omega_0   & 1  \end{bmatrix}
-    \begin{bmatrix}
-     \Delta e(0)\\
-    \Delta \dot{e}(0)
-    \end{bmatrix}
+    \Delta s(0) &= T_{\infty}\Delta e(0)\\
+    \Delta \dot{s}(0) & =T_{\infty}\Delta \dot{e}(0)- 2m \omega_0 T_{\infty} \Delta e(0)
+
 
 * Rejecteur :
 
 .. math ::
 
-    \begin{bmatrix}
-    \Delta s(0)\\
-    \Delta \dot{s}(0)
-    \end{bmatrix}
-    =  T_{0}\begin{bmatrix} 1 & 0 \\ - 2m \omega_0   & 1  \end{bmatrix}
-    \begin{bmatrix}
-    \Delta e(0)\\
-    \Delta \dot{e}(0)
-    \end{bmatrix}
+    \Delta s(0) &= T_{0}\Delta e(0)\\
+    \Delta \dot{s}(0) & =T_{0}\Delta \dot{e}(0)- 2m \omega_0 T_{0} \Delta e(0)
+
 
 
 
@@ -235,10 +186,7 @@ Considérons le cas où l'entrée est un échelon d'amplitude :math:`E=1`. Dans 
 
 .. math ::
     
-    \begin{bmatrix}
-    \Delta e(0)\\
-    \Delta \dot{e}(0)
-    \end{bmatrix}=\begin{bmatrix}1 \\ 0\end{bmatrix}
+    \Delta\mathbf{e}(0)=\begin{bmatrix}1 \\ 0\end{bmatrix}
 
 La figure suivante présente la réponse indicielle pour un filtre passe-bas, passe-bande, passe-haut et rejecteur ayant la même pulsation propre :math:`\omega_0=1` rad/s, le même coefficient d'amortissement :math:`m=0.5` et le même 
 coefficient d'amplification :math:`T_0=T_\infty=T_m=2`.
