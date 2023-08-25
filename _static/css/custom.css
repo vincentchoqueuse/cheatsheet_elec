@@ -39,3 +39,7 @@ nav.bd-links .active:hover>a, nav.bd-links .active>a {
 .toc-entry>.nav-link.active {
     font-weight: 400;
     }
+
+pre{
+    box-shadow: none;
+}
