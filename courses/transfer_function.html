@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Systèmes SLIT &#8212; cheatsheet elec  documentation</title>
+    <title>Analyse des systèmes SLIT &#8212; cheatsheet elec  documentation</title>
 <script>
   document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
   document.documentElement.dataset.theme = localStorage.getItem("theme") || "light"
@@ -195,7 +195,7 @@
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Systèmes SLIT
+   Analyse des systèmes SLIT
   </a>
  </li>
  <li class="toctree-l1">
@@ -248,10 +248,32 @@
 <nav id="bd-toc-nav">
     <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#definition">
-   Définition
+  <a class="reference internal nav-link" href="#systemes-slit">
+   Systèmes SLIT
   </a>
   <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#definition">
+     Définition
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#modelisation">
+     Modélisation
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#fonction-de-transfert">
+   Fonction de transfert
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Définition
+    </a>
+   </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#forme-polynomiale-ba">
      Forme Polynomiale [ba]
@@ -324,8 +346,19 @@
               
               <article class="bd-article" role="main">
                 
-  <section id="systemes-slit">
-<h1>Systèmes SLIT<a class="headerlink" href="#systemes-slit" title="Link to this heading">#</a></h1>
+  <section id="analyse-des-systemes-slit">
+<h1>Analyse des systèmes SLIT<a class="headerlink" href="#analyse-des-systemes-slit" title="Link to this heading">#</a></h1>
+<section id="systemes-slit">
+<h2>Systèmes SLIT<a class="headerlink" href="#systemes-slit" title="Link to this heading">#</a></h2>
+<section id="definition">
+<h3>Définition<a class="headerlink" href="#definition" title="Link to this heading">#</a></h3>
+<p>Un système est dit linéaire s’il obéit au principe de superposition. Cela signifie que la sortie du système à une combinaison linéaire d’entrées est égale à la même combinaison linéaire des sorties individuelles correspondant à ces entrées. Formellement, si un système produit une sortie <span class="math notranslate nohighlight">\(y_1(t)\)</span> en réponse à une entrée <span class="math notranslate nohighlight">\(x_1(t)\)</span> et une sortie <span class="math notranslate nohighlight">\(y_2(t)\)</span> en réponse à <span class="math notranslate nohighlight">\(x_2(t)\)</span>, alors pour n’importe quelles constantes <span class="math notranslate nohighlight">\(a\)</span> et <span class="math notranslate nohighlight">\(b\)</span>, la sortie due à <span class="math notranslate nohighlight">\(a \times x_1(t) + b \times x_2(t)\)</span> sera <span class="math notranslate nohighlight">\(a \times y_1(t) + b \times y_2(t)\)</span>.</p>
+<p>L’invariance dans le temps, quant à elle, indique que le comportement du système ne change pas avec le temps. Cela signifie que si une entrée <span class="math notranslate nohighlight">\(x(t)\)</span> produit une sortie <span class="math notranslate nohighlight">\(y(t)\)</span>, alors, pour tout retard <span class="math notranslate nohighlight">\(\tau\)</span>, l’entrée <span class="math notranslate nohighlight">\(x(t-\tau)\)</span> produira la sortie <span class="math notranslate nohighlight">\(y(t-\tau)\)</span>. En d’autres termes, le système répond de la même manière à une même entrée, indépendamment du moment où cette entrée est appliquée.</p>
+<p>Un Système Linéaire Invariant dans le Temps, ou SLIT, est un système qui respecte à la fois la propriété de linéarité et celle d’invariance dans le temps. Ces systèmes sont essentiels en ingénierie car ils peuvent être décrits et analysés de manière compacte en utilisant des outils mathématiques tels que la Transformée de Fourier ou la Transformée de Laplace.</p>
+</section>
+<section id="modelisation">
+<h3>Modélisation<a class="headerlink" href="#modelisation" title="Link to this heading">#</a></h3>
+<p>Pour un SLIT, la relation entre l’entrée et la sortie peut être représentée par une équation différentielle linéaire où les coefficients de cette équation ne varient pas avec le temps.</p>
 <p>Considérons un système linéaire et invariant dans le temps (SLIT) décrit par une équation différentielle linéaire à coefficients constants d’ordre n :</p>
 <div class="math notranslate nohighlight">
 \[a_n \frac{d^n s(t)}{dt^n} + \cdots+a_1 \frac{d s(t)}{dt}  +a_0 s(t) =b_m \frac{d^m e(t)}{dt^m} +\cdots+b_0 e(t)\]</div>
@@ -337,8 +370,25 @@ de manipuler des dérivées, l’utilisation de la fonction de transfert permet 
 <li><p>Echelon d’amplitude E: Lorsque <span class="math notranslate nohighlight">\(e(t)=Eu(t)\)</span>, la sortie du système est appelée <strong>réponse indicielle</strong>,</p></li>
 <li><p>Sinusoïde: Lorsque <span class="math notranslate nohighlight">\(E\cos(\omega t + \varphi_e)\)</span>, la sortie du système est appelée <strong>réponse fréquentielle</strong>.</p></li>
 </ul>
-<section id="definition">
-<h2>Définition<a class="headerlink" href="#definition" title="Link to this heading">#</a></h2>
+</section>
+</section>
+<section id="fonction-de-transfert">
+<h2>Fonction de transfert<a class="headerlink" href="#fonction-de-transfert" title="Link to this heading">#</a></h2>
+<p>La notion de fonction de transfert offre plusieurs avantages par rapport à l’utilisation directe d’équations différentielles lors de l’analyse des systèmes.</p>
+<ol class="arabic simple">
+<li><p><strong>Simplification mathématique</strong> :
+Avec la Transformée de Laplace, les équations différentielles se transforment en équations algébriques, qui sont souvent plus simples à manipuler. Par exemple, la dérivation devient une multiplication, ce qui facilite les opérations.</p></li>
+<li><p><strong>Représentation universelle</strong> :
+La fonction de transfert donne une représentation standard d’un système qui capture ses caractéristiques dynamiques, indépendamment de l’entrée spécifique.</p></li>
+<li><p><strong>Analyse fréquentielle</strong> :
+La fonction de transfert permet d’analyser facilement le comportement du système en fonction de la fréquence.</p></li>
+<li><p><strong>Modularité</strong> :
+Lors de la conception de systèmes complexes composés de plusieurs sous-systèmes, chaque sous-système peut être représenté par sa propre fonction de transfert. Ces fonctions de transfert peuvent ensuite être combinées de manière simple (par exemple, par mise en série ou en parallèle) pour obtenir la fonction de transfert du système global.</p></li>
+<li><p><strong>Facilité d’utilisation avec des outils de simulation</strong> :
+De nombreux outils modernes (comme MATLAB/Simulink ou Python) utilisent la fonction de transfert pour simuler et analyser les systèmes.</p></li>
+</ol>
+<section id="id1">
+<h3>Définition<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
 <p>La fonction de transfert du système est définie par :</p>
 <div class="math notranslate nohighlight">
 \[H(p) = \frac{S(p)}{E(p)}\]</div>
@@ -352,7 +402,8 @@ de manipuler des dérivées, l’utilisation de la fonction de transfert permet 
 <li><p>à partir de l’équation différentielle en appliquant la transformée de Laplace sous l’hypothèse où les conditions initiales sont nulles,</p></li>
 <li><p>à partir de l’analyse d’un circuit électronique en utilisant directement la notion d’impédance généralisée.</p></li>
 </ul>
-<p>Il est courant d’exprime la fonction de transfert sous deux formes différentes: la forme polynomiale et la forme factorisée.</p>
+<p>La représentation d’une fonction de transfert peut être exprimée sous plusieurs formes, parmi lesquelles les formes canoniques polynomiales, les zéros-pôles-gain (zpk) ou encore les formes d’état.</p>
+</section>
 <section id="forme-polynomiale-ba">
 <h3>Forme Polynomiale [ba]<a class="headerlink" href="#forme-polynomiale-ba" title="Link to this heading">#</a></h3>
 <div class="math notranslate nohighlight">
@@ -382,7 +433,12 @@ de manipuler des dérivées, l’utilisation de la fonction de transfert permet 
 <figure class="align-default">
 <img alt="../_images/transfer_function-1.png" class="plot-directive" src="../_images/transfer_function-1.png" />
 </figure>
-<p>Les pôles jouent un rôle de premier plan au niveau de la réponse temporelle (stabilité, présence d’oscillation, rapidité).</p>
+<p>La représentation en zéros-pôles-gain (zpk) est particulièrement prisée pour les raisons suivantes :</p>
+<ul class="simple">
+<li><p>Interprétation physique: Chaque zéro et pôle de la fonction de transfert a une signification physique associée au comportement dynamique du système. Par exemple, un pôle indique une fréquence naturelle du système et peut être lié à des phénomènes tels que la résonance. Cette représentation donne ainsi une vision intuitive du comportement du système.</p></li>
+<li><p>Simplification mathématique: Dans certains cas, il est plus simple et plus direct de travailler avec des zéros et des pôles plutôt qu’avec des polynômes complets, notamment lorsqu’on veut analyser la stabilité d’un système.</p></li>
+<li><p>Multiplication et division: Dans le cadre de la mise en série ou en parallèle de systèmes, il est souvent plus simple de multiplier ou diviser directement les représentations zpk entre elles plutôt que leurs formes polynomiales.</p></li>
+</ul>
 </section>
 </section>
 <section id="proprietes">
@@ -400,8 +456,9 @@ de manipuler des dérivées, l’utilisation de la fonction de transfert permet 
 </section>
 <section id="gain-statique">
 <h3>Gain statique<a class="headerlink" href="#gain-statique" title="Link to this heading">#</a></h3>
-<p>Le gain statique d’une fonction de transfert, noté <span class="math notranslate nohighlight">\(K\)</span>,  correspond à la réponse en régime permanent d’un système à une entrée de type échelon unité.</p>
-<p>Pour déterminer le gain statique d’une fonction de transfert <span class="math notranslate nohighlight">\(H(p)\)</span>, il suffit d’évaluer la fonction de transfert en 0 c-à-d</p>
+<p>Le gain statique est une mesure essentielle pour la conception et l’analyse des systèmes car il donne une première indication sur le comportement d’un système en régime permanent face à des perturbations ou des signaux d’entrée constants.</p>
+<p>Le gain statique d’une fonction de transfert, noté <span class="math notranslate nohighlight">\(K\)</span>,  est défini comme la réponse en régime permanent d’un système à une entrée de type échelon unité, c-à-d <span class="math notranslate nohighlight">\(e(t)=u(t)\)</span>, en supposant que le système est initialement au repos (c’est-à-dire, toutes les conditions initiales sont nulles)</p>
+<p>Il est possible de determiner le gain statique d’une fonction de transfert <span class="math notranslate nohighlight">\(H(p)\)</span> en posant <span class="math notranslate nohighlight">\(p=0\)</span>.</p>
 <div class="math notranslate nohighlight">
 \[K = H(0) = \frac{b_0}{a_0}\]</div>
 <ul class="simple">
@@ -421,11 +478,16 @@ de manipuler des dérivées, l’utilisation de la fonction de transfert permet 
 </section>
 <section id="comportement-frequentiel">
 <h3>Comportement Fréquentiel<a class="headerlink" href="#comportement-frequentiel" title="Link to this heading">#</a></h3>
+<p>Une caractéristique essentielle des systèmes SLIT est que si l’entrée est une sinusoïde de fréquence <span class="math notranslate nohighlight">\(f_0\)</span>, la sortie sera aussi une sinusoïde de la même fréquence, mais potentiellement avec une amplitude et une phase modifiées. Le comportement fréquentiel d’un système SLIT permet d’obtenir le gain et le déphasage du signal de sortie en fonction de la fréquence.</p>
 <section id="exponentielle-complexe">
 <h4>Exponentielle Complexe<a class="headerlink" href="#exponentielle-complexe" title="Link to this heading">#</a></h4>
 <p>Lorsque l’entrée est une exponentielle complexe de pulsation <span class="math notranslate nohighlight">\(\omega\)</span>, c-à-d <span class="math notranslate nohighlight">\(e(t)=ce^{j\omega t}\)</span>, la sortie est une sinusoïde de même pulsation et s’exprime sous la forme :</p>
 <div class="math notranslate nohighlight">
 \[s(t)=H(j\omega)ce^{j\omega t}.\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(H(j\omega)\)</span> correspond au gain complexe du système à la pulsation <span class="math notranslate nohighlight">\(\omega\)</span>,</p></li>
+</ul>
+<p>Notons que pour tous les systèmes réels (<span class="math notranslate nohighlight">\(a_n\in \mathbb{R}\)</span> et <span class="math notranslate nohighlight">\(b_m\in \mathbb{R}\)</span>), la fonction de transfert <span class="math notranslate nohighlight">\(H(p)\)</span> respectera la propriété de symétrie hermitienne suivante: <span class="math notranslate nohighlight">\(H(p) = H^*(-j\omega)\)</span>.</p>
 </section>
 <section id="sinusoide">
 <h4>Sinusoïde<a class="headerlink" href="#sinusoide" title="Link to this heading">#</a></h4>

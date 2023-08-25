@@ -1,5 +1,24 @@
+Analyse des systèmes SLIT
+=========================
+
+
+
 Systèmes SLIT
-=============
+-------------
+
+Définition
+++++++++++
+
+Un système est dit linéaire s'il obéit au principe de superposition. Cela signifie que la sortie du système à une combinaison linéaire d'entrées est égale à la même combinaison linéaire des sorties individuelles correspondant à ces entrées. Formellement, si un système produit une sortie :math:`y_1(t)` en réponse à une entrée :math:`x_1(t)` et une sortie :math:`y_2(t)` en réponse à :math:`x_2(t)`, alors pour n'importe quelles constantes :math:`a` et :math:`b`, la sortie due à :math:`a \times x_1(t) + b \times x_2(t)` sera :math:`a \times y_1(t) + b \times y_2(t)`.
+
+L'invariance dans le temps, quant à elle, indique que le comportement du système ne change pas avec le temps. Cela signifie que si une entrée :math:`x(t)` produit une sortie :math:`y(t)`, alors, pour tout retard :math:`\tau`, l'entrée :math:`x(t-\tau)` produira la sortie :math:`y(t-\tau)`. En d'autres termes, le système répond de la même manière à une même entrée, indépendamment du moment où cette entrée est appliquée.
+
+Un Système Linéaire Invariant dans le Temps, ou SLIT, est un système qui respecte à la fois la propriété de linéarité et celle d'invariance dans le temps. Ces systèmes sont essentiels en ingénierie car ils peuvent être décrits et analysés de manière compacte en utilisant des outils mathématiques tels que la Transformée de Fourier ou la Transformée de Laplace.
+
+Modélisation 
+++++++++++++
+
+Pour un SLIT, la relation entre l'entrée et la sortie peut être représentée par une équation différentielle linéaire où les coefficients de cette équation ne varient pas avec le temps. 
 
 Considérons un système linéaire et invariant dans le temps (SLIT) décrit par une équation différentielle linéaire à coefficients constants d'ordre n :
 
@@ -16,8 +35,28 @@ Dans ce cours, nous allons nous focaliser spécifiquement à différent type d'e
 * Echelon d'amplitude E: Lorsque :math:`e(t)=Eu(t)`, la sortie du système est appelée **réponse indicielle**,
 * Sinusoïde: Lorsque :math:`E\cos(\omega t + \varphi_e)`, la sortie du système est appelée **réponse fréquentielle**.
 
+Fonction de transfert
+---------------------
+
+La notion de fonction de transfert offre plusieurs avantages par rapport à l'utilisation directe d'équations différentielles lors de l'analyse des systèmes.
+
+1. **Simplification mathématique** : 
+   Avec la Transformée de Laplace, les équations différentielles se transforment en équations algébriques, qui sont souvent plus simples à manipuler. Par exemple, la dérivation devient une multiplication, ce qui facilite les opérations.
+
+2. **Représentation universelle** : 
+   La fonction de transfert donne une représentation standard d'un système qui capture ses caractéristiques dynamiques, indépendamment de l'entrée spécifique.
+
+3. **Analyse fréquentielle** : 
+   La fonction de transfert permet d'analyser facilement le comportement du système en fonction de la fréquence. 
+
+4. **Modularité** : 
+   Lors de la conception de systèmes complexes composés de plusieurs sous-systèmes, chaque sous-système peut être représenté par sa propre fonction de transfert. Ces fonctions de transfert peuvent ensuite être combinées de manière simple (par exemple, par mise en série ou en parallèle) pour obtenir la fonction de transfert du système global.
+
+5. **Facilité d'utilisation avec des outils de simulation** : 
+   De nombreux outils modernes (comme MATLAB/Simulink ou Python) utilisent la fonction de transfert pour simuler et analyser les systèmes. 
+
 Définition
-----------
+++++++++++
 
 La fonction de transfert du système est définie par :
 
@@ -35,7 +74,8 @@ L'expression de :math:`H(p)` peut s'obtenir
 * à partir de l'équation différentielle en appliquant la transformée de Laplace sous l'hypothèse où les conditions initiales sont nulles,
 * à partir de l'analyse d'un circuit électronique en utilisant directement la notion d'impédance généralisée.
 
-Il est courant d'exprime la fonction de transfert sous deux formes différentes: la forme polynomiale et la forme factorisée.
+
+La représentation d'une fonction de transfert peut être exprimée sous plusieurs formes, parmi lesquelles les formes canoniques polynomiales, les zéros-pôles-gain (zpk) ou encore les formes d'état. 
 
 Forme Polynomiale [ba]
 ++++++++++++++++++++++
@@ -92,7 +132,16 @@ Il est courant de représenter la localisation des pôles (:math:`\times`) et de
     plt.legend()
     plt.grid()
 
-Les pôles jouent un rôle de premier plan au niveau de la réponse temporelle (stabilité, présence d'oscillation, rapidité).
+
+La représentation en zéros-pôles-gain (zpk) est particulièrement prisée pour les raisons suivantes :
+
+* Interprétation physique: Chaque zéro et pôle de la fonction de transfert a une signification physique associée au comportement dynamique du système. Par exemple, un pôle indique une fréquence naturelle du système et peut être lié à des phénomènes tels que la résonance. Cette représentation donne ainsi une vision intuitive du comportement du système.
+
+* Simplification mathématique: Dans certains cas, il est plus simple et plus direct de travailler avec des zéros et des pôles plutôt qu'avec des polynômes complets, notamment lorsqu'on veut analyser la stabilité d'un système.
+
+* Multiplication et division: Dans le cadre de la mise en série ou en parallèle de systèmes, il est souvent plus simple de multiplier ou diviser directement les représentations zpk entre elles plutôt que leurs formes polynomiales.
+
+
 
 Propriétés 
 ----------
@@ -115,9 +164,11 @@ Pour qu'un système soit stable, il est possible d'établir que tous les pôles 
 Gain statique 
 +++++++++++++
 
-Le gain statique d'une fonction de transfert, noté :math:`K`,  correspond à la réponse en régime permanent d'un système à une entrée de type échelon unité.
+Le gain statique est une mesure essentielle pour la conception et l'analyse des systèmes car il donne une première indication sur le comportement d'un système en régime permanent face à des perturbations ou des signaux d'entrée constants.
 
-Pour déterminer le gain statique d'une fonction de transfert :math:`H(p)`, il suffit d'évaluer la fonction de transfert en 0 c-à-d
+Le gain statique d'une fonction de transfert, noté :math:`K`,  est défini comme la réponse en régime permanent d'un système à une entrée de type échelon unité, c-à-d :math:`e(t)=u(t)`, en supposant que le système est initialement au repos (c'est-à-dire, toutes les conditions initiales sont nulles)
+
+Il est possible de determiner le gain statique d'une fonction de transfert :math:`H(p)` en posant :math:`p=0`.
 
 .. math ::
 
@@ -148,6 +199,8 @@ A titre d'illustration, si le système est soumis à une entrée en échelon uni
 Comportement Fréquentiel
 ++++++++++++++++++++++++
 
+Une caractéristique essentielle des systèmes SLIT est que si l'entrée est une sinusoïde de fréquence :math:`f_0`, la sortie sera aussi une sinusoïde de la même fréquence, mais potentiellement avec une amplitude et une phase modifiées. Le comportement fréquentiel d'un système SLIT permet d'obtenir le gain et le déphasage du signal de sortie en fonction de la fréquence.
+
 Exponentielle Complexe 
 ``````````````````````
 
@@ -156,6 +209,10 @@ Lorsque l'entrée est une exponentielle complexe de pulsation :math:`\omega`, c-
 .. math::
     
     s(t)=H(j\omega)ce^{j\omega t}.
+
+* :math:`H(j\omega)` correspond au gain complexe du système à la pulsation :math:`\omega`,
+
+Notons que pour tous les systèmes réels (:math:`a_n\in \mathbb{R}` et :math:`b_m\in \mathbb{R}`), la fonction de transfert :math:`H(p)` respectera la propriété de symétrie hermitienne suivante: :math:`H(p) = H^*(-j\omega)`.
 
 Sinusoïde
 `````````
