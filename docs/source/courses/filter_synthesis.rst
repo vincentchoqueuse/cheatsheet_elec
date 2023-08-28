@@ -1,11 +1,37 @@
 Synthèse des Filtres d'ordre N
 ==============================
 
+Un filtre est souvent représenté par une fonction de transfert qui détermine comment les différentes fréquences d'un signal d'entrée sont affectées. L'ordre d'un :math:`N` d'un filtre est lié à la puissance la plus élevée dans son équation différentielle, ce qui, en retour, est souvent directement lié au nombre de composants nécessaires pour réaliser le filtre.
+
+Plus :math:`N` est élevé, plus le filtre est capable d'offrir une transition abrupte entre les fréquences qu'il laisse passer et celles qu'il rejette. Cependant, cela vient aussi avec une complexité accrue et des exigences plus strictes en termes de composants et de conception.
+
+Concevoir un filtre n'est pas simplement une question de choix de l'ordre approprié. La synthèse des filtres concerne la définition des caractéristiques désirées du filtre (comme la bande passante, l'atténuation, la phase) et la conversion de ces spécifications en une conception de circuit ou un algorithme. L'ingénieur doit trouver un compromis entre plusieurs paramètres : rapidité de transition entre les bandes passantes et de coupure, ondulation acceptable dans la bande passante, atténuation minimale dans la bande de coupure, et bien sûr, la complexité et la faisabilité du filtre.
+
+Méthodologie
+------------
+
+* Étape 1 : Synthèse du filtre normalisé
+
+    - Définir les spécifications du filtre : Avant toute chose, il est nécessaire de définir les spécifications souhaitées pour le filtre, comme la bande passante, l'atténuation, l'ondulation dans la bande passante, etc.
+    - Choisir la technique de synthèse : Cela peut être Butterworth, Chebyshev, elliptique, etc. Chaque type a ses propres caractéristiques.
+    - Déterminer l'ordre :math:`N` du filtre : En utilisant les spécifications et le type de réponse choisie, déterminez l'ordre minimal :math:`N` du filtre nécessaire pour satisfaire ces spécifications.
+    - Synthèse de la fonction de transfert : Avec l'ordre déterminé et le type de réponse, utilisez les formules appropriées pour déduire la fonction de transfert :math:`H_n(p)` du filtre normalisé.
+
+* Étape 2 : Dénormalisation. La dénormalisation consiste à adapter le filtre conçu dans l'étape précédente à vos besoins réels, comme la fréquence de coupure ou la bande passante.
+
+    - Réaliser la substitution :math:`p\to f(p)` pour obtenir la fonction de transfert du filtre dénormalisé.
+
+* Étape 3 : Réalisation du filtre
+
+    - Sélection des composants : À partir de la fonction de transfert dénormalisée, choisissez des composants (résistances, condensateurs, inductances, etc.) pour réaliser physiquement le filtre.
+
+    - Assemblage et test : Une fois que vous avez tous les composants nécessaires, assemblez le filtre. Testez ensuite ses performances pour vous assurer qu'il répond aux spécifications.
+
+
 Denormalisation
 ---------------
 
-Pour synthétiser un filtre d'ordre N, la procédure classique consiste à d'abord synthétiser son équivalent "passe-bas" normalisé puis à réaliser une dénormalisation. 
-Soit :math:`H_n(p)` la fonction de transfert du filtre normalisé. La fonction du filtre dénormalisé s'obtient en modifiant la variable p de la manière suivante :
+Pour synthétiser un filtre d'ordre N, la procédure classique consiste à d'abord synthétiser son équivalent "passe-bas" normalisé puis à réaliser une dénormalisation. Soit :math:`H_n(p)` la fonction de transfert du filtre normalisé. La fonction du filtre dénormalisé s'obtient en modifiant la variable p de la manière suivante :
 
 .. math ::
 
@@ -15,8 +41,8 @@ Soit :math:`H_n(p)` la fonction de transfert du filtre normalisé. La fonction d
 * :math:`H_n(p)`: fonction de transfert du filtre normalisé.
 
 
-Mapping des pôles et zéros  
-++++++++++++++++++++++++++
+Mapping fréquentiel 
++++++++++++++++++++
 
 Lors de la dénormalisation, la pulsation :math:`\omega` est mappé en une ou plusieurs pulsations :math:`\widehat{\omega}`. Le lien entre 
 :math:`\omega` et :math:`\widehat{\omega}` est donné par l'équation : 
