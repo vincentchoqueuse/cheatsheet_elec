@@ -25,7 +25,7 @@
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../_static/plot_directive.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=b1afeb3f" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=91a7fb74" />
 
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=92025949c220c2e29695">
@@ -248,17 +248,22 @@
 <nav id="bd-toc-nav">
     <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#methodologie">
+   Méthodologie
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#denormalisation">
    Denormalisation
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#mapping-des-poles-et-zeros">
-     Mapping des pôles et zéros
+    <a class="reference internal nav-link" href="#mapping-frequentiel">
+     Mapping fréquentiel
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id1">
+    <a class="reference internal nav-link" href="#mapping-des-poles-et-zeros">
      Mapping des pôles et zéros
     </a>
    </li>
@@ -275,7 +280,7 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#mapping-frequentiel">
+    <a class="reference internal nav-link" href="#id1">
      Mapping Fréquentiel
     </a>
    </li>
@@ -373,25 +378,57 @@
                 
   <section id="synthese-des-filtres-d-ordre-n">
 <h1>Synthèse des Filtres d’ordre N<a class="headerlink" href="#synthese-des-filtres-d-ordre-n" title="Link to this heading">#</a></h1>
+<p>Un filtre est souvent représenté par une fonction de transfert qui détermine comment les différentes fréquences d’un signal d’entrée sont affectées. L’ordre d’un <span class="math notranslate nohighlight">\(N\)</span> d’un filtre est lié à la puissance la plus élevée dans son équation différentielle, ce qui, en retour, est souvent directement lié au nombre de composants nécessaires pour réaliser le filtre.</p>
+<p>Plus <span class="math notranslate nohighlight">\(N\)</span> est élevé, plus le filtre est capable d’offrir une transition abrupte entre les fréquences qu’il laisse passer et celles qu’il rejette. Cependant, cela vient aussi avec une complexité accrue et des exigences plus strictes en termes de composants et de conception.</p>
+<p>Concevoir un filtre n’est pas simplement une question de choix de l’ordre approprié. La synthèse des filtres concerne la définition des caractéristiques désirées du filtre (comme la bande passante, l’atténuation, la phase) et la conversion de ces spécifications en une conception de circuit ou un algorithme. L’ingénieur doit trouver un compromis entre plusieurs paramètres : rapidité de transition entre les bandes passantes et de coupure, ondulation acceptable dans la bande passante, atténuation minimale dans la bande de coupure, et bien sûr, la complexité et la faisabilité du filtre.</p>
+<section id="methodologie">
+<h2>Méthodologie<a class="headerlink" href="#methodologie" title="Link to this heading">#</a></h2>
+<ul>
+<li><p>Étape 1 : Synthèse du filtre normalisé</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Définir les spécifications du filtre : Avant toute chose, il est nécessaire de définir les spécifications souhaitées pour le filtre, comme la bande passante, l’atténuation, l’ondulation dans la bande passante, etc.</p></li>
+<li><p>Choisir la technique de synthèse : Cela peut être Butterworth, Chebyshev, elliptique, etc. Chaque type a ses propres caractéristiques.</p></li>
+<li><p>Déterminer l’ordre <span class="math notranslate nohighlight">\(N\)</span> du filtre : En utilisant les spécifications et le type de réponse choisie, déterminez l’ordre minimal <span class="math notranslate nohighlight">\(N\)</span> du filtre nécessaire pour satisfaire ces spécifications.</p></li>
+<li><p>Synthèse de la fonction de transfert : Avec l’ordre déterminé et le type de réponse, utilisez les formules appropriées pour déduire la fonction de transfert <span class="math notranslate nohighlight">\(H_n(p)\)</span> du filtre normalisé.</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Étape 2 : Dénormalisation. La dénormalisation consiste à adapter le filtre conçu dans l’étape précédente à vos besoins réels, comme la fréquence de coupure ou la bande passante.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Réaliser la substitution <span class="math notranslate nohighlight">\(p\to f(p)\)</span> pour obtenir la fonction de transfert du filtre dénormalisé.</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Étape 3 : Réalisation du filtre</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Sélection des composants : À partir de la fonction de transfert dénormalisée, choisissez des composants (résistances, condensateurs, inductances, etc.) pour réaliser physiquement le filtre.</p></li>
+<li><p>Assemblage et test : Une fois que vous avez tous les composants nécessaires, assemblez le filtre. Testez ensuite ses performances pour vous assurer qu’il répond aux spécifications.</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</section>
 <section id="denormalisation">
 <h2>Denormalisation<a class="headerlink" href="#denormalisation" title="Link to this heading">#</a></h2>
-<p>Pour synthétiser un filtre d’ordre N, la procédure classique consiste à d’abord synthétiser son équivalent “passe-bas” normalisé puis à réaliser une dénormalisation.
-Soit <span class="math notranslate nohighlight">\(H_n(p)\)</span> la fonction de transfert du filtre normalisé. La fonction du filtre dénormalisé s’obtient en modifiant la variable p de la manière suivante :</p>
+<p>Pour synthétiser un filtre d’ordre N, la procédure classique consiste à d’abord synthétiser son équivalent “passe-bas” normalisé puis à réaliser une dénormalisation. Soit <span class="math notranslate nohighlight">\(H_n(p)\)</span> la fonction de transfert du filtre normalisé. La fonction du filtre dénormalisé s’obtient en modifiant la variable p de la manière suivante :</p>
 <div class="math notranslate nohighlight">
 \[H(p) = \frac{N(p)}{D(p)}= \left.H_n(p)\right|_{p\to f(p)}\]</div>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(f(p)\)</span>: fonction de transformation,</p></li>
 <li><p><span class="math notranslate nohighlight">\(H_n(p)\)</span>: fonction de transfert du filtre normalisé.</p></li>
 </ul>
-<section id="mapping-des-poles-et-zeros">
-<h3>Mapping des pôles et zéros<a class="headerlink" href="#mapping-des-poles-et-zeros" title="Link to this heading">#</a></h3>
+<section id="mapping-frequentiel">
+<h3>Mapping fréquentiel<a class="headerlink" href="#mapping-frequentiel" title="Link to this heading">#</a></h3>
 <p>Lors de la dénormalisation, la pulsation <span class="math notranslate nohighlight">\(\omega\)</span> est mappé en une ou plusieurs pulsations <span class="math notranslate nohighlight">\(\widehat{\omega}\)</span>. Le lien entre
 <span class="math notranslate nohighlight">\(\omega\)</span> et <span class="math notranslate nohighlight">\(\widehat{\omega}\)</span> est donné par l’équation :</p>
 <div class="math notranslate nohighlight">
 \[\omega = \frac{1}{j}f(j\widehat{\omega})\]</div>
 </section>
-<section id="id1">
-<h3>Mapping des pôles et zéros<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<section id="mapping-des-poles-et-zeros">
+<h3>Mapping des pôles et zéros<a class="headerlink" href="#mapping-des-poles-et-zeros" title="Link to this heading">#</a></h3>
 <p>Lors de la dénormalisation, le pôle <span class="math notranslate nohighlight">\(p_l\)</span> est mappé en un ou plusieurs pôles <span class="math notranslate nohighlight">\(\widehat{p}_l\)</span>. Le lien entre
 <span class="math notranslate nohighlight">\(p_l\)</span> et <span class="math notranslate nohighlight">\(\widehat{p}_l\)</span> est donné par l’équation :</p>
 <div class="math notranslate nohighlight">
@@ -405,8 +442,8 @@ Soit <span class="math notranslate nohighlight">\(H_n(p)\)</span> la fonction de
 <div class="math notranslate nohighlight">
 \[f(p) = \frac{p}{\omega_c}\]</div>
 </section>
-<section id="mapping-frequentiel">
-<h3>Mapping Fréquentiel<a class="headerlink" href="#mapping-frequentiel" title="Link to this heading">#</a></h3>
+<section id="id1">
+<h3>Mapping Fréquentiel<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
 <p>La pulsation <span class="math notranslate nohighlight">\(\omega\)</span> rad/s du filtre normalisé est mappée à la pulsation <span class="math notranslate nohighlight">\(\widehat{\omega}\)</span> telle que</p>
 <div class="math notranslate nohighlight">
 \[j\omega = \frac{j\widehat{\omega}}{\omega_c} \Rightarrow \omega=\frac{\widehat{\omega}}{\omega_c}\]</div>
@@ -560,7 +597,7 @@ Soit <span class="math notranslate nohighlight">\(H_n(p)\)</span> la fonction de
   
   <div class="footer-item">
     <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 7.2.3.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 7.2.4.<br>
 </p>
   </div>
   

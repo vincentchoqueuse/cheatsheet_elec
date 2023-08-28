@@ -17,6 +17,11 @@ nav.bd-links ul {
     list-style: none;
     padding: 0 0 0 0 !important;
     }
+
+
+nav.bd-links ul ul {
+        padding-left: 20px !important;
+    }
         
 .bd-header.navbar-light#navbar-main {
     background: var(--pst-color-on-background) !important;
@@ -42,4 +47,12 @@ nav.bd-links .active:hover>a, nav.bd-links .active>a {
 
 pre{
     box-shadow: none;
+}
+
+.toctree-wrapper p.caption {
+    margin-bottom: 20px !important;
+}
+
+a:visited {
+    color: var(--pst-color-primary);
 }
