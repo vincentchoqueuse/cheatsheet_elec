@@ -56,3 +56,14 @@ pre{
 a:visited {
     color: var(--pst-color-primary);
 }
+
+.fa-bars {
+    color: rgb(77, 77, 77);
+}
+
+@media (max-width:1199.98px)
+{
+    .navbar button.navbar-toggler {
+        border-color: rgb(201, 201, 201);
+    }
+}
