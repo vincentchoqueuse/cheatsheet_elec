@@ -74,6 +74,27 @@ L'expression de :math:`H(p)` peut s'obtenir
 * à partir de l'équation différentielle en appliquant la transformée de Laplace sous l'hypothèse où les conditions initiales sont nulles,
 * à partir de l'analyse d'un circuit électronique en utilisant directement la notion d'impédance généralisée.
 
+Exemple 
+```````
+
+Soit la fonction de transfert de second ordre suivante :
+
+.. math ::
+
+    a_2 \frac{d^2 s(t)}{dt^2} + a_1 \frac{d s(t)}{dt}  +a_0 s(t) = b_0 e(t)
+
+En supposant les conditions initiales nulles, nous obtenons dans le domaine de Laplace l'équation algébrique suivante : 
+
+.. math ::
+
+    a_2 p^2S(p) + a_1 pS(p)  +a_0 S(p) = b_0 E(p)
+
+En factorisant de deux côtés, il en vient que :
+
+.. math ::
+
+    (a_2 p^2 + a_1 p  +a_0) S(p) = b_0 E(p) \Rightarrow H(p)=\frac{b_0}{a_2 p^2 + a_1 p  +a_0}
+
 
 La représentation d'une fonction de transfert peut être exprimée sous plusieurs formes, parmi lesquelles les formes canoniques polynomiales, les zéros-pôles-gain (zpk) ou encore les formes d'état. 
 
@@ -135,11 +156,11 @@ Il est courant de représenter la localisation des pôles (:math:`\times`) et de
 
 La représentation en zéros-pôles-gain (zpk) est particulièrement prisée pour les raisons suivantes :
 
-* Interprétation physique: Chaque zéro et pôle de la fonction de transfert a une signification physique associée au comportement dynamique du système. Par exemple, un pôle indique une fréquence naturelle du système et peut être lié à des phénomènes tels que la résonance. Cette représentation donne ainsi une vision intuitive du comportement du système.
+* **Interprétation physique:** Chaque zéro et pôle de la fonction de transfert a une signification physique associée au comportement dynamique du système. Par exemple, un pôle indique une fréquence naturelle du système et peut être lié à des phénomènes tels que la résonance. Cette représentation donne ainsi une vision intuitive du comportement du système.
 
-* Simplification mathématique: Dans certains cas, il est plus simple et plus direct de travailler avec des zéros et des pôles plutôt qu'avec des polynômes complets, notamment lorsqu'on veut analyser la stabilité d'un système.
+* **Simplification mathématique:** Dans certains cas, il est plus simple et plus direct de travailler avec des zéros et des pôles plutôt qu'avec des polynômes complets, notamment lorsqu'on veut analyser la stabilité d'un système.
 
-* Multiplication et division: Dans le cadre de la mise en série ou en parallèle de systèmes, il est souvent plus simple de multiplier ou diviser directement les représentations zpk entre elles plutôt que leurs formes polynomiales.
+* **Multiplication et division:** Dans le cadre de la mise en série ou en parallèle de systèmes, il est souvent plus simple de multiplier ou diviser directement les représentations zpk entre elles plutôt que leurs formes polynomiales.
 
 
 
