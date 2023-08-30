@@ -181,6 +181,11 @@
    Conda
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ltspice.html">
+   LTSpice
+  </a>
+ </li>
 </ul>
 
   </div>
@@ -205,6 +210,11 @@
 
 <nav id="bd-toc-nav">
     <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction">
+   Introduction
+  </a>
+ </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#analyse-de-systemes">
    Analyse de Systèmes
@@ -292,11 +302,31 @@
                 
   <section id="python">
 <h1>Python<a class="headerlink" href="#python" title="Link to this heading">#</a></h1>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
+<p>Dans ce cours nous allons utiliser Python pour l’analyse des filtres et plus généralement des systèmes LTI.
+L’utilisation de Python pour l’analyse des systèmes linéaires invariants dans le temps (LTI) offre plusieurs avantages.</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>Librairies puissantes :</dt><dd><ul>
+<li><p><code class="code docutils literal notranslate"><span class="pre">NumPy</span></code> : Une bibliothèque pour la manipulation d’arrays et matrices, essentielle pour les calculs liés aux systèmes LTI.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">SciPy</span></code> : Offre le module signal qui fournit des outils pour l’analyse et la conception de systèmes LTI, y compris des fonctions pour la transformation de Laplace, de Fourier, la convolution, etc.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">matplotlib</span></code> : Une bibliothèque de visualisation permettant de tracer des réponses en fréquence, des réponses impulsionnelles et temporelles, et d’autres aspects des systèmes LTI.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p><strong>Flexibilité</strong> : Contrairement à des logiciels spécifiques qui peuvent être limités dans leurs fonctionnalités ou leur capacité d’extension, Python est un langage de programmation complet. Cela signifie que vous pouvez facilement automatiser des tâches, effectuer des analyses complexes, ou même intégrer l’analyse LTI dans des applications plus grandes.</p></li>
+<li><p><strong>Interopérabilité</strong>: Python peut être facilement intégré avec d’autres logiciels ou langages de programmation. Cela est particulièrement utile si vous devez, par exemple, combiner l’analyse LTI avec des simulations réalisées dans d’autres logiciels.</p></li>
+<li><p><strong>Open Source et Gratuit</strong> : Python et ses librairies sont open source, ce qui signifie qu’ils sont gratuits à utiliser et qu’ils bénéficient du support d’une large communauté. Vous pouvez les adapter selon vos besoins sans restriction.</p></li>
+<li><p><strong>Plateforme indépendante</strong> : Python est multiplateforme, ce qui signifie que vous pouvez exécuter vos scripts d’analyse LTI sur Windows, MacOS, Linux, et même sur certains systèmes embarqués.</p></li>
+</ul>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">from</span> <span class="nn">scipy.signal</span> <span class="kn">import</span> <span class="n">lti</span><span class="p">,</span> <span class="n">butter</span>
 </pre></div>
 </div>
+</section>
 <section id="analyse-de-systemes">
 <h2>Analyse de Systèmes<a class="headerlink" href="#analyse-de-systemes" title="Link to this heading">#</a></h2>
 <ul class="simple">

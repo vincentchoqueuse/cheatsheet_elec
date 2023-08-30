@@ -8,6 +8,7 @@ Cheatsheets
    markdown
    python
    conda
+   ltspice
    
 
  

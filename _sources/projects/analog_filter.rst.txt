@@ -120,8 +120,8 @@ Circuits Sallen Key
 
   SK HP Filter
 
-Circuits MFB
-++++++++++++
+Circuits Rauch
+++++++++++++++
 
 .. figure:: ../courses/img/MFB_LP.svg
   :width: 300

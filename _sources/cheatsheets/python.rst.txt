@@ -1,6 +1,22 @@
 Python
 ======
 
+Introduction
+------------
+
+Dans ce cours nous allons utiliser Python pour l'analyse des filtres et plus généralement des systèmes LTI.
+L'utilisation de Python pour l'analyse des systèmes linéaires invariants dans le temps (LTI) offre plusieurs avantages. 
+
+* Librairies puissantes :
+    * :code:`NumPy` : Une bibliothèque pour la manipulation d'arrays et matrices, essentielle pour les calculs liés aux systèmes LTI.
+    * :code:`SciPy` : Offre le module signal qui fournit des outils pour l'analyse et la conception de systèmes LTI, y compris des fonctions pour la transformation de Laplace, de Fourier, la convolution, etc.
+    * :code:`matplotlib` : Une bibliothèque de visualisation permettant de tracer des réponses en fréquence, des réponses impulsionnelles et temporelles, et d'autres aspects des systèmes LTI.
+* **Flexibilité** : Contrairement à des logiciels spécifiques qui peuvent être limités dans leurs fonctionnalités ou leur capacité d'extension, Python est un langage de programmation complet. Cela signifie que vous pouvez facilement automatiser des tâches, effectuer des analyses complexes, ou même intégrer l'analyse LTI dans des applications plus grandes.
+* **Interopérabilité**: Python peut être facilement intégré avec d'autres logiciels ou langages de programmation. Cela est particulièrement utile si vous devez, par exemple, combiner l'analyse LTI avec des simulations réalisées dans d'autres logiciels.
+* **Open Source et Gratuit** : Python et ses librairies sont open source, ce qui signifie qu'ils sont gratuits à utiliser et qu'ils bénéficient du support d'une large communauté. Vous pouvez les adapter selon vos besoins sans restriction.
+* **Plateforme indépendante** : Python est multiplateforme, ce qui signifie que vous pouvez exécuter vos scripts d'analyse LTI sur Windows, MacOS, Linux, et même sur certains systèmes embarqués.
+
+
 .. plot ::
     :context:
     :include-source: true

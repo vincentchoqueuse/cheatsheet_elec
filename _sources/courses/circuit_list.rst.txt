@@ -124,33 +124,33 @@ Circuits Sallen Key
 
   SK HP Filter
 
-Circuits MFB
-++++++++++++
+Circuits Rauch
+++++++++++++++
 
 .. figure:: img/MFB_LP.svg
   :width: 300
   :align: center
   :alt: MFB LP
 
-  MFB LP Filter
+  Rauch LP Filter
 
 .. figure:: img/MFB_BP.svg
   :width: 300
   :align: center
   :alt: MFB BP
 
-  MFB BP Filter
+  Rauch BP Filter
 
 .. figure:: img/MFB_BP2.svg
   :width: 300
   :align: center
   :alt: MFB BP2
 
-  MFB BP2 Filter
+  Rauch BP2 Filter
 
 .. figure:: img/MFB_HP.svg
   :width: 300
   :align: center
   :alt: MFB HP
 
-  MFB HP Filter
+  Rauch HP Filter

@@ -273,6 +273,13 @@
     <a class="reference internal nav-link" href="#id1">
      Définition
     </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#exemple">
+       Exemple
+      </a>
+     </li>
+    </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#forme-polynomiale-ba">
@@ -302,7 +309,7 @@
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#exemple">
+      <a class="reference internal nav-link" href="#id2">
        Exemple
       </a>
      </li>
@@ -402,7 +409,19 @@ De nombreux outils modernes (comme MATLAB/Simulink ou Python) utilisent la fonct
 <li><p>à partir de l’équation différentielle en appliquant la transformée de Laplace sous l’hypothèse où les conditions initiales sont nulles,</p></li>
 <li><p>à partir de l’analyse d’un circuit électronique en utilisant directement la notion d’impédance généralisée.</p></li>
 </ul>
+<section id="exemple">
+<h4>Exemple<a class="headerlink" href="#exemple" title="Link to this heading">#</a></h4>
+<p>Soit la fonction de transfert de second ordre suivante :</p>
+<div class="math notranslate nohighlight">
+\[a_2 \frac{d^2 s(t)}{dt^2} + a_1 \frac{d s(t)}{dt}  +a_0 s(t) = b_0 e(t)\]</div>
+<p>En supposant les conditions initiales nulles, nous obtenons dans le domaine de Laplace l’équation algébrique suivante :</p>
+<div class="math notranslate nohighlight">
+\[a_2 p^2S(p) + a_1 pS(p)  +a_0 S(p) = b_0 E(p)\]</div>
+<p>En factorisant de deux côtés, il en vient que :</p>
+<div class="math notranslate nohighlight">
+\[(a_2 p^2 + a_1 p  +a_0) S(p) = b_0 E(p) \Rightarrow H(p)=\frac{b_0}{a_2 p^2 + a_1 p  +a_0}\]</div>
 <p>La représentation d’une fonction de transfert peut être exprimée sous plusieurs formes, parmi lesquelles les formes canoniques polynomiales, les zéros-pôles-gain (zpk) ou encore les formes d’état.</p>
+</section>
 </section>
 <section id="forme-polynomiale-ba">
 <h3>Forme Polynomiale [ba]<a class="headerlink" href="#forme-polynomiale-ba" title="Link to this heading">#</a></h3>
@@ -435,9 +454,9 @@ De nombreux outils modernes (comme MATLAB/Simulink ou Python) utilisent la fonct
 </figure>
 <p>La représentation en zéros-pôles-gain (zpk) est particulièrement prisée pour les raisons suivantes :</p>
 <ul class="simple">
-<li><p>Interprétation physique: Chaque zéro et pôle de la fonction de transfert a une signification physique associée au comportement dynamique du système. Par exemple, un pôle indique une fréquence naturelle du système et peut être lié à des phénomènes tels que la résonance. Cette représentation donne ainsi une vision intuitive du comportement du système.</p></li>
-<li><p>Simplification mathématique: Dans certains cas, il est plus simple et plus direct de travailler avec des zéros et des pôles plutôt qu’avec des polynômes complets, notamment lorsqu’on veut analyser la stabilité d’un système.</p></li>
-<li><p>Multiplication et division: Dans le cadre de la mise en série ou en parallèle de systèmes, il est souvent plus simple de multiplier ou diviser directement les représentations zpk entre elles plutôt que leurs formes polynomiales.</p></li>
+<li><p><strong>Interprétation physique:</strong> Chaque zéro et pôle de la fonction de transfert a une signification physique associée au comportement dynamique du système. Par exemple, un pôle indique une fréquence naturelle du système et peut être lié à des phénomènes tels que la résonance. Cette représentation donne ainsi une vision intuitive du comportement du système.</p></li>
+<li><p><strong>Simplification mathématique:</strong> Dans certains cas, il est plus simple et plus direct de travailler avec des zéros et des pôles plutôt qu’avec des polynômes complets, notamment lorsqu’on veut analyser la stabilité d’un système.</p></li>
+<li><p><strong>Multiplication et division:</strong> Dans le cadre de la mise en série ou en parallèle de systèmes, il est souvent plus simple de multiplier ou diviser directement les représentations zpk entre elles plutôt que leurs formes polynomiales.</p></li>
 </ul>
 </section>
 </section>
@@ -465,8 +484,8 @@ De nombreux outils modernes (comme MATLAB/Simulink ou Python) utilisent la fonct
 <li><p>Lorsque l’entrée est une sinusoïde, le gain statique s’obtient en évaluant le gain dans les basse-fréquences c-a-d lorsque <span class="math notranslate nohighlight">\(\omega \to 0\)</span>.</p></li>
 <li><p>Si l’entrée et/ou la sortie ne sont pas nulles, le gain statique correspond au rapport entre la variation de la sortie et la variation de l’entrée.</p></li>
 </ul>
-<section id="exemple">
-<h4>Exemple<a class="headerlink" href="#exemple" title="Link to this heading">#</a></h4>
+<section id="id2">
+<h4>Exemple<a class="headerlink" href="#id2" title="Link to this heading">#</a></h4>
 <p>Soit la fonction de transfert de :</p>
 <div class="math notranslate nohighlight">
 \[H(p) = \frac{2p+5}{p^2+3p+2}\]</div>

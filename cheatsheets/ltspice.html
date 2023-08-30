@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>LTSpice &#8212; cheatsheet elec  documentation</title>
+<script>
+  document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
+  document.documentElement.dataset.theme = localStorage.getItem("theme") || "light"
+</script>
+
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=92025949c220c2e29695" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=92025949c220c2e29695" rel="stylesheet">
+
+
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../_static/plot_directive.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=d988800b" />
+
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=92025949c220c2e29695">
+
+    <script src="../_static/documentation_options.js?v=8a448e45"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Links" href="../links.html" />
+    <link rel="prev" title="Conda" href="conda.html" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="docsearch:language" content="en">
+  </head>
+  
+  
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="180" data-default-mode="light">
+    <div class="bd-header-announcement container-fluid" id="banner">
+      
+
+    </div>
+
+    
+    <nav class="bd-header navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="bd-header__inner container-xl">
+
+  <div id="navbar-start">
+    
+    
+  
+
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+    <img src="../_static/logo.svg" class="logo__image only-light" alt="Logo image">
+    <img src="../_static/logo.svg" class="logo__image only-dark" alt="Logo image">
+  
+  
+</a>
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="fas fa-bars"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../courses/index.html">
+  Cours
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../tutorials/index.html">
+  Tutorials
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../projects/index.html">
+  Projects
+ </a>
+</li>
+
+<li class="toctree-l1 current active nav-item">
+ <a class="reference internal nav-link" href="index.html">
+  Cheatsheets
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../links.html">
+  Links
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../about.html">
+  About
+ </a>
+</li>
+
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <span id="theme-switch" class="btn btn-sm btn-outline-primary navbar-btn rounded-circle">
+    <a class="theme-switch" data-mode="light"><i class="fas fa-sun"></i></a>
+    <a class="theme-switch" data-mode="dark"><i class="far fa-moon"></i></a>
+    <a class="theme-switch" data-mode="auto"><i class="fas fa-adjust"></i></a>
+</span>
+      </div>
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/vincentchoqueuse/cheatsheet_elec" rel="noopener" target="_blank" title="GitHub"><span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label></a>
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="bd-container container-xl">
+      <div class="bd-container__inner row">
+          
+
+<!-- Only show if we have sidebars configured, else just a small margin  -->
+<div class="bd-sidebar-primary col-12 col-md-3 bd-sidebar">
+  <div class="sidebar-start-items"><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Contents:
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="markdown.html">
+   Markdown
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="python.html">
+   Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="conda.html">
+   Conda
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   LTSpice
+  </a>
+ </li>
+</ul>
+
+  </div>
+</nav>
+  </div>
+  <div class="sidebar-end-items">
+  </div>
+</div>
+
+
+          
+
+
+<div class="bd-sidebar-secondary d-none d-xl-block col-xl-2 bd-toc">
+  
+    
+    <div class="toc-item">
+      
+<div class="tocsection onthispage mt-5 pt-1 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction">
+   Introduction
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exemple">
+     Exemple
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#gestion-des-fichiers-audio">
+   Gestion des fichiers Audio
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#import-de-fichiers">
+     Import de fichiers
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#export">
+     Export
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#creation-automatique-de-fichier-ltspice">
+   Création Automatique de fichier LTspice
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#installation-de-jinja">
+     Installation de Jinja
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#structure-du-projet">
+     Structure du Projet
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#fichier-ltspice">
+     Fichier LTSpice
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#code-python">
+     Code Python
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+</nav>
+    </div>
+    
+    <div class="toc-item">
+      
+    </div>
+    
+  
+</div>
+
+
+          
+          
+          <div class="bd-content col-12 col-md-9 col-xl-7">
+              
+              <article class="bd-article" role="main">
+                
+  <section id="ltspice">
+<h1>LTSpice<a class="headerlink" href="#ltspice" title="Link to this heading">#</a></h1>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
+<p>LTspice est un logiciel de simulation de circuits électroniques de haute performance développé par Linear Technology, désormais une division d’Analog Devices. Il s’agit d’un simulateur SPICE standard avec une interface graphique améliorée et sans les limitations courantes des simulateurs SPICE traditionnels. Voici quelques points saillants concernant LTspice:</p>
+<ul class="simple">
+<li><p><strong>Gratuité:</strong> LTspice est offert gratuitement aux concepteurs et aux étudiants. Il ne possède pas de limitations sur le nombre de nœuds, de composants ou de n’importe quel autre paramètre caractéristique des versions d’évaluation d’autres outils.</p></li>
+<li><p><strong>Interface Utilisateur Intuitive:</strong> L’interface de LTspice est conçue pour être intuitive. Les utilisateurs peuvent dessiner des schémas, exécuter des simulations, et visualiser les résultats avec facilité.</p></li>
+<li><p><strong>Librairies Complètes:</strong> LTspice est fourni avec des librairies comprenant des milliers de composants. Toutefois, sa principale force réside dans les modèles de composants de Linear Technology.</p></li>
+<li><p><strong>Types de Simulation:</strong> Outre les analyses DC, AC et transitoires standard, LTspice supporte également la simulation thermique, la simulation de bruit, et d’autres types plus avancés.</p></li>
+<li><p><strong>Personnalisation:</strong> Les utilisateurs peuvent ajouter leurs propres modèles SPICE, ce qui rend LTspice extrêmement flexible.</p></li>
+<li><p><strong>Compatibilité:</strong> Étant un outil basé sur SPICE, LTspice peut souvent exécuter des fichiers de netlist d’autres simulateurs SPICE, et ses fichiers peuvent également être importés dans d’autres outils SPICE.</p></li>
+</ul>
+<section id="exemple">
+<h3>Exemple<a class="headerlink" href="#exemple" title="Link to this heading">#</a></h3>
+<p>Un fichier LTspice peut s’ouvrir avec un éditeur de texte. Le code ci-dessous correspond au contenu du fichier LTSpice <code class="code docutils literal notranslate"><span class="pre">.asc</span></code> pour un filtre Rauch de type LP.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Version 4
+SHEET 1 1876 900
+WIRE -224 -128 -432 -128
+WIRE -816 -112 -1008 -112
+WIRE -560 -112 -816 -112
+WIRE -816 -96 -816 -112
+WIRE -1120 16 -1168 16
+WIRE -1008 16 -1008 -32
+WIRE -1008 16 -1040 16
+WIRE -960 16 -1008 16
+WIRE -816 16 -816 -32
+WIRE -816 16 -880 16
+WIRE -752 16 -816 16
+WIRE -608 32 -688 32
+WIRE -560 32 -560 -112
+WIRE -560 32 -608 32
+WIRE -752 48 -816 48
+WIRE -1168 64 -1168 16
+WIRE -368 64 -368 32
+WIRE -1008 80 -1008 16
+WIRE -816 80 -816 48
+WIRE -368 96 -368 64
+WIRE -1168 176 -1168 144
+WIRE -1008 176 -1008 144
+WIRE -432 272 -432 -128
+WIRE -224 272 -224 -128
+WIRE -224 272 -432 272
+FLAG -368 64 0
+FLAG -368 -48 +Vcc
+IOPIN -368 -48 Out
+FLAG -368 176 -Vcc
+IOPIN -368 176 Out
+FLAG -720 0 +Vcc
+IOPIN -720 0 In
+FLAG -720 64 -Vcc
+IOPIN -720 64 In
+FLAG -608 32 vs
+FLAG -1168 16 ve
+IOPIN -1168 16 In
+FLAG -816 80 0
+FLAG -1008 176 0
+FLAG -1168 176 0
+SYMBOL voltage -368 -64 R0
+SYMATTR InstName V1
+SYMATTR Value 15
+SYMBOL voltage -368 80 R0
+SYMATTR InstName V2
+SYMATTR Value 15
+SYMBOL UniversalOpamp2 -720 32 R0
+SYMATTR InstName U1
+SYMBOL res -1136 32 R270
+WINDOW 0 32 56 VTop 2
+WINDOW 3 0 56 VBottom 2
+SYMATTR InstName R1
+SYMATTR Value 1000
+SYMBOL res -976 32 R270
+WINDOW 0 32 56 VTop 2
+WINDOW 3 0 56 VBottom 2
+SYMATTR InstName R3
+SYMATTR Value 1000
+SYMBOL res -1024 -128 R0
+SYMATTR InstName R2
+SYMATTR Value 5000
+SYMBOL cap -832 -96 R0
+SYMATTR InstName C2
+SYMATTR Value 23n
+SYMBOL cap -1024 80 R0
+SYMATTR InstName C1
+SYMATTR Value 3.5µ
+SYMBOL voltage -1168 48 R0
+WINDOW 123 24 124 Left 2
+WINDOW 39 0 0 Left 2
+SYMATTR Value2 AC 1 0
+SYMATTR InstName V3
+SYMATTR Value &quot;&quot;
+TEXT -400 250 Left 1 ;alimentation AOP
+TEXT -1200 300 Left 2 !.ac dec 100 10 10k
+</pre></div>
+</div>
+</section>
+</section>
+<section id="gestion-des-fichiers-audio">
+<h2>Gestion des fichiers Audio<a class="headerlink" href="#gestion-des-fichiers-audio" title="Link to this heading">#</a></h2>
+<p>Dans LTspice, il est possible d’importer un fichier son pour l’utiliser comme une source de signal dans une simulation. Ceci est utile si vous souhaitez, par exemple, simuler le comportement d’un circuit à un signal sonore réel.</p>
+<section id="import-de-fichiers">
+<h3>Import de fichiers<a class="headerlink" href="#import-de-fichiers" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Placez une source de tension sur votre schéma.</p></li>
+<li><p>Faites un clic droit sur la source de tension pour éditer ses propriétés.</p></li>
+<li><p>Dans le champ “Value”, tapez <code class="code docutils literal notranslate"><span class="pre">wavefile=&quot;{{filename}}.wav&quot;</span></code> (remplacez <code class="code docutils literal notranslate"><span class="pre">{{filename}}&quot;</span></code> par le chemin complet du fichier .wav sur votre ordinateur).</p></li>
+<li><p>Lancer la simulation</p></li>
+</ul>
+</section>
+<section id="export">
+<h3>Export<a class="headerlink" href="#export" title="Link to this heading">#</a></h3>
+<p>Tapez la directive suivante :</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">.</span><span class="n">wave</span> <span class="n">nom_du_fichier</span><span class="o">.</span><span class="n">wav</span> <span class="n">nBits</span> <span class="n">nSamples</span> <span class="n">V</span><span class="p">({{</span><span class="n">noeud</span><span class="p">}})</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="code docutils literal notranslate"><span class="pre">nom_du_fichier.wav</span></code> est le nom du fichier où vous souhaitez sauvegarder la sortie.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">nBits</span></code> est le nombre de bits par échantillon (par exemple, 16 pour une résolution de 16 bits).</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">nSamples</span></code> est la fréquence d’échantillonnage (par exemple, 44100 pour 44,1 kHz).</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">V({{noeud}})</span></code> est la tension que vous souhaitez exporter, où <code class="code docutils literal notranslate"><span class="pre">{{noeud}}</span></code> est le nom du nœud ou point de votre schéma dont vous souhaitez exporter la tension.</p></li>
+</ul>
+<p>Par exemple, si vous souhaitez exporter la tension au point nommé Out avec une résolution de 16 bits et une fréquence d’échantillonnage de 44,1 kHz, la directive serait : <code class="code docutils literal notranslate"><span class="pre">..wave</span> <span class="pre">sortie.wav</span> <span class="pre">16</span> <span class="pre">44100</span> <span class="pre">V(Out)</span></code></p>
+</section>
+</section>
+<section id="creation-automatique-de-fichier-ltspice">
+<h2>Création Automatique de fichier LTspice<a class="headerlink" href="#creation-automatique-de-fichier-ltspice" title="Link to this heading">#</a></h2>
+<p>Pour créer automatiquement des fichiers LTspice, une solution consiste à utiliser le moteur de template Python Jinja.
+L’utilisation de Jinja en Python pour générer des fichiers LTspice présente plusieurs avantages, en particulier dans le cadre de simulations automatisées, d’optimisations ou d’analyses de paramètres. Voici quelques raisons pour lesquelles cette approche pourrait être bénéfique:</p>
+<ul class="simple">
+<li><p><strong>Automatisation des simulations</strong>: En générant des fichiers LTspice avec Jinja, vous pouvez créer automatiquement plusieurs variantes de schémas basés sur différents paramètres. C’est utile pour exécuter des séries de simulations avec différentes conditions ou valeurs de composants.</p></li>
+<li><p><strong>Optimisation</strong>: Si vous souhaitez optimiser certaines performances d’un circuit (comme le gain, la bande passante, etc.), vous pouvez générer des schémas avec différentes configurations, exécuter des simulations pour chacune d’elles et analyser les résultats pour trouver la meilleure configuration.</p></li>
+<li><p><strong>Reproductibilité</strong>: La génération programmée de fichiers LTspice garantit que les schémas sont toujours créés de la même manière, réduisant les erreurs humaines.</p></li>
+<li><p><strong>Modularité</strong>: Avec Jinja, vous pouvez créer des modèles réutilisables pour des parties courantes de circuits, vous permettant de construire rapidement des schémas complexes à partir de blocs préexistants.</p></li>
+<li><p><strong>Gestion de grands projets</strong>: Pour les projets complexes qui nécessitent de nombreux scénarios de simulation ou des variations de conception, la gestion manuelle des fichiers LTspice peut devenir fastidieuse. En utilisant Jinja, vous pouvez structurer et organiser votre flux de travail de manière plus systématique.</p></li>
+</ul>
+<section id="installation-de-jinja">
+<h3>Installation de Jinja<a class="headerlink" href="#installation-de-jinja" title="Link to this heading">#</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">jinja2</span>
+</pre></div>
+</div>
+</section>
+<section id="structure-du-projet">
+<h3>Structure du Projet<a class="headerlink" href="#structure-du-projet" title="Link to this heading">#</a></h3>
+<p>Dans l’exemple ci dessous, nous allons considérer la création d’un fichier LTspice permettant de simuler un circuit RC-RC.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>/output
+/templates
+<span class="w">    </span>RCRC.asc<span class="w"> </span>//&lt;-<span class="w"> </span>template<span class="w"> </span>contenant<span class="w"> </span>le<span class="w"> </span>code<span class="w"> </span>asc
+generate_filter.py
+</pre></div>
+</div>
+</section>
+<section id="fichier-ltspice">
+<h3>Fichier LTSpice<a class="headerlink" href="#fichier-ltspice" title="Link to this heading">#</a></h3>
+<p>Le contenu du template LTSpice RCRC.asc est le suivant :</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Version</span> <span class="mi">4</span>
+<span class="n">SHEET</span> <span class="mi">1</span> <span class="mi">1876</span> <span class="mi">900</span>
+<span class="n">WIRE</span> <span class="o">-</span><span class="mi">816</span> <span class="mi">32</span> <span class="o">-</span><span class="mi">832</span> <span class="mi">32</span>
+<span class="n">WIRE</span> <span class="o">-</span><span class="mi">768</span> <span class="mi">32</span> <span class="o">-</span><span class="mi">816</span> <span class="mi">32</span>
+<span class="n">WIRE</span> <span class="o">-</span><span class="mi">656</span> <span class="mi">32</span> <span class="o">-</span><span class="mi">688</span> <span class="mi">32</span>
+<span class="n">WIRE</span> <span class="o">-</span><span class="mi">560</span> <span class="mi">32</span> <span class="o">-</span><span class="mi">656</span> <span class="mi">32</span>
+<span class="n">WIRE</span> <span class="o">-</span><span class="mi">448</span> <span class="mi">32</span> <span class="o">-</span><span class="mi">480</span> <span class="mi">32</span>
+<span class="n">WIRE</span> <span class="o">-</span><span class="mi">400</span> <span class="mi">32</span> <span class="o">-</span><span class="mi">448</span> <span class="mi">32</span>
+<span class="n">WIRE</span> <span class="o">-</span><span class="mi">656</span> <span class="mi">96</span> <span class="o">-</span><span class="mi">656</span> <span class="mi">32</span>
+<span class="n">WIRE</span> <span class="o">-</span><span class="mi">448</span> <span class="mi">96</span> <span class="o">-</span><span class="mi">448</span> <span class="mi">32</span>
+<span class="n">WIRE</span> <span class="o">-</span><span class="mi">832</span> <span class="mi">192</span> <span class="o">-</span><span class="mi">832</span> <span class="mi">112</span>
+<span class="n">WIRE</span> <span class="o">-</span><span class="mi">656</span> <span class="mi">192</span> <span class="o">-</span><span class="mi">656</span> <span class="mi">160</span>
+<span class="n">WIRE</span> <span class="o">-</span><span class="mi">448</span> <span class="mi">192</span> <span class="o">-</span><span class="mi">448</span> <span class="mi">160</span>
+<span class="n">WIRE</span> <span class="mi">992</span> <span class="mi">320</span> <span class="mi">992</span> <span class="o">-</span><span class="mi">304</span>
+<span class="n">FLAG</span> <span class="o">-</span><span class="mi">816</span> <span class="mi">32</span> <span class="n">ve</span>
+<span class="n">IOPIN</span> <span class="o">-</span><span class="mi">816</span> <span class="mi">32</span> <span class="n">In</span>
+<span class="n">FLAG</span> <span class="o">-</span><span class="mi">656</span> <span class="mi">192</span> <span class="mi">0</span>
+<span class="n">FLAG</span> <span class="o">-</span><span class="mi">400</span> <span class="mi">32</span> <span class="n">vs</span>
+<span class="n">IOPIN</span> <span class="o">-</span><span class="mi">400</span> <span class="mi">32</span> <span class="n">Out</span>
+<span class="n">FLAG</span> <span class="o">-</span><span class="mi">448</span> <span class="mi">192</span> <span class="mi">0</span>
+<span class="n">FLAG</span> <span class="o">-</span><span class="mi">832</span> <span class="mi">192</span> <span class="mi">0</span>
+<span class="n">SYMBOL</span> <span class="n">res</span> <span class="o">-</span><span class="mi">784</span> <span class="mi">48</span> <span class="n">R270</span>
+<span class="n">WINDOW</span> <span class="mi">0</span> <span class="mi">32</span> <span class="mi">56</span> <span class="n">VTop</span> <span class="mi">2</span>
+<span class="n">WINDOW</span> <span class="mi">3</span> <span class="mi">0</span> <span class="mi">56</span> <span class="n">VBottom</span> <span class="mi">2</span>
+<span class="n">SYMATTR</span> <span class="n">InstName</span> <span class="n">R1</span>
+<span class="n">SYMATTR</span> <span class="n">Value</span> <span class="p">{{</span><span class="n">R1</span><span class="p">}}</span>
+<span class="n">SYMBOL</span> <span class="n">cap</span> <span class="o">-</span><span class="mi">672</span> <span class="mi">96</span> <span class="n">R0</span>
+<span class="n">SYMATTR</span> <span class="n">InstName</span> <span class="n">C1</span>
+<span class="n">SYMATTR</span> <span class="n">Value</span> <span class="p">{{</span><span class="n">C1</span><span class="p">}}</span>
+<span class="n">SYMBOL</span> <span class="n">res</span> <span class="o">-</span><span class="mi">576</span> <span class="mi">48</span> <span class="n">R270</span>
+<span class="n">WINDOW</span> <span class="mi">0</span> <span class="mi">32</span> <span class="mi">56</span> <span class="n">VTop</span> <span class="mi">2</span>
+<span class="n">WINDOW</span> <span class="mi">3</span> <span class="mi">0</span> <span class="mi">56</span> <span class="n">VBottom</span> <span class="mi">2</span>
+<span class="n">SYMATTR</span> <span class="n">InstName</span> <span class="n">R2</span>
+<span class="n">SYMATTR</span> <span class="n">Value</span> <span class="p">{{</span><span class="n">R2</span><span class="p">}}</span>
+<span class="n">SYMBOL</span> <span class="n">cap</span> <span class="o">-</span><span class="mi">464</span> <span class="mi">96</span> <span class="n">R0</span>
+<span class="n">SYMATTR</span> <span class="n">InstName</span> <span class="n">C2</span>
+<span class="n">SYMATTR</span> <span class="n">Value</span> <span class="p">{{</span><span class="n">C2</span><span class="p">}}</span>
+<span class="n">SYMBOL</span> <span class="n">voltage</span> <span class="o">-</span><span class="mi">832</span> <span class="mi">16</span> <span class="n">R0</span>
+<span class="n">WINDOW</span> <span class="mi">123</span> <span class="mi">24</span> <span class="mi">124</span> <span class="n">Left</span> <span class="mi">2</span>
+<span class="n">WINDOW</span> <span class="mi">39</span> <span class="mi">0</span> <span class="mi">0</span> <span class="n">Left</span> <span class="mi">2</span>
+<span class="n">SYMATTR</span> <span class="n">Value2</span> <span class="n">AC</span> <span class="mi">1</span> <span class="mi">0</span>
+<span class="n">SYMATTR</span> <span class="n">InstName</span> <span class="n">V1</span>
+<span class="n">SYMATTR</span> <span class="n">Value</span> <span class="s2">&quot;&quot;</span>
+</pre></div>
+</div>
+<p>Ce fichier de template contient les tags jinja <code class="code docutils literal notranslate"><span class="pre">{{R1}}</span></code>, <code class="code docutils literal notranslate"><span class="pre">{{R2}}</span></code>, <code class="code docutils literal notranslate"><span class="pre">{{C1}}</span></code>, <code class="code docutils literal notranslate"><span class="pre">{{C2}}</span></code>. Le code jinja va permettre
+de remplacer ces tags par une valeur via python.</p>
+</section>
+<section id="code-python">
+<h3>Code Python<a class="headerlink" href="#code-python" title="Link to this heading">#</a></h3>
+<p>Le contenu du fichier python <code class="code docutils literal notranslate"><span class="pre">generate_filter.py</span></code> est le suivant.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">jinja2</span> <span class="kn">import</span> <span class="n">Environment</span><span class="p">,</span> <span class="n">FileSystemLoader</span>
+
+
+<span class="c1"># chargement du template Jinja</span>
+<span class="n">file_loader</span> <span class="o">=</span> <span class="n">FileSystemLoader</span><span class="p">(</span><span class="s1">&#39;templates&#39;</span><span class="p">)</span>
+<span class="n">env</span> <span class="o">=</span> <span class="n">Environment</span><span class="p">(</span><span class="n">loader</span><span class="o">=</span><span class="n">file_loader</span><span class="p">)</span>
+<span class="n">template</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">get_template</span><span class="p">(</span><span class="s1">&#39;RCRC.asc&#39;</span><span class="p">)</span>
+
+<span class="c1"># Valeurs pour les composants à insérer dans le template</span>
+<span class="n">values</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;R1&quot;</span><span class="p">:</span> <span class="s2">&quot;10k&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;C1&quot;</span><span class="p">:</span> <span class="s2">&quot;10n&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;R2&quot;</span><span class="p">:</span> <span class="s2">&quot;100k&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;C2&quot;</span><span class="p">:</span> <span class="s2">&quot;1n&quot;</span>
+<span class="p">}</span>
+<span class="n">template</span><span class="o">.</span><span class="n">stream</span><span class="p">(</span><span class="n">values</span><span class="p">)</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="s2">&quot;output/RCRC_output.asc&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+
+
+              </article>
+              
+
+              
+              <footer class="bd-footer-article">
+                  <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+  <a class='left-prev' id="prev-link" href="conda.html" title="previous page">
+      <i class="fas fa-angle-left"></i>
+      <div class="prev-next-info">
+          <p class="prev-next-subtitle">previous</p>
+          <p class="prev-next-title">Conda</p>
+      </div>
+  </a>
+  <a class='right-next' id="next-link" href="../links.html" title="next page">
+  <div class="prev-next-info">
+      <p class="prev-next-subtitle">next</p>
+      <p class="prev-next-title">Links</p>
+  </div>
+  <i class="fas fa-angle-right"></i>
+  </a>
+</div>
+              </footer>
+              
+          </div>
+          
+      </div>
+    </div>
+
+  
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=92025949c220c2e29695"></script>
+
+<footer class="bd-footer"><div class="bd-footer__inner container">
+  
+  <div class="footer-item">
+    <p class="copyright">
+    &copy; Copyright 2022, V. Choqueuse.<br>
+</p>
+  </div>
+  
+  <div class="footer-item">
+    <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 7.2.4.<br>
+</p>
+  </div>
+  
+</div>
+</footer>
+  </body>
+</html>
