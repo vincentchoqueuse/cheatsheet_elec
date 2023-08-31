@@ -300,83 +300,83 @@
 <section id="exemple">
 <h3>Exemple<a class="headerlink" href="#exemple" title="Link to this heading">#</a></h3>
 <p>Un fichier LTspice peut s’ouvrir avec un éditeur de texte. Le code ci-dessous correspond au contenu du fichier LTSpice <code class="code docutils literal notranslate"><span class="pre">.asc</span></code> pour un filtre Rauch de type LP.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Version 4
-SHEET 1 1876 900
-WIRE -224 -128 -432 -128
-WIRE -816 -112 -1008 -112
-WIRE -560 -112 -816 -112
-WIRE -816 -96 -816 -112
-WIRE -1120 16 -1168 16
-WIRE -1008 16 -1008 -32
-WIRE -1008 16 -1040 16
-WIRE -960 16 -1008 16
-WIRE -816 16 -816 -32
-WIRE -816 16 -880 16
-WIRE -752 16 -816 16
-WIRE -608 32 -688 32
-WIRE -560 32 -560 -112
-WIRE -560 32 -608 32
-WIRE -752 48 -816 48
-WIRE -1168 64 -1168 16
-WIRE -368 64 -368 32
-WIRE -1008 80 -1008 16
-WIRE -816 80 -816 48
-WIRE -368 96 -368 64
-WIRE -1168 176 -1168 144
-WIRE -1008 176 -1008 144
-WIRE -432 272 -432 -128
-WIRE -224 272 -224 -128
-WIRE -224 272 -432 272
-FLAG -368 64 0
-FLAG -368 -48 +Vcc
-IOPIN -368 -48 Out
-FLAG -368 176 -Vcc
-IOPIN -368 176 Out
-FLAG -720 0 +Vcc
-IOPIN -720 0 In
-FLAG -720 64 -Vcc
-IOPIN -720 64 In
-FLAG -608 32 vs
-FLAG -1168 16 ve
-IOPIN -1168 16 In
-FLAG -816 80 0
-FLAG -1008 176 0
-FLAG -1168 176 0
-SYMBOL voltage -368 -64 R0
-SYMATTR InstName V1
-SYMATTR Value 15
-SYMBOL voltage -368 80 R0
-SYMATTR InstName V2
-SYMATTR Value 15
-SYMBOL UniversalOpamp2 -720 32 R0
-SYMATTR InstName U1
-SYMBOL res -1136 32 R270
-WINDOW 0 32 56 VTop 2
-WINDOW 3 0 56 VBottom 2
-SYMATTR InstName R1
-SYMATTR Value 1000
-SYMBOL res -976 32 R270
-WINDOW 0 32 56 VTop 2
-WINDOW 3 0 56 VBottom 2
-SYMATTR InstName R3
-SYMATTR Value 1000
-SYMBOL res -1024 -128 R0
-SYMATTR InstName R2
-SYMATTR Value 5000
-SYMBOL cap -832 -96 R0
-SYMATTR InstName C2
-SYMATTR Value 23n
-SYMBOL cap -1024 80 R0
-SYMATTR InstName C1
-SYMATTR Value 3.5µ
-SYMBOL voltage -1168 48 R0
-WINDOW 123 24 124 Left 2
-WINDOW 39 0 0 Left 2
-SYMATTR Value2 AC 1 0
-SYMATTR InstName V3
-SYMATTR Value &quot;&quot;
-TEXT -400 250 Left 1 ;alimentation AOP
-TEXT -1200 300 Left 2 !.ac dec 100 10 10k
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Version<span class="w"> </span><span class="m">4</span>
+SHEET<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">1876</span><span class="w"> </span><span class="m">900</span>
+WIRE<span class="w"> </span>-224<span class="w"> </span>-128<span class="w"> </span>-432<span class="w"> </span>-128
+WIRE<span class="w"> </span>-816<span class="w"> </span>-112<span class="w"> </span>-1008<span class="w"> </span>-112
+WIRE<span class="w"> </span>-560<span class="w"> </span>-112<span class="w"> </span>-816<span class="w"> </span>-112
+WIRE<span class="w"> </span>-816<span class="w"> </span>-96<span class="w"> </span>-816<span class="w"> </span>-112
+WIRE<span class="w"> </span>-1120<span class="w"> </span><span class="m">16</span><span class="w"> </span>-1168<span class="w"> </span><span class="m">16</span>
+WIRE<span class="w"> </span>-1008<span class="w"> </span><span class="m">16</span><span class="w"> </span>-1008<span class="w"> </span>-32
+WIRE<span class="w"> </span>-1008<span class="w"> </span><span class="m">16</span><span class="w"> </span>-1040<span class="w"> </span><span class="m">16</span>
+WIRE<span class="w"> </span>-960<span class="w"> </span><span class="m">16</span><span class="w"> </span>-1008<span class="w"> </span><span class="m">16</span>
+WIRE<span class="w"> </span>-816<span class="w"> </span><span class="m">16</span><span class="w"> </span>-816<span class="w"> </span>-32
+WIRE<span class="w"> </span>-816<span class="w"> </span><span class="m">16</span><span class="w"> </span>-880<span class="w"> </span><span class="m">16</span>
+WIRE<span class="w"> </span>-752<span class="w"> </span><span class="m">16</span><span class="w"> </span>-816<span class="w"> </span><span class="m">16</span>
+WIRE<span class="w"> </span>-608<span class="w"> </span><span class="m">32</span><span class="w"> </span>-688<span class="w"> </span><span class="m">32</span>
+WIRE<span class="w"> </span>-560<span class="w"> </span><span class="m">32</span><span class="w"> </span>-560<span class="w"> </span>-112
+WIRE<span class="w"> </span>-560<span class="w"> </span><span class="m">32</span><span class="w"> </span>-608<span class="w"> </span><span class="m">32</span>
+WIRE<span class="w"> </span>-752<span class="w"> </span><span class="m">48</span><span class="w"> </span>-816<span class="w"> </span><span class="m">48</span>
+WIRE<span class="w"> </span>-1168<span class="w"> </span><span class="m">64</span><span class="w"> </span>-1168<span class="w"> </span><span class="m">16</span>
+WIRE<span class="w"> </span>-368<span class="w"> </span><span class="m">64</span><span class="w"> </span>-368<span class="w"> </span><span class="m">32</span>
+WIRE<span class="w"> </span>-1008<span class="w"> </span><span class="m">80</span><span class="w"> </span>-1008<span class="w"> </span><span class="m">16</span>
+WIRE<span class="w"> </span>-816<span class="w"> </span><span class="m">80</span><span class="w"> </span>-816<span class="w"> </span><span class="m">48</span>
+WIRE<span class="w"> </span>-368<span class="w"> </span><span class="m">96</span><span class="w"> </span>-368<span class="w"> </span><span class="m">64</span>
+WIRE<span class="w"> </span>-1168<span class="w"> </span><span class="m">176</span><span class="w"> </span>-1168<span class="w"> </span><span class="m">144</span>
+WIRE<span class="w"> </span>-1008<span class="w"> </span><span class="m">176</span><span class="w"> </span>-1008<span class="w"> </span><span class="m">144</span>
+WIRE<span class="w"> </span>-432<span class="w"> </span><span class="m">272</span><span class="w"> </span>-432<span class="w"> </span>-128
+WIRE<span class="w"> </span>-224<span class="w"> </span><span class="m">272</span><span class="w"> </span>-224<span class="w"> </span>-128
+WIRE<span class="w"> </span>-224<span class="w"> </span><span class="m">272</span><span class="w"> </span>-432<span class="w"> </span><span class="m">272</span>
+FLAG<span class="w"> </span>-368<span class="w"> </span><span class="m">64</span><span class="w"> </span><span class="m">0</span>
+FLAG<span class="w"> </span>-368<span class="w"> </span>-48<span class="w"> </span>+Vcc
+IOPIN<span class="w"> </span>-368<span class="w"> </span>-48<span class="w"> </span>Out
+FLAG<span class="w"> </span>-368<span class="w"> </span><span class="m">176</span><span class="w"> </span>-Vcc
+IOPIN<span class="w"> </span>-368<span class="w"> </span><span class="m">176</span><span class="w"> </span>Out
+FLAG<span class="w"> </span>-720<span class="w"> </span><span class="m">0</span><span class="w"> </span>+Vcc
+IOPIN<span class="w"> </span>-720<span class="w"> </span><span class="m">0</span><span class="w"> </span>In
+FLAG<span class="w"> </span>-720<span class="w"> </span><span class="m">64</span><span class="w"> </span>-Vcc
+IOPIN<span class="w"> </span>-720<span class="w"> </span><span class="m">64</span><span class="w"> </span>In
+FLAG<span class="w"> </span>-608<span class="w"> </span><span class="m">32</span><span class="w"> </span>vs
+FLAG<span class="w"> </span>-1168<span class="w"> </span><span class="m">16</span><span class="w"> </span>ve
+IOPIN<span class="w"> </span>-1168<span class="w"> </span><span class="m">16</span><span class="w"> </span>In
+FLAG<span class="w"> </span>-816<span class="w"> </span><span class="m">80</span><span class="w"> </span><span class="m">0</span>
+FLAG<span class="w"> </span>-1008<span class="w"> </span><span class="m">176</span><span class="w"> </span><span class="m">0</span>
+FLAG<span class="w"> </span>-1168<span class="w"> </span><span class="m">176</span><span class="w"> </span><span class="m">0</span>
+SYMBOL<span class="w"> </span>voltage<span class="w"> </span>-368<span class="w"> </span>-64<span class="w"> </span>R0
+SYMATTR<span class="w"> </span>InstName<span class="w"> </span>V1
+SYMATTR<span class="w"> </span>Value<span class="w"> </span><span class="m">15</span>
+SYMBOL<span class="w"> </span>voltage<span class="w"> </span>-368<span class="w"> </span><span class="m">80</span><span class="w"> </span>R0
+SYMATTR<span class="w"> </span>InstName<span class="w"> </span>V2
+SYMATTR<span class="w"> </span>Value<span class="w"> </span><span class="m">15</span>
+SYMBOL<span class="w"> </span>UniversalOpamp2<span class="w"> </span>-720<span class="w"> </span><span class="m">32</span><span class="w"> </span>R0
+SYMATTR<span class="w"> </span>InstName<span class="w"> </span>U1
+SYMBOL<span class="w"> </span>res<span class="w"> </span>-1136<span class="w"> </span><span class="m">32</span><span class="w"> </span>R270
+WINDOW<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">32</span><span class="w"> </span><span class="m">56</span><span class="w"> </span>VTop<span class="w"> </span><span class="m">2</span>
+WINDOW<span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">56</span><span class="w"> </span>VBottom<span class="w"> </span><span class="m">2</span>
+SYMATTR<span class="w"> </span>InstName<span class="w"> </span>R1
+SYMATTR<span class="w"> </span>Value<span class="w"> </span><span class="m">1000</span>
+SYMBOL<span class="w"> </span>res<span class="w"> </span>-976<span class="w"> </span><span class="m">32</span><span class="w"> </span>R270
+WINDOW<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">32</span><span class="w"> </span><span class="m">56</span><span class="w"> </span>VTop<span class="w"> </span><span class="m">2</span>
+WINDOW<span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">56</span><span class="w"> </span>VBottom<span class="w"> </span><span class="m">2</span>
+SYMATTR<span class="w"> </span>InstName<span class="w"> </span>R3
+SYMATTR<span class="w"> </span>Value<span class="w"> </span><span class="m">1000</span>
+SYMBOL<span class="w"> </span>res<span class="w"> </span>-1024<span class="w"> </span>-128<span class="w"> </span>R0
+SYMATTR<span class="w"> </span>InstName<span class="w"> </span>R2
+SYMATTR<span class="w"> </span>Value<span class="w"> </span><span class="m">5000</span>
+SYMBOL<span class="w"> </span>cap<span class="w"> </span>-832<span class="w"> </span>-96<span class="w"> </span>R0
+SYMATTR<span class="w"> </span>InstName<span class="w"> </span>C2
+SYMATTR<span class="w"> </span>Value<span class="w"> </span>23n
+SYMBOL<span class="w"> </span>cap<span class="w"> </span>-1024<span class="w"> </span><span class="m">80</span><span class="w"> </span>R0
+SYMATTR<span class="w"> </span>InstName<span class="w"> </span>C1
+SYMATTR<span class="w"> </span>Value<span class="w"> </span><span class="m">3</span>.5µ
+SYMBOL<span class="w"> </span>voltage<span class="w"> </span>-1168<span class="w"> </span><span class="m">48</span><span class="w"> </span>R0
+WINDOW<span class="w"> </span><span class="m">123</span><span class="w"> </span><span class="m">24</span><span class="w"> </span><span class="m">124</span><span class="w"> </span>Left<span class="w"> </span><span class="m">2</span>
+WINDOW<span class="w"> </span><span class="m">39</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">0</span><span class="w"> </span>Left<span class="w"> </span><span class="m">2</span>
+SYMATTR<span class="w"> </span>Value2<span class="w"> </span>AC<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">0</span>
+SYMATTR<span class="w"> </span>InstName<span class="w"> </span>V3
+SYMATTR<span class="w"> </span>Value<span class="w"> </span><span class="s2">&quot;&quot;</span>
+TEXT<span class="w"> </span>-400<span class="w"> </span><span class="m">250</span><span class="w"> </span>Left<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="p">;</span>alimentation<span class="w"> </span>AOP
+TEXT<span class="w"> </span>-1200<span class="w"> </span><span class="m">300</span><span class="w"> </span>Left<span class="w"> </span><span class="m">2</span><span class="w"> </span>!.ac<span class="w"> </span>dec<span class="w"> </span><span class="m">100</span><span class="w"> </span><span class="m">10</span><span class="w"> </span>10k
 </pre></div>
 </div>
 </section>
@@ -396,7 +396,7 @@ TEXT -1200 300 Left 2 !.ac dec 100 10 10k
 <section id="export">
 <h3>Export<a class="headerlink" href="#export" title="Link to this heading">#</a></h3>
 <p>Tapez la directive suivante :</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">.</span><span class="n">wave</span> <span class="n">nom_du_fichier</span><span class="o">.</span><span class="n">wav</span> <span class="n">nBits</span> <span class="n">nSamples</span> <span class="n">V</span><span class="p">({{</span><span class="n">noeud</span><span class="p">}})</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>.wave<span class="w"> </span>nom_du_fichier.wav<span class="w"> </span>nBits<span class="w"> </span>nSamples<span class="w"> </span>V<span class="o">({{</span>noeud<span class="o">}})</span>
 </pre></div>
 </div>
 <ul class="simple">
@@ -556,7 +556,7 @@ de remplacer ces tags par une valeur via python.</p>
   
   <div class="footer-item">
     <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 7.2.4.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 7.2.5.<br>
 </p>
   </div>
   

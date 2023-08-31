@@ -19,7 +19,7 @@ Exemple
 
 Un fichier LTspice peut s'ouvrir avec un éditeur de texte. Le code ci-dessous correspond au contenu du fichier LTSpice :code:`.asc` pour un filtre Rauch de type LP.
 
-.. code ::
+.. code :: bash
 
     Version 4
     SHEET 1 1876 900
@@ -118,7 +118,7 @@ Export
 
 Tapez la directive suivante : 
 
-.. code ::
+.. code :: bash
     
     .wave nom_du_fichier.wav nBits nSamples V({{noeud}})
 
