@@ -201,8 +201,13 @@
 <nav id="bd-toc-nav">
     <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#objectifs">
-   Objectifs
+  <a class="reference internal nav-link" href="#acquis-d-apprentissage-vises">
+   Acquis d’Apprentissage Visés
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#description-du-travail">
+   Description du travail
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -230,18 +235,23 @@
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#acquis-d-apprentissage">
-   Acquis d’apprentissage
+  <a class="reference internal nav-link" href="#id1">
+   Méthodologie
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#aav1">
-     AAv1
+    <a class="reference internal nav-link" href="#aav1-etude-de-circuits-electronique-dordre-2">
+     AAv1 (Étude de circuits électronique d’ordre 2)
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#aav2">
-     AAv2
+    <a class="reference internal nav-link" href="#aav4-design">
+     AAv4 (Design)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#aav5-restitution">
+     AAv5 (Restitution)
     </a>
    </li>
   </ul>
@@ -311,8 +321,25 @@
                 
   <section id="projet-debruitage-de-vuvuzela">
 <h1>Projet: Débruitage de Vuvuzela<a class="headerlink" href="#projet-debruitage-de-vuvuzela" title="Link to this heading">#</a></h1>
-<section id="objectifs">
-<h2>Objectifs<a class="headerlink" href="#objectifs" title="Link to this heading">#</a></h2>
+<section id="acquis-d-apprentissage-vises">
+<h2>Acquis d’Apprentissage Visés<a class="headerlink" href="#acquis-d-apprentissage-vises" title="Link to this heading">#</a></h2>
+<ul>
+<li><p>AAv1 (Étude de circuits électronique d’ordre 2) : A l’issue du 4e semestre d’électronique, l’étudiant sera capable de déterminer sous forme analytique ou numérique les paramètres caractéristiques d’un circuit du 2nd ordre en fonction de la valeur de ses composants en déterminant au préalable sa fonction de transfert. Les paramètres caractéristiques comprennent:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>le type de filtre;</p></li>
+<li><p>le coefficient d’amplification;</p></li>
+<li><p>la fréquence propre;</p></li>
+<li><p>le coefficient d’amortissement.</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>AAv4 (Design) : A l’issue du 4e semestre d’électronique, l’étudiant sera capable de proposer un circuit respectant un cahier des charges. Le cahier des charges sera spécifié sous la forme soit par de plusieurs paramètres caractéristiques d’une cellule d’ordre 2 (type, coefficient d’amplification, fréquence propre, coefficient d’amortissement) ou soit par un gabarit fréquentiel. L’étudiant sera en mesure de vérifier la conformité de sa proposition avec le cahier des charges en utilisant un logiciel de simulation (Python/Numpy/Scipy et LTspice).</p></li>
+<li><p>AAv5 (Restitution) A l’issue du 4e semestre d’électronique, l’étudiant sera capable de rédiger un rapport de synthèse technique dans un support adapté comprenant du texte, des illustrations, du code, des résultats d’expérimentation en laboratoire.</p></li>
+</ul>
+</section>
+<section id="description-du-travail">
+<h2>Description du travail<a class="headerlink" href="#description-du-travail" title="Link to this heading">#</a></h2>
 <p>Lors de la Coupe du Monde de Football en 2010, un phénomène sonore a marqué les téléspectateurs du monde entier : le bruit omniprésent du Vuvuzela. Originaire d’Afrique du Sud, cet instrument produit une tonalité continue, qui, bien qu’étant partie intégrante de l’ambiance festive, a parfois nui à la clarté des commentaires sportifs pendant la retransmission des matchs. Pour avoir un aperçu, vous pouvez écouter l’extrait suivant : <a class="reference external" href="https://www.youtube.com/watch?v=bKCIFXqhLzo">https://www.youtube.com/watch?v=bKCIFXqhLzo</a>.</p>
 <p>Le défi de ce projet est de concevoir un filtre “anti-vuvuzela”. Votre mission sera d’atténuer spécifiquement les fréquences sonores produites par cet instrument afin de mettre en avant la qualité audio des commentaires. Le fichier audio à analyser et traiter est mis à votre disposition sur la plateforme Moodle.</p>
 <section id="methodologie">
@@ -345,14 +372,14 @@
 <h3>Liste des filtres<a class="headerlink" href="#liste-des-filtres" title="Link to this heading">#</a></h3>
 <section id="filtres-passifs">
 <h4>Filtres Passifs<a class="headerlink" href="#filtres-passifs" title="Link to this heading">#</a></h4>
-<figure class="align-default" id="id1">
+<figure class="align-default" id="id2">
 <img alt="RLC" src="../_images/RLC.svg" /><figcaption>
-<p><span class="caption-text">Filtre RLC Notch</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+<p><span class="caption-text">Filtre RLC Notch</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
-<figure class="align-default" id="id2">
+<figure class="align-default" id="id3">
 <img alt="RLC" src="../_images/twin_T.svg" /><figcaption>
-<p><span class="caption-text">Filtre Twin-T</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
+<p><span class="caption-text">Filtre Twin-T</span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
@@ -365,14 +392,27 @@
 </section>
 </section>
 </section>
-<section id="acquis-d-apprentissage">
-<h2>Acquis d’apprentissage<a class="headerlink" href="#acquis-d-apprentissage" title="Link to this heading">#</a></h2>
+<section id="id1">
+<h2>Méthodologie<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
 <p>Le travail réalisé dans ce projet doit vous permettre d’acquérir un certain nombre d’apprentissages.
 La notation du projet sera basée sur la validation des acquis d’apprentissage suivants.</p>
-<section id="aav1">
-<h3>AAv1<a class="headerlink" href="#aav1" title="Link to this heading">#</a></h3>
+<section id="aav1-etude-de-circuits-electronique-dordre-2">
+<h3>AAv1 (Étude de circuits électronique d’ordre 2)<a class="headerlink" href="#aav1-etude-de-circuits-electronique-dordre-2" title="Link to this heading">#</a></h3>
 <ul class="simple">
-<li><p>Etre capable de concevoir, d’implementer et de valider un filtre audio d’ordre N analogique à partir d’un besoin fonctionnel clairement exprimé.</p></li>
+<li><p>A l’issue du 4e semestre d’électronique, l’étudiant sera capable de déterminer sous forme analytique ou numérique les paramètres caractéristiques d’un circuit du 2nd ordre en fonction de la valeur de ses composants en déterminant au préalable sa fonction de transfert.</p></li>
+</ul>
+<p>Pour atteindre cet objectif, vous devrez être en mesure de :</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Calculer la fonction de transfert de plusieurs filtres rejecteurs.</p></li>
+<li><p>Déterminer pour chaque filtre : le coefficient d’amplification, la fréquence propre, le coefficient d’amortissement.</p></li>
+</ul>
+</div></blockquote>
+</section>
+<section id="aav4-design">
+<h3>AAv4 (Design)<a class="headerlink" href="#aav4-design" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>A l’issue du 4e semestre d’électronique, l’étudiant sera capable de proposer un circuit respectant un cahier des charges. Le cahier des charges sera spécifié sous la forme soit par de plusieurs paramètres caractéristiques d’une cellule d’ordre 2 (type, coefficient d’amplification, fréquence propre, coefficient d’amortissement) ou soit par un gabarit fréquentiel. L’étudiant sera en mesure de vérifier la conformité de sa proposition avec le cahier des charges en utilisant un logiciel de simulation (Python/Numpy/Scipy et LTspice).</p></li>
 </ul>
 <p>Pour atteindre cet objectif, vous devrez être en mesure de :</p>
 <blockquote>
@@ -387,13 +427,14 @@ La notation du projet sera basée sur la validation des acquis d’apprentissage
 </ul>
 </div></blockquote>
 </section>
-<section id="aav2">
-<h3>AAv2<a class="headerlink" href="#aav2" title="Link to this heading">#</a></h3>
+<section id="aav5-restitution">
+<h3>AAv5 (Restitution)<a class="headerlink" href="#aav5-restitution" title="Link to this heading">#</a></h3>
 <ul class="simple">
-<li><p>Etre capable de rédiger un rapport de synthèse technique dans un support adapté comprenant du texte, des illustrations, du code, des résultats d’expérimentation en laboratoire.</p></li>
+<li><p>A l’issue du 4e semestre d’électronique, l’étudiant sera capable de rédiger un rapport de synthèse technique dans un support adapté comprenant du texte, des illustrations, du code, des résultats d’expérimentation en laboratoire.</p></li>
 </ul>
 <p>Pour atteindre cet objectif, vous devrez être en mesure de :</p>
-<ul class="simple">
+<blockquote>
+<div><ul class="simple">
 <li><p>Comprendre les besoins du lecteur et d’adapter son rapport en conséquence.</p></li>
 <li><p>Utiliser un support adapté pour votre restitution respectant des contraintes de sobriété numérique (taille raisonnable) et de confidentialité (travail uniquement communiqué aux membres du binôme et à l’enseignant),</p></li>
 <li><p>Maîtriser la structure du rapport de synthèse technique : L’étudiant sera capable de créer une structure de rapport claire et logique, en utilisant des titres et des sous-titres appropriés pour faciliter la lecture et la compréhension du contenu.</p></li>
@@ -403,6 +444,7 @@ La notation du projet sera basée sur la validation des acquis d’apprentissage
 <li><p>Rédiger des résultats d’expérimentation : L’étudiant sera capable de synthétiser des résultats d’expérimentation en laboratoire de manière précise et critique, en utilisant des graphiques et des images pour faciliter la compréhension des résultats.</p></li>
 <li><p>(Respecter les normes de citation : L’étudiant sera en mesure de respecter les normes de citation et d’utiliser les références appropriées pour citer les sources consultées lors de la rédaction du rapport).</p></li>
 </ul>
+</div></blockquote>
 </section>
 </section>
 <section id="utilisation-du-materiel">

@@ -203,11 +203,6 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="second_order.html">
-   Systèmes de Second Ordre
-  </a>
- </li>
- <li class="toctree-l1">
   <a class="reference internal" href="filter_synthesis.html">
    Synthèse des Filtres d’ordre N
   </a>
@@ -240,9 +235,24 @@
     
     <div class="toc-item">
       
+<div class="tocsection onthispage mt-5 pt-1 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
 
 <nav id="bd-toc-nav">
-    
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#acquis-d-apprentissage-vises">
+   Acquis d’Apprentissage Visés
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#outils-numeriques">
+   Outils Numériques
+  </a>
+ </li>
+</ul>
+
 </nav>
     </div>
     
@@ -268,12 +278,80 @@
 <li class="toctree-l1"><a class="reference internal" href="rappels/index.html">Rappels</a></li>
 <li class="toctree-l1"><a class="reference internal" href="transfer_function.html">Analyse des systèmes SLIT</a></li>
 <li class="toctree-l1"><a class="reference internal" href="first_order.html">Systèmes de Premier Ordre</a></li>
-<li class="toctree-l1"><a class="reference internal" href="second_order.html">Systèmes de Second Ordre</a></li>
 <li class="toctree-l1"><a class="reference internal" href="filter_synthesis.html">Synthèse des Filtres d’ordre N</a></li>
 <li class="toctree-l1"><a class="reference internal" href="signal_list.html">Liste des Signaux</a></li>
 <li class="toctree-l1"><a class="reference internal" href="circuit_list.html">Liste des Circuits</a></li>
 </ul>
 </div>
+<section id="acquis-d-apprentissage-vises">
+<h2>Acquis d’Apprentissage Visés<a class="headerlink" href="#acquis-d-apprentissage-vises" title="Link to this heading">#</a></h2>
+<ul>
+<li><p>AAv1 (Étude de circuits électronique d’ordre 2) : A l’issue du 4e semestre d’électronique, l’étudiant sera capable de déterminer sous forme analytique ou numérique les paramètres caractéristiques d’un circuit du 2nd ordre en fonction de la valeur de ses composants en déterminant au préalable sa fonction de transfert. Les paramètres caractéristiques comprennent:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>le type de filtre;</p></li>
+<li><p>le coefficient d’amplification;</p></li>
+<li><p>la fréquence propre;</p></li>
+<li><p>le coefficient d’amortissement.</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>AAv2 (Modélisation et représentations des systèmes LTI ordre 1 et 2) : A l’issue du 4e semestre d’électronique, l’étudiant sera capable de déterminer, pour un système LTI décrit dans un formalisme donné, la réponse indicielle et fréquentielle en utilisant la résolution de l’équation différentielle ou la transformée de Laplace, et de représenter ces réponses sous forme adéquates. Les formalismes considérés incluent:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>la forme factorisée: z,p,k;</p></li>
+<li><p>la forme polynomiale: b,a. L’étudiant sera en mesure de vérifier la validité de ses développements avec un logiciel de simulation (Python/Numpy/Scipy).</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>AAv3 (Caractérisation et identification) : A l’issue du 4e semestre d’électronique, l’étudiant sera capable de caractériser le comportement d’un système LTI représenté par sa réponse indicielle, sa réponse fréquentielle ou son diagramme des pôles et des zéros. La caractérisation portera sur les critères suivants:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Caractéristiques temporelles: stabilité, présence de dépassement, temps de réponse à 5 %,</p></li>
+<li><p>Caractéristiques fréquentielles: type, amplification, fréquence propre, amortissement, comportement asymptotique.</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>AAv4 (Design) : A l’issue du 4e semestre d’électronique, l’étudiant sera capable de proposer un circuit respectant un cahier des charges. Le cahier des charges sera spécifié sous la forme soit par de plusieurs paramètres caractéristiques d’une cellule d’ordre 2 (type, coefficient d’amplification, fréquence propre, coefficient d’amortissement) ou soit par un gabarit fréquentiel. L’étudiant sera en mesure de vérifier la conformité de sa proposition avec le cahier des charges en utilisant un logiciel de simulation (Python/Numpy/Scipy et LTspice).</p></li>
+<li><p>AAv5 (Restitution) : A l’issue du 4e semestre d’électronique, l’étudiant sera capable de rédiger un rapport de synthèse technique dans un support adapté comprenant du texte, des illustrations, du code, des résultats d’expérimentation en laboratoire.</p></li>
+</ul>
+</section>
+<section id="outils-numeriques">
+<h2>Outils Numériques<a class="headerlink" href="#outils-numeriques" title="Link to this heading">#</a></h2>
+<p>Cet enseignement utilise différents outils permettant d’illustrer un certain nombre de notions.</p>
+<ul>
+<li><p>LTspice (Simulation de Circuits): LTspice est un simulateur SPICE de haute performance qui permet de modéliser et d’analyser le comportement de circuits électroniques. C’est un outil essentiel pour vérifier les conceptions avant de procéder à la réalisation physique.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Visualisation: l’outil permet la visualisation des signaux, des caractéristiques de transfert et d’autres comportements des circuits, ce qui facilite la compréhension.</p></li>
+<li><p>Composants Intégrés: LTspice contient une grande bibliothèque de composants, ce qui permet d’expérimenter avec différentes configurations et composants.</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Python avec numpy, scipy et matplotlib:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Traitement des Données: numpy est idéal pour les opérations mathématiques sur des tableaux, et scipy fournit des outils pour des opérations plus complexes telles que la transformation de Fourier ou la résolution d’équations différentielles, qui sont couramment utilisées en électronique.</p></li>
+<li><p>Visualisation: matplotlib est une bibliothèque de visualisation qui peut être utilisée pour tracer des courbes, des histogrammes, des diagrammes de puissance, etc. Elle est essentielle pour analyser et comprendre les données issues des simulations ou des expérimentations.</p></li>
+<li><p>Flexibilité: Python est un langage de programmation polyvalent, permettant de développer des outils ou des scripts personnalisés pour automatiser des tâches, traiter des données ou même interfacer avec du matériel électronique réel.</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Jupyter:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Interactivité: Les notebooks Jupyter offrent un environnement interactif où il est possible de combiner du code, des formules mathématiques, des visualisations et du texte de manière cohérente. Cela permet de créer des documents de travail clairs et illustrés.</p></li>
+<li><p>Documenter et Partager: Jupyter permet de documenter son travail et de partager ses analyses et ses découvertes avec d’autres, facilitant ainsi la collaboration et la discussion.</p></li>
+<li><p>Intégration avec Python: Jupyter supporte nativement Python, ce qui signifie qu’il peut utiliser numpy, scipy, matplotlib et d’autres bibliothèques directement à l’intérieur de leurs notebooks.</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Installation: Pour installer Python avec les librairies Numpy, Scipy et Maptplotlib, il est recommandé d’utiliser <cite>conda</cite> (<a class="reference internal" href="../cheatsheets/conda.html"><span class="doc">documentation</span></a>)</p>
+</div>
+</section>
 </section>
 
 

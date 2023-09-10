@@ -1,8 +1,24 @@
 Projet: Débruitage de Vuvuzela 
 ==============================
 
-Objectifs 
----------
+
+Acquis d'Apprentissage Visés
+----------------------------
+
+* AAv1 (Étude de circuits électronique d’ordre 2) : A l’issue du 4e semestre d’électronique, l’étudiant sera capable de déterminer sous forme analytique ou numérique les paramètres caractéristiques d’un circuit du 2nd ordre en fonction de la valeur de ses composants en déterminant au préalable sa fonction de transfert. Les paramètres caractéristiques comprennent:
+
+   * le type de filtre;
+   * le coefficient d’amplification;
+   * la fréquence propre;
+   * le coefficient d’amortissement.
+
+* AAv4 (Design) : A l’issue du 4e semestre d’électronique, l’étudiant sera capable de proposer un circuit respectant un cahier des charges. Le cahier des charges sera spécifié sous la forme soit par de plusieurs paramètres caractéristiques d’une cellule d’ordre 2 (type, coefficient d’amplification, fréquence propre, coefficient d’amortissement) ou soit par un gabarit fréquentiel. L'étudiant sera en mesure de vérifier la conformité de sa proposition avec le cahier des charges en utilisant un logiciel de simulation (Python/Numpy/Scipy et LTspice).
+
+* AAv5 (Restitution) A l’issue du 4e semestre d’électronique, l’étudiant sera capable de rédiger un rapport de synthèse technique dans un support adapté comprenant du texte, des illustrations, du code, des résultats d'expérimentation en laboratoire.
+
+
+Description du travail
+----------------------
 
 Lors de la Coupe du Monde de Football en 2010, un phénomène sonore a marqué les téléspectateurs du monde entier : le bruit omniprésent du Vuvuzela. Originaire d'Afrique du Sud, cet instrument produit une tonalité continue, qui, bien qu'étant partie intégrante de l'ambiance festive, a parfois nui à la clarté des commentaires sportifs pendant la retransmission des matchs. Pour avoir un aperçu, vous pouvez écouter l'extrait suivant : https://www.youtube.com/watch?v=bKCIFXqhLzo.
 
@@ -51,17 +67,28 @@ Filtres Actifs
 * Bainter Notch Filters: https://www.analog.com/media/en/training-seminars/tutorials/MT-203.pdf
 
 
-Acquis d'apprentissage
-----------------------
+Méthodologie
+------------
 
 Le travail réalisé dans ce projet doit vous permettre d'acquérir un certain nombre d'apprentissages. 
 La notation du projet sera basée sur la validation des acquis d'apprentissage suivants.
 
 
-AAv1
-++++
+AAv1 (Étude de circuits électronique d’ordre 2)
++++++++++++++++++++++++++++++++++++++++++++++++
 
-* Etre capable de concevoir, d'implementer et de valider un filtre audio d'ordre N analogique à partir d'un besoin fonctionnel clairement exprimé.
+* A l’issue du 4e semestre d’électronique, l’étudiant sera capable de déterminer sous forme analytique ou numérique les paramètres caractéristiques d’un circuit du 2nd ordre en fonction de la valeur de ses composants en déterminant au préalable sa fonction de transfert. 
+
+Pour atteindre cet objectif, vous devrez être en mesure de :
+
+    * Calculer la fonction de transfert de plusieurs filtres rejecteurs. 
+    * Déterminer pour chaque filtre : le coefficient d’amplification, la fréquence propre, le coefficient d’amortissement.
+
+
+AAv4 (Design)
++++++++++++++
+
+*  A l’issue du 4e semestre d’électronique, l’étudiant sera capable de proposer un circuit respectant un cahier des charges. Le cahier des charges sera spécifié sous la forme soit par de plusieurs paramètres caractéristiques d’une cellule d’ordre 2 (type, coefficient d’amplification, fréquence propre, coefficient d’amortissement) ou soit par un gabarit fréquentiel. L'étudiant sera en mesure de vérifier la conformité de sa proposition avec le cahier des charges en utilisant un logiciel de simulation (Python/Numpy/Scipy et LTspice).
 
 Pour atteindre cet objectif, vous devrez être en mesure de :
 
@@ -73,21 +100,21 @@ Pour atteindre cet objectif, vous devrez être en mesure de :
    * Présenter les résultats des différents filtres audio de manière claire et synthétique.
    * Comparer les performances des différents filtres et identifier leurs limites. 
 
-AAv2
-++++
+AAv5 (Restitution)
+++++++++++++++++++
 
-* Etre capable de rédiger un rapport de synthèse technique dans un support adapté comprenant du texte, des illustrations, du code, des résultats d'expérimentation en laboratoire.
+* A l’issue du 4e semestre d’électronique, l’étudiant sera capable de rédiger un rapport de synthèse technique dans un support adapté comprenant du texte, des illustrations, du code, des résultats d'expérimentation en laboratoire.
 
 Pour atteindre cet objectif, vous devrez être en mesure de :
 
-* Comprendre les besoins du lecteur et d'adapter son rapport en conséquence.
-* Utiliser un support adapté pour votre restitution respectant des contraintes de sobriété numérique (taille raisonnable) et de confidentialité (travail uniquement communiqué aux membres du binôme et à l'enseignant),
-* Maîtriser la structure du rapport de synthèse technique : L'étudiant sera capable de créer une structure de rapport claire et logique, en utilisant des titres et des sous-titres appropriés pour faciliter la lecture et la compréhension du contenu.
-* Maîtriser les compétences de rédaction : L'étudiant sera capable d'écrire un texte clair et concis, en utilisant un langage technique adapté, sans ambiguïté ni erreurs d'orthographe ou grammaticales.
-* Intégrer des illustrations et des images : L'étudiant sera en mesure d'intégrer des illustrations, des images et des graphiques pertinents pour améliorer la compréhension du contenu et rendre le rapport plus attractif.
-* Intégrer du code informatique : L'étudiant sera en mesure d'intégrer du code informatique pertinent dans son rapport et d'expliquer de manière claire le fonctionnement du code et les résultats obtenus.
-* Rédiger des résultats d'expérimentation : L'étudiant sera capable de synthétiser des résultats d'expérimentation en laboratoire de manière précise et critique, en utilisant des graphiques et des images pour faciliter la compréhension des résultats.
-* (Respecter les normes de citation : L'étudiant sera en mesure de respecter les normes de citation et d'utiliser les références appropriées pour citer les sources consultées lors de la rédaction du rapport).
+    * Comprendre les besoins du lecteur et d'adapter son rapport en conséquence.
+    * Utiliser un support adapté pour votre restitution respectant des contraintes de sobriété numérique (taille raisonnable) et de confidentialité (travail uniquement communiqué aux membres du binôme et à l'enseignant),
+    * Maîtriser la structure du rapport de synthèse technique : L'étudiant sera capable de créer une structure de rapport claire et logique, en utilisant des titres et des sous-titres appropriés pour faciliter la lecture et la compréhension du contenu.
+    * Maîtriser les compétences de rédaction : L'étudiant sera capable d'écrire un texte clair et concis, en utilisant un langage technique adapté, sans ambiguïté ni erreurs d'orthographe ou grammaticales.
+    * Intégrer des illustrations et des images : L'étudiant sera en mesure d'intégrer des illustrations, des images et des graphiques pertinents pour améliorer la compréhension du contenu et rendre le rapport plus attractif.
+    * Intégrer du code informatique : L'étudiant sera en mesure d'intégrer du code informatique pertinent dans son rapport et d'expliquer de manière claire le fonctionnement du code et les résultats obtenus.
+    * Rédiger des résultats d'expérimentation : L'étudiant sera capable de synthétiser des résultats d'expérimentation en laboratoire de manière précise et critique, en utilisant des graphiques et des images pour faciliter la compréhension des résultats.
+    * (Respecter les normes de citation : L'étudiant sera en mesure de respecter les normes de citation et d'utiliser les références appropriées pour citer les sources consultées lors de la rédaction du rapport).
 
 
 Utilisation du Matériel
