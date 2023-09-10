@@ -51,120 +51,6 @@ Fonctions de transfert normalisées
     H(p)=\frac{\frac{T_{\infty}}{\omega_0^2}p^2}{\frac{1}{\omega_0^2}p^2+\frac{2m}{\omega_0}p+1}​
 
 
-Liste des circuits 
-------------------
-
-
-.. note ::
-    
-    Chaque étudiant devra choisir un filtre passif et un filtre actif.
-
-Circuits RC/RC
-++++++++++++++
-
-
-.. figure:: ../courses/img/RC_RC_LP.svg
-  :width: 300
-  :align: center
-  :alt: RC RC LP
-
-  RC/RC LP Filter
-
-
-.. figure:: ../courses/img/RC_RC_BP.svg
-  :width: 300
-  :align: center
-  :alt: RC RC BP
-
-  RC/RC BP Filter
-
-.. figure:: ../courses/img/RC_RC_HP.svg
-  :width: 300
-  :align: center
-  :alt: RC RC HP
-
-  RC/RC HP Filter
-
-Circuits RLC
-++++++++++++
-
-.. figure:: ../courses/img/RLC_LP.svg
-  :width: 300
-  :align: center
-  :alt: RLC LP
-
-  RLC LP Filter
-
-.. figure:: ../courses/img/RLC_BP1.svg
-  :width: 300
-  :align: center
-  :alt: RLC BP1
-
-  RLC BP1 Filter
-
-.. figure:: ../courses/img/RLC_BP2.svg
-  :width: 300
-  :align: center
-  :alt: RLC BP2
-
-  RLC BP2 Filter
-
-.. figure:: ../courses/img/RLC_HP.svg
-  :width: 300
-  :align: center
-  :alt: RLC HP
-
-  RLC HP Filter
-
-Circuits Sallen Key
-+++++++++++++++++++
-
-.. figure:: ../courses/img/SK_LP.svg
-  :width: 300
-  :align: center
-  :alt: SK LP
-
-  SK LP Filter
-
-.. figure:: ../courses/img/SK_HP.svg
-  :width: 300
-  :align: center
-  :alt: SK HP
-
-  SK HP Filter
-
-Circuits Rauch
-++++++++++++++
-
-.. figure:: ../courses/img/MFB_LP.svg
-  :width: 300
-  :align: center
-  :alt: MFB LP
-
-  MFB LP Filter
-
-.. figure:: ../courses/img/MFB_BP.svg
-  :width: 300
-  :align: center
-  :alt: MFB BP
-
-  MFB BP Filter
-
-.. figure:: ../courses/img/MFB_BP2.svg
-  :width: 300
-  :align: center
-  :alt: MFB BP2
-
-  MFB BP2 Filter
-
-.. figure:: ../courses/img/MFB_HP.svg
-  :width: 300
-  :align: center
-  :alt: MFB HP
-
-  MFB HP Filter
-
-
 Exemple 
 -------
 
@@ -350,3 +236,116 @@ Pour tester le bon fonctionnement de la classe `RLC_BP3_Filter`, il suffit ensui
 
     python test_filter_RLC.py
 
+
+Liste des circuits 
+------------------
+
+
+.. note ::
+    
+    Chaque étudiant devra choisir un filtre passif et un filtre actif.
+
+Circuits RC/RC
+++++++++++++++
+
+
+.. figure:: ../courses/img/RC_RC_LP.svg
+  :width: 300
+  :align: center
+  :alt: RC RC LP
+
+  RC/RC LP Filter
+
+
+.. figure:: ../courses/img/RC_RC_BP.svg
+  :width: 300
+  :align: center
+  :alt: RC RC BP
+
+  RC/RC BP Filter
+
+.. figure:: ../courses/img/RC_RC_HP.svg
+  :width: 300
+  :align: center
+  :alt: RC RC HP
+
+  RC/RC HP Filter
+
+Circuits RLC
+++++++++++++
+
+.. figure:: ../courses/img/RLC_LP.svg
+  :width: 300
+  :align: center
+  :alt: RLC LP
+
+  RLC LP Filter
+
+.. figure:: ../courses/img/RLC_BP1.svg
+  :width: 300
+  :align: center
+  :alt: RLC BP1
+
+  RLC BP1 Filter
+
+.. figure:: ../courses/img/RLC_BP2.svg
+  :width: 300
+  :align: center
+  :alt: RLC BP2
+
+  RLC BP2 Filter
+
+.. figure:: ../courses/img/RLC_HP.svg
+  :width: 300
+  :align: center
+  :alt: RLC HP
+
+  RLC HP Filter
+
+Circuits Sallen Key
++++++++++++++++++++
+
+.. figure:: ../courses/img/SK_LP.svg
+  :width: 300
+  :align: center
+  :alt: SK LP
+
+  SK LP Filter
+
+.. figure:: ../courses/img/SK_HP.svg
+  :width: 300
+  :align: center
+  :alt: SK HP
+
+  SK HP Filter
+
+Circuits Rauch
+++++++++++++++
+
+.. figure:: ../courses/img/MFB_LP.svg
+  :width: 300
+  :align: center
+  :alt: MFB LP
+
+  MFB LP Filter
+
+.. figure:: ../courses/img/MFB_BP.svg
+  :width: 300
+  :align: center
+  :alt: MFB BP
+
+  MFB BP Filter
+
+.. figure:: ../courses/img/MFB_BP2.svg
+  :width: 300
+  :align: center
+  :alt: MFB BP2
+
+  MFB BP2 Filter
+
+.. figure:: ../courses/img/MFB_HP.svg
+  :width: 300
+  :align: center
+  :alt: MFB HP
+
+  MFB HP Filter
