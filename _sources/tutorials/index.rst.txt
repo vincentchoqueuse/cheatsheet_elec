@@ -10,5 +10,3 @@ Tutorials
    first_order
    constant_determination
    initial_values
-   identification_time
-   identification_freq

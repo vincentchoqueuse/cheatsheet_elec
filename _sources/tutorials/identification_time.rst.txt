@@ -13,8 +13,8 @@ Dans ce tutorial, nous montrons comment identifier les paramètres d'un filtre d
 * Les abaques de dépassement et de temps de réponse ne sont pas disponibles.
 
 
-Réponse Indicielle 
-------------------
+Paramètres à mesurer
+++++++++++++++++++++
 
 .. plot ::
     :context: close-figs
