@@ -15,6 +15,5 @@ Electronique
     tutorials/index
     projects/index
     cheatsheets/index
-    links
     about
 
