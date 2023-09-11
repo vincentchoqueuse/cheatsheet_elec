@@ -14,4 +14,4 @@ Comment Contribuer ?
 
 Une erreur sur le site ? un point à détailler ? Rien de plus simple:
 
-* https://git.enib.fr/choqueuse/s4_elec/-/issues/1
+* https://git.enib.fr/choqueuse/s4_elec/-/issues
