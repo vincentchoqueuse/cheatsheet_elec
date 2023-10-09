@@ -6,4 +6,5 @@ Projects
    :caption: Contents:
 
    analog_filter
+   second_order_analysis
    vuvuzela

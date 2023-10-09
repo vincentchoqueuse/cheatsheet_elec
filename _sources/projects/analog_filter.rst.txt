@@ -30,7 +30,7 @@ Pour chaque filtre d'ordre 2, nous souhaitons traiter les problèmes suivants :
 5. Validation sur LTSpice
 
 Fonctions de transfert normalisées 
-```````````````````````````````````
+``````````````````````````````````
 
 * Passe-bas (LP)
 

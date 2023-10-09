@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Travail Collaboratif : Analyse des filtres d’ordre 2 &#8212; cheatsheet elec  documentation</title>
+<script>
+  document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
+  document.documentElement.dataset.theme = localStorage.getItem("theme") || "light"
+</script>
+
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=92025949c220c2e29695" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=92025949c220c2e29695" rel="stylesheet">
+
+
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../_static/plot_directive.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=96e0d561" />
+
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=92025949c220c2e29695">
+
+    <script src="../_static/documentation_options.js?v=8a448e45"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Projet: Débruitage de Vuvuzela" href="vuvuzela.html" />
+    <link rel="prev" title="Travail Collaboratif : Analog Filter" href="analog_filter.html" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="docsearch:language" content="en">
+  </head>
+  
+  
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="180" data-default-mode="light">
+    <div class="bd-header-announcement container-fluid" id="banner">
+      
+
+    </div>
+
+    
+    <nav class="bd-header navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="bd-header__inner container-xl">
+
+  <div id="navbar-start">
+    
+    
+  
+
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+    <img src="../_static/logo.svg" class="logo__image only-light" alt="Logo image">
+    <img src="../_static/logo.svg" class="logo__image only-dark" alt="Logo image">
+  
+  
+</a>
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="fas fa-bars"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../courses/index.html">
+  Cours
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../tutorials/index.html">
+  Tutorials
+ </a>
+</li>
+
+<li class="toctree-l1 current active nav-item">
+ <a class="reference internal nav-link" href="index.html">
+  Projects
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../cheatsheets/index.html">
+  Cheatsheets
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../about.html">
+  About
+ </a>
+</li>
+
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <span id="theme-switch" class="btn btn-sm btn-outline-primary navbar-btn rounded-circle">
+    <a class="theme-switch" data-mode="light"><i class="fas fa-sun"></i></a>
+    <a class="theme-switch" data-mode="dark"><i class="far fa-moon"></i></a>
+    <a class="theme-switch" data-mode="auto"><i class="fas fa-adjust"></i></a>
+</span>
+      </div>
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/vincentchoqueuse/cheatsheet_elec" rel="noopener" target="_blank" title="GitHub"><span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label></a>
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="bd-container container-xl">
+      <div class="bd-container__inner row">
+          
+
+<!-- Only show if we have sidebars configured, else just a small margin  -->
+<div class="bd-sidebar-primary col-12 col-md-3 bd-sidebar">
+  <div class="sidebar-start-items"><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Contents:
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="analog_filter.html">
+   Travail Collaboratif : Analog Filter
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Travail Collaboratif : Analyse des filtres d’ordre 2
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="vuvuzela.html">
+   Projet: Débruitage de Vuvuzela
+  </a>
+ </li>
+</ul>
+
+  </div>
+</nav>
+  </div>
+  <div class="sidebar-end-items">
+  </div>
+</div>
+
+
+          
+
+
+<div class="bd-sidebar-secondary d-none d-xl-block col-xl-2 bd-toc">
+  
+    
+    <div class="toc-item">
+      
+<div class="tocsection onthispage mt-5 pt-1 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#acquis-d-apprentissage-vises">
+   Acquis d’Apprentissage Visés
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#description-du-travail">
+   Description du travail
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#methodologie">
+   Méthodologie
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#poles-et-zeros">
+     Pôles et Zéros
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#reponse-temporelle">
+     Réponse Temporelle
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#reponse-frequentielle">
+     Réponse Fréquentielle
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+</nav>
+    </div>
+    
+    <div class="toc-item">
+      
+    </div>
+    
+  
+</div>
+
+
+          
+          
+          <div class="bd-content col-12 col-md-9 col-xl-7">
+              
+              <article class="bd-article" role="main">
+                
+  <section id="travail-collaboratif-analyse-des-filtres-d-ordre-2">
+<h1>Travail Collaboratif : Analyse des filtres d’ordre 2<a class="headerlink" href="#travail-collaboratif-analyse-des-filtres-d-ordre-2" title="Link to this heading">#</a></h1>
+<section id="acquis-d-apprentissage-vises">
+<h2>Acquis d’Apprentissage Visés<a class="headerlink" href="#acquis-d-apprentissage-vises" title="Link to this heading">#</a></h2>
+<ul>
+<li><dl>
+<dt>AAv2 (Modélisation et représentations des systèmes LTI ordre 1 et 2)<span class="classifier">A l’issue du 4e semestre d’électronique, l’étudiant sera capable de déterminer, pour un système LTI décrit dans un formalisme donné, la réponse indicielle et fréquentielle en utilisant la résolution de l’équation différentielle ou la transformée de Laplace, et de représenter ces réponses sous forme adéquates. Les formalismes considérés incluent:</span></dt><dd><ul class="simple">
+<li><p>la forme factorisée: z,p,k;</p></li>
+<li><p>la forme polynomiale: b,a.</p></li>
+</ul>
+<p>L’étudiant sera en mesure de vérifier la validité de ses développements avec un logiciel de simulation (Python/Numpy/Scipy).</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>AAv3 (Caractérisation et identification)<span class="classifier">A l’issue du 4e semestre d’électronique, l’étudiant sera capable de caractériser le comportement d’un système LTI représenté par sa réponse indicielle, sa réponse fréquentielle ou son diagramme des pôles et des zéros. La caractérisation portera sur les critères suivants:</span></dt><dd><ul class="simple">
+<li><p>Caractéristiques temporelles: stabilité, présence de dépassement, temps de réponse à 5 %,</p></li>
+<li><p>Caractéristiques fréquentielles: type, amplification, fréquence propre, amortissement, comportement asymptotique.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</section>
+<section id="description-du-travail">
+<h2>Description du travail<a class="headerlink" href="#description-du-travail" title="Link to this heading">#</a></h2>
+<p>Chaque groupe de travail travaille sur l’un des 4 filtres suivants:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}H_{LP}(p)&amp;=\frac{T_0}{\frac{1}{\omega_0^2}p^2+\frac{2m}{\omega_0}p+1}\\
+H_{BP}(p)&amp;=\frac{\frac{2mT_m}{\omega_0}p}{\frac{1}{\omega_0^2}p^2+\frac{2m}{\omega_0}p+1}​\\
+H_{HP}(p)&amp;=\frac{\frac{T_{\infty}}{\omega_0^2}p^2}{\frac{1}{\omega_0^2}p^2+\frac{2m}{\omega_0}p+1}​\\
+H_{BR}(p)&amp;=\frac{T_0\left(\frac{1}{\omega_0^2}p^2+1\right)}{\frac{1}{\omega_0^2}p^2+\frac{2m}{\omega_0}p+1}​\end{split}\]</div>
+<p>L’objectif final est l’identification des paramètres <span class="math notranslate nohighlight">\(T_x\)</span>, <span class="math notranslate nohighlight">\(\omega_0\)</span> et <span class="math notranslate nohighlight">\(m\)</span> d’un filtre à partir de :</p>
+<ul class="simple">
+<li><p>la cartographie des pôles et des zéros,</p></li>
+<li><p>l’analyse de la réponse temporelle (indicielle, …),</p></li>
+<li><p>l’analyse de la réponse fréquentielle.</p></li>
+</ul>
+</section>
+<section id="methodologie">
+<h2>Méthodologie<a class="headerlink" href="#methodologie" title="Link to this heading">#</a></h2>
+<p>Dans l’objectif de proposer une technique d’identification, nous proposons d’utiliser la méthodologie suivante :</p>
+<section id="poles-et-zeros">
+<h3>Pôles et Zéros<a class="headerlink" href="#poles-et-zeros" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Détermination de l’expression analytique des pôles et zéros,</p></li>
+<li><p>Identification de <span class="math notranslate nohighlight">\(\omega_0\)</span> et <span class="math notranslate nohighlight">\(m\)</span> à partir de la position des pôles.</p></li>
+</ul>
+</section>
+<section id="reponse-temporelle">
+<h3>Réponse Temporelle<a class="headerlink" href="#reponse-temporelle" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><dl class="simple">
+<dt>Détermination de l’expression analytique de la solution libre <span class="math notranslate nohighlight">\(s_l(t)\)</span>. Dans le cas où cette solution présente des oscillations:</dt><dd><ul>
+<li><p>Détermination de la pseudo-pulsation <span class="math notranslate nohighlight">\(\omega_p\)</span>,</p></li>
+<li><p>Détermination du ratio <span class="math notranslate nohighlight">\(R=s_l(t)/s_l(t+T_p)\)</span> entre deux dépassements consécutifs de même signe où <span class="math notranslate nohighlight">\(T_p\)</span> désigne la pseudo-pulsation.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p>Détermination de l’expression analytique de la solution particulière <span class="math notranslate nohighlight">\(s_l(t)\)</span> dans le cas d’une réponse indicielle,</p></li>
+<li><dl class="simple">
+<dt>Détermination des constantes d’intégration. Dans le cas où les conditions initiales sont nulles,</dt><dd><ul>
+<li><p>Détermination de la valeur initiale <span class="math notranslate nohighlight">\(s(0^+)\)</span></p></li>
+<li><p>Détermination de la dérivée en <span class="math notranslate nohighlight">\(0^+\)</span> c-à-d <span class="math notranslate nohighlight">\(\left.\frac{ds(t)}{dt}\right|_{t=0^+}\)</span></p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p>Détermination de l’expression analytique de la réponse indicielle.</p></li>
+</ul>
+</section>
+<section id="reponse-frequentielle">
+<h3>Réponse Fréquentielle<a class="headerlink" href="#reponse-frequentielle" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Détermination de l’expression analytique de la réponse fréquentielle (module et argument),</p></li>
+<li><p>Détermination du comportement asymptotique en <span class="math notranslate nohighlight">\(\omega\to 0\)</span> et <span class="math notranslate nohighlight">\(\omega\to +\infty\)</span>,</p></li>
+<li><p>Détermination du comportement singulier en <span class="math notranslate nohighlight">\(\omega_0\)</span>,</p></li>
+<li><p>Détermination des coordonnées de l’extremum du module (pulsation, module, argument),</p></li>
+<li><p>[Filtre BP ou BR] Identification de la largeur de la bande-passante (ou bande rejetée) à <span class="math notranslate nohighlight">\(-3\)</span> dB.</p></li>
+</ul>
+</section>
+</section>
+</section>
+
+
+              </article>
+              
+
+              
+              <footer class="bd-footer-article">
+                  <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+  <a class='left-prev' id="prev-link" href="analog_filter.html" title="previous page">
+      <i class="fas fa-angle-left"></i>
+      <div class="prev-next-info">
+          <p class="prev-next-subtitle">previous</p>
+          <p class="prev-next-title">Travail Collaboratif : Analog Filter</p>
+      </div>
+  </a>
+  <a class='right-next' id="next-link" href="vuvuzela.html" title="next page">
+  <div class="prev-next-info">
+      <p class="prev-next-subtitle">next</p>
+      <p class="prev-next-title">Projet: Débruitage de Vuvuzela</p>
+  </div>
+  <i class="fas fa-angle-right"></i>
+  </a>
+</div>
+              </footer>
+              
+          </div>
+          
+      </div>
+    </div>
+
+  
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=92025949c220c2e29695"></script>
+
+<footer class="bd-footer"><div class="bd-footer__inner container">
+  
+  <div class="footer-item">
+    <p class="copyright">
+    &copy; Copyright 2022, V. Choqueuse.<br>
+</p>
+  </div>
+  
+  <div class="footer-item">
+    <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 7.2.6.<br>
+</p>
+  </div>
+  
+</div>
+</footer>
+  </body>
+</html>

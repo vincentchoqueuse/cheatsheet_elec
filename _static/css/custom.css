@@ -61,6 +61,10 @@ a:visited {
     color: rgb(77, 77, 77);
 }
 
+dt {
+    font-weight: normal;
+    }
+
 @media (max-width:1199.98px)
 {
     .navbar button.navbar-toggler {
