@@ -142,6 +142,21 @@ Oscilloscope SDS 1104X-E
 * documentation: https://siglentna.com/USA_website_2014/Documents/UserManual/SDS1000X&Xplus_UserManual_UM0101X-E02A.pdf
 * programming guide: https://int.siglent.com/u_file/document/SDS1000%20Series&SDS2000X&SDS2000X-E_ProgrammingGuide_PG01-E02D.pdf
 
+Obtention des diagrammes de Bode 
+++++++++++++++++++++++++++++++++
+
+L'oscilloscopes et le générateur sont connectés en USB. Cette connexion permet de réaliser des diagrammes de Bode:
+
+* raccorder le générateur à l'entrée de votre circuit, 
+* raccorder le générateur à l'entrée CH1 de l'oscilloscope, 
+* raccorder la sortie de votre circuit à l'entrée CH2 de l'oscilloscope,
+* Sur l'oscilloscope, appuyer sur le bouton `utility`, puis `Bode Plot II`.
+
+Il est possible de calibrer le balayage réalisé par le générateur (menu `config`).
+
+* Dans le menu `config` puis `set_channel`, vérifier que DUT Input=CH1 et DUT Output1=CH2.
+
+
 Utilisation avec PyVisa
 +++++++++++++++++++++++
 
