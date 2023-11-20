@@ -271,6 +271,11 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#obtention-des-diagrammes-de-bode">
+     Obtention des diagrammes de Bode
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#utilisation-avec-pyvisa">
      Utilisation avec PyVisa
     </a>
@@ -466,6 +471,20 @@ La notation du projet sera basée sur la validation des acquis d’apprentissage
 <ul class="simple">
 <li><p>documentation: <a class="reference external" href="https://siglentna.com/USA_website_2014/Documents/UserManual/SDS1000X&amp;Xplus_UserManual_UM0101X-E02A.pdf">https://siglentna.com/USA_website_2014/Documents/UserManual/SDS1000X&amp;Xplus_UserManual_UM0101X-E02A.pdf</a></p></li>
 <li><p>programming guide: <a class="reference external" href="https://int.siglent.com/u_file/document/SDS1000%20Series&amp;SDS2000X&amp;SDS2000X-E_ProgrammingGuide_PG01-E02D.pdf">https://int.siglent.com/u_file/document/SDS1000%20Series&amp;SDS2000X&amp;SDS2000X-E_ProgrammingGuide_PG01-E02D.pdf</a></p></li>
+</ul>
+</section>
+<section id="obtention-des-diagrammes-de-bode">
+<h3>Obtention des diagrammes de Bode<a class="headerlink" href="#obtention-des-diagrammes-de-bode" title="Link to this heading">#</a></h3>
+<p>L’oscilloscopes et le générateur sont connectés en USB. Cette connexion permet de réaliser des diagrammes de Bode:</p>
+<ul class="simple">
+<li><p>raccorder le générateur à l’entrée de votre circuit,</p></li>
+<li><p>raccorder le générateur à l’entrée CH1 de l’oscilloscope,</p></li>
+<li><p>raccorder la sortie de votre circuit à l’entrée CH2 de l’oscilloscope,</p></li>
+<li><p>Sur l’oscilloscope, appuyer sur le bouton <cite>utility</cite>, puis <cite>Bode Plot II</cite>.</p></li>
+</ul>
+<p>Il est possible de calibrer le balayage réalisé par le générateur (menu <cite>config</cite>).</p>
+<ul class="simple">
+<li><p>Dans le menu <cite>config</cite> puis <cite>set_channel</cite>, vérifier que DUT Input=CH1 et DUT Output1=CH2.</p></li>
 </ul>
 </section>
 <section id="utilisation-avec-pyvisa">
