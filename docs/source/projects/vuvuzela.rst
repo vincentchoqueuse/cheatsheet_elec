@@ -150,7 +150,7 @@ L'oscilloscopes et le générateur sont connectés en USB. Cette connexion perme
 * raccorder le générateur à l'entrée de votre circuit, 
 * raccorder le générateur à l'entrée CH1 de l'oscilloscope, 
 * raccorder la sortie de votre circuit à l'entrée CH2 de l'oscilloscope,
-* Sur l'oscilloscope, appuyer sur le bouton `utility`, puis `Bode Plot II`.
+* Sur l'oscilloscope, appuyer sur le bouton `utility`, page 2/4, puis `Bode Plot II`.
 
 Il est possible de calibrer le balayage réalisé par le générateur (menu `config`).
 
