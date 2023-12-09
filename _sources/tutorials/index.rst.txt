@@ -10,3 +10,4 @@ Tutorials
    first_order
    constant_determination
    initial_values
+   BP_design

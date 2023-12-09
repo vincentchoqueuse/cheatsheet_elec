@@ -247,8 +247,13 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#determination-de-l-ordre">
+   Détermination de l’ordre
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#denormalisation">
-   Denormalisation
+   Dénormalisation
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -318,12 +323,12 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id7">
+    <a class="reference internal nav-link" href="#mapping-bp">
      Mapping Fréquentiel
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id8">
+    <a class="reference internal nav-link" href="#mapping-bp-zpk">
      Mapping des pôles et zéros
     </a>
    </li>
@@ -377,36 +382,47 @@
 <p>Concevoir un filtre n’est pas simplement une question de choix de l’ordre approprié. La synthèse des filtres concerne la définition des caractéristiques désirées du filtre (comme la bande passante, l’atténuation, la phase) et la conversion de ces spécifications en une conception de circuit ou un algorithme. L’ingénieur doit trouver un compromis entre plusieurs paramètres : rapidité de transition entre les bandes passantes et de coupure, ondulation acceptable dans la bande passante, atténuation minimale dans la bande de coupure, et bien sûr, la complexité et la faisabilité du filtre.</p>
 <section id="methodologie">
 <h2>Méthodologie<a class="headerlink" href="#methodologie" title="Link to this heading">#</a></h2>
-<ul>
-<li><p>Étape 1 : Synthèse du filtre normalisé</p>
-<blockquote>
-<div><ul class="simple">
-<li><p>Définir les spécifications du filtre : Avant toute chose, il est nécessaire de définir les spécifications souhaitées pour le filtre, comme la bande passante, l’atténuation, l’ondulation dans la bande passante, etc.</p></li>
-<li><p>Choisir la technique de synthèse : Cela peut être Butterworth, Chebyshev, elliptique, etc. Chaque type a ses propres caractéristiques.</p></li>
-<li><p>Déterminer l’ordre <span class="math notranslate nohighlight">\(N\)</span> du filtre : En utilisant les spécifications et le type de réponse choisie, déterminez l’ordre minimal <span class="math notranslate nohighlight">\(N\)</span> du filtre nécessaire pour satisfaire ces spécifications.</p></li>
-<li><p>Synthèse de la fonction de transfert : Avec l’ordre déterminé et le type de réponse, utilisez les formules appropriées pour déduire la fonction de transfert <span class="math notranslate nohighlight">\(H_n(p)\)</span> du filtre normalisé.</p></li>
+<ul class="simple">
+<li><dl class="simple">
+<dt>Étape 1<span class="classifier">Synthèse du filtre normalisé</span></dt><dd><ul>
+<li><p>Définir les spécifications du filtre : Avant toute chose, il est nécessaire de définir les spécifications souhaitées pour le filtre, comme la bande passante, l’atténuation, l’ondulation dans la bande passante, etc. Ces specifications sont précisées via le gabarit fréquentiel.</p></li>
+<li><p>Définir le gabarit du filtre passe-bas normalisé (<span class="math notranslate nohighlight">\(\omega_c=1\)</span> rad/s).</p></li>
+<li><p>Déterminer l’ordre <span class="math notranslate nohighlight">\(N\)</span> du filtre.</p></li>
+<li><p>Synthèse de la fonction de transfert : Avec l’ordre déterminé et la technique de synthèse retenue, utilisez les formules appropriées pour déduire la fonction de transfert <span class="math notranslate nohighlight">\(H_n(p)\)</span> du filtre normalisé.</p></li>
 </ul>
-</div></blockquote>
+</dd>
+</dl>
 </li>
-<li><p>Étape 2 : Dénormalisation. La dénormalisation consiste à adapter le filtre conçu dans l’étape précédente à vos besoins réels, comme la fréquence de coupure ou la bande passante.</p>
-<blockquote>
-<div><ul class="simple">
+<li><dl class="simple">
+<dt>Étape 2<span class="classifier">Dénormalisation. La dénormalisation consiste à adapter le filtre conçu dans l’étape précédente à vos besoins réels, comme la fréquence de coupure ou la bande passante.</span></dt><dd><ul>
 <li><p>Réaliser la substitution <span class="math notranslate nohighlight">\(p\to f(p)\)</span> pour obtenir la fonction de transfert du filtre dénormalisé.</p></li>
 </ul>
-</div></blockquote>
+</dd>
+</dl>
 </li>
-<li><p>Étape 3 : Réalisation du filtre</p>
-<blockquote>
-<div><ul class="simple">
+<li><dl class="simple">
+<dt>Étape 3<span class="classifier">Réalisation du filtre</span></dt><dd><ul>
 <li><p>Sélection des composants : À partir de la fonction de transfert dénormalisée, choisissez des composants (résistances, condensateurs, inductances, etc.) pour réaliser physiquement le filtre.</p></li>
 <li><p>Assemblage et test : Une fois que vous avez tous les composants nécessaires, assemblez le filtre. Testez ensuite ses performances pour vous assurer qu’il répond aux spécifications.</p></li>
 </ul>
-</div></blockquote>
+</dd>
+</dl>
 </li>
 </ul>
 </section>
+<section id="determination-de-l-ordre">
+<h2>Détermination de l’ordre<a class="headerlink" href="#determination-de-l-ordre" title="Link to this heading">#</a></h2>
+<p>Pour un filtre passe-bas normalisé, il est possible de déterminer l’ordre en utilisant le comportement asymptotique en hautes-fréquences :</p>
+<div class="math notranslate nohighlight">
+\[N = \left\lceil-\frac{\ln\left(\frac{T_c}{T_s}\right)}{\ln\left(\frac{\omega_c}{\omega_s}\right)}\right\rceil\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\omega_c=1\)</span> rad/s</p></li>
+<li><p><span class="math notranslate nohighlight">\(T_c\)</span> correspond à l’amplification minimale dans la bande passante.</p></li>
+<li><p><span class="math notranslate nohighlight">\(T_s\)</span> correspond à l’amplification maximale dans la bande rejetée.</p></li>
+</ul>
+</section>
 <section id="denormalisation">
-<h2>Denormalisation<a class="headerlink" href="#denormalisation" title="Link to this heading">#</a></h2>
+<h2>Dénormalisation<a class="headerlink" href="#denormalisation" title="Link to this heading">#</a></h2>
 <p>Pour synthétiser un filtre d’ordre N, la procédure classique consiste à d’abord synthétiser son équivalent “passe-bas” normalisé puis à réaliser une dénormalisation. Soit <span class="math notranslate nohighlight">\(H_n(p)\)</span> la fonction de transfert du filtre normalisé. La fonction du filtre dénormalisé s’obtient en modifiant la variable p de la manière suivante :</p>
 <div class="math notranslate nohighlight">
 \[H(p) = \frac{N(p)}{D(p)}= \left.H_n(p)\right|_{p\to f(p)}\]</div>
@@ -427,6 +443,11 @@
 <span class="math notranslate nohighlight">\(p_l\)</span> et <span class="math notranslate nohighlight">\(\widehat{p}_l\)</span> est donné par l’équation :</p>
 <div class="math notranslate nohighlight">
 \[p_l = f(\widehat{p}_l)\]</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>En pratique, il est plus efficace d’appliquer la dénormalisation directement sur les pôles. Cette stratégie permet de déterminer plus rapidement
+les pulsations propres <span class="math notranslate nohighlight">\(\omega_0\)</span> et les coefficients d’amortissement <span class="math notranslate nohighlight">\(m\)</span> des différentes cellules d’ordre 2.</p>
+</div>
 </section>
 </section>
 <section id="passe-bas">
@@ -494,8 +515,8 @@
 <li><p><span class="math notranslate nohighlight">\(\Delta \omega=\omega_{c2}-\omega_{c1}\)</span> désigne la largeur de la bande passante.</p></li>
 </ul>
 </section>
-<section id="id7">
-<h3>Mapping Fréquentiel<a class="headerlink" href="#id7" title="Link to this heading">#</a></h3>
+<section id="mapping-bp">
+<span id="id7"></span><h3>Mapping Fréquentiel<a class="headerlink" href="#mapping-bp" title="Link to this heading">#</a></h3>
 <p>La pulsation <span class="math notranslate nohighlight">\(\omega\)</span> du filtre normalisé est mappée à la pulsation <span class="math notranslate nohighlight">\(\widehat{\omega}\)</span> où</p>
 <div class="math notranslate nohighlight">
 \[j\omega = \frac{(j\widehat{\omega})^2+\omega_0^2}{j\widehat{\omega}\Delta \omega} \Rightarrow \omega = \frac{\widehat{\omega}^2-\omega_0^2}{\widehat{\omega}\Delta \omega}\]</div>
@@ -503,8 +524,8 @@
 <img alt="../_images/filter_synthesis-5.png" class="plot-directive" src="../_images/filter_synthesis-5.png" />
 </figure>
 </section>
-<section id="id8">
-<h3>Mapping des pôles et zéros<a class="headerlink" href="#id8" title="Link to this heading">#</a></h3>
+<section id="mapping-bp-zpk">
+<span id="id8"></span><h3>Mapping des pôles et zéros<a class="headerlink" href="#mapping-bp-zpk" title="Link to this heading">#</a></h3>
 <p>Les pôles <span class="math notranslate nohighlight">\(p_l\)</span> et zéros <span class="math notranslate nohighlight">\(z_l\)</span> du filtre normalisé sont mappés aux pôles et zéros</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\widehat{p}_l&amp;=\alpha p_l \pm \sqrt{\alpha^2p_l^2-\omega_0^2}\\
