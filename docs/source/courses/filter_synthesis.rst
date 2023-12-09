@@ -11,24 +11,32 @@ Méthodologie
 ------------
 
 * Étape 1 : Synthèse du filtre normalisé
-
-    - Définir les spécifications du filtre : Avant toute chose, il est nécessaire de définir les spécifications souhaitées pour le filtre, comme la bande passante, l'atténuation, l'ondulation dans la bande passante, etc.
-    - Choisir la technique de synthèse : Cela peut être Butterworth, Chebyshev, elliptique, etc. Chaque type a ses propres caractéristiques.
-    - Déterminer l'ordre :math:`N` du filtre : En utilisant les spécifications et le type de réponse choisie, déterminez l'ordre minimal :math:`N` du filtre nécessaire pour satisfaire ces spécifications.
-    - Synthèse de la fonction de transfert : Avec l'ordre déterminé et le type de réponse, utilisez les formules appropriées pour déduire la fonction de transfert :math:`H_n(p)` du filtre normalisé.
-
+    - Définir les spécifications du filtre : Avant toute chose, il est nécessaire de définir les spécifications souhaitées pour le filtre, comme la bande passante, l'atténuation, l'ondulation dans la bande passante, etc. Ces specifications sont précisées via le gabarit fréquentiel.
+    - Définir le gabarit du filtre passe-bas normalisé (:math:`\omega_c=1` rad/s). 
+    - Déterminer l'ordre :math:`N` du filtre.
+    - Synthèse de la fonction de transfert : Avec l'ordre déterminé et la technique de synthèse retenue, utilisez les formules appropriées pour déduire la fonction de transfert :math:`H_n(p)` du filtre normalisé.
 * Étape 2 : Dénormalisation. La dénormalisation consiste à adapter le filtre conçu dans l'étape précédente à vos besoins réels, comme la fréquence de coupure ou la bande passante.
-
     - Réaliser la substitution :math:`p\to f(p)` pour obtenir la fonction de transfert du filtre dénormalisé.
-
 * Étape 3 : Réalisation du filtre
-
     - Sélection des composants : À partir de la fonction de transfert dénormalisée, choisissez des composants (résistances, condensateurs, inductances, etc.) pour réaliser physiquement le filtre.
-
     - Assemblage et test : Une fois que vous avez tous les composants nécessaires, assemblez le filtre. Testez ensuite ses performances pour vous assurer qu'il répond aux spécifications.
 
+Détermination de l'ordre 
+------------------------
 
-Denormalisation
+Pour un filtre passe-bas normalisé, il est possible de déterminer l'ordre en utilisant le comportement asymptotique en hautes-fréquences :
+
+.. math ::
+
+    N = \left\lceil-\frac{\ln\left(\frac{T_c}{T_s}\right)}{\ln\left(\frac{\omega_c}{\omega_s}\right)}\right\rceil
+
+* :math:`\omega_c=1` rad/s
+* :math:`T_c` correspond à l'amplification minimale dans la bande passante.
+* :math:`T_s` correspond à l'amplification maximale dans la bande rejetée.
+
+
+
+Dénormalisation
 ---------------
 
 Pour synthétiser un filtre d'ordre N, la procédure classique consiste à d'abord synthétiser son équivalent "passe-bas" normalisé puis à réaliser une dénormalisation. Soit :math:`H_n(p)` la fonction de transfert du filtre normalisé. La fonction du filtre dénormalisé s'obtient en modifiant la variable p de la manière suivante :
@@ -62,6 +70,11 @@ Lors de la dénormalisation, le pôle :math:`p_l` est mappé en un ou plusieurs 
 
     p_l = f(\widehat{p}_l)
 
+
+.. note ::
+
+    En pratique, il est plus efficace d'appliquer la dénormalisation directement sur les pôles. Cette stratégie permet de déterminer plus rapidement 
+    les pulsations propres :math:`\omega_0` et les coefficients d'amortissement :math:`m` des différentes cellules d'ordre 2.
 
 Passe-Bas 
 ---------
@@ -299,6 +312,8 @@ Transformation
 * :math:`\Delta \omega=\omega_{c2}-\omega_{c1}` désigne la largeur de la bande passante.
 
 
+.. _mapping-BP:
+
 Mapping Fréquentiel 
 +++++++++++++++++++
 
@@ -365,6 +380,9 @@ La pulsation :math:`\omega` du filtre normalisé est mappée à la pulsation :ma
     ax2.axvline([w_hat[1]],c="r",linestyle="--")
     ax2.grid()
     fig.tight_layout()
+
+
+.. _mapping-BP-zpk:
 
 Mapping des pôles et zéros  
 ++++++++++++++++++++++++++
