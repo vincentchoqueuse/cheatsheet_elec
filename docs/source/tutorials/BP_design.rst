@@ -11,7 +11,7 @@ Cahier des charges
 * Type de filtre: passe-bande, 
 * Technique de synthèse: Butterworth, 
 * Bande passante : :math:`\omega \in [900, 1111]` rad/s,
-* Bande rejetée : :math:`\omega \in [500, 2000]` rad/s,
+* Bande rejetée : :math:`\omega \in [0, 500[ \cup [2000, +\infty[` rad/s,
 * Atténuation maximale dans la bande passante: :math:`3` dB,
 * Atténuation minimale dans la bande rejetée: :math:`40` dB.
 
@@ -146,7 +146,7 @@ Pour dénormaliser le filtre, nous allons opérer un mapping des pôles et zéro
 
     \widehat{p}_l&=\alpha p_l \pm \sqrt{\alpha^2p_l^2-\omega_0^2}\\
 
-* :math:`\alpha=\Delta \omega/2=211/2=105.5` rad/s,
+* :math:`\alpha=\Delta \omega/2=211/2=105.5` rad/s désigne la moitié de la bande passante,
 * :math:`p_l` correspond aux pôles du filtre normalisé, 
 * :math:`\widehat{p}_l` correspond aux pôles du filtre dénormalisé.
 
