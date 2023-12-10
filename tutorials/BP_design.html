@@ -292,7 +292,7 @@ applicable à n’importe quel filtre.</p>
 <li><p>Type de filtre: passe-bande,</p></li>
 <li><p>Technique de synthèse: Butterworth,</p></li>
 <li><p>Bande passante : <span class="math notranslate nohighlight">\(\omega \in [900, 1111]\)</span> rad/s,</p></li>
-<li><p>Bande rejetée : <span class="math notranslate nohighlight">\(\omega \in [500, 2000]\)</span> rad/s,</p></li>
+<li><p>Bande rejetée : <span class="math notranslate nohighlight">\(\omega \in [0, 500[ \cup [2000, +\infty[\)</span> rad/s,</p></li>
 <li><p>Atténuation maximale dans la bande passante: <span class="math notranslate nohighlight">\(3\)</span> dB,</p></li>
 <li><p>Atténuation minimale dans la bande rejetée: <span class="math notranslate nohighlight">\(40\)</span> dB.</p></li>
 </ul>
@@ -353,7 +353,7 @@ applicable à n’importe quel filtre.</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\widehat{p}_l&amp;=\alpha p_l \pm \sqrt{\alpha^2p_l^2-\omega_0^2}\\\end{split}\]</div>
 <ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(\alpha=\Delta \omega/2=211/2=105.5\)</span> rad/s,</p></li>
+<li><p><span class="math notranslate nohighlight">\(\alpha=\Delta \omega/2=211/2=105.5\)</span> rad/s désigne la moitié de la bande passante,</p></li>
 <li><p><span class="math notranslate nohighlight">\(p_l\)</span> correspond aux pôles du filtre normalisé,</p></li>
 <li><p><span class="math notranslate nohighlight">\(\widehat{p}_l\)</span> correspond aux pôles du filtre dénormalisé.</p></li>
 </ul>
